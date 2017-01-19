@@ -1,0 +1,23 @@
+PODS:
+  - DZNEmptyDataSet (1.8.1)
+  - KWTransition (0.0.4)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SVProgressHUD (2.0.3)
+
+DEPENDENCIES:
+  - DZNEmptyDataSet
+  - KWTransition
+  - SDWebImage
+  - SVProgressHUD
+
+SPEC CHECKSUMS:
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  KWTransition: 72d59eef35ddb67769eb99a41317fa75c0444e1b
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+
+PODFILE CHECKSUM: 47649d9c5a8917ebfecfeaae32b2dade7f1ac565
+
+COCOAPODS: 1.0.1
