@@ -20,6 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+	
+	// Use two NIBs, one for expanded form
+	[self.eventsTableView registerNib:[UINib nibWithNibName:@"EventsTableViewCell2" bundle:nil] forCellReuseIdentifier:@"eventsCellExp"];
+	[self.eventsTableView registerNib:[UINib nibWithNibName:@"EventsTableViewCell" bundle:nil] forCellReuseIdentifier:@"eventsCell"];
+	
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,14 +34,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    EventsTableViewCell *cell = (EventsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"eventsCell"];
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"EventsTableViewCell" owner:self options:nil];
-    cell = [nib objectAtIndex:0];
-    
-    if (cell == nil) {
-        cell = [[EventsTableViewCell alloc] init];
-    }
-    
+	EventsTableViewCell *cell;
+	if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame)
+		cell = (EventsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"eventsCellExp"];
+	else
+		cell = (EventsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"eventsCell"];
+	
     return cell;
 }
 
@@ -44,15 +47,23 @@
     return 5;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
+	[tableView beginUpdates]; // Call this before making changes like row height update to the table view
+	
     if (!([indexPath compare:self.selectedIndexPath] == NSOrderedSame))
         self.selectedIndexPath = indexPath;
     else
         self.selectedIndexPath = nil;
-    
+	
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[tableView reloadData]; // Reload after allowing the transistion to finish.
+		[tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+	});
+	
+	[tableView endUpdates];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
