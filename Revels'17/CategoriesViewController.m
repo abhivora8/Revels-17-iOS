@@ -8,16 +8,20 @@
 
 #import "CategoriesViewController.h"
 #import "CategoriesTableViewCell.h"
+#import "EventsTableViewController.h"
 
-@interface CategoriesViewController ()
+@interface CategoriesViewController () 
 {
-    NSArray *categoryList;
     NSMutableArray *filteredEventList;
 }
 
 @end
 
 @implementation CategoriesViewController
+{
+    NSArray *categoryList;
+    IBOutlet UITableView *catTableView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -61,6 +65,16 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"catToEvents"]) {
+        NSIndexPath *indexPath = [catTableView indexPathForSelectedRow];
+        EventsTableViewController *dest = segue.destinationViewController;
+        dest.catName = [categoryList objectAtIndex:indexPath.row];
+        dest.title = dest.catName;
+    }
 }
 
 

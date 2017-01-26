@@ -20,6 +20,7 @@
 		D60CA6C51E02FAE200B79D69 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CA6C41E02FAE200B79D69 /* ResultsViewController.m */; };
 		D60CA6C91E02FAF800B79D69 /* ResultsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CA6C71E02FAF800B79D69 /* ResultsTableViewCell.m */; };
 		D60CA6CA1E02FAF800B79D69 /* ResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60CA6C81E02FAF800B79D69 /* ResultsTableViewCell.xib */; };
+		D65BD80C1E3A56F200417E8B /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65BD80B1E3A56F200417E8B /* EventsTableViewController.m */; };
 		D6CD86A21E2FE86F00000446 /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CD86A11E2FE86F00000446 /* EventsViewController.m */; };
 		D6CD86A61E2FEB4F00000446 /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CD86A41E2FEB4F00000446 /* EventsTableViewCell.m */; };
 		D6CD86A71E2FEB4F00000446 /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CD86A51E2FEB4F00000446 /* EventsTableViewCell.xib */; };
@@ -47,6 +48,8 @@
 		D60CA6C61E02FAF800B79D69 /* ResultsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableViewCell.h; sourceTree = "<group>"; };
 		D60CA6C71E02FAF800B79D69 /* ResultsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableViewCell.m; sourceTree = "<group>"; };
 		D60CA6C81E02FAF800B79D69 /* ResultsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultsTableViewCell.xib; sourceTree = "<group>"; };
+		D65BD80A1E3A56F200417E8B /* EventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewController.h; sourceTree = "<group>"; };
+		D65BD80B1E3A56F200417E8B /* EventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewController.m; sourceTree = "<group>"; };
 		D6CD86A01E2FE86F00000446 /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsViewController.h; sourceTree = "<group>"; };
 		D6CD86A11E2FE86F00000446 /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsViewController.m; sourceTree = "<group>"; };
 		D6CD86A31E2FEB4F00000446 /* EventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewCell.h; sourceTree = "<group>"; };
@@ -130,6 +133,7 @@
 		D60CA6C11E02C68900B79D69 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				D65BD8091E3A56DE00417E8B /* Filtered Events */,
 				D60CA6BE1E02C14900B79D69 /* CategoriesViewController.h */,
 				D60CA6BF1E02C14900B79D69 /* CategoriesViewController.m */,
 				D60CA6B91E02B00500B79D69 /* CategoriesTableViewCell.h */,
@@ -149,6 +153,15 @@
 				D60CA6C81E02FAF800B79D69 /* ResultsTableViewCell.xib */,
 			);
 			name = Results;
+			sourceTree = "<group>";
+		};
+		D65BD8091E3A56DE00417E8B /* Filtered Events */ = {
+			isa = PBXGroup;
+			children = (
+				D65BD80A1E3A56F200417E8B /* EventsTableViewController.h */,
+				D65BD80B1E3A56F200417E8B /* EventsTableViewController.m */,
+			);
+			name = "Filtered Events";
 			sourceTree = "<group>";
 		};
 		D6CD869F1E2FE84F00000446 /* Events */ = {
@@ -298,6 +311,7 @@
 				D6CD86A21E2FE86F00000446 /* EventsViewController.m in Sources */,
 				D60CA6C01E02C14900B79D69 /* CategoriesViewController.m in Sources */,
 				D60CA6C91E02FAF800B79D69 /* ResultsTableViewCell.m in Sources */,
+				D65BD80C1E3A56F200417E8B /* EventsTableViewController.m in Sources */,
 				D60CA6C51E02FAE200B79D69 /* ResultsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
