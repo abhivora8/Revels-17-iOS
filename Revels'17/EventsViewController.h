@@ -14,4 +14,6 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *eventsTableView;
 
+- (IBAction)eventDayChanged:(id)sender;
+
 @end

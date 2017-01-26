@@ -19,7 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    events = [NSArray arrayWithObjects:@"Eve 1",@"Eve 2",@"Eve 3",@"Eve 4", nil]; //load array based on the category selected?
+     if([self.catName isEqualToString:@"Cat1"])
+        events = [NSArray arrayWithObjects:@"Cat1 Eve 1",@"Cat1 Eve 2",@"Cat1 Eve 3",@"Cat1 Eve 4", nil];
+     else if([self.catName isEqualToString:@"Cat2"])
+        events = [NSArray arrayWithObjects:@"Cat2 Eve 1",@"Cat2 Eve 2",@"Cat2 Eve 3",@"Cat2 Eve 4", nil];
+     else
+         events = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,6 +54,11 @@
     cell.textLabel.text = [events objectAtIndex:indexPath.row];
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

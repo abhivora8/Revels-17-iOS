@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    categoryList = [[NSArray alloc] initWithObjects: @"One",@"Two",@"Three",@"Four", nil];
+    categoryList = [[NSArray alloc] initWithObjects: @"Cat1",@"Cat2",@"Cat3",@"Cat4", nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,6 +64,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self performSegueWithIdentifier:@"catToEvents" sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

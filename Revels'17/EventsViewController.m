@@ -15,7 +15,9 @@
 
 @end
 
-@implementation EventsViewController
+@implementation EventsViewController{
+    NSArray *eventsList;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,7 +26,32 @@
 	// Use two NIBs, one for expanded form
 	[self.eventsTableView registerNib:[UINib nibWithNibName:@"EventsTableViewCell2" bundle:nil] forCellReuseIdentifier:@"eventsCellExp"];
 	[self.eventsTableView registerNib:[UINib nibWithNibName:@"EventsTableViewCell" bundle:nil] forCellReuseIdentifier:@"eventsCell"];
+    [self eventDayChanged:0];
 	
+}
+
+- (IBAction)eventDayChanged:(id)sender {
+    if(_eventsSegmentedView.selectedSegmentIndex == 0 || sender == 0)
+    {
+        eventsList = [NSArray arrayWithObjects:@"Day1Eve1",@"Day1Eve2", nil];
+        [self.eventsTableView reloadData];
+    }
+    
+    else if(_eventsSegmentedView.selectedSegmentIndex == 1)
+    {
+        eventsList = [NSArray arrayWithObjects:@"Day2Eve1",@"Day2Eve2", nil];
+        [self.eventsTableView reloadData];
+    }
+    else if(_eventsSegmentedView.selectedSegmentIndex == 2)
+    {
+        eventsList = [NSArray arrayWithObjects:@"Day3Eve1",@"Day3Eve2", nil];
+        [self.eventsTableView reloadData];
+    }
+    else if(_eventsSegmentedView.selectedSegmentIndex == 3)
+    {
+        eventsList = [NSArray arrayWithObjects:@"Day4Eve1",@"Day4Eve2", nil];
+        [self.eventsTableView reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,11 +67,13 @@
 	else
 		cell = (EventsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"eventsCell"];
 	
+    cell.eveName = [eventsList objectAtIndex:indexPath.row];
+    
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return eventsList.count;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
