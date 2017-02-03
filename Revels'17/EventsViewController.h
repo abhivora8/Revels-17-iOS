@@ -10,10 +10,4 @@
 
 @interface EventsViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UISegmentedControl *eventsSegmentedView;
-
-@property (strong, nonatomic) IBOutlet UITableView *eventsTableView;
-
-- (IBAction)eventDayChanged:(id)sender;
-
 @end

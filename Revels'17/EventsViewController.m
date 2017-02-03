@@ -7,51 +7,78 @@
 //
 
 #import "EventsViewController.h"
-#import "EventsTableViewCell.h"
 
-@interface EventsViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "EventsByDayTableViewController.h"
 
-@property (nonatomic, strong) NSIndexPath *selectedIndexPath;
+@interface EventsViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
+
+@property (strong, nonatomic) IBOutlet UISegmentedControl *eventsSegmentedView;
+
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+
+@property (strong, nonatomic) UIPageViewController *pageViewController;
+
+@property (strong, nonatomic) NSMutableArray <EventsByDayTableViewController *> *viewControllers;
 
 @end
 
-@implementation EventsViewController{
-    NSArray *eventsList;
+@implementation EventsViewController {
+	NSInteger lastIndex;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	
-	// Use two NIBs, one for expanded form
-	[self.eventsTableView registerNib:[UINib nibWithNibName:@"EventsTableViewCell2" bundle:nil] forCellReuseIdentifier:@"eventsCellExp"];
-	[self.eventsTableView registerNib:[UINib nibWithNibName:@"EventsTableViewCell" bundle:nil] forCellReuseIdentifier:@"eventsCell"];
-    [self eventDayChanged:0];
+	self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
+															  navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
+																			options:nil];
+	
+	self.pageViewController.dataSource = self;
+	self.pageViewController.delegate = self;
+	
+	self.viewControllers = [NSMutableArray new];
+	for (NSInteger i = 0; i < 4; ++i) {
+		EventsByDayTableViewController *ebdtvc = [self.storyboard instantiateViewControllerWithIdentifier:@"EventsByDayVC"];
+		NSMutableArray <NSString *> *events = [NSMutableArray new];
+		for (NSInteger j = 0; j < rand() % 5 + 5; ++j) {
+			[events addObject:[NSString stringWithFormat:@"Event %li.%li", i, j]];
+		}
+		ebdtvc.events = events;
+		[self.viewControllers addObject:ebdtvc];
+	}
+	
+	[self addChildViewController:self.pageViewController];
+	
+	lastIndex = 0;
+	self.eventsSegmentedView.selectedSegmentIndex = 0;
+    [self eventDayChanged:self.eventsSegmentedView];
+	
+	[self.pageViewController setViewControllers:@[self.viewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+	
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	
+	[super viewDidAppear:animated];
+	
+	[self.containerView addSubview:self.pageViewController.view];
+	[self.pageViewController.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+	self.pageViewController.view.frame = self.containerView.bounds;
+	self.pageViewController.view.clipsToBounds = YES;
+	
+	[self.pageViewController didMoveToParentViewController:self];
+	
 	
 }
 
 - (IBAction)eventDayChanged:(id)sender {
-    if(_eventsSegmentedView.selectedSegmentIndex == 0 || sender == 0)
-    {
-        eventsList = [NSArray arrayWithObjects:@"Day1Eve1",@"Day1Eve2", nil];
-        [self.eventsTableView reloadData];
-    }
-    
-    else if(_eventsSegmentedView.selectedSegmentIndex == 1)
-    {
-        eventsList = [NSArray arrayWithObjects:@"Day2Eve1",@"Day2Eve2", nil];
-        [self.eventsTableView reloadData];
-    }
-    else if(_eventsSegmentedView.selectedSegmentIndex == 2)
-    {
-        eventsList = [NSArray arrayWithObjects:@"Day3Eve1",@"Day3Eve2", nil];
-        [self.eventsTableView reloadData];
-    }
-    else if(_eventsSegmentedView.selectedSegmentIndex == 3)
-    {
-        eventsList = [NSArray arrayWithObjects:@"Day4Eve1",@"Day4Eve2", nil];
-        [self.eventsTableView reloadData];
-    }
+	NSInteger index = [sender selectedSegmentIndex];
+	[self.pageViewController setViewControllers:@[[self.viewControllers objectAtIndex:index]]
+									  direction:(lastIndex >= index) ? UIPageViewControllerNavigationDirectionReverse : UIPageViewControllerNavigationDirectionForward
+									   animated:YES
+									 completion:nil];
+	lastIndex = index;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,47 +86,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-	EventsTableViewCell *cell;
-	if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame)
-		cell = (EventsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"eventsCellExp"];
-	else
-		cell = (EventsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"eventsCell"];
-	
-    cell.eveName = [eventsList objectAtIndex:indexPath.row];
-    
-    return cell;
+#pragma mark - Page view controller data source
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
+	if (viewController == nil || viewController == self.viewControllers.firstObject) {
+		return nil;
+	}
+	NSInteger index = [self.viewControllers indexOfObject:(EventsByDayTableViewController *)viewController];
+	return [self.viewControllers objectAtIndex:index - 1];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return eventsList.count;
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+	if (viewController == nil || viewController == self.viewControllers.lastObject) {
+		return nil;
+	}
+	NSInteger index = [self.viewControllers indexOfObject:(EventsByDayTableViewController *)viewController];
+	return [self.viewControllers objectAtIndex:index + 1];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+#pragma mark - Page view controller delegate
 
-	[tableView beginUpdates]; // Call this before making changes like row height update to the table view
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
 	
-    if (!([indexPath compare:self.selectedIndexPath] == NSOrderedSame))
-        self.selectedIndexPath = indexPath;
-    else
-        self.selectedIndexPath = nil;
+	if (finished) {
+		NSInteger index = [self.viewControllers indexOfObject:(EventsByDayTableViewController *)(pageViewController.viewControllers.lastObject)];
+		[self.eventsSegmentedView setSelectedSegmentIndex:index];
+	}
 	
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-	
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-		[tableView reloadData]; // Reload after allowing the transistion to finish.
-		[tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
-	});
-	
-	[tableView endUpdates];
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame)
-        return 285.f;
-    return 65.f;
-}
-
 
 @end

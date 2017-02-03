@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		474024E0714FEDAFC755AA81 /* libPods-Revels'17.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C82C8B650CF896A877C5137 /* libPods-Revels'17.a */; };
 		5918B8DD1E33D66800AB612C /* EventsTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5918B8DC1E33D66800AB612C /* EventsTableViewCell2.xib */; };
+		593D8BB71E431C3C0074B636 /* EventsByDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */; };
 		D60CA6A11E02ADA300B79D69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CA6A01E02ADA300B79D69 /* main.m */; };
 		D60CA6A41E02ADA300B79D69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CA6A31E02ADA300B79D69 /* AppDelegate.m */; };
 		D60CA6AA1E02ADA300B79D69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60CA6A81E02ADA300B79D69 /* Main.storyboard */; };
@@ -29,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		5918B8DC1E33D66800AB612C /* EventsTableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell2.xib; sourceTree = "<group>"; };
+		593D8BB51E431C3C0074B636 /* EventsByDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsByDayTableViewController.h; sourceTree = "<group>"; };
+		593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsByDayTableViewController.m; sourceTree = "<group>"; };
 		5C82C8B650CF896A877C5137 /* libPods-Revels'17.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Revels'17.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F277E97FEB34C8351AE9CD8 /* Pods-Revels'17.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revels'17.release.xcconfig"; path = "Pods/Target Support Files/Pods-Revels'17/Pods-Revels'17.release.xcconfig"; sourceTree = "<group>"; };
 		D60CA69C1E02ADA300B79D69 /* Revels'17.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Revels'17.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +179,8 @@
 				D6CD86A41E2FEB4F00000446 /* EventsTableViewCell.m */,
 				D6CD86A01E2FE86F00000446 /* EventsViewController.h */,
 				D6CD86A11E2FE86F00000446 /* EventsViewController.m */,
+				593D8BB51E431C3C0074B636 /* EventsByDayTableViewController.h */,
+				593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */,
 				D6CD86A51E2FEB4F00000446 /* EventsTableViewCell.xib */,
 				5918B8DC1E33D66800AB612C /* EventsTableViewCell2.xib */,
 			);
@@ -313,6 +318,7 @@
 				D60CA6A41E02ADA300B79D69 /* AppDelegate.m in Sources */,
 				D60CA6BC1E02B00500B79D69 /* CategoriesTableViewCell.m in Sources */,
 				D60CA6A11E02ADA300B79D69 /* main.m in Sources */,
+				593D8BB71E431C3C0074B636 /* EventsByDayTableViewController.m in Sources */,
 				D6CD86A21E2FE86F00000446 /* EventsViewController.m in Sources */,
 				D6C470A71E3CAC540094D8B5 /* FilteredEventsTableViewCell.m in Sources */,
 				D60CA6C01E02C14900B79D69 /* CategoriesViewController.m in Sources */,

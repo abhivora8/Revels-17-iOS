@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventsCellExp" rowHeight="285" id="KGk-i7-Jjw" customClass="EventsTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="285"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="240" id="KGk-i7-Jjw" customClass="EventsTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="284.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="239.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1h-vJ-tB2">
@@ -32,8 +32,8 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMV-61-uy4">
-                        <rect key="frame" x="78" y="92.5" width="234" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="70" y="74" width="242" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -49,64 +49,71 @@
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ax-7X-79b">
                         <rect key="frame" x="277" y="22" width="30" height="30"/>
-                        <color key="backgroundColor" red="1" green="0.20496454040000001" blue="0.19081095419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.87916402279999994" green="0.29039105069999999" blue="0.21420224730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="658-nW-1z7"/>
                             <constraint firstAttribute="width" constant="30" id="Rpj-aL-qnG"/>
                         </constraints>
-                        <state key="normal" title="2"/>
+                        <state key="normal" title="2">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <action selector="favouritesButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Mwn-kk-7El"/>
                         </connections>
                     </button>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ddF-HT-pfj">
-                        <rect key="frame" x="23" y="81" width="40" height="40"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="ddF-HT-pfj">
+                        <rect key="frame" x="23" y="67" width="32" height="32"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="ZHL-0Z-WnM"/>
-                            <constraint firstAttribute="width" constant="40" id="tUN-7N-QGg"/>
+                            <constraint firstAttribute="height" constant="32" id="ZHL-0Z-WnM"/>
+                            <constraint firstAttribute="width" constant="32" id="tUN-7N-QGg"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEA-3s-PTY">
-                        <rect key="frame" x="78" y="142.5" width="234" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="70" y="116" width="242" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XMB-ze-1uB">
-                        <rect key="frame" x="23" y="131" width="40" height="40"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="date" translatesAutoresizingMaskIntoConstraints="NO" id="XMB-ze-1uB">
+                        <rect key="frame" x="23" y="109" width="32" height="32"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="SpQ-BO-Ccp"/>
-                            <constraint firstAttribute="width" constant="40" id="mJN-rT-eJ7"/>
+                            <constraint firstAttribute="height" constant="32" id="SpQ-BO-Ccp"/>
+                            <constraint firstAttribute="width" constant="32" id="mJN-rT-eJ7"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max team members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fn-iU-hF6">
-                        <rect key="frame" x="78" y="192.5" width="234" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="70" y="158" width="242" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sZk-Jf-26D">
-                        <rect key="frame" x="23" y="181" width="40" height="40"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team" translatesAutoresizingMaskIntoConstraints="NO" id="sZk-Jf-26D">
+                        <rect key="frame" x="23" y="151" width="32" height="32"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="X4R-92-u2F"/>
-                            <constraint firstAttribute="width" constant="40" id="ahr-1p-fmL"/>
+                            <constraint firstAttribute="height" constant="32" id="X4R-92-u2F"/>
+                            <constraint firstAttribute="width" constant="32" id="ahr-1p-fmL"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person of contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHr-mF-fDV">
-                        <rect key="frame" x="78" y="242.5" width="184" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="70" y="200" width="192" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nn6-CQ-eFD">
-                        <rect key="frame" x="23" y="231" width="40" height="40"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact" translatesAutoresizingMaskIntoConstraints="NO" id="nn6-CQ-eFD">
+                        <rect key="frame" x="23" y="193" width="32" height="32"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="40" id="VWk-pe-uqs"/>
-                            <constraint firstAttribute="height" constant="40" id="WSD-hR-JR6"/>
+                            <constraint firstAttribute="width" constant="32" id="VWk-pe-uqs"/>
+                            <constraint firstAttribute="height" constant="32" id="WSD-hR-JR6"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W48-jK-2Ud">
-                        <rect key="frame" x="282" y="238.5" width="25" height="25"/>
+                        <rect key="frame" x="282" y="196.5" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="BLp-db-LPc"/>
                             <constraint firstAttribute="height" constant="25" id="QHJ-mJ-BET"/>
@@ -120,7 +127,7 @@
                     <constraint firstItem="2Fn-iU-hF6" firstAttribute="centerY" secondItem="sZk-Jf-26D" secondAttribute="centerY" id="9Ze-Mr-h1Z"/>
                     <constraint firstItem="W48-jK-2Ud" firstAttribute="centerY" secondItem="PHr-mF-fDV" secondAttribute="centerY" id="Bo4-Qe-VaN"/>
                     <constraint firstItem="U4p-KU-Sr0" firstAttribute="top" secondItem="d1h-vJ-tB2" secondAttribute="bottom" constant="2" id="CS0-8l-qKg"/>
-                    <constraint firstItem="ddF-HT-pfj" firstAttribute="top" secondItem="U4p-KU-Sr0" secondAttribute="bottom" constant="30" id="EYp-oj-y9V"/>
+                    <constraint firstItem="ddF-HT-pfj" firstAttribute="top" secondItem="U4p-KU-Sr0" secondAttribute="bottom" constant="16" id="EYp-oj-y9V"/>
                     <constraint firstItem="sZk-Jf-26D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="Eg6-5o-sQb"/>
                     <constraint firstItem="WgZ-Mc-5NB" firstAttribute="leading" secondItem="d1h-vJ-tB2" secondAttribute="trailing" constant="8" id="HYD-KN-bgV"/>
                     <constraint firstItem="XMB-ze-1uB" firstAttribute="top" secondItem="ddF-HT-pfj" secondAttribute="bottom" constant="10" id="Jo4-VW-cEn"/>
@@ -161,7 +168,13 @@
                 <outlet property="personImage" destination="nn6-CQ-eFD" id="jd4-5a-Ypr"/>
                 <outlet property="personOfContactLabel" destination="PHr-mF-fDV" id="lkg-JZ-EgW"/>
             </connections>
-            <point key="canvasLocation" x="-225" y="20.5"/>
+            <point key="canvasLocation" x="-225" y="-2"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="contact" width="44" height="44"/>
+        <image name="date" width="44" height="44"/>
+        <image name="location" width="44" height="44"/>
+        <image name="team" width="44" height="44"/>
+    </resources>
 </document>
