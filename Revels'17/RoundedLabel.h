@@ -10,4 +10,6 @@
 
 @interface RoundedLabel : UILabel
 
+@property (nonatomic, strong) IBInspectable UIColor *fillColor;
+
 @end

@@ -9,6 +9,7 @@ target 'Revels\'17' do
   pod 'SDWebImage'
   pod 'KWTransition'
   pod 'DZNEmptyDataSet'
+  pod ‘Parse’
 
   # Pods for Revels'17
 

@@ -1,6 +1,9 @@
 PODS:
+  - Bolts/Tasks (1.8.4)
   - DZNEmptyDataSet (1.8.1)
   - KWTransition (0.0.4)
+  - Parse (1.14.2):
+    - Bolts/Tasks (~> 1.8)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -9,15 +12,18 @@ PODS:
 DEPENDENCIES:
   - DZNEmptyDataSet
   - KWTransition
+  - Parse
   - SDWebImage
   - SVProgressHUD
 
 SPEC CHECKSUMS:
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   KWTransition: 72d59eef35ddb67769eb99a41317fa75c0444e1b
+  Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 55c8dc200cdca20ed414fe1549117517dd15af73
+PODFILE CHECKSUM: a88b9a393d44ff3b78330898b89ac652e9e37452
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.2.0

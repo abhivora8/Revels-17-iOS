@@ -11,5 +11,6 @@
 @interface EventsTableViewController : UITableViewController
 
 @property (nonatomic,strong) NSString *catName;
+@property (nonatomic,strong) NSArray *events;
 
 @end

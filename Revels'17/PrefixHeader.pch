@@ -6,8 +6,39 @@
 //  Copyright © 2017 Abhishek Vora. All rights reserved.
 //
 
-#ifndef PrefixHeader_h
-#define PrefixHeader_h
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
 
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-#endif /* PrefixHeader_h */
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <Parse/Parse.h>
+#import <Bolts/Bolts.h>
+
+#import "AppDelegate.h"
+#import "ASMutableURLRequest.h"
+#import "DADataManager.h"
+#import "Reachability.h"
+#import "Colours.h"
+
+#define SWdith [UIScreen mainScreen].bounds.size.width
+#define SHeight [UIScreen mainScreen].bounds.size.height
+
+#define SVHUD_SHOW dispatch_async(dispatch_get_main_queue(),^{[SVProgressHUD showWithStatus:@"Loading..."];});
+#define SVHUD_HIDE dispatch_async(dispatch_get_main_queue(),^{[SVProgressHUD dismiss];});
+
+#define SVHUD_FAILURE(message) dispatch_async(dispatch_get_main_queue(), ^{ [SVProgressHUD showErrorWithStatus:message]; });
+#define SVHUD_SUCCESS(message) dispatch_async(dispatch_get_main_queue(), ^{ [SVProgressHUD showSuccessWithStatus:message]; });
+
+#define UIColorFromRGBWithAlpha(rgbValue, a) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
+
+#define GLOBAL_BACK_COLOR UIColorFromRGBWithAlpha(0xf9f7f3, 1.f)
+#define GLOBAL_TINT_COLOR UIColorFromRGBWithAlpha(0xb9cf32, 1.f)
+
+#define PRINT_RESPONSE_HEADERS_AND_CODE long statusCode = (long)[(NSHTTPURLResponse *)response statusCode]; if ([response isKindOfClass:[NSHTTPURLResponse class]]) { printf("\nResponse HTTP Status code: %ld\n", statusCode);  }
+
+#endif /* PrefixHeader_pch */

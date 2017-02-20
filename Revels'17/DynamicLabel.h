@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol DynamicLabelDelegate <NSObject>
+
+- (void)didFinishTextAnimation;
+
+@end
+
 @interface DynamicLabel : UILabel
+
+@property IBInspectable CGFloat lineWidth;
+
+@property IBInspectable CGFloat wordSpeed;
+
+@property (weak, nonatomic) id<DynamicLabelDelegate> delegate;
+
+- (void)setDefaultText:(NSString *)text;
 
 @end

@@ -10,4 +10,9 @@
 
 @interface ASMutableURLRequest : NSMutableURLRequest
 
++ (instancetype)getRequestWithURL:(NSURL *)URL;
++ (instancetype)postRequestWithURL:(NSURL *)URL;
++ (instancetype)putRequestWithURL:(NSURL *)URL;
++ (instancetype)deleteRequestWithURL:(NSURL *)URL;
+
 @end

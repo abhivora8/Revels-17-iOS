@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage_ImageEffects : UIImage
+@interface UIImage (ImageEffects)
+
+- (UIImage *)applyLightEffect;
+- (UIImage *)applyExtraLightEffect;
+- (UIImage *)applyDarkEffect;
+- (UIImage *)applyTintEffectWithColor:(UIColor *)tintColor :(float)radius;
+
+- (UIImage *)applyBlurWithRadius:(CGFloat)blurRadius tintColor:(UIColor *)tintColor saturationDeltaFactor:(CGFloat)saturationDeltaFactor maskImage:(UIImage *)maskImage;
+
+- (UIImage *)applyBlurWithRadius:(CGFloat)blurRadius iterationsCount:(NSInteger)iterationsCount tintColor:(UIColor *)tintColor saturationDeltaFactor:(CGFloat)saturationDeltaFactor maskImage:(UIImage *)maskImage;
 
 @end

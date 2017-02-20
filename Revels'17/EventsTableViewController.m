@@ -11,21 +11,15 @@
 
 @interface EventsTableViewController ()
 
+@property (nonatomic) NSIndexPath *selectedIndexPath;
+
 @end
 
-@implementation EventsTableViewController {
-    NSArray *events;
-}
+@implementation EventsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-     if([self.catName isEqualToString:@"Cat1"])
-        events = [NSArray arrayWithObjects:@"Cat1 Eve 1",@"Cat1 Eve 2",@"Cat1 Eve 3",@"Cat1 Eve 4", nil];
-     else if([self.catName isEqualToString:@"Cat2"])
-        events = [NSArray arrayWithObjects:@"Cat2 Eve 1",@"Cat2 Eve 2",@"Cat2 Eve 3",@"Cat2 Eve 4", nil];
-     else
-         events = nil;
+    self.selectedIndexPath = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,26 +34,49 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return events.count;
+    return self.events.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    FilteredEventsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"filteredEventsCell"];
-    if (cell == nil)
-    {
-        cell = [[FilteredEventsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"filteredEventsCell"];
-    }
+    FilteredEventsTableViewCell *cell;
     
-    cell.eveName.text = [events objectAtIndex:indexPath.row];
+     if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame) {
+         cell = [tableView dequeueReusableCellWithIdentifier:@"filteredEventsCellExp" forIndexPath:indexPath];
+     } else {
+         cell = [tableView dequeueReusableCellWithIdentifier:@"filteredEventsCell" forIndexPath:indexPath];
+     }
+    
+    cell.eveName.text = [self.events objectAtIndex:indexPath.row];
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView beginUpdates];
+    if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame) {
+        self.selectedIndexPath = nil;
+    } else {
+        self.selectedIndexPath = indexPath;
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView endUpdates];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame)
+        return 250.f;
+    return 70.f;
+}
+
+- (void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (!self.tableView.isDragging) {
+        [tableView beginUpdates];
+        [tableView reloadData];
+        [tableView endUpdates];
+    }
 }
 
 -(BOOL)hidesBottomBarWhenPushed

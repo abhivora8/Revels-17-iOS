@@ -10,12 +10,16 @@
 
 @implementation RoundedLabel
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
+    
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithOvalInRect:self.bounds];
+    [bezierPath setLineWidth:1.f];
+    [self.fillColor setFill];
+    [bezierPath fill];
+    
+    [super drawRect:rect];
+    
 }
-*/
 
 @end

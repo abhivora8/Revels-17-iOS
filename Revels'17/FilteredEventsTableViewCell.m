@@ -23,4 +23,6 @@
 
 - (IBAction)FavButtonPressed:(id)sender {
 }
+- (IBAction)callButtonPressed:(id)sender {
+}
 @end

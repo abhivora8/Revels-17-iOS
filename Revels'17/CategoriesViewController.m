@@ -8,7 +8,7 @@
 
 #import "CategoriesViewController.h"
 #import "CategoriesTableViewCell.h"
-#import "EventsTableViewController.h"
+#import "CategoriesPageViewController.h"
 
 @interface CategoriesViewController () 
 {
@@ -72,7 +72,7 @@
 {
     if ([segue.identifier isEqualToString:@"catToEvents"]) {
         NSIndexPath *indexPath = [catTableView indexPathForSelectedRow];
-        EventsTableViewController *dest = segue.destinationViewController;
+        CategoriesPageViewController *dest = segue.destinationViewController;
         dest.catName = [categoryList objectAtIndex:indexPath.row];
         dest.title = dest.catName;
     }

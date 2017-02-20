@@ -10,4 +10,6 @@
 
 @interface CategoriesPageViewController : UIViewController
 
+@property (nonatomic,strong) NSString *catName;
+
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "EventsViewController.h"
-
 #import "EventsByDayTableViewController.h"
 
 @interface EventsViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
@@ -30,9 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	
-	self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
-															  navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
-																			options:nil];
+	self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
 	
 	self.pageViewController.dataSource = self;
 	self.pageViewController.delegate = self;
@@ -73,12 +70,11 @@
 }
 
 - (IBAction)eventDayChanged:(id)sender {
+    
 	NSInteger index = [sender selectedSegmentIndex];
-	[self.pageViewController setViewControllers:@[[self.viewControllers objectAtIndex:index]]
-									  direction:(lastIndex >= index) ? UIPageViewControllerNavigationDirectionReverse : UIPageViewControllerNavigationDirectionForward
-									   animated:YES
-									 completion:nil];
-	lastIndex = index;
+	[self.pageViewController setViewControllers:@[[self.viewControllers objectAtIndex:index]] direction:(lastIndex >= index) ? UIPageViewControllerNavigationDirectionReverse : UIPageViewControllerNavigationDirectionForward  animated:YES completion:nil];
+	
+    lastIndex = index;
 }
 
 - (void)didReceiveMemoryWarning {
