@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvu-sG-vN2">
-                        <rect key="frame" x="69" y="23" width="202" height="24"/>
+                        <rect key="frame" x="69" y="23" width="233" height="24"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -31,26 +31,14 @@
                             <constraint firstAttribute="width" secondItem="3tz-5l-idy" secondAttribute="height" multiplier="1:1" id="ICF-zn-2OF"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmJ-Lm-MDD">
-                        <rect key="frame" x="279" y="22" width="25" height="25"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="25" id="h9h-rd-Zdu"/>
-                            <constraint firstAttribute="width" constant="25" id="nuY-eq-CfC"/>
-                        </constraints>
-                        <connections>
-                            <action selector="catInfo:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Djj-Ka-0dS"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="topMargin" secondItem="3tz-5l-idy" secondAttribute="top" id="2OZ-oP-Sj3"/>
                     <constraint firstAttribute="leadingMargin" secondItem="3tz-5l-idy" secondAttribute="leading" id="52V-eg-LDq"/>
                     <constraint firstItem="mvu-sG-vN2" firstAttribute="leading" secondItem="3tz-5l-idy" secondAttribute="trailing" constant="8" id="KWb-Ga-dWu"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="mvu-sG-vN2" secondAttribute="trailing" constant="10" id="KdD-JI-6du"/>
                     <constraint firstAttribute="bottomMargin" secondItem="3tz-5l-idy" secondAttribute="bottom" id="VzC-st-R0I"/>
-                    <constraint firstItem="KmJ-Lm-MDD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="WhV-b9-LmG"/>
                     <constraint firstItem="mvu-sG-vN2" firstAttribute="centerY" secondItem="3tz-5l-idy" secondAttribute="centerY" id="XSh-uB-rz4"/>
-                    <constraint firstItem="KmJ-Lm-MDD" firstAttribute="leading" secondItem="mvu-sG-vN2" secondAttribute="trailing" constant="8" id="fK1-KX-U62"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="KmJ-Lm-MDD" secondAttribute="trailing" constant="8" id="wem-VA-QbS"/>
                 </constraints>
                 <userDefinedRuntimeAttributes>
                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

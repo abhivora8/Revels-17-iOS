@@ -25,4 +25,6 @@
 }
 - (IBAction)callButtonPressed:(id)sender {
 }
+- (IBAction)infoButtonClicked:(id)sender {
+}
 @end
