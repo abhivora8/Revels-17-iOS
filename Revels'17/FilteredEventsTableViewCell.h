@@ -10,6 +10,8 @@
 
 @interface FilteredEventsTableViewCell : UITableViewCell
 
+- (IBAction)infoButtonClicked:(id)sender;
+
 @property (strong, nonatomic) IBOutlet UILabel *eveName;
 @property (strong, nonatomic) IBOutlet UILabel *catName;
 @property (strong, nonatomic) IBOutlet UIButton *favButton;

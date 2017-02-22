@@ -14,6 +14,5 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *catName;
 
-- (IBAction)catInfo:(id)sender;
 
 @end

@@ -24,8 +24,4 @@
 	[super setFrame:CGRectInset(frame, 8, 4)];
 }
 
-#pragma code incomplete
-
-- (IBAction)catInfo:(id)sender {
-}
 @end
