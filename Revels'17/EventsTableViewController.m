@@ -8,6 +8,7 @@
 
 #import "EventsTableViewController.h"
 #import "FilteredEventsTableViewCell.h"
+#import "EventsDetailsJSONModel.h"
 
 @interface EventsTableViewController ()
 
@@ -34,7 +35,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.events.count;
+    return self.eventList.count;
 }
 
 
@@ -48,7 +49,24 @@
          cell = [tableView dequeueReusableCellWithIdentifier:@"filteredEventsCell" forIndexPath:indexPath];
      }
     
-    cell.eveName.text = [self.events objectAtIndex:indexPath.row];
+    EventsDetailsJSONModel *model = [self.eventDetails objectAtIndex:indexPath.row];
+    
+    if ([model.cntctno isEqualToString:@" "])
+        cell.contactLabel.text = @"Contact Info Unavailable";
+    else
+        cell.contactLabel.text = model.cntctno;
+    cell.eveName.text = [self.eventList objectAtIndex:indexPath.row];
+    cell.catName.text = self.catName;
+    cell.maxPplLabel.text = model.eventMaxTeamSize;
+    
+    if([model.day isEqualToString:@"1"])
+        cell.dateLabel.text = [NSString stringWithFormat:@"8-03-17"];
+    else if([model.day isEqualToString:@"2"])
+        cell.dateLabel.text = [NSString stringWithFormat:@"9-03-17"];
+    else if([model.day isEqualToString:@"3"])
+        cell.dateLabel.text = [NSString stringWithFormat:@"10-03-17"];
+    else if([model.day isEqualToString:@"4"])
+        cell.dateLabel.text = [NSString stringWithFormat:@"11-03-17"];
     
     return cell;
 }

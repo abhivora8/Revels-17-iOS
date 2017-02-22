@@ -8,6 +8,7 @@
 
 #import "CategoriesPageViewController.h"
 #import "EventsTableViewController.h"
+#import "EventsDetailsJSONModel.h"
 
 @interface CategoriesPageViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 
@@ -25,11 +26,73 @@
 @implementation CategoriesPageViewController
 {
     NSInteger lastIndex;
+    NSMutableArray *eveArray;
+    NSMutableArray * eventDetailsToDisplay;
 }
+
+-(void)loadEventsFromApi
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        @try {
+            
+            NSURL *custumUrl = [[NSURL alloc]initWithString:@"http://api.mitportals.in/events/"];
+            NSData *mydata = [NSData dataWithContentsOfURL:custumUrl];
+            NSError *error;
+            
+            if (mydata!=nil)
+            {
+                id jsonData = [NSJSONSerialization JSONObjectWithData:mydata options:kNilOptions error:&error];
+                id array = [jsonData valueForKey:@"data"];
+                eveArray = [EventsDetailsJSONModel getArrayFromJson:array];
+                
+                for (NSInteger i = 0; i < 4; i++)
+                {
+                    EventsTableViewController *etvc = [self.storyboard instantiateViewControllerWithIdentifier:@"EventsByCatVC"];
+                    
+                    NSMutableArray *events = [NSMutableArray new];
+                    
+                    for(EventsDetailsJSONModel *x in eveArray)
+                    {
+                        if([x.categoryEventName isEqualToString:self.catName] && [x.day isEqualToString:[NSString stringWithFormat:@"%ld",i+1]])
+                        {
+                            [events addObject:x.eventName];
+                            [eventDetailsToDisplay addObject:x];
+                        }
+                    }
+                    NSLog(@"Events:%@",events);
+                    
+                    etvc.eventList = events;
+                    etvc.catName = self.catName;
+                    etvc.eventDetails = eventDetailsToDisplay;
+                    [self.viewControllers addObject:etvc];
+                }
+                
+                [self addChildViewController:self.pageViewController];
+                
+                lastIndex = 0;
+                self.eventsByDaySegmentedView.selectedSegmentIndex = 0;
+                
+                [self dayChanged:self.eventsByDaySegmentedView];
+                
+                [self.pageViewController setViewControllers:@[self.viewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+            }
+            
+        }
+        @catch (NSException *exception) {
+            
+        }
+        @finally {
+            
+        }
+    });
+}
+
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    eventDetailsToDisplay = [NSMutableArray new];
+    [self loadEventsFromApi];
     
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
@@ -37,27 +100,6 @@
     self.pageViewController.delegate = self;
     
     self.viewControllers = [NSMutableArray new];
-    
-    for (NSInteger i = 0; i < 4; ++i) {
-        EventsTableViewController *etvc = [self.storyboard instantiateViewControllerWithIdentifier:@"EventsByCatVC"];
-        NSMutableArray <NSString *> *events = [NSMutableArray new];
-        for (NSInteger j = 0; j < rand() % 5 + 5; ++j) {
-            [events addObject:[NSString stringWithFormat:@"Event %li.%li", i, j]];
-        }
-        etvc.events = events;
-        [self.viewControllers addObject:etvc];
-    }
-    
-    [self addChildViewController:self.pageViewController];
-    
-    lastIndex = 0;
-    self.eventsByDaySegmentedView.selectedSegmentIndex = 0;
-    
-    [self dayChanged:self.eventsByDaySegmentedView];
-    
-    [self.pageViewController setViewControllers:@[self.viewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-    
-
     
 }
 
