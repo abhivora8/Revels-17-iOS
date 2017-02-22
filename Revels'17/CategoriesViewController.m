@@ -53,8 +53,7 @@
             
         }
         @finally {
-//            NSLog(@"%@", catArray);
-//            NSLog(@"%@", categoryList);
+
         }
     });
 }
@@ -62,7 +61,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    categoryList = [NSMutableArray new];
 //    if(reachability.isReachable) not working
         [self loadCategoriesFromApi]; //json is parsed but values aren't getting stored in categoryList
     
@@ -77,7 +76,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return catArray.count;
+    return categoryList.count;
 }
 
 
@@ -89,8 +88,8 @@
         [tableView registerNib:[UINib nibWithNibName:@"CategoriesTableViewCell" bundle:nil] forCellReuseIdentifier:@"categoriesCell"];
 		cell = [tableView dequeueReusableCellWithIdentifier:@"categoriesCell"];
     }
-    cell.catName.text = cat.catName;
-	cell.catImage.image = [UIImage imageNamed:cat.catName];
+    cell.catName.text = [categoryList objectAtIndex:indexPath.row];
+    cell.catImage.image = [UIImage imageNamed:cat.catName];
     
     return cell;
 }

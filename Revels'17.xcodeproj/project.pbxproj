@@ -57,6 +57,7 @@
 		D6CD86A61E2FEB4F00000446 /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CD86A41E2FEB4F00000446 /* EventsTableViewCell.m */; };
 		D6CD86A71E2FEB4F00000446 /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CD86A51E2FEB4F00000446 /* EventsTableViewCell.xib */; };
 		D6EA2B7B1E5D8DB600A60E80 /* CategoriesJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EA2B7A1E5D8DB600A60E80 /* CategoriesJSONModel.m */; };
+		D6FC727B1E5E037900ED76EA /* EventsDetailsJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FC727A1E5E037900ED76EA /* EventsDetailsJSONModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -154,6 +155,8 @@
 		D6CD86A51E2FEB4F00000446 /* EventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
 		D6EA2B791E5D8DB600A60E80 /* CategoriesJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesJSONModel.h; sourceTree = "<group>"; };
 		D6EA2B7A1E5D8DB600A60E80 /* CategoriesJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesJSONModel.m; sourceTree = "<group>"; };
+		D6FC72791E5E037900ED76EA /* EventsDetailsJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsDetailsJSONModel.h; sourceTree = "<group>"; };
+		D6FC727A1E5E037900ED76EA /* EventsDetailsJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsDetailsJSONModel.m; sourceTree = "<group>"; };
 		FD1901EFD50286870DA04BBE /* Pods-Revels'17.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revels'17.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Revels'17/Pods-Revels'17.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +210,7 @@
 		D60CA69E1E02ADA300B79D69 /* Revels'17 */ = {
 			isa = PBXGroup;
 			children = (
+				D6FC72781E5E035A00ED76EA /* Events JSON Model */,
 				D6EA2B781E5D8D9A00A60E80 /* Category JSON Model */,
 				D62003A91E5732600056E6EE /* Views */,
 				D62003E51E5889040056E6EE /* Cells */,
@@ -582,6 +586,15 @@
 			name = "Category JSON Model";
 			sourceTree = "<group>";
 		};
+		D6FC72781E5E035A00ED76EA /* Events JSON Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6FC72791E5E037900ED76EA /* EventsDetailsJSONModel.h */,
+				D6FC727A1E5E037900ED76EA /* EventsDetailsJSONModel.m */,
+			);
+			name = "Events JSON Model";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -713,6 +726,7 @@
 				D62003D11E5743200056E6EE /* DADataManager.m in Sources */,
 				D6CD86A61E2FEB4F00000446 /* EventsTableViewCell.m in Sources */,
 				D60CA6A41E02ADA300B79D69 /* AppDelegate.m in Sources */,
+				D6FC727B1E5E037900ED76EA /* EventsDetailsJSONModel.m in Sources */,
 				D62003B01E5733260056E6EE /* RoundedLabel.m in Sources */,
 				D60CA6BC1E02B00500B79D69 /* CategoriesTableViewCell.m in Sources */,
 				D62003F41E5AE9DF0056E6EE /* CategoriesPageViewController.m in Sources */,

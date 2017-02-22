@@ -10,7 +10,6 @@
 
 @interface FilteredEventsTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UIImageView *eveImage;
 @property (strong, nonatomic) IBOutlet UILabel *eveName;
 @property (strong, nonatomic) IBOutlet UILabel *catName;
 @property (strong, nonatomic) IBOutlet UIButton *favButton;
