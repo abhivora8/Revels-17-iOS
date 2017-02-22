@@ -37,7 +37,8 @@
                 id jsonData = [NSJSONSerialization JSONObjectWithData:mydata options:kNilOptions error:&error];
                 id array = [jsonData valueForKey:@"data"];
                 catArray = [CategoriesJSONModel getArrayFromJson:array];
-                
+				
+				categoryList = [NSMutableArray new];
                 for(CategoriesJSONModel *p in catArray)
                 {
                     [categoryList addObject:p.catName];
@@ -52,8 +53,8 @@
             
         }
         @finally {
-            NSLog(@"%@",catArray);
-            NSLog(@"%@",categoryList);
+//            NSLog(@"%@", catArray);
+//            NSLog(@"%@", categoryList);
         }
     });
 }
@@ -84,20 +85,26 @@
     CategoriesJSONModel *cat = [catArray objectAtIndex:indexPath.row];
     CategoriesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoriesCell"];
     
-    if (cell == nil)
-    {
+    if (cell == nil) {
         [tableView registerNib:[UINib nibWithNibName:@"CategoriesTableViewCell" bundle:nil] forCellReuseIdentifier:@"categoriesCell"];
-        cell = [tableView dequeueReusableCellWithIdentifier:@"categoriesCell"];
-        
+		cell = [tableView dequeueReusableCellWithIdentifier:@"categoriesCell"];
     }
     cell.catName.text = cat.catName;
+	cell.catImage.image = [UIImage imageNamed:cat.catName];
     
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 70.f;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 84.f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	return 4.f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+	return 4.f;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

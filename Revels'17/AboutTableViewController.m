@@ -8,7 +8,6 @@
 
 #import "AboutTableViewController.h"
 #import "RegisterWebViewController.h"
-#import <Parse/Parse.h>
 
 @interface AboutTableViewController ()
 
@@ -119,14 +118,7 @@
 - (IBAction)browserAction:(id)sender {
     
     SVHUD_SHOW;
-    
-    [PFConfig getConfigInBackgroundWithBlock:^(PFConfig * _Nullable config, NSError * _Nullable error) {
-        
-        finalWebsiteUrl = config[@"mobile_website"];
-        SVHUD_HIDE;
-        [self openURLWithString:finalWebsiteUrl backupURLString:finalWebsiteUrl];
-        
-    }];
+	
 }
 
 - (IBAction)sharesheetAction:(id)sender {

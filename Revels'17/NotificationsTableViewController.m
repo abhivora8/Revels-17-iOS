@@ -25,26 +25,6 @@
     
     notifs = [NSMutableArray new];
     
-    SVHUD_SHOW;
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Notifications"];
-    [query orderByAscending:@"createdAt"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        
-        if (error) {
-            SVHUD_FAILURE(error.localizedDescription);
-            return;
-        }
-        
-        notifs = [NSMutableArray arrayWithArray:objects];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-            SVHUD_HIDE;
-        });
-        
-    }];
-    
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"RevelsCutout"]];
@@ -123,19 +103,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"notificationCell" forIndexPath:indexPath];
     
-    PFObject *notif = [notifs objectAtIndex:indexPath.section];
-    
-    cell.textLabel.text = [notif objectForKey:@"detail"];
-    
     return cell;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
-    PFObject *notif = [notifs objectAtIndex:section];
-    
-    return [notif objectForKey:@"title"];
-    
 }
 
 #pragma mark - Table view delegate
