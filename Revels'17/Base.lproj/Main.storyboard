@@ -162,26 +162,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CIn-fi-uY0">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ymb-EV-4Cs">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RYm-K0-KqT">
+                                        <rect key="frame" x="8" y="8" width="359" height="29"/>
+                                        <segments>
+                                            <segment title="Day 1"/>
+                                            <segment title="Day 2"/>
+                                            <segment title="Day 3"/>
+                                            <segment title="Day 4"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="dayChanged:" destination="iXb-Gn-cfh" eventType="valueChanged" id="yIm-Ke-Fvo"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="RYm-K0-KqT" secondAttribute="bottom" constant="8" id="4v5-FW-XR8"/>
+                                    <constraint firstAttribute="trailing" secondItem="RYm-K0-KqT" secondAttribute="trailing" constant="8" id="9DQ-Uu-I1V"/>
+                                    <constraint firstItem="RYm-K0-KqT" firstAttribute="top" secondItem="Ymb-EV-4Cs" secondAttribute="top" constant="8" id="ckU-ZK-JAD"/>
+                                    <constraint firstAttribute="height" constant="44" id="lWm-ck-eor"/>
+                                    <constraint firstItem="RYm-K0-KqT" firstAttribute="leading" secondItem="Ymb-EV-4Cs" secondAttribute="leading" constant="8" id="woL-Dt-1Rm"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIn-fi-uY0">
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RYm-K0-KqT">
-                                <rect key="frame" x="5" y="72" width="364" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Day 1"/>
-                                    <segment title="Day 2"/>
-                                    <segment title="Day 3"/>
-                                    <segment title="Day 4"/>
-                                </segments>
-                                <connections>
-                                    <action selector="dayChanged:" destination="iXb-Gn-cfh" eventType="valueChanged" id="yIm-Ke-Fvo"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CIn-fi-uY0" firstAttribute="leading" secondItem="wJe-D3-rpo" secondAttribute="leadingMargin" constant="-16" id="4RE-mY-LYl"/>
+                            <constraint firstItem="CIn-fi-uY0" firstAttribute="top" secondItem="Ymb-EV-4Cs" secondAttribute="bottom" id="969-Yk-7B9"/>
+                            <constraint firstItem="Ymb-EV-4Cs" firstAttribute="leading" secondItem="wJe-D3-rpo" secondAttribute="leadingMargin" constant="-16" id="L79-zl-ajG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CIn-fi-uY0" secondAttribute="trailing" constant="-16" id="Ye8-uu-qGk"/>
+                            <constraint firstItem="XeK-SG-a5p" firstAttribute="top" secondItem="CIn-fi-uY0" secondAttribute="bottom" constant="-49" id="c2F-Zg-h8l"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ymb-EV-4Cs" secondAttribute="trailing" constant="-16" id="czf-sA-tXV"/>
+                            <constraint firstItem="Ymb-EV-4Cs" firstAttribute="top" secondItem="ocb-mL-l6Z" secondAttribute="bottom" id="qX7-DQ-ptl"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4VZ-Ya-CdL"/>
                     <connections>
