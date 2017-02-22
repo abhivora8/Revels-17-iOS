@@ -56,6 +56,7 @@
 		D6CD86A21E2FE86F00000446 /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CD86A11E2FE86F00000446 /* EventsViewController.m */; };
 		D6CD86A61E2FEB4F00000446 /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CD86A41E2FEB4F00000446 /* EventsTableViewCell.m */; };
 		D6CD86A71E2FEB4F00000446 /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CD86A51E2FEB4F00000446 /* EventsTableViewCell.xib */; };
+		D6EA2B7B1E5D8DB600A60E80 /* CategoriesJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EA2B7A1E5D8DB600A60E80 /* CategoriesJSONModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,6 +152,8 @@
 		D6CD86A31E2FEB4F00000446 /* EventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewCell.h; sourceTree = "<group>"; };
 		D6CD86A41E2FEB4F00000446 /* EventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewCell.m; sourceTree = "<group>"; };
 		D6CD86A51E2FEB4F00000446 /* EventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
+		D6EA2B791E5D8DB600A60E80 /* CategoriesJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesJSONModel.h; sourceTree = "<group>"; };
+		D6EA2B7A1E5D8DB600A60E80 /* CategoriesJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesJSONModel.m; sourceTree = "<group>"; };
 		FD1901EFD50286870DA04BBE /* Pods-Revels'17.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revels'17.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Revels'17/Pods-Revels'17.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,6 +207,7 @@
 		D60CA69E1E02ADA300B79D69 /* Revels'17 */ = {
 			isa = PBXGroup;
 			children = (
+				D6EA2B781E5D8D9A00A60E80 /* Category JSON Model */,
 				D62003A91E5732600056E6EE /* Views */,
 				D62003E51E5889040056E6EE /* Cells */,
 				D62003CD1E5743050056E6EE /* Models */,
@@ -569,6 +573,15 @@
 			name = Events;
 			sourceTree = "<group>";
 		};
+		D6EA2B781E5D8D9A00A60E80 /* Category JSON Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6EA2B791E5D8DB600A60E80 /* CategoriesJSONModel.h */,
+				D6EA2B7A1E5D8DB600A60E80 /* CategoriesJSONModel.m */,
+			);
+			name = "Category JSON Model";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -720,6 +733,7 @@
 				D620038A1E572D360056E6EE /* UIImage+ImageEffects.m in Sources */,
 				D62003B61E5733440056E6EE /* DynamicLabel.m in Sources */,
 				D62003BA1E5734310056E6EE /* DAHexagonalView.m in Sources */,
+				D6EA2B7B1E5D8DB600A60E80 /* CategoriesJSONModel.m in Sources */,
 				D620039C1E5730280056E6EE /* Colours.m in Sources */,
 				D62003B31E5733350056E6EE /* UnderlinedLabel.m in Sources */,
 				D62003FE1E5C7C2D0056E6EE /* InstagramDetailViewController.m in Sources */,

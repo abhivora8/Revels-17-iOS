@@ -44,7 +44,7 @@
         for (NSInteger j = 0; j < rand() % 5 + 5; ++j) {
             [events addObject:[NSString stringWithFormat:@"Event %li.%li", i, j]];
         }
-        etvc.events = events;
+        etvc.eventList = events;
         [self.viewControllers addObject:etvc];
     }
     
