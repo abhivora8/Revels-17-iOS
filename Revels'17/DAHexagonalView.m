@@ -197,6 +197,8 @@
 }
 
 - (void)awakeFromNib {
+	
+	[super awakeFromNib];
     
     drawsHex = NO;
     
@@ -211,7 +213,8 @@
     
     HEXSIDE = (HEXWIDTH / sqrt(3));
     HEXHEIGHT = (HEXSIDE * 2);
-    
+	
+	// Cannot be nil!
     if (!self.images) {
         self.images = [@[[UIImage imageNamed:@"Avikant"],
                          [UIImage imageNamed:@"Anuraag"],
