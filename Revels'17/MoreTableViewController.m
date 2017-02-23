@@ -42,13 +42,12 @@
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     self.navigationController.view.backgroundColor = [UIColor clearColor];
-    
-    
-    self.tabBarController.tabBar.barTintColor = [UIColor clearColor];
-    self.tabBarController.tabBar.backgroundColor = [UIColor clearColor];
-    self.tabBarController.tabBar.backgroundImage = [UIImage new];
-    self.tabBarController.tabBar.shadowImage = [UIImage new];
-    
+	
+	self.tabBarController.tabBar.translucent = NO;
+	self.tabBarController.tabBar.shadowImage = [UIImage new];
+	self.tabBarController.tabBar.backgroundColor = [UIColor clearColor];
+	self.tabBarController.view.backgroundColor = [UIColor clearColor];
+	
     
     if (!self.navBarBackgroundView) {
         
@@ -57,8 +56,8 @@
         self.navBarBackgroundView = [self.navigationController.view resizableSnapshotViewFromRect:barRect afterScreenUpdates:YES withCapInsets:UIEdgeInsetsZero];
         
         CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-        NSArray *colors = @[(id)[[UIColor colorWithWhite:0.8 alpha:0] CGColor],
-                            (id)[[UIColor colorWithWhite:1.0 alpha:1] CGColor]];
+        NSArray *colors = @[(id)[[UIColor colorWithWhite:0.0 alpha:0] CGColor],
+                            (id)[[UIColor colorWithWhite:0.1 alpha:1] CGColor]];
         [gradientLayer setColors:colors];
         [gradientLayer setStartPoint:CGPointMake(0.0f, 1.0f)];
         [gradientLayer setEndPoint:CGPointMake(0.0f, 0.7f)];
@@ -67,7 +66,6 @@
         [[self.navBarBackgroundView layer] setMask:gradientLayer];
         [self.navigationController.view addSubview:self.navBarBackgroundView];
     }
-    
     
     
     if (!self.tabBarBackgroundView) {
@@ -89,19 +87,18 @@
         [[self.tabBarBackgroundView layer] setMask:gradientLayer];
         [self.navigationController.view addSubview:self.tabBarBackgroundView];
     }
-    
-    
-    
+	
 }
 
 
 - (void)viewDidDisappear:(BOOL)animated {
-    
-    self.tabBarController.tabBar.barTintColor = nil;
-    self.tabBarController.tabBar.backgroundColor = nil;
-    self.tabBarController.tabBar.backgroundImage = nil;
-    self.tabBarController.tabBar.shadowImage = nil;
-    
+	
+	self.tabBarController.tabBar.translucent = YES;
+	
+	self.tabBarController.tabBar.shadowImage = nil;
+	self.tabBarController.tabBar.backgroundColor = GLOBAL_BACK_COLOR;
+	self.tabBarController.view.backgroundColor = GLOBAL_BACK_COLOR;
+	
 }
 
 

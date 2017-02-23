@@ -41,6 +41,16 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Neutra2Display-Titling.otf</string>
+		<string>neutra2displaybold.ttf</string>
+		<string>neutra2displayinline.ttf</string>
+		<string>neutra2displaylight.ttf</string>
+		<string>neutra2displaymedium.ttf</string>
+		<string>neutra2displaythin.ttf</string>
+		<string>neutra2displaytitling.ttf</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -48,8 +58,7 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

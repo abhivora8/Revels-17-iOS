@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		474024E0714FEDAFC755AA81 /* libPods-Revels'17.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C82C8B650CF896A877C5137 /* libPods-Revels'17.a */; };
+		591088611E5F1CDE004A04C4 /* Neutra2Display-Titling.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5910885A1E5F1CDE004A04C4 /* Neutra2Display-Titling.otf */; };
+		591088621E5F1CDE004A04C4 /* neutra2displaybold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5910885B1E5F1CDE004A04C4 /* neutra2displaybold.ttf */; };
+		591088631E5F1CDE004A04C4 /* neutra2displayinline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5910885C1E5F1CDE004A04C4 /* neutra2displayinline.ttf */; };
+		591088641E5F1CDE004A04C4 /* neutra2displaylight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5910885D1E5F1CDE004A04C4 /* neutra2displaylight.ttf */; };
+		591088651E5F1CDE004A04C4 /* neutra2displaymedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5910885E1E5F1CDE004A04C4 /* neutra2displaymedium.ttf */; };
+		591088661E5F1CDE004A04C4 /* neutra2displaythin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5910885F1E5F1CDE004A04C4 /* neutra2displaythin.ttf */; };
+		591088671E5F1CDE004A04C4 /* neutra2displaytitling.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 591088601E5F1CDE004A04C4 /* neutra2displaytitling.ttf */; };
 		5918B8DD1E33D66800AB612C /* EventsTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5918B8DC1E33D66800AB612C /* EventsTableViewCell2.xib */; };
 		593D8BB71E431C3C0074B636 /* EventsByDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */; };
 		D60CA6A11E02ADA300B79D69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CA6A01E02ADA300B79D69 /* main.m */; };
@@ -22,7 +29,6 @@
 		D60CA6C91E02FAF800B79D69 /* ResultsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CA6C71E02FAF800B79D69 /* ResultsTableViewCell.m */; };
 		D60CA6CA1E02FAF800B79D69 /* ResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60CA6C81E02FAF800B79D69 /* ResultsTableViewCell.xib */; };
 		D620038A1E572D360056E6EE /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D62003891E572D360056E6EE /* UIImage+ImageEffects.m */; };
-		D62003901E572E260056E6EE /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D620038F1E572E260056E6EE /* MoreViewController.m */; };
 		D62003931E572E9A0056E6EE /* MoreCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D62003921E572E9A0056E6EE /* MoreCollectionViewCell.m */; };
 		D620039C1E5730280056E6EE /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = D620039B1E5730280056E6EE /* Colours.m */; };
 		D62003A01E5730FE0056E6EE /* DevelopersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D620039F1E5730FE0056E6EE /* DevelopersViewController.m */; };
@@ -61,6 +67,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5910885A1E5F1CDE004A04C4 /* Neutra2Display-Titling.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neutra2Display-Titling.otf"; sourceTree = "<group>"; };
+		5910885B1E5F1CDE004A04C4 /* neutra2displaybold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = neutra2displaybold.ttf; sourceTree = "<group>"; };
+		5910885C1E5F1CDE004A04C4 /* neutra2displayinline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = neutra2displayinline.ttf; sourceTree = "<group>"; };
+		5910885D1E5F1CDE004A04C4 /* neutra2displaylight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = neutra2displaylight.ttf; sourceTree = "<group>"; };
+		5910885E1E5F1CDE004A04C4 /* neutra2displaymedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = neutra2displaymedium.ttf; sourceTree = "<group>"; };
+		5910885F1E5F1CDE004A04C4 /* neutra2displaythin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = neutra2displaythin.ttf; sourceTree = "<group>"; };
+		591088601E5F1CDE004A04C4 /* neutra2displaytitling.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = neutra2displaytitling.ttf; sourceTree = "<group>"; };
 		5918B8DC1E33D66800AB612C /* EventsTableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell2.xib; sourceTree = "<group>"; };
 		593D8BB51E431C3C0074B636 /* EventsByDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsByDayTableViewController.h; sourceTree = "<group>"; };
 		593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsByDayTableViewController.m; sourceTree = "<group>"; };
@@ -86,8 +99,6 @@
 		D60CA6C81E02FAF800B79D69 /* ResultsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultsTableViewCell.xib; sourceTree = "<group>"; };
 		D62003881E572D360056E6EE /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		D62003891E572D360056E6EE /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
-		D620038E1E572E260056E6EE /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
-		D620038F1E572E260056E6EE /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		D62003911E572E9A0056E6EE /* MoreCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreCollectionViewCell.h; sourceTree = "<group>"; };
 		D62003921E572E9A0056E6EE /* MoreCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreCollectionViewCell.m; sourceTree = "<group>"; };
 		D62003951E572F710056E6EE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -172,6 +183,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		591088591E5F1CDE004A04C4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5910885A1E5F1CDE004A04C4 /* Neutra2Display-Titling.otf */,
+				5910885B1E5F1CDE004A04C4 /* neutra2displaybold.ttf */,
+				5910885C1E5F1CDE004A04C4 /* neutra2displayinline.ttf */,
+				5910885D1E5F1CDE004A04C4 /* neutra2displaylight.ttf */,
+				5910885E1E5F1CDE004A04C4 /* neutra2displaymedium.ttf */,
+				5910885F1E5F1CDE004A04C4 /* neutra2displaythin.ttf */,
+				591088601E5F1CDE004A04C4 /* neutra2displaytitling.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		5971CB1FF1C66DF0119CB1B2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +250,7 @@
 		D60CA69F1E02ADA300B79D69 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				591088591E5F1CDE004A04C4 /* Fonts */,
 				D62003951E572F710056E6EE /* PrefixHeader.pch */,
 				D60CA6B01E02ADA300B79D69 /* Info.plist */,
 				D60CA6AB1E02ADA300B79D69 /* Assets.xcassets */,
@@ -285,8 +311,6 @@
 				D62003DD1E5886460056E6EE /* About */,
 				D62003D51E5883080056E6EE /* Register */,
 				D620039D1E5730E30056E6EE /* Developers */,
-				D620038E1E572E260056E6EE /* MoreViewController.h */,
-				D620038F1E572E260056E6EE /* MoreViewController.m */,
 				D62003D21E5882AE0056E6EE /* MoreTableViewController.h */,
 				D62003D31E5882AE0056E6EE /* MoreTableViewController.m */,
 			);
@@ -657,14 +681,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				591088621E5F1CDE004A04C4 /* neutra2displaybold.ttf in Resources */,
+				591088671E5F1CDE004A04C4 /* neutra2displaytitling.ttf in Resources */,
 				D60CA6AF1E02ADA300B79D69 /* LaunchScreen.storyboard in Resources */,
+				591088641E5F1CDE004A04C4 /* neutra2displaylight.ttf in Resources */,
 				5918B8DD1E33D66800AB612C /* EventsTableViewCell2.xib in Resources */,
+				591088651E5F1CDE004A04C4 /* neutra2displaymedium.ttf in Resources */,
 				D60CA6CA1E02FAF800B79D69 /* ResultsTableViewCell.xib in Resources */,
+				591088611E5F1CDE004A04C4 /* Neutra2Display-Titling.otf in Resources */,
 				D6CD86A71E2FEB4F00000446 /* EventsTableViewCell.xib in Resources */,
+				591088661E5F1CDE004A04C4 /* neutra2displaythin.ttf in Resources */,
 				D62003C81E5740AF0056E6EE /* DeveloperDetailView.xib in Resources */,
 				D60CA6BD1E02B00500B79D69 /* CategoriesTableViewCell.xib in Resources */,
 				D60CA6AC1E02ADA300B79D69 /* Assets.xcassets in Resources */,
 				D60CA6AA1E02ADA300B79D69 /* Main.storyboard in Resources */,
+				591088631E5F1CDE004A04C4 /* neutra2displayinline.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,7 +767,6 @@
 				593D8BB71E431C3C0074B636 /* EventsByDayTableViewController.m in Sources */,
 				D6CD86A21E2FE86F00000446 /* EventsViewController.m in Sources */,
 				D6C470A71E3CAC540094D8B5 /* FilteredEventsTableViewCell.m in Sources */,
-				D62003901E572E260056E6EE /* MoreViewController.m in Sources */,
 				D620040B1E5C7D960056E6EE /* TabbarController.m in Sources */,
 				D62004041E5C7C9D0056E6EE /* InstagramV2ViewController.m in Sources */,
 				D62003C21E5735AD0056E6EE /* ASMutableURLRequest.m in Sources */,
@@ -894,6 +924,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "abhishek.Revels'17";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -911,6 +942,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "abhishek.Revels'17";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
