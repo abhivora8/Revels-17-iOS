@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="neutra2displaybold.ttf">
+            <string>Neutraface2Display-Bold</string>
+        </array>
+        <array key="neutra2displaytitling.ttf">
+            <string>Neutraface2Display-Titling</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="64" id="G8d-ve-brF" customClass="FilteredEventsTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G8d-ve-brF" id="DPS-xm-HhD">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuQ-dq-Dqy">
+                        <rect key="frame" x="327" y="12" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="8Mx-1O-9yi"/>
+                            <constraint firstAttribute="width" constant="32" id="y9Q-kW-e30"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="favsEmpty"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EventName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z9-u2-chd">
+                        <rect key="frame" x="16" y="12" width="265" height="22"/>
+                        <fontDescription key="fontDescription" name="Neutraface2Display-Bold" family="Neutraface 2 Display" pointSize="22"/>
+                        <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cat Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1P-ZC-BrE">
+                        <rect key="frame" x="16" y="38" width="265" height="17"/>
+                        <fontDescription key="fontDescription" name="Neutraface2Display-Titling" family="Neutraface 2 Display" pointSize="17"/>
+                        <color key="textColor" red="0.76862745099999996" green="0.21960784310000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jiw-4g-p6J">
+                        <rect key="frame" x="293" y="17" width="22" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="22" id="R27-ne-thI"/>
+                            <constraint firstAttribute="height" constant="22" id="oYa-Zu-907"/>
+                        </constraints>
+                        <color key="tintColor" red="0.76862745099999996" green="0.21960784310000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Y1P-ZC-BrE" firstAttribute="top" secondItem="9z9-u2-chd" secondAttribute="bottom" constant="4" id="68S-Sp-NU9"/>
+                    <constraint firstItem="SuQ-dq-Dqy" firstAttribute="leading" secondItem="jiw-4g-p6J" secondAttribute="trailing" constant="12" id="6cg-za-XV6"/>
+                    <constraint firstItem="9z9-u2-chd" firstAttribute="leading" secondItem="DPS-xm-HhD" secondAttribute="leadingMargin" constant="8" id="FiU-MT-g1l"/>
+                    <constraint firstAttribute="topMargin" secondItem="SuQ-dq-Dqy" secondAttribute="top" constant="-4" id="Fkj-5v-WRs"/>
+                    <constraint firstItem="Y1P-ZC-BrE" firstAttribute="leading" secondItem="9z9-u2-chd" secondAttribute="leading" id="QhN-5S-xL3"/>
+                    <constraint firstItem="Y1P-ZC-BrE" firstAttribute="trailing" secondItem="9z9-u2-chd" secondAttribute="trailing" id="d7V-u0-Fff"/>
+                    <constraint firstItem="9z9-u2-chd" firstAttribute="top" secondItem="SuQ-dq-Dqy" secondAttribute="top" id="gtx-SU-g7T"/>
+                    <constraint firstItem="jiw-4g-p6J" firstAttribute="leading" secondItem="9z9-u2-chd" secondAttribute="trailing" constant="12" id="upH-ed-ipq"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="SuQ-dq-Dqy" secondAttribute="trailing" constant="8" id="wXH-UH-gw5"/>
+                    <constraint firstItem="jiw-4g-p6J" firstAttribute="centerY" secondItem="SuQ-dq-Dqy" secondAttribute="centerY" id="ykS-DU-PF2"/>
+                </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                        <integer key="value" value="4"/>
+                    </userDefinedRuntimeAttribute>
+                </userDefinedRuntimeAttributes>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.1843137255" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="4"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="catName" destination="Y1P-ZC-BrE" id="Mbt-Ad-weu"/>
+                <outlet property="eveName" destination="9z9-u2-chd" id="Y7q-yG-w3O"/>
+                <outlet property="favButton" destination="SuQ-dq-Dqy" id="2Yx-ZT-LxQ"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="-52"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="favsEmpty" width="44" height="44"/>
+    </resources>
+</document>

@@ -64,6 +64,9 @@
     categoryList = [NSMutableArray new];
 //    if(reachability.isReachable) not working
         [self loadCategoriesFromApi]; //json is parsed but values aren't getting stored in categoryList
+	
+	UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
+	self.navigationItem.backBarButtonItem = backButton;
     
 }
 
@@ -112,8 +115,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"catToEvents"]) {
         NSIndexPath *indexPath = [catTableView indexPathForSelectedRow];
         CategoriesPageViewController *dest = segue.destinationViewController;

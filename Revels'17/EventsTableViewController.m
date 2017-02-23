@@ -6,11 +6,13 @@
 //  Copyright © 2017 Abhishek Vora. All rights reserved.
 //
 
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+
 #import "EventsTableViewController.h"
 #import "FilteredEventsTableViewCell.h"
 #import "EventsDetailsJSONModel.h"
 
-@interface EventsTableViewController ()
+@interface EventsTableViewController () <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @property (nonatomic) NSIndexPath *selectedIndexPath;
 
@@ -19,8 +21,15 @@
 @implementation EventsTableViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    self.selectedIndexPath = nil;
+	
+	[super viewDidLoad];
+	
+	self.selectedIndexPath = nil;
+	
+	
+//	[self.tableView registerNib:[UINib nibWithNibName:@"FilteredEventsTableViewCell" bundle:nil] forCellReuseIdentifier:@"filteredEventsCell"];
+	[self.tableView registerNib:[UINib nibWithNibName:@"FilteredEventsTableViewCell2" bundle:nil] forCellReuseIdentifier:@"filteredEventsCellExp"];
+	
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,12 +52,12 @@
     
     FilteredEventsTableViewCell *cell;
     
-     if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame) {
+//     if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame) {
          cell = [tableView dequeueReusableCellWithIdentifier:@"filteredEventsCellExp" forIndexPath:indexPath];
-     } else {
-         cell = [tableView dequeueReusableCellWithIdentifier:@"filteredEventsCell" forIndexPath:indexPath];
-     }
-    
+//     } else {
+//         cell = [tableView dequeueReusableCellWithIdentifier:@"filteredEventsCell" forIndexPath:indexPath];
+//     }
+		 
     EventsDetailsJSONModel *model = [self.eventDetails objectAtIndex:indexPath.row];
     
     if ([model.cntctno isEqualToString:@" "])
@@ -58,21 +67,18 @@
     cell.eveName.text = [self.eventList objectAtIndex:indexPath.row];
     cell.catName.text = self.catName;
     cell.maxPplLabel.text = model.eventMaxTeamSize;
+	cell.day = model.day;
     
-    if([model.day isEqualToString:@"1"])
-        cell.dateLabel.text = [NSString stringWithFormat:@"8-03-17"];
-    else if([model.day isEqualToString:@"2"])
-        cell.dateLabel.text = [NSString stringWithFormat:@"9-03-17"];
-    else if([model.day isEqualToString:@"3"])
-        cell.dateLabel.text = [NSString stringWithFormat:@"10-03-17"];
-    else if([model.day isEqualToString:@"4"])
-        cell.dateLabel.text = [NSString stringWithFormat:@"11-03-17"];
     
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+	return NO;
+}
+
+/*
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView beginUpdates];
     if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame) {
         self.selectedIndexPath = nil;
@@ -82,13 +88,23 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [tableView endUpdates];
 }
+ */
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame)
-        return 250.f;
-    return 70.f;
+//    if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame)
+        return 238.f;
+//    return 72.f;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	return 4.f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+	return 4.f;
+}
+
+/*
 - (void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
     if (!self.tableView.isDragging) {
         [tableView beginUpdates];
@@ -96,9 +112,9 @@
         [tableView endUpdates];
     }
 }
+*/
 
--(BOOL)hidesBottomBarWhenPushed
-{
+- (BOOL)hidesBottomBarWhenPushed {
     return YES;
 }
 
