@@ -26,6 +26,8 @@
 	
 	self.selectedIndexPath = nil;
 	
+	self.tableView.emptyDataSetSource = self;
+	self.tableView.emptyDataSetDelegate = self;
 	
 //	[self.tableView registerNib:[UINib nibWithNibName:@"FilteredEventsTableViewCell" bundle:nil] forCellReuseIdentifier:@"filteredEventsCell"];
 	[self.tableView registerNib:[UINib nibWithNibName:@"FilteredEventsTableViewCell2" bundle:nil] forCellReuseIdentifier:@"filteredEventsCellExp"];
@@ -118,6 +120,31 @@
     return YES;
 }
 
+#pragma mark - DZN Empty Data Set Source
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
+	return [UIImage imageNamed:@"header"];
+}
+
+- (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView {
+	return GLOBAL_BACK_COLOR;
+}
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
+	
+	NSString *text = [NSString stringWithFormat:@"%@ has no events for this day.", self.catName];
+	
+	NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Neutraface2Display-Bold" size:24.f],
+								 NSForegroundColorAttributeName: GLOBAL_RED_COLOR};
+	
+	return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+#pragma mark - DZN Empty Data Set Source
+
+- (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView {
+	return (self.eventDetails.count == 0);
+}
 
 /*
 // Override to support conditional editing of the table view.
