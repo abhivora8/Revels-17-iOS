@@ -15,6 +15,9 @@
 		591088651E5F1CDE004A04C4 /* neutra2displaymedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5910885E1E5F1CDE004A04C4 /* neutra2displaymedium.ttf */; };
 		591088661E5F1CDE004A04C4 /* neutra2displaythin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5910885F1E5F1CDE004A04C4 /* neutra2displaythin.ttf */; };
 		591088671E5F1CDE004A04C4 /* neutra2displaytitling.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 591088601E5F1CDE004A04C4 /* neutra2displaytitling.ttf */; };
+		5910886B1E5F5147004A04C4 /* CrossButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910886A1E5F5147004A04C4 /* CrossButton.m */; };
+		5910886D1E5F58F9004A04C4 /* FilteredEventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5910886C1E5F58F9004A04C4 /* FilteredEventsTableViewCell.xib */; };
+		5910886F1E5F5938004A04C4 /* FilteredEventsTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5910886E1E5F5938004A04C4 /* FilteredEventsTableViewCell2.xib */; };
 		5918B8DD1E33D66800AB612C /* EventsTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5918B8DC1E33D66800AB612C /* EventsTableViewCell2.xib */; };
 		593D8BB71E431C3C0074B636 /* EventsByDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */; };
 		D60CA6A11E02ADA300B79D69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CA6A01E02ADA300B79D69 /* main.m */; };
@@ -74,6 +77,10 @@
 		5910885E1E5F1CDE004A04C4 /* neutra2displaymedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = neutra2displaymedium.ttf; sourceTree = "<group>"; };
 		5910885F1E5F1CDE004A04C4 /* neutra2displaythin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = neutra2displaythin.ttf; sourceTree = "<group>"; };
 		591088601E5F1CDE004A04C4 /* neutra2displaytitling.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = neutra2displaytitling.ttf; sourceTree = "<group>"; };
+		591088691E5F5147004A04C4 /* CrossButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrossButton.h; sourceTree = "<group>"; };
+		5910886A1E5F5147004A04C4 /* CrossButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrossButton.m; sourceTree = "<group>"; };
+		5910886C1E5F58F9004A04C4 /* FilteredEventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilteredEventsTableViewCell.xib; sourceTree = "<group>"; };
+		5910886E1E5F5938004A04C4 /* FilteredEventsTableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilteredEventsTableViewCell2.xib; sourceTree = "<group>"; };
 		5918B8DC1E33D66800AB612C /* EventsTableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell2.xib; sourceTree = "<group>"; };
 		593D8BB51E431C3C0074B636 /* EventsByDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsByDayTableViewController.h; sourceTree = "<group>"; };
 		593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsByDayTableViewController.m; sourceTree = "<group>"; };
@@ -195,6 +202,15 @@
 				591088601E5F1CDE004A04C4 /* neutra2displaytitling.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		591088681E5F5147004A04C4 /* Cross Button */ = {
+			isa = PBXGroup;
+			children = (
+				591088691E5F5147004A04C4 /* CrossButton.h */,
+				5910886A1E5F5147004A04C4 /* CrossButton.m */,
+			);
+			path = "Cross Button";
 			sourceTree = "<group>";
 		};
 		5971CB1FF1C66DF0119CB1B2 /* Pods */ = {
@@ -540,6 +556,8 @@
 			children = (
 				D6C470A51E3CAC540094D8B5 /* FilteredEventsTableViewCell.h */,
 				D6C470A61E3CAC540094D8B5 /* FilteredEventsTableViewCell.m */,
+				5910886C1E5F58F9004A04C4 /* FilteredEventsTableViewCell.xib */,
+				5910886E1E5F5938004A04C4 /* FilteredEventsTableViewCell2.xib */,
 			);
 			name = "Filtered events";
 			sourceTree = "<group>";
@@ -568,6 +586,7 @@
 				D62004031E5C7C9D0056E6EE /* InstagramV2ViewController.m */,
 				D62004051E5C7CEE0056E6EE /* ParallaxCollectionViewCell.h */,
 				D62004061E5C7CEE0056E6EE /* ParallaxCollectionViewCell.m */,
+				591088681E5F5147004A04C4 /* Cross Button */,
 			);
 			name = Instagram;
 			sourceTree = "<group>";
@@ -684,10 +703,12 @@
 				591088621E5F1CDE004A04C4 /* neutra2displaybold.ttf in Resources */,
 				591088671E5F1CDE004A04C4 /* neutra2displaytitling.ttf in Resources */,
 				D60CA6AF1E02ADA300B79D69 /* LaunchScreen.storyboard in Resources */,
+				5910886F1E5F5938004A04C4 /* FilteredEventsTableViewCell2.xib in Resources */,
 				591088641E5F1CDE004A04C4 /* neutra2displaylight.ttf in Resources */,
 				5918B8DD1E33D66800AB612C /* EventsTableViewCell2.xib in Resources */,
 				591088651E5F1CDE004A04C4 /* neutra2displaymedium.ttf in Resources */,
 				D60CA6CA1E02FAF800B79D69 /* ResultsTableViewCell.xib in Resources */,
+				5910886D1E5F58F9004A04C4 /* FilteredEventsTableViewCell.xib in Resources */,
 				591088611E5F1CDE004A04C4 /* Neutra2Display-Titling.otf in Resources */,
 				D6CD86A71E2FEB4F00000446 /* EventsTableViewCell.xib in Resources */,
 				591088661E5F1CDE004A04C4 /* neutra2displaythin.ttf in Resources */,
@@ -770,6 +791,7 @@
 				D620040B1E5C7D960056E6EE /* TabbarController.m in Sources */,
 				D62004041E5C7C9D0056E6EE /* InstagramV2ViewController.m in Sources */,
 				D62003C21E5735AD0056E6EE /* ASMutableURLRequest.m in Sources */,
+				5910886B1E5F5147004A04C4 /* CrossButton.m in Sources */,
 				D62003D81E5883210056E6EE /* RegisterWebViewController.m in Sources */,
 				D60CA6C01E02C14900B79D69 /* CategoriesViewController.m in Sources */,
 				D62003AC1E57326E0056E6EE /* AboutBackgroundView.m in Sources */,

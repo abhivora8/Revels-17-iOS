@@ -10,12 +10,11 @@
 
 @interface FilteredEventsTableViewCell : UITableViewCell
 
-- (IBAction)infoButtonClicked:(id)sender;
+@property (nonatomic) NSString *day;
 
 @property (strong, nonatomic) IBOutlet UILabel *eveName;
 @property (strong, nonatomic) IBOutlet UILabel *catName;
 @property (strong, nonatomic) IBOutlet UIButton *favButton;
-- (IBAction)FavButtonPressed:(id)sender;
 @property (strong, nonatomic) IBOutlet UIImageView *locationImage;
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *dateImage;
@@ -24,6 +23,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *maxPplLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *contactImage;
 @property (strong, nonatomic) IBOutlet UILabel *contactLabel;
-- (IBAction)callButtonPressed:(id)sender;
 
 @end
