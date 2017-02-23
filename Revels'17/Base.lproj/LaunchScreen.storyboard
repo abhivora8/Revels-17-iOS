@@ -30,7 +30,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGW-2i-Z2W">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="f0O-b8-HJO"/>
                                 </constraints>
@@ -71,7 +71,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Revels Cutout" width="1024" height="1024"/>
-        <image name="Revels Title Text" width="1757" height="616"/>
+        <image name="Revels Cutout" width="480" height="480"/>
+        <image name="Revels Title Text" width="480" height="168"/>
     </resources>
 </document>

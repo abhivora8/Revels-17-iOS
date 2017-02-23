@@ -16,4 +16,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *round;
 
+@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
+
 @end

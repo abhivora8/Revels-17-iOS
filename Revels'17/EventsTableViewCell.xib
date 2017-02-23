@@ -1,84 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="neutra2displaybold.ttf">
+            <string>Neutraface2Display-Bold</string>
+        </array>
+        <array key="neutra2displaytitling.ttf">
+            <string>Neutraface2Display-Titling</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="KGk-i7-Jjw" customClass="EventsTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="64" id="Xnn-kz-PO8" customClass="EventsTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xnn-kz-PO8" id="yvu-cN-eS3">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1h-vJ-tB2">
-                        <rect key="frame" x="28" y="15" width="203" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4p-KU-Sr0">
-                        <rect key="frame" x="28" y="34" width="203" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgZ-Mc-5NB">
-                        <rect key="frame" x="239" y="22" width="30" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PW-dN-CQK">
+                        <rect key="frame" x="327" y="12" width="32" height="32"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="Ueh-Vp-RUa"/>
-                            <constraint firstAttribute="height" constant="30" id="eY4-Ji-iRj"/>
+                            <constraint firstAttribute="height" constant="32" id="c6c-3p-AMT"/>
+                            <constraint firstAttribute="width" constant="32" id="vCV-kn-1Vy"/>
                         </constraints>
-                        <connections>
-                            <action selector="infoButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cTO-hX-hnA"/>
-                        </connections>
+                        <state key="normal" title="Button" image="favsEmpty"/>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ax-7X-79b">
-                        <rect key="frame" x="277" y="22" width="30" height="30"/>
-                        <color key="backgroundColor" red="0.87916402279999994" green="0.29039105069999999" blue="0.21420224730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EventName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmg-ok-VhC">
+                        <rect key="frame" x="16" y="12" width="265" height="22"/>
+                        <fontDescription key="fontDescription" name="Neutraface2Display-Bold" family="Neutraface 2 Display" pointSize="22"/>
+                        <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cat Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nb-T4-kOU">
+                        <rect key="frame" x="16" y="38" width="265" height="17"/>
+                        <fontDescription key="fontDescription" name="Neutraface2Display-Titling" family="Neutraface 2 Display" pointSize="17"/>
+                        <color key="textColor" red="0.76862745099999996" green="0.21960784310000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6C-zA-uvW">
+                        <rect key="frame" x="293" y="17" width="22" height="22"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="658-nW-1z7"/>
-                            <constraint firstAttribute="width" constant="30" id="Rpj-aL-qnG"/>
+                            <constraint firstAttribute="height" constant="22" id="EpN-Id-qeo"/>
+                            <constraint firstAttribute="width" constant="22" id="LWR-gm-K6w"/>
                         </constraints>
-                        <state key="normal" title="2">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="15"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                        <connections>
-                            <action selector="favouritesButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Mwn-kk-7El"/>
-                        </connections>
+                        <color key="tintColor" red="0.76862745099999996" green="0.21960784310000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="U4p-KU-Sr0" firstAttribute="top" secondItem="d1h-vJ-tB2" secondAttribute="bottom" constant="2" id="CS0-8l-qKg"/>
-                    <constraint firstItem="WgZ-Mc-5NB" firstAttribute="leading" secondItem="d1h-vJ-tB2" secondAttribute="trailing" constant="8" id="HYD-KN-bgV"/>
-                    <constraint firstItem="4ax-7X-79b" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="14" id="LFK-7h-MCj"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="4ax-7X-79b" secondAttribute="trailing" constant="5" id="UDs-nc-ycd"/>
-                    <constraint firstItem="4ax-7X-79b" firstAttribute="leading" secondItem="WgZ-Mc-5NB" secondAttribute="trailing" constant="8" id="VA8-er-iD0"/>
-                    <constraint firstItem="WgZ-Mc-5NB" firstAttribute="leading" secondItem="U4p-KU-Sr0" secondAttribute="trailing" constant="8" id="i7z-wq-hfu"/>
-                    <constraint firstItem="d1h-vJ-tB2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="mCB-ut-QkB"/>
-                    <constraint firstItem="U4p-KU-Sr0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="rCF-RM-2u5"/>
-                    <constraint firstItem="d1h-vJ-tB2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="ueR-rF-wzc"/>
-                    <constraint firstItem="WgZ-Mc-5NB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="14" id="wO8-Fw-uXd"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="4PW-dN-CQK" secondAttribute="trailing" constant="8" id="5qZ-mU-PDM"/>
+                    <constraint firstAttribute="topMargin" secondItem="4PW-dN-CQK" secondAttribute="top" constant="-4" id="DSL-Ec-h70"/>
+                    <constraint firstItem="l6C-zA-uvW" firstAttribute="centerY" secondItem="4PW-dN-CQK" secondAttribute="centerY" id="TNF-CK-1hm"/>
+                    <constraint firstItem="4PW-dN-CQK" firstAttribute="leading" secondItem="l6C-zA-uvW" secondAttribute="trailing" constant="12" id="Wo1-71-q4s"/>
+                    <constraint firstItem="l6C-zA-uvW" firstAttribute="leading" secondItem="kmg-ok-VhC" secondAttribute="trailing" constant="12" id="Yi5-vJ-71d"/>
+                    <constraint firstItem="5Nb-T4-kOU" firstAttribute="top" secondItem="kmg-ok-VhC" secondAttribute="bottom" constant="4" id="ZFl-9R-T3y"/>
+                    <constraint firstItem="5Nb-T4-kOU" firstAttribute="trailing" secondItem="kmg-ok-VhC" secondAttribute="trailing" id="hAb-HP-Trp"/>
+                    <constraint firstItem="5Nb-T4-kOU" firstAttribute="leading" secondItem="kmg-ok-VhC" secondAttribute="leading" id="l8f-5W-L4j"/>
+                    <constraint firstItem="kmg-ok-VhC" firstAttribute="leading" secondItem="yvu-cN-eS3" secondAttribute="leadingMargin" constant="8" id="nSo-ue-iLV"/>
+                    <constraint firstItem="kmg-ok-VhC" firstAttribute="top" secondItem="4PW-dN-CQK" secondAttribute="top" id="yXd-zC-m9f"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.1843137255" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
-                <outlet property="catName" destination="U4p-KU-Sr0" id="Xxb-8E-5TH"/>
-                <outlet property="eveName" destination="d1h-vJ-tB2" id="nAa-OL-XRA"/>
+                <outlet property="catName" destination="5Nb-T4-kOU" id="gY3-Dl-njR"/>
+                <outlet property="eveName" destination="kmg-ok-VhC" id="C0I-yf-GoQ"/>
+                <outlet property="favButton" destination="4PW-dN-CQK" id="WkA-71-xw6"/>
+                <outlet property="infoButton" destination="l6C-zA-uvW" id="KWN-aZ-6jX"/>
             </connections>
-            <point key="canvasLocation" x="-312" y="-92.5"/>
+            <point key="canvasLocation" x="33.5" y="-52"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="favsEmpty" width="44" height="44"/>
+    </resources>
 </document>

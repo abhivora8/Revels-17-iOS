@@ -15,9 +15,6 @@
 
 @property (nonatomic, strong) KWTransition *transition;
 
-@property (nonatomic, strong) UIView *navBarBackgroundView;
-@property (nonatomic, strong) UIView *tabBarBackgroundView;
-
 @end
 
 @implementation MoreTableViewController {
@@ -28,10 +25,12 @@
     [super viewDidLoad];
     
     self.transition = [KWTransition manager];
-    
-    //	AboutBackgroundView *abv = [[AboutBackgroundView alloc] init];
-    //	abv.skewedBackground = YES;
-    //	self.tableView.backgroundView = abv;
+	
+	UIImageView *headerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"header"]];
+	headerImageView.contentMode = UIViewContentModeScaleAspectFit;
+	self.tableView.tableHeaderView = headerImageView;
+	
+	self.title = @"";
     
 }
 
@@ -43,61 +42,10 @@
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     self.navigationController.view.backgroundColor = [UIColor clearColor];
 	
-	self.tabBarController.tabBar.translucent = NO;
-	self.tabBarController.tabBar.shadowImage = [UIImage new];
-	self.tabBarController.tabBar.backgroundColor = [UIColor clearColor];
-	self.tabBarController.view.backgroundColor = [UIColor clearColor];
-	
-    
-    if (!self.navBarBackgroundView) {
-        
-        CGRect barRect = CGRectMake(0.0f, 0.0f, SWdith, 82.0f);
-        
-        self.navBarBackgroundView = [self.navigationController.view resizableSnapshotViewFromRect:barRect afterScreenUpdates:YES withCapInsets:UIEdgeInsetsZero];
-        
-        CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-        NSArray *colors = @[(id)[[UIColor colorWithWhite:0.0 alpha:0] CGColor],
-                            (id)[[UIColor colorWithWhite:0.1 alpha:1] CGColor]];
-        [gradientLayer setColors:colors];
-        [gradientLayer setStartPoint:CGPointMake(0.0f, 1.0f)];
-        [gradientLayer setEndPoint:CGPointMake(0.0f, 0.7f)];
-        [gradientLayer setFrame:[self.navBarBackgroundView bounds]];
-        
-        [[self.navBarBackgroundView layer] setMask:gradientLayer];
-        [self.navigationController.view addSubview:self.navBarBackgroundView];
-    }
-    
-    
-    if (!self.tabBarBackgroundView) {
-        
-        CGRect barRect = CGRectMake(0.0f, SHeight - 60.f, SWdith, 60.0f);
-        
-        self.tabBarBackgroundView = [[UIView alloc] initWithFrame:barRect];
-        self.tabBarBackgroundView.backgroundColor = GLOBAL_BACK_COLOR;
-        
-        CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-        NSArray *colors = @[(id)[[UIColor colorWithWhite:0.8 alpha:0] CGColor],
-                            (id)[[UIColor colorWithWhite:1.0 alpha:1] CGColor]];
-        [gradientLayer setColors:colors];
-        [gradientLayer setStartPoint:CGPointMake(0.0f, 0.0f)];
-        [gradientLayer setEndPoint:CGPointMake(0.0f, 0.3f)];
-        [gradientLayer setFrame:[self.tabBarBackgroundView bounds]];
-        
-        [self.tabBarBackgroundView setFrame:barRect];
-        [[self.tabBarBackgroundView layer] setMask:gradientLayer];
-        [self.navigationController.view addSubview:self.tabBarBackgroundView];
-    }
-	
 }
 
 
 - (void)viewDidDisappear:(BOOL)animated {
-	
-	self.tabBarController.tabBar.translucent = YES;
-	
-	self.tabBarController.tabBar.shadowImage = nil;
-	self.tabBarController.tabBar.backgroundColor = GLOBAL_BACK_COLOR;
-	self.tabBarController.view.backgroundColor = GLOBAL_BACK_COLOR;
 	
 }
 
@@ -133,17 +81,6 @@
     
     if (indexPath.section == 0) {
         
-        navc = [self.storyboard instantiateViewControllerWithIdentifier:@"RegisterVCNav"];
-        
-        RegisterWebViewController *rwvc = [navc.viewControllers firstObject];
-        
-        rwvc.passedTitle = @"MIT Revels";
-        rwvc.passedURL = [NSURL URLWithString:@"http://www.mitrevels.in"];
-        
-    }
-    
-    if (indexPath.section == 1) {
-        
         // Register shit
         
         navc = [self.storyboard instantiateViewControllerWithIdentifier:@"RegisterVCNav"];
@@ -161,7 +98,7 @@
         
     }
     
-    else if (indexPath.section == 2) {
+    else if (indexPath.section == 1) {
         
         // About Revels
         
@@ -169,7 +106,7 @@
         
     }
     
-    else if (indexPath.section == 3) {
+    else if (indexPath.section == 2) {
         
         // Notifications
         
@@ -177,7 +114,7 @@
         
     }
     
-    else if (indexPath.section == 4) {
+    else if (indexPath.section == 3) {
         
         // Favourites
         
@@ -185,7 +122,7 @@
         
     }
     
-    else if (indexPath.section == 5) {
+    else if (indexPath.section == 4) {
         
         // Developers
         

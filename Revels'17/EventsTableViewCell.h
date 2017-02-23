@@ -13,8 +13,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *eveName;
 @property (strong, nonatomic) IBOutlet UILabel *catName;
 
-- (IBAction)infoButton:(id)sender;
-- (IBAction)favouritesButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *favButton;
+@property (weak, nonatomic) IBOutlet UIButton *infoButton;
 
 @property (strong, nonatomic) IBOutlet UIImageView *locationImage;
 @property (strong, nonatomic) IBOutlet UIImageView *dateimage;
