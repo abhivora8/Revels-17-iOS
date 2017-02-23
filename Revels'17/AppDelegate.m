@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 
+
 @interface AppDelegate ()
 
 @end
@@ -17,8 +18,53 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+	
+	[self customizeColors];
+	
     return YES;
 }
+
+#pragma mark - Customizations
+
+- (void)customizeColors {
+	
+	[SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
+	[SVProgressHUD setBackgroundColor:[UIColor whiteColor]];
+	[SVProgressHUD setForegroundColor:GLOBAL_RED_COLOR];
+	
+	[[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: GLOBAL_YELLOW_COLOR} forState:UIControlStateNormal];
+	[[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor lightTextColor]} forState:UIControlStateHighlighted];
+	[[UISegmentedControl appearance] setTintColor:GLOBAL_YELLOW_COLOR];
+	
+	[[UITextField appearance] setTextColor:GLOBAL_TINT_COLOR];
+	[[UITextField appearance] setTintColor:GLOBAL_TINT_COLOR];
+	
+	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: GLOBAL_RED_COLOR, NSFontAttributeName: [UIFont fontWithName:@"Neutraface2Display-Bold" size:20.0]}];
+	
+	[[UINavigationBar appearance] setTranslucent:NO];
+	
+	[[UINavigationBar appearance] setTintColor:GLOBAL_RED_COLOR];
+	[[UINavigationBar appearance] setBarTintColor:GLOBAL_BACK_COLOR];
+	
+	[[UITabBar appearance] setTintColor:GLOBAL_YELLOW_COLOR];
+	[[UITabBar appearance] setBarTintColor:GLOBAL_BACK_COLOR];
+	
+	[[UITableView appearance] setBackgroundColor:GLOBAL_BACK_COLOR];
+	
+	[[UITableViewCell appearance] setBackgroundColor:GLOBAL_GRAY_COLOR];
+	
+	[[UICollectionView appearance] setBackgroundColor:GLOBAL_BACK_COLOR];
+	
+	[[UICollectionViewCell appearance] setBackgroundColor:GLOBAL_GRAY_COLOR];
+	
+	[[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: GLOBAL_GRAY_COLOR } forState:UIControlStateNormal];
+	[[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: GLOBAL_YELLOW_COLOR} forState:UIControlStateSelected];
+	
+	[[UIView appearanceWhenContainedInInstancesOfClasses:@[[UITabBar class]]] setTintColor:GLOBAL_YELLOW_COLOR];
+	
+}
+
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

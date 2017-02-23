@@ -22,8 +22,6 @@
 
 @property (nonatomic, strong) KWTransition *transition;
 
-@property (nonatomic, strong) UIView *statusBarBackgroundView;
-
 @property (nonatomic, strong) IBOutlet UISearchBar *searchBar;
 
 @end
@@ -54,26 +52,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
-    if (!self.statusBarBackgroundView) {
-        
-        CGRect barRect = CGRectMake(0.0f, 0.0f, SWdith, 26.0f);
-        
-        self.statusBarBackgroundView = [self.navigationController.view resizableSnapshotViewFromRect:barRect afterScreenUpdates:YES withCapInsets:UIEdgeInsetsZero];
-        
-        CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-        NSArray *colors = [NSArray arrayWithObjects:
-                           (id)[[UIColor colorWithWhite:0 alpha:0] CGColor],
-                           (id)[[UIColor colorWithWhite:0 alpha:1] CGColor],
-                           nil];
-        [gradientLayer setColors:colors];
-        [gradientLayer setStartPoint:CGPointMake(0.0f, 1.0f)];
-        [gradientLayer setEndPoint:CGPointMake(0.0f, 0.7f)];
-        [gradientLayer setFrame:[self.statusBarBackgroundView bounds]];
-        
-        [[self.statusBarBackgroundView layer] setMask:gradientLayer];
-        [self.view addSubview:self.statusBarBackgroundView];
-    }
+	
     
 }
 

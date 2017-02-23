@@ -34,8 +34,12 @@ colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 
-#define GLOBAL_BACK_COLOR UIColorFromRGBWithAlpha(0xf9f7f3, 1.f)
-#define GLOBAL_TINT_COLOR UIColorFromRGBWithAlpha(0xb9cf32, 1.f)
+#define GLOBAL_BACK_COLOR UIColorFromRGBWithAlpha(0x1e1e1e, 1.f)
+#define GLOBAL_GRAY_COLOR UIColorFromRGBWithAlpha(0x2f2f2f, 1.f)
+#define GLOBAL_RED_COLOR UIColorFromRGBWithAlpha(0xc43837, 1.f)
+#define GLOBAL_YELLOW_COLOR UIColorFromRGBWithAlpha(0xf7af24, 1.f)
+#define GLOBAL_BLUE_COLOR UIColorFromRGBWithAlpha(0x2980b6, 1.f)
+#define GLOBAL_TINT_COLOR GLOBAL_RED_COLOR
 
 #define PRINT_RESPONSE_HEADERS_AND_CODE long statusCode = (long)[(NSHTTPURLResponse *)response statusCode]; if ([response isKindOfClass:[NSHTTPURLResponse class]]) { printf("\nResponse HTTP Status code: %ld\n", statusCode);  }
 
