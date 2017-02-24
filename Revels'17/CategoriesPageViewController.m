@@ -59,7 +59,6 @@
                             [eventDetailsToDisplay addObject:x];
                         }
                     }
-                    NSLog(@"Events:%@",events);
                     
                     etvc.eventList = events;
                     etvc.catName = self.catName;
@@ -71,7 +70,6 @@
                 
                 lastIndex = 0;
                 self.eventsByDaySegmentedView.selectedSegmentIndex = 0;
-                
                 [self dayChanged:self.eventsByDaySegmentedView];
                 
                 [self.pageViewController setViewControllers:@[self.viewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
