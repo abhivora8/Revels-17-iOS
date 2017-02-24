@@ -10,6 +10,8 @@
 
 @interface EventsTableViewCell : UITableViewCell
 
+@property (nonatomic) NSString *day;
+
 @property (strong, nonatomic) IBOutlet UILabel *eveName;
 @property (strong, nonatomic) IBOutlet UILabel *catName;
 

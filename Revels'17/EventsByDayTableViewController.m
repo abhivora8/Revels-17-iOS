@@ -7,8 +7,8 @@
 //
 
 #import "EventsByDayTableViewController.h"
-
 #import "EventsTableViewCell.h"
+#import "EventsDetailsJSONModel.h"
 
 @interface EventsByDayTableViewController ()
 
@@ -39,12 +39,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.events.count;
+    return [self.events count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	EventsTableViewCell *cell;
+    EventsDetailsJSONModel *demoModel = [self.events objectAtIndex:indexPath.row];
  
 	if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame) {
 		cell = [tableView dequeueReusableCellWithIdentifier:@"cellExp" forIndexPath:indexPath];
@@ -52,8 +53,10 @@
 		cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
 	}
 	
-	cell.catName.text = [NSString stringWithFormat:@"Category: %li", indexPath.row];
-	cell.eveName.text = self.events[indexPath.row];
+    cell.catName.text = demoModel.categoryEventName;
+    cell.eveName.text = demoModel.eventName;
+    cell.maxPplLabel.text = demoModel.eventMaxTeamSize;
+    cell.day = demoModel.day;
 	
     // Configure the cell...
     

@@ -8,6 +8,7 @@
 
 #import "EventsViewController.h"
 #import "EventsByDayTableViewController.h"
+#import "EventsDetailsJSONModel.h"
 
 @interface EventsViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 
@@ -23,36 +24,74 @@
 
 @implementation EventsViewController {
 	NSInteger lastIndex;
+    NSMutableArray *eveArray;
+}
+
+-(void)loadEventsFromApi
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        @try {
+            
+            NSURL *custumUrl = [[NSURL alloc]initWithString:@"http://api.mitportals.in/events/"];
+            NSData *mydata = [NSData dataWithContentsOfURL:custumUrl];
+            NSError *error;
+            
+            if (mydata!=nil)
+            {
+                id jsonData = [NSJSONSerialization JSONObjectWithData:mydata options:kNilOptions error:&error];
+                id array = [jsonData valueForKey:@"data"];
+                eveArray = [EventsDetailsJSONModel getArrayFromJson:array];
+                
+                for (NSInteger i = 0; i < 4; i++)
+                {
+                    EventsByDayTableViewController *ebdtvc = [self.storyboard instantiateViewControllerWithIdentifier:@"EventsByDayVC"];
+                    
+                    NSMutableArray *events = [NSMutableArray new];
+                    
+                    for(EventsDetailsJSONModel *x in eveArray)
+                    {
+                        if([x.day isEqualToString:[NSString stringWithFormat:@"%ld",i+1]])
+                        {
+                            [events addObject:x];
+                        }
+                    }
+                    ebdtvc.events = events;
+                    [self.viewControllers addObject:ebdtvc];
+                }
+                
+                [self addChildViewController:self.pageViewController];
+                
+                lastIndex = 0;
+                self.eventsSegmentedView.selectedSegmentIndex = 0;
+                [self eventDayChanged:self.eventsSegmentedView];
+                
+                [self.pageViewController setViewControllers:@[self.viewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+                                
+            }
+            
+        }
+        @catch (NSException *exception) {
+            
+        }
+        @finally {
+            
+        }
+    });
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    eveArray = [NSMutableArray new];
+    [self loadEventsFromApi];
+
+    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
 	
-	self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-	
-	self.pageViewController.dataSource = self;
+    self.pageViewController.dataSource = self;
 	self.pageViewController.delegate = self;
 	
 	self.viewControllers = [NSMutableArray new];
-	for (NSInteger i = 0; i < 4; ++i) {
-		EventsByDayTableViewController *ebdtvc = [self.storyboard instantiateViewControllerWithIdentifier:@"EventsByDayVC"];
-		NSMutableArray <NSString *> *events = [NSMutableArray new];
-		for (NSInteger j = 0; j < rand() % 5 + 5; ++j) {
-			[events addObject:[NSString stringWithFormat:@"Event %li.%li", i, j]];
-		}
-		ebdtvc.events = events;
-		[self.viewControllers addObject:ebdtvc];
-	}
-	
-	[self addChildViewController:self.pageViewController];
-	
-	lastIndex = 0;
-	self.eventsSegmentedView.selectedSegmentIndex = 0;
-    [self eventDayChanged:self.eventsSegmentedView];
-	
-	[self.pageViewController setViewControllers:@[self.viewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-	
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -71,7 +110,7 @@
 
 - (IBAction)eventDayChanged:(id)sender {
     
-	NSInteger index = [sender selectedSegmentIndex];
+    NSInteger index = [sender selectedSegmentIndex];
 	[self.pageViewController setViewControllers:@[[self.viewControllers objectAtIndex:index]] direction:(lastIndex >= index) ? UIPageViewControllerNavigationDirectionReverse : UIPageViewControllerNavigationDirectionForward  animated:YES completion:nil];
 	
     lastIndex = index;
