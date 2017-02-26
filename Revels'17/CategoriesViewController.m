@@ -9,19 +9,21 @@
 #import "CategoriesViewController.h"
 #import "CategoriesTableViewCell.h"
 #import "CategoriesPageViewController.h"
+#import "CategoriesCollectionViewCell.h"
 #import "CategoriesJSONModel.h"
 
-@interface CategoriesViewController ()
+@interface CategoriesViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic) NSManagedObjectContext *context;
 @property (nonatomic) NSFetchRequest *fetchRequest;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
 @implementation CategoriesViewController
 {
     NSMutableArray *catArray;
-    IBOutlet UITableView *catTableView;
     Reachability *reachability;
 }
 
@@ -46,7 +48,7 @@
 				dispatch_async(dispatch_get_main_queue(), ^{
 					NSError *err;
 					[self.context save:&err];
-					[catTableView reloadData];
+					[self.collectionView reloadData];
 				});
 			
             }
@@ -83,6 +85,10 @@
 	
 	UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
 	self.navigationItem.backBarButtonItem = backButton;
+	
+	[self.collectionView registerNib:[UINib nibWithNibName:@"CategoriesCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"catCell"];
+	
+	self.collectionView.contentInset = UIEdgeInsetsMake(8, 0, 8, 0);
     
 }
 
@@ -90,56 +96,45 @@
     [super didReceiveMemoryWarning];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+#pragma mark - Collection view data souce
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+	return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return catArray.count;
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+	return catArray.count;
 }
 
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CategoriesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoriesCell"];
-    if (cell == nil) {
-        [tableView registerNib:[UINib nibWithNibName:@"CategoriesTableViewCell" bundle:nil] forCellReuseIdentifier:@"categoriesCell"];
-		cell = [tableView dequeueReusableCellWithIdentifier:@"categoriesCell"];
-    }
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+	CategoriesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"catCell" forIndexPath:indexPath];
 	CategoryStore *category = [catArray objectAtIndex:indexPath.row];
-	cell.catName.text = category.catName;
-    cell.catImage.image = [UIImage imageNamed:category.catName];
-    
-    return cell;
+	cell.catNameLabel.text = category.catName;
+	cell.catImageView.image = [UIImage imageNamed:category.catName];
+	return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 84.f;
+#pragma mark - Collection view delegate
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+	CGFloat w = (self.view.bounds.size.width)/3.f - 8;
+	return CGSizeMake(w, w * 144 / 120.f);
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-	return 4.f;
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+	return 8;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-	return 4.f;
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+	return 8;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self performSegueWithIdentifier:@"catToEvents" sender:self];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+	CategoriesPageViewController *dest = [self.storyboard instantiateViewControllerWithIdentifier:@"CategoriesPageVC"];
+	CategoryStore *cat = [catArray objectAtIndex:indexPath.row];
+	dest.category = cat;
+	[collectionView deselectItemAtIndexPath:indexPath animated:YES];
+	[self.navigationController pushViewController:dest animated:YES];
 }
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"catToEvents"]) {
-        NSIndexPath *indexPath = [catTableView indexPathForSelectedRow];
-        CategoriesPageViewController *dest = segue.destinationViewController;
-        CategoryStore *cat = [catArray objectAtIndex:indexPath.row];
-        dest.catName = cat.catName;
-        dest.catId = cat.catID;
-        dest.title = cat.catName;
-    }
-}
-
 
 @end

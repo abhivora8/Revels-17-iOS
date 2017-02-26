@@ -20,85 +20,181 @@
 
 @property (strong, nonatomic) NSMutableArray <EventsTableViewController *> *viewControllers;
 
+@property (nonatomic) NSManagedObjectContext *context;
+@property (nonatomic) NSFetchRequest *eventRequest;
+@property (nonatomic) NSFetchRequest *scheduleRequest;
+
 
 @end
 
-@implementation CategoriesPageViewController
-{
-    NSInteger lastIndex;
-    NSMutableArray *eveArray;
-    NSMutableArray * eventDetailsToDisplay;
+@implementation CategoriesPageViewController {
+	NSInteger lastIndex;
+	NSMutableArray *eveArray;
+	NSMutableArray *scheduleArray;
 }
 
 -(void)loadEventsFromApi
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        @try {
-            
-            NSURL *custumUrl = [[NSURL alloc]initWithString:@"http://api.mitportals.in/events/"];
-            NSData *mydata = [NSData dataWithContentsOfURL:custumUrl];
-            NSError *error;
-            
-            if (mydata!=nil)
-            {
-                id jsonData = [NSJSONSerialization JSONObjectWithData:mydata options:kNilOptions error:&error];
-                id array = [jsonData valueForKey:@"data"];
-                eveArray = [EventsDetailsJSONModel getArrayFromJson:array];
-                
-                for (NSInteger i = 0; i < 4; i++)
-                {
-                    EventsTableViewController *etvc = [self.storyboard instantiateViewControllerWithIdentifier:@"EventsByCatVC"];
-                    
-                    NSMutableArray *events = [NSMutableArray new];
-                    
-                    for(EventsDetailsJSONModel *x in eveArray)
-                    {
-                        if([x.categoryEventName isEqualToString:self.catName] && [x.day isEqualToString:[NSString stringWithFormat:@"%ld",i+1]])
-                        {
-                            [events addObject:x.eventName];
-                            [eventDetailsToDisplay addObject:x];
-                        }
-                    }
-                    
-                    etvc.eventList = events;
-                    etvc.catName = self.catName;
-                    etvc.eventDetails = eventDetailsToDisplay;
-                    [self.viewControllers addObject:etvc];
-                }
-                
-                [self addChildViewController:self.pageViewController];
-                
-                lastIndex = 0;
-                self.eventsByDaySegmentedView.selectedSegmentIndex = 0;
-                [self dayChanged:self.eventsByDaySegmentedView];
-                
-                [self.pageViewController setViewControllers:@[self.viewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-            }
-            
-        }
-        @catch (NSException *exception) {
-            
-        }
-        @finally {
-            
-        }
-    });
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+		@try {
+			
+			NSURL *custumUrl = [[NSURL alloc]initWithString:@"http://api.mitportals.in/events/"];
+			NSData *mydata = [NSData dataWithContentsOfURL:custumUrl];
+			NSError *error;
+			
+			if (mydata!=nil)
+			{
+				
+				SVHUD_HIDE;
+				
+				id jsonData = [NSJSONSerialization JSONObjectWithData:mydata options:kNilOptions error:&error];
+				id array = [jsonData valueForKey:@"data"];
+				
+				eveArray = [CoreDataHelper getEventsFromJSONData:array storeIntoManagedObjectContext:self.context];
+				[eveArray filterUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@", self.category.catID]];
+				
+				dispatch_async(dispatch_get_main_queue(), ^{
+					NSError *err;
+					[self.context save:&err];
+					if (err != nil) {
+						NSLog(@"Error in saving: %@", err.localizedDescription);
+					}
+					if (scheduleArray.count > 0 && eveArray.count > 0) {
+						NSLog(@"Both schedule and events present; populating children");
+						[self populateChildControllers];
+					}
+				});
+				
+				
+			}
+			
+		}
+		@catch (NSException *exception) {
+			
+		}
+		@finally {
+			
+		}
+	});
+}
+
+- (void)loadScheduleFromApi
+{
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+		
+		@try {
+			
+			NSURL *custumUrl = [[NSURL alloc]initWithString:@"http://api.mitportals.in/schedule/"];
+			NSData *mydata = [NSData dataWithContentsOfURL:custumUrl];
+			NSError *error;
+			
+			if (mydata!=nil)
+			{
+				
+				SVHUD_HIDE;
+				
+				id jsonData = [NSJSONSerialization JSONObjectWithData:mydata options:kNilOptions error:&error];
+				id array = [jsonData valueForKey:@"data"];
+				
+				scheduleArray = [CoreDataHelper getScheduleFromJSONData:array storeIntoManagedObjectContext:self.context];
+				[scheduleArray filterUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@", self.category.catID]];
+				
+				dispatch_async(dispatch_get_main_queue(), ^{
+					NSError *err;
+					[self.context save:&err];
+					if (err != nil) {
+						NSLog(@"Error in saving: %@", err.localizedDescription);
+					}
+					if (scheduleArray.count > 0 && eveArray.count > 0) {
+						NSLog(@"Both schedule and events present; populating children.");
+						[self populateChildControllers];
+					}
+				});
+				
+				
+			}
+			
+		}
+		@catch (NSException *exception) {
+			
+		}
+		@finally {
+			
+		}
+		
+		
+	});
+}
+
+- (void)populateChildControllers {
+	
+	for (NSInteger i = 0; i < 4; i++) {
+		EventsTableViewController *ebdtvc = [self.viewControllers objectAtIndex:i];
+		NSArray *filteredSchedules = [scheduleArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"day == %@", [NSString stringWithFormat:@"%li", i + 1]]];
+		ebdtvc.schedules = filteredSchedules;
+	}
+	EventsTableViewController *etvc = [self.viewControllers firstObject];
+	[etvc.tableView reloadData];
+	[self dayChanged:self.eventsByDaySegmentedView];
+	
 }
 
 
 - (void)viewDidLoad {
-    
+	
     [super viewDidLoad];
-    eventDetailsToDisplay = [NSMutableArray new];
-    [self loadEventsFromApi];
-    
-    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    
-    self.pageViewController.dataSource = self;
-    self.pageViewController.delegate = self;
-    
-    self.viewControllers = [NSMutableArray new];
-    
+	
+	self.title = self.category.catName;
+	
+	self.context = [AppDelegate sharedManagedObjectContext];
+	
+	self.eventRequest = [EventStore fetchRequest];
+	[self.eventRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"catName" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"eventName" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"day" ascending:YES]]];
+	[self.eventRequest setPredicate:[NSPredicate predicateWithFormat:@"catID == %@", self.category.catID]];
+	
+	self.scheduleRequest = [ScheduleStore fetchRequest];
+	[self.scheduleRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"eventID" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"day" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"stime" ascending:YES]]];
+	[self.scheduleRequest setPredicate:[NSPredicate predicateWithFormat:@"catID == %@", self.category.catID]];
+	
+	eveArray = [NSMutableArray new];
+	scheduleArray = [NSMutableArray new];
+	
+	NSError *error;
+	
+	eveArray = [[self.context executeFetchRequest:self.eventRequest error:&error] mutableCopy];
+	scheduleArray = [[self.context executeFetchRequest:self.scheduleRequest error:&error] mutableCopy];
+	
+	if (eveArray.count == 0 || scheduleArray.count == 0) {
+		SVHUD_SHOW;
+	}
+	
+	self.viewControllers = [NSMutableArray new];
+	
+	for (NSInteger i = 0; i < 4; i++) {
+		EventsTableViewController *ebdtvc = [self.storyboard instantiateViewControllerWithIdentifier:@"EventsByCatVC"];
+		[self.viewControllers addObject:ebdtvc];
+	}
+	
+	[self.pageViewController setViewControllers:@[self.viewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+	
+	lastIndex = 0;
+	self.eventsByDaySegmentedView.selectedSegmentIndex = 0;
+	[self dayChanged:self.eventsByDaySegmentedView];
+	
+	[self loadEventsFromApi];
+	[self loadScheduleFromApi];
+	
+	self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+	
+	self.pageViewController.dataSource = self;
+	self.pageViewController.delegate = self;
+	
+	[self addChildViewController:self.pageViewController];
+	
+	lastIndex = 0;
+	self.eventsByDaySegmentedView.selectedSegmentIndex = 0;
+
+	
 }
 
 - (void)viewDidAppear:(BOOL)animated {

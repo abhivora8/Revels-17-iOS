@@ -15,6 +15,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *eveName;
 @property (strong, nonatomic) IBOutlet UILabel *catName;
 @property (strong, nonatomic) IBOutlet UIButton *favButton;
+@property (weak, nonatomic) IBOutlet UIButton *infoButton;
+@property (weak, nonatomic) IBOutlet UIButton *callButton;
 @property (strong, nonatomic) IBOutlet UIImageView *locationImage;
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *dateImage;

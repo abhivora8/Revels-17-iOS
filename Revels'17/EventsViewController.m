@@ -10,7 +10,7 @@
 #import "EventsByDayTableViewController.h"
 #import "EventsDetailsJSONModel.h"
 
-@interface EventsViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
+@interface EventsViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource, UISearchResultsUpdating, UISearchControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *eventsSegmentedView;
 
@@ -23,6 +23,8 @@
 @property (nonatomic) NSManagedObjectContext *context;
 @property (nonatomic) NSFetchRequest *eventRequest;
 @property (nonatomic) NSFetchRequest *scheduleRequest;
+
+@property (nonatomic) UISearchController *searchController;
 
 @end
 
@@ -185,6 +187,8 @@
 	
 	lastIndex = 0;
 	self.eventsSegmentedView.selectedSegmentIndex = 0;
+	
+	[self setupSearchController];
 
 }
 
@@ -199,6 +203,21 @@
 	
 	[self.pageViewController didMoveToParentViewController:self];
 	
+}
+
+- (void)setupSearchController {
+	self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+	self.searchController.searchResultsUpdater = self;
+	self.searchController.searchBar.barTintColor = GLOBAL_BACK_COLOR;
+	self.searchController.searchBar.tintColor = GLOBAL_YELLOW_COLOR;
+	UITextField *txfSearchField = [self.searchController.searchBar valueForKey:@"_searchField"];
+	[txfSearchField setTextColor:GLOBAL_YELLOW_COLOR];
+	[txfSearchField setFont:GLOBAL_FONT_BOLD(14)];
+	self.searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+	self.searchController.dimsBackgroundDuringPresentation = NO;
+	self.definesPresentationContext = NO;
+	self.searchController.hidesNavigationBarDuringPresentation = NO;
+	self.navigationItem.titleView = self.searchController.searchBar;
 }
 
 - (IBAction)eventDayChanged:(id)sender {
@@ -241,6 +260,15 @@
 		[self.eventsSegmentedView setSelectedSegmentIndex:index];
 	}
 	
+}
+
+#pragma mark - Search controller
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+	UISearchBar *searchBar = self.searchController.searchBar;
+	for (EventsByDayTableViewController *ebdtvc in self.viewControllers) {
+		[ebdtvc filterWithSearchText:searchBar.text];
+	}
 }
 
 @end

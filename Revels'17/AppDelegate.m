@@ -53,9 +53,7 @@
 	
 	[[UITableViewCell appearance] setBackgroundColor:GLOBAL_GRAY_COLOR];
 	
-	[[UICollectionView appearance] setBackgroundColor:GLOBAL_BACK_COLOR];
-	
-	[[UICollectionViewCell appearance] setBackgroundColor:GLOBAL_GRAY_COLOR];
+	[[UICollectionViewCell appearance] setBackgroundColor:UIColorFromRGBWithAlpha(0x3c3c3c, 1.f)];
 	
 	[[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: GLOBAL_GRAY_COLOR } forState:UIControlStateNormal];
 	[[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: GLOBAL_YELLOW_COLOR} forState:UIControlStateSelected];

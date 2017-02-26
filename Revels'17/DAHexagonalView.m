@@ -216,9 +216,9 @@
 	
 	// Cannot be nil!
     if (!self.images) {
-        self.images = [@[[UIImage imageNamed:@"Avikant"],
-                         [UIImage imageNamed:@"Anuraag"],
-                         [UIImage imageNamed:@"Saketh"],
+        self.images = [@[[UIImage imageNamed:@"Abhishek"],
+                         [UIImage imageNamed:@"Anurag"],
+                         [UIImage imageNamed:@"Gautham"],
                          [UIImage imageNamed:@"Yash"]
                          ] mutableCopy];
     }
@@ -411,7 +411,7 @@
     }
     
     UIButton *buttonK = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 64, 64)];
-    [buttonK setBackgroundImage:[UIImage imageNamed:@"Kartik"] forState:UIControlStateNormal];
+    [buttonK setBackgroundImage:[UIImage imageNamed:@"Anuraag"] forState:UIControlStateNormal];
     [buttonK setFrame:CGRectMake(0, 0, 64, 64)];
     [buttonK setCenter:[self.hexPoints[0] CGPointValue]];
     [buttonK setTag:4];
@@ -420,7 +420,7 @@
     [self addSubview:buttonK];
     
     UIButton *buttonS = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 64, 64)];
-    [buttonS setBackgroundImage:[UIImage imageNamed:@"Sorte"] forState:UIControlStateNormal];
+    [buttonS setBackgroundImage:[UIImage imageNamed:@"Avikant"] forState:UIControlStateNormal];
     [buttonS setCenter:[self.hexPoints[3] CGPointValue]];
     [buttonS setTag:5];
     [buttonS addTarget:self action:@selector(imageButtonPressed:) forControlEvents:UIControlEventTouchUpInside];

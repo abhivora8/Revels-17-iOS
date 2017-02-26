@@ -11,7 +11,6 @@
 @interface EventsTableViewController : UITableViewController
 
 @property (nonatomic,strong) NSString *catName;
-@property (nonatomic,strong) NSArray *eventList;
-@property (nonatomic,strong) NSArray *eventDetails;
+@property (nonatomic) NSArray <ScheduleStore *> *schedules;
 
 @end
