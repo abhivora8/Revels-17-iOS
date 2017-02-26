@@ -11,6 +11,6 @@
 @interface EventsByDayTableViewController : UITableViewController
 
 // Make this array of the model objects later.
-@property (nonatomic) NSMutableArray *events;
+@property (nonatomic) NSArray <ScheduleStore *> *schedules;
 
 @end

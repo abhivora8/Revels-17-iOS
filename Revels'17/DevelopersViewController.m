@@ -117,9 +117,10 @@ typedef struct EasterEggPosition {
     
     devDetailView.actualCenter = self.hexagonalView.actualCenter;
     
-    if (index == 10)
+	if (index == 10) {
         NSLog(@"Revels logo pressed");
-    
+	}
+	
     else if (index == 0) {
         [devDetailView setPersonName:@"Avikant Saini" personDetail:@"iOS Developer\nIf I wanted a warm fuzzy feeling,\nI’d antialias my graphics!" personImage:[UIImage imageNamed:@"Avikant"]];
         [devDetailView showInView:self.view animatedFromAnchorPoint:[self.hexagonalView.hexPoints[1] CGPointValue]];
