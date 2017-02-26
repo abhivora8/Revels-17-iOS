@@ -17,6 +17,8 @@
 @property (nonatomic) NSManagedObjectContext *context;
 @property (nonatomic) NSArray <EventStore *> *events;
 
+@property (nonatomic) NSMutableArray <ScheduleStore *> *filteredSchedules;
+
 @end
 
 @implementation EventsByDayTableViewController {
@@ -36,6 +38,8 @@
 	NSError *error;
 	self.events = [self.context executeFetchRequest:[EventStore fetchRequest] error:&error];
 	
+	self.filteredSchedules = [self.schedules mutableCopy];
+	
 	shouldAnimate = YES;
 	
 }
@@ -52,14 +56,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.schedules count];
+    return [self.filteredSchedules count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	EventsTableViewCell *cell;
 	
-	ScheduleStore *schedule = [self.schedules objectAtIndex:indexPath.row];
+	ScheduleStore *schedule = [self.filteredSchedules objectAtIndex:indexPath.row];
 	EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
  
 	if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame) {
@@ -153,13 +157,31 @@
 	}
 }
 
+#pragma mark Filtering
+
+- (void)filterWithSearchText:(NSString *)searchText {
+	self.filteredSchedules = [NSMutableArray new];
+	if (searchText.length > 0) {
+		NSMutableArray *schCopy = [self.schedules mutableCopy];
+		NSArray *filteredEvents = [self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catName contains[cd] %@ OR eventName contains[cd] %@ OR hashtag contains[cd] %@ OR type contains[cd] %@", searchText, searchText, searchText, searchText]];
+		for (EventStore *event in filteredEvents) {
+			NSArray *fschs = [schCopy filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", event.catID, event.eventID]];
+			[self.filteredSchedules addObjectsFromArray:fschs];
+			[schCopy removeObjectsInArray:fschs];
+		}
+	} else {
+		self.filteredSchedules = [self.schedules mutableCopy];
+	}
+	[self.tableView reloadData];
+}
+
 #pragma mark - Cell actions
 
 - (void)favAction:(id)sender {
 	shouldAnimate = NO;
 	NSInteger row = [sender tag];
 //	NSLog(@"Fav clicked at %li", row);
-	ScheduleStore *schedule = [self.schedules objectAtIndex:row];
+	ScheduleStore *schedule = [self.filteredSchedules objectAtIndex:row];
 	EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
 	event.isFavorite = !event.isFavorite;
 	NSError *error;
@@ -170,7 +192,7 @@
 - (void)infoAction:(id)sender {
 	NSInteger row = [sender tag];
 //	NSLog(@"Info clicked at %li", row);
-	ScheduleStore *schedule = [self.schedules objectAtIndex:row];
+	ScheduleStore *schedule = [self.filteredSchedules objectAtIndex:row];
 	EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
 	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@", event.eventName] message:[NSString stringWithFormat:@"%@", event.eventDesc] preferredStyle:UIAlertControllerStyleAlert];
 	UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleCancel handler:nil];
@@ -181,11 +203,18 @@
 - (void)callAction:(id)sender {
 	NSInteger row = [sender tag];
 //	NSLog(@"Call clicked at %li", row);
-	ScheduleStore *schedule = [self.schedules objectAtIndex:row];
+	ScheduleStore *schedule = [self.filteredSchedules objectAtIndex:row];
 	EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
 //	NSLog(@"%@", event.contactNumber);
 	NSURL *callURL = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", [event.contactNumber stringByReplacingOccurrencesOfString:@" " withString:@""]]];
 	[[UIApplication sharedApplication] openURL:callURL];
+}
+
+#pragma mark - Other
+
+- (void)resetSelectedIndexPath {
+	self.selectedIndexPath = nil;
+	[self.tableView reloadData];
 }
 
 /*

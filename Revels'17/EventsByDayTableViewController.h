@@ -13,4 +13,8 @@
 // Make this array of the model objects later.
 @property (nonatomic) NSArray <ScheduleStore *> *schedules;
 
+- (void)filterWithSearchText:(NSString *)searchText;
+
+- (void)resetSelectedIndexPath;
+
 @end

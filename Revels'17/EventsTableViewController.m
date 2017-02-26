@@ -14,7 +14,8 @@
 
 @interface EventsTableViewController () <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
-@property (nonatomic) NSIndexPath *selectedIndexPath;
+@property (nonatomic) NSManagedObjectContext *context;
+@property (nonatomic) NSArray <EventStore *> *events;
 
 @end
 
@@ -24,13 +25,16 @@
 	
 	[super viewDidLoad];
 	
-	self.selectedIndexPath = nil;
-	
 	self.tableView.emptyDataSetSource = self;
 	self.tableView.emptyDataSetDelegate = self;
 	
 //	[self.tableView registerNib:[UINib nibWithNibName:@"FilteredEventsTableViewCell" bundle:nil] forCellReuseIdentifier:@"filteredEventsCell"];
 	[self.tableView registerNib:[UINib nibWithNibName:@"FilteredEventsTableViewCell2" bundle:nil] forCellReuseIdentifier:@"filteredEventsCellExp"];
+	
+	self.context = [AppDelegate sharedManagedObjectContext];
+	
+	NSError *error;
+	self.events = [self.context executeFetchRequest:[EventStore fetchRequest] error:&error];
 	
 }
 
@@ -46,7 +50,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.eventList.count;
+    return self.schedules.count;
 }
 
 
@@ -60,17 +64,32 @@
 //         cell = [tableView dequeueReusableCellWithIdentifier:@"filteredEventsCell" forIndexPath:indexPath];
 //     }
 		 
-    EventsDetailsJSONModel *model = [self.eventDetails objectAtIndex:indexPath.row];
-    
-    if ([model.cntctno isEqualToString:@" "])
-        cell.contactLabel.text = @"Contact Info Unavailable";
-    else
-        cell.contactLabel.text = model.cntctno;
-    cell.eveName.text = [self.eventList objectAtIndex:indexPath.row];
-    cell.catName.text = self.catName;
-    cell.maxPplLabel.text = model.eventMaxTeamSize;
-	cell.day = model.day;
-    
+//    EventsDetailsJSONModel *model = [self.eventDetails objectAtIndex:indexPath.row];
+	
+	ScheduleStore *schedule = [self.schedules objectAtIndex:indexPath.row];
+	EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
+	
+	cell.eveName.text = [NSString stringWithFormat:@"%@", event.eventName];
+	cell.maxPplLabel.text = [NSString stringWithFormat:@"Max team size: %@", event.eventMaxTeamSize];
+	
+	cell.day = schedule.day;
+	cell.locationLabel.text = schedule.venue;
+	cell.contactLabel.text = event.contactName;
+	cell.dateLabel.text = [NSString stringWithFormat:@"%@ - %@", schedule.stime, schedule.etime];
+	
+	cell.favButton.tag = indexPath.row;
+	cell.infoButton.tag = indexPath.row;
+	cell.callButton.tag = indexPath.row;
+	
+	if (event.isFavorite) {
+		[cell.favButton setImage:[UIImage imageNamed:@"favsFilled"] forState:UIControlStateNormal];
+	} else {
+		[cell.favButton setImage:[UIImage imageNamed:@"favsEmpty"] forState:UIControlStateNormal];
+	}
+	
+	[cell.favButton addTarget:self action:@selector(favAction:) forControlEvents:UIControlEventTouchUpInside];
+	[cell.infoButton addTarget:self action:@selector(infoAction:) forControlEvents:UIControlEventTouchUpInside];
+	[cell.callButton addTarget:self action:@selector(callAction:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
@@ -94,7 +113,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame)
-        return 238.f;
+        return 216.f;
 //    return 72.f;
 }
 
@@ -143,8 +162,44 @@
 #pragma mark - DZN Empty Data Set Source
 
 - (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView {
-	return (self.eventDetails.count == 0);
+	return (self.schedules.count == 0);
 }
+
+#pragma mark - Cell actions
+
+- (void)favAction:(id)sender {
+	NSInteger row = [sender tag];
+	//	NSLog(@"Fav clicked at %li", row);
+	ScheduleStore *schedule = [self.schedules objectAtIndex:row];
+	EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
+	event.isFavorite = !event.isFavorite;
+	NSError *error;
+	[self.context save:&error];
+//	[self.tableView reloadRowsAtIndexPaths:self.tableView.indexPathsForVisibleRows withRowAnimation:UITableViewRowAnimationAutomatic];
+	[self.tableView reloadData];
+}
+
+- (void)infoAction:(id)sender {
+	NSInteger row = [sender tag];
+	//	NSLog(@"Info clicked at %li", row);
+	ScheduleStore *schedule = [self.schedules objectAtIndex:row];
+	EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
+	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@", event.eventName] message:[NSString stringWithFormat:@"%@", event.eventDesc] preferredStyle:UIAlertControllerStyleAlert];
+	UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleCancel handler:nil];
+	[alertController addAction:cancelAction];
+	[self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)callAction:(id)sender {
+	NSInteger row = [sender tag];
+	//	NSLog(@"Call clicked at %li", row);
+	ScheduleStore *schedule = [self.schedules objectAtIndex:row];
+	EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
+	//	NSLog(@"%@", event.contactNumber);
+	NSURL *callURL = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", [event.contactNumber stringByReplacingOccurrencesOfString:@" " withString:@""]]];
+	[[UIApplication sharedApplication] openURL:callURL];
+}
+
 
 /*
 // Override to support conditional editing of the table view.

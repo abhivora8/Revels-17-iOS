@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Revels&apos;17/EventsByDayTableViewController.m"
-            timestampString = "509801381.483721"
+            timestampString = "509803523.138404"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "-tableView:willDisplayCell:forRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>

@@ -44,6 +44,9 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 #define GLOBAL_BLUE_COLOR UIColorFromRGBWithAlpha(0x2980b6, 1.f)
 #define GLOBAL_TINT_COLOR GLOBAL_RED_COLOR
 
+#define GLOBAL_FONT_BOLD(x) [UIFont fontWithName:@"Neutraface2Display-Bold" size:x]
+#define GLOBAL_FONT_MEDIUM(x) [UIFont fontWithName:@"Neutraface2Display-Medium" size:x]
+
 #define PRINT_RESPONSE_HEADERS_AND_CODE long statusCode = (long)[(NSHTTPURLResponse *)response statusCode]; if ([response isKindOfClass:[NSHTTPURLResponse class]]) { printf("\nResponse HTTP Status code: %ld\n", statusCode);  }
 
 #endif /* PrefixHeader_pch */

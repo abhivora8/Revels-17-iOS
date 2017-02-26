@@ -39,32 +39,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="wIZ-Z8-ngx">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oFu-RC-dCG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jyg-tU-LJX">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
                                 <connections>
-                                    <outlet property="dataSource" destination="YVz-KJ-hyn" id="Yr0-Lc-jTa"/>
-                                    <outlet property="delegate" destination="YVz-KJ-hyn" id="x6h-DI-ZU0"/>
+                                    <outlet property="dataSource" destination="YVz-KJ-hyn" id="NYq-1j-FbN"/>
+                                    <outlet property="delegate" destination="YVz-KJ-hyn" id="cst-OH-yOM"/>
                                 </connections>
-                            </tableView>
+                            </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="wIZ-Z8-ngx" firstAttribute="top" secondItem="yZq-Ai-LHo" secondAttribute="top" id="RvF-ki-U62"/>
-                            <constraint firstItem="GWD-wV-JVq" firstAttribute="top" secondItem="wIZ-Z8-ngx" secondAttribute="bottom" constant="-49" id="YDE-Qq-oFz"/>
-                            <constraint firstItem="wIZ-Z8-ngx" firstAttribute="leading" secondItem="yZq-Ai-LHo" secondAttribute="leading" id="obq-Ip-iGw"/>
-                            <constraint firstAttribute="trailing" secondItem="wIZ-Z8-ngx" secondAttribute="trailing" id="zuj-H3-tPj"/>
+                            <constraint firstItem="oFu-RC-dCG" firstAttribute="leading" secondItem="yZq-Ai-LHo" secondAttribute="leadingMargin" constant="-16" id="OOu-2H-ZEl"/>
+                            <constraint firstItem="oFu-RC-dCG" firstAttribute="top" secondItem="Qfa-VG-rRG" secondAttribute="bottom" id="psS-qQ-RU9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oFu-RC-dCG" secondAttribute="trailing" constant="-16" id="szp-aO-5pV"/>
+                            <constraint firstItem="GWD-wV-JVq" firstAttribute="top" secondItem="oFu-RC-dCG" secondAttribute="bottom" constant="-49" id="vqL-Gt-Fys"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Categories" id="Sew-l6-0EV"/>
                     <connections>
-                        <outlet property="catTableView" destination="wIZ-Z8-ngx" id="2DV-NW-pa5"/>
+                        <outlet property="collectionView" destination="oFu-RC-dCG" id="0QZ-wh-b7A"/>
                         <segue destination="iXb-Gn-cfh" kind="show" identifier="catToEvents" id="G7W-cI-rzB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="beX-fV-wGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="761" y="858"/>
+            <point key="canvasLocation" x="760.79999999999995" y="857.72113943028489"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="fGb-N7-dRM">
@@ -106,7 +113,7 @@
         <!--Categories Page View Controller-->
         <scene sceneID="t6M-0e-ofK">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="iXb-Gn-cfh" customClass="CategoriesPageViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoriesPageVC" hidesBottomBarWhenPushed="YES" id="iXb-Gn-cfh" customClass="CategoriesPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ocb-mL-l6Z"/>
                         <viewControllerLayoutGuide type="bottom" id="XeK-SG-a5p"/>
@@ -142,7 +149,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIn-fi-uY0">
-                                <rect key="frame" x="-4" y="108" width="383" height="559"/>
+                                <rect key="frame" x="-4" y="108" width="383" height="510"/>
                                 <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -152,7 +159,7 @@
                             <constraint firstItem="CIn-fi-uY0" firstAttribute="top" secondItem="Ymb-EV-4Cs" secondAttribute="bottom" id="969-Yk-7B9"/>
                             <constraint firstItem="Ymb-EV-4Cs" firstAttribute="leading" secondItem="wJe-D3-rpo" secondAttribute="leadingMargin" constant="-16" id="L79-zl-ajG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CIn-fi-uY0" secondAttribute="trailing" constant="-20" id="Ye8-uu-qGk"/>
-                            <constraint firstItem="XeK-SG-a5p" firstAttribute="top" secondItem="CIn-fi-uY0" secondAttribute="bottom" constant="-49" id="c2F-Zg-h8l"/>
+                            <constraint firstItem="XeK-SG-a5p" firstAttribute="top" secondItem="CIn-fi-uY0" secondAttribute="bottom" id="c2F-Zg-h8l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ymb-EV-4Cs" secondAttribute="trailing" constant="-16" id="czf-sA-tXV"/>
                             <constraint firstItem="Ymb-EV-4Cs" firstAttribute="top" secondItem="ocb-mL-l6Z" secondAttribute="bottom" id="qX7-DQ-ptl"/>
                         </constraints>
@@ -165,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aNx-MN-6LU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1572" y="858"/>
+            <point key="canvasLocation" x="1494" y="858"/>
         </scene>
         <!--EventsByCatVC-->
         <scene sceneID="jVr-pC-iJA">
@@ -183,7 +190,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BFT-oZ-rUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2276" y="857.72113943028489"/>
+            <point key="canvasLocation" x="2276" y="858"/>
         </scene>
         <!--Events-->
         <scene sceneID="n0i-Do-G6d">
@@ -1951,7 +1958,7 @@ Said the joker to the thief,
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ph9-cQ-5vr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ph9-cQ-5vr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
