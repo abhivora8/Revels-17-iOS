@@ -53,6 +53,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	
+//	self.collectionView.contentOffset = CGPointMake(0, -64);
     
 }
 

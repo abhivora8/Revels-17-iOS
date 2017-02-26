@@ -21,9 +21,6 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)infoButton:(id)sender {
-}
-
 - (void)setDay:(NSString *)day {
     _day = day;
     if ([day isEqualToString:@"1"])
@@ -36,7 +33,4 @@
         self.dateLabel.text = [NSString stringWithFormat:@"Saturday, March 11th"];
 }
 
-
-- (IBAction)favouritesButton:(id)sender {
-}
 @end

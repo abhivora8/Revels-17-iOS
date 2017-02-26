@@ -1515,7 +1515,7 @@ Said the joker to the thief,
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cf4-JJ-VND">
-                                <rect key="frame" x="-4" y="0.0" width="383" height="627"/>
+                                <rect key="frame" x="-4" y="64" width="383" height="563"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="E7H-BZ-uO3">
                                     <size key="itemSize" width="175" height="175"/>
@@ -1622,7 +1622,7 @@ Said the joker to the thief,
                         </subviews>
                         <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cf4-JJ-VND" firstAttribute="top" secondItem="h2x-lT-TLF" secondAttribute="bottom" constant="-64" id="Lbl-8f-o6J"/>
+                            <constraint firstItem="cf4-JJ-VND" firstAttribute="top" secondItem="h2x-lT-TLF" secondAttribute="bottom" id="Lbl-8f-o6J"/>
                             <constraint firstItem="cf4-JJ-VND" firstAttribute="leading" secondItem="ivL-6A-Rn0" secondAttribute="leadingMargin" constant="-20" id="aqu-1y-gSx"/>
                             <constraint firstItem="idj-D0-hOb" firstAttribute="top" secondItem="cf4-JJ-VND" secondAttribute="bottom" constant="-9" id="fwM-jx-ZxJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cf4-JJ-VND" secondAttribute="trailing" constant="-20" id="gol-Ba-Z6V"/>
@@ -1946,12 +1946,12 @@ Said the joker to the thief,
         <!--Navigation Controller-->
         <scene sceneID="Cak-Gx-lr8">
             <objects>
-                <navigationController storyboardIdentifier="InstagramV2VCNav" automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="Pc8-2R-eOm" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="InstagramV2VCNav" automaticallyAdjustsScrollViewInsets="NO" id="Pc8-2R-eOm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="44instagramLogo" id="nbD-HC-MnF">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ph9-cQ-5vr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ph9-cQ-5vr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">

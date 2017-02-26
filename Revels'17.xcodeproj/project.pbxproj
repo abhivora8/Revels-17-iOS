@@ -18,6 +18,9 @@
 		5910886B1E5F5147004A04C4 /* CrossButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910886A1E5F5147004A04C4 /* CrossButton.m */; };
 		5910886D1E5F58F9004A04C4 /* FilteredEventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5910886C1E5F58F9004A04C4 /* FilteredEventsTableViewCell.xib */; };
 		5910886F1E5F5938004A04C4 /* FilteredEventsTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5910886E1E5F5938004A04C4 /* FilteredEventsTableViewCell2.xib */; };
+		591088A51E62D09F004A04C4 /* RevelsCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 591088A31E62D09F004A04C4 /* RevelsCoreData.xcdatamodeld */; };
+		591088A71E62D25E004A04C4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591088A61E62D25E004A04C4 /* CoreData.framework */; };
+		591088B71E62D374004A04C4 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 591088B61E62D374004A04C4 /* CoreDataHelper.m */; };
 		5918B8DD1E33D66800AB612C /* EventsTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5918B8DC1E33D66800AB612C /* EventsTableViewCell2.xib */; };
 		593D8BB71E431C3C0074B636 /* EventsByDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */; };
 		D60CA6A11E02ADA300B79D69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CA6A01E02ADA300B79D69 /* main.m */; };
@@ -81,6 +84,10 @@
 		5910886A1E5F5147004A04C4 /* CrossButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrossButton.m; sourceTree = "<group>"; };
 		5910886C1E5F58F9004A04C4 /* FilteredEventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilteredEventsTableViewCell.xib; sourceTree = "<group>"; };
 		5910886E1E5F5938004A04C4 /* FilteredEventsTableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilteredEventsTableViewCell2.xib; sourceTree = "<group>"; };
+		591088A41E62D09F004A04C4 /* RevelsCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RevelsCoreData.xcdatamodel; sourceTree = "<group>"; };
+		591088A61E62D25E004A04C4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		591088B51E62D374004A04C4 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataHelper.h; path = CoreData/CoreDataHelper.h; sourceTree = "<group>"; };
+		591088B61E62D374004A04C4 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataHelper.m; path = CoreData/CoreDataHelper.m; sourceTree = "<group>"; };
 		5918B8DC1E33D66800AB612C /* EventsTableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell2.xib; sourceTree = "<group>"; };
 		593D8BB51E431C3C0074B636 /* EventsByDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsByDayTableViewController.h; sourceTree = "<group>"; };
 		593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsByDayTableViewController.m; sourceTree = "<group>"; };
@@ -183,6 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				591088A71E62D25E004A04C4 /* CoreData.framework in Frameworks */,
 				474024E0714FEDAFC755AA81 /* libPods-Revels'17.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +221,16 @@
 			path = "Cross Button";
 			sourceTree = "<group>";
 		};
+		591088A81E62D2A7004A04C4 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				591088A31E62D09F004A04C4 /* RevelsCoreData.xcdatamodeld */,
+				591088B51E62D374004A04C4 /* CoreDataHelper.h */,
+				591088B61E62D374004A04C4 /* CoreDataHelper.m */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
 		5971CB1FF1C66DF0119CB1B2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +243,7 @@
 		83CF0BFE6636F991EF9FE28B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				591088A61E62D25E004A04C4 /* CoreData.framework */,
 				5C82C8B650CF896A877C5137 /* libPods-Revels'17.a */,
 			);
 			name = Frameworks;
@@ -251,6 +270,9 @@
 		D60CA69E1E02ADA300B79D69 /* Revels'17 */ = {
 			isa = PBXGroup;
 			children = (
+				591088A81E62D2A7004A04C4 /* Core Data */,
+				D60CA6A21E02ADA300B79D69 /* AppDelegate.h */,
+				D60CA6A31E02ADA300B79D69 /* AppDelegate.m */,
 				D6FC72781E5E035A00ED76EA /* Events JSON Model */,
 				D6EA2B781E5D8D9A00A60E80 /* Category JSON Model */,
 				D62003A91E5732600056E6EE /* Views */,
@@ -270,8 +292,6 @@
 				D62003951E572F710056E6EE /* PrefixHeader.pch */,
 				D60CA6B01E02ADA300B79D69 /* Info.plist */,
 				D60CA6AB1E02ADA300B79D69 /* Assets.xcassets */,
-				D60CA6A21E02ADA300B79D69 /* AppDelegate.h */,
-				D60CA6A31E02ADA300B79D69 /* AppDelegate.m */,
 				D60CA6A01E02ADA300B79D69 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -673,6 +693,7 @@
 					D60CA69B1E02ADA200B79D69 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = HN3SCP8A52;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -793,6 +814,7 @@
 				D62003C21E5735AD0056E6EE /* ASMutableURLRequest.m in Sources */,
 				5910886B1E5F5147004A04C4 /* CrossButton.m in Sources */,
 				D62003D81E5883210056E6EE /* RegisterWebViewController.m in Sources */,
+				591088B71E62D374004A04C4 /* CoreDataHelper.m in Sources */,
 				D60CA6C01E02C14900B79D69 /* CategoriesViewController.m in Sources */,
 				D62003AC1E57326E0056E6EE /* AboutBackgroundView.m in Sources */,
 				D62004071E5C7CEE0056E6EE /* ParallaxCollectionViewCell.m in Sources */,
@@ -815,6 +837,7 @@
 				D62003931E572E9A0056E6EE /* MoreCollectionViewCell.m in Sources */,
 				D62003A81E5732050056E6EE /* Reachability.m in Sources */,
 				D62003A41E5731A70056E6EE /* EasterEggViewController.m in Sources */,
+				591088A51E62D09F004A04C4 /* RevelsCoreData.xcdatamodeld in Sources */,
 				D62003DC1E5883840056E6EE /* UINavigationItem+Loading.m in Sources */,
 				D62003FB1E5C7BE40056E6EE /* InstagramData.m in Sources */,
 			);
@@ -937,6 +960,7 @@
 			baseConfigurationReference = FD1901EFD50286870DA04BBE /* Pods-Revels'17.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = HN3SCP8A52;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -944,8 +968,10 @@
 				INFOPLIST_FILE = "Revels'17/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "abhishek.Revels'17";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.lugmanipal.Revels-15";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -955,6 +981,7 @@
 			baseConfigurationReference = 7F277E97FEB34C8351AE9CD8 /* Pods-Revels'17.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = HN3SCP8A52;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -962,8 +989,9 @@
 				INFOPLIST_FILE = "Revels'17/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "abhishek.Revels'17";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.lugmanipal.Revels-15";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -990,6 +1018,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		591088A31E62D09F004A04C4 /* RevelsCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				591088A41E62D09F004A04C4 /* RevelsCoreData.xcdatamodel */,
+			);
+			currentVersion = 591088A41E62D09F004A04C4 /* RevelsCoreData.xcdatamodel */;
+			name = RevelsCoreData.xcdatamodeld;
+			path = CoreData/RevelsCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D60CA6941E02ADA200B79D69 /* Project object */;
 }

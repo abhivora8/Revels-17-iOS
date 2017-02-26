@@ -14,9 +14,14 @@
 
 @property (nonatomic) NSIndexPath *selectedIndexPath;
 
+@property (nonatomic) NSManagedObjectContext *context;
+@property (nonatomic) NSArray <EventStore *> *events;
+
 @end
 
-@implementation EventsByDayTableViewController
+@implementation EventsByDayTableViewController {
+	BOOL shouldAnimate;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,6 +30,14 @@
 	[self.tableView registerNib:[UINib nibWithNibName:@"EventsTableViewCell2" bundle:nil] forCellReuseIdentifier:@"cellExp"];
 	
 	self.selectedIndexPath = nil;
+	
+	self.context = [AppDelegate sharedManagedObjectContext];
+	
+	NSError *error;
+	self.events = [self.context executeFetchRequest:[EventStore fetchRequest] error:&error];
+	
+	shouldAnimate = YES;
+	
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,13 +52,15 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.events count];
+    return [self.schedules count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	EventsTableViewCell *cell;
-    EventsDetailsJSONModel *demoModel = [self.events objectAtIndex:indexPath.row];
+	
+	ScheduleStore *schedule = [self.schedules objectAtIndex:indexPath.row];
+	EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
  
 	if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame) {
 		cell = [tableView dequeueReusableCellWithIdentifier:@"cellExp" forIndexPath:indexPath];
@@ -53,12 +68,28 @@
 		cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
 	}
 	
-    cell.catName.text = demoModel.categoryEventName;
-    cell.eveName.text = demoModel.eventName;
-    cell.maxPplLabel.text = demoModel.eventMaxTeamSize;
-    cell.day = demoModel.day;
+	cell.catName.text = event.catName;
+	cell.eveName.text = [NSString stringWithFormat:@"%@ %@", event.eventName, ([schedule.round isEqualToString:@"-"])?@"":[NSString stringWithFormat:@"(%@)", schedule.round]];
+	cell.maxPplLabel.text = [NSString stringWithFormat:@"Max team size: %@", event.eventMaxTeamSize];
 	
-    // Configure the cell...
+	cell.day = schedule.day;
+	cell.locationLabel.text = schedule.venue;
+	cell.personOfContactLabel.text = event.contactName;
+	cell.dateLabel.text = [NSString stringWithFormat:@"%@ - %@", schedule.stime, schedule.etime];
+	
+	cell.favButton.tag = indexPath.row;
+	cell.infoButton.tag = indexPath.row;
+	cell.callButton.tag = indexPath.row;
+	
+	if (event.isFavorite) {
+		[cell.favButton setImage:[UIImage imageNamed:@"favsFilled"] forState:UIControlStateNormal];
+	} else {
+		[cell.favButton setImage:[UIImage imageNamed:@"favsEmpty"] forState:UIControlStateNormal];
+	}
+	
+	[cell.favButton addTarget:self action:@selector(favAction:) forControlEvents:UIControlEventTouchUpInside];
+	[cell.infoButton addTarget:self action:@selector(infoAction:) forControlEvents:UIControlEventTouchUpInside];
+	[cell.callButton addTarget:self action:@selector(callAction:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
@@ -74,6 +105,7 @@
 	}
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	[tableView endUpdates];
+	[tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -100,6 +132,12 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 	// Animate.
+	if (!shouldAnimate) {
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			shouldAnimate = YES;
+		});
+		return;
+	}
 	if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame) {
 		EventsTableViewCell *xell = (EventsTableViewCell *)cell;
 		NSArray <UIView *> *views = @[xell.locationImage, xell.locationLabel, xell.dateimage, xell.dateLabel, xell.maxPplImage, xell.maxPplLabel, xell.personImage, xell.personOfContactLabel];
@@ -113,6 +151,41 @@
 			} completion:nil];
 		}
 	}
+}
+
+#pragma mark - Cell actions
+
+- (void)favAction:(id)sender {
+	shouldAnimate = NO;
+	NSInteger row = [sender tag];
+//	NSLog(@"Fav clicked at %li", row);
+	ScheduleStore *schedule = [self.schedules objectAtIndex:row];
+	EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
+	event.isFavorite = !event.isFavorite;
+	NSError *error;
+	[self.context save:&error];
+	[self.tableView reloadRowsAtIndexPaths:self.tableView.indexPathsForVisibleRows withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (void)infoAction:(id)sender {
+	NSInteger row = [sender tag];
+//	NSLog(@"Info clicked at %li", row);
+	ScheduleStore *schedule = [self.schedules objectAtIndex:row];
+	EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
+	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@", event.eventName] message:[NSString stringWithFormat:@"%@", event.eventDesc] preferredStyle:UIAlertControllerStyleAlert];
+	UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleCancel handler:nil];
+	[alertController addAction:cancelAction];
+	[self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)callAction:(id)sender {
+	NSInteger row = [sender tag];
+//	NSLog(@"Call clicked at %li", row);
+	ScheduleStore *schedule = [self.schedules objectAtIndex:row];
+	EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
+//	NSLog(@"%@", event.contactNumber);
+	NSURL *callURL = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", [event.contactNumber stringByReplacingOccurrencesOfString:@" " withString:@""]]];
+	[[UIApplication sharedApplication] openURL:callURL];
 }
 
 /*

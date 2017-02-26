@@ -153,6 +153,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.1843137255" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
+                <outlet property="callButton" destination="jnI-RG-Rdo" id="W2C-Gn-Kzk"/>
                 <outlet property="catName" destination="A0k-cd-MUF" id="7L3-Hm-uEp"/>
                 <outlet property="contactImage" destination="lmu-Cj-qfT" id="7xe-eZ-6jZ"/>
                 <outlet property="dateLabel" destination="a7j-Zt-mpF" id="VHm-JB-W7w"/>

@@ -11,13 +11,15 @@
 #import "CategoriesPageViewController.h"
 #import "CategoriesJSONModel.h"
 
-@interface CategoriesViewController () 
+@interface CategoriesViewController ()
+
+@property (nonatomic) NSManagedObjectContext *context;
+@property (nonatomic) NSFetchRequest *fetchRequest;
 
 @end
 
 @implementation CategoriesViewController
 {
-    NSMutableArray *categoryList;
     NSMutableArray *catArray;
     IBOutlet UITableView *catTableView;
     Reachability *reachability;
@@ -31,22 +33,22 @@
             NSURL *custumUrl = [[NSURL alloc]initWithString:@"http://api.mitportals.in/categories/"];
             NSData *mydata = [NSData dataWithContentsOfURL:custumUrl];
             NSError *error;
+			
+			SVHUD_HIDE;
             
             if (mydata!=nil)
             {
                 id jsonData = [NSJSONSerialization JSONObjectWithData:mydata options:kNilOptions error:&error];
                 id array = [jsonData valueForKey:@"data"];
-                catArray = [CategoriesJSONModel getArrayFromJson:array];
 				
-				categoryList = [NSMutableArray new];
-                for(CategoriesJSONModel *p in catArray)
-                {
-                    [categoryList addObject:p.catName];
-                }
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [catTableView reloadData];
-                });
+				catArray = [[CoreDataHelper getCategoriesFromJSONData:array storeIntoManagedObjectContext:self.context] mutableCopy];
+				
+				dispatch_async(dispatch_get_main_queue(), ^{
+					NSError *err;
+					[self.context save:&err];
+					[catTableView reloadData];
+				});
+			
             }
         }
         @catch (NSException *exception) {
@@ -61,7 +63,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    categoryList = [NSMutableArray new];
+	
+	self.context = [AppDelegate sharedManagedObjectContext];
+	self.fetchRequest = [CategoryStore fetchRequest];
+	[self.fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"catName" ascending:YES]]];
+	
+	catArray = [NSMutableArray new];
+	
+	// Load from store...
+	NSError *error;
+	catArray = [[self.context executeFetchRequest:self.fetchRequest error:&error] mutableCopy];
+	
+	if (catArray.count == 0) {
+		SVHUD_SHOW;
+	}
+	
 //    if(reachability.isReachable) not working
         [self loadCategoriesFromApi]; //json is parsed but values aren't getting stored in categoryList
 	
@@ -79,20 +95,19 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return categoryList.count;
+    return catArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CategoriesJSONModel *cat = [catArray objectAtIndex:indexPath.row];
     CategoriesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoriesCell"];
-    
     if (cell == nil) {
         [tableView registerNib:[UINib nibWithNibName:@"CategoriesTableViewCell" bundle:nil] forCellReuseIdentifier:@"categoriesCell"];
 		cell = [tableView dequeueReusableCellWithIdentifier:@"categoriesCell"];
     }
-    cell.catName.text = [categoryList objectAtIndex:indexPath.row];
-    cell.catImage.image = [UIImage imageNamed:cat.catName];
+	CategoryStore *category = [catArray objectAtIndex:indexPath.row];
+	cell.catName.text = category.catName;
+    cell.catImage.image = [UIImage imageNamed:category.catName];
     
     return cell;
 }
@@ -119,9 +134,9 @@
     if ([segue.identifier isEqualToString:@"catToEvents"]) {
         NSIndexPath *indexPath = [catTableView indexPathForSelectedRow];
         CategoriesPageViewController *dest = segue.destinationViewController;
-        CategoriesJSONModel *cat = [catArray objectAtIndex:indexPath.row];
+        CategoryStore *cat = [catArray objectAtIndex:indexPath.row];
         dest.catName = cat.catName;
-        dest.catId = cat.catId;
+        dest.catId = cat.catID;
         dest.title = cat.catName;
     }
 }
