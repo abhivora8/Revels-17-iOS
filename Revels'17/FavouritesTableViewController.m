@@ -28,69 +28,6 @@
     NSMutableArray *scheduleArray;
 }
 
--(void)loadEventsFromApi
-{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        @try {
-            
-            NSURL *custumUrl = [[NSURL alloc]initWithString:@"http://api.mitportals.in/events/"];
-            NSData *mydata = [NSData dataWithContentsOfURL:custumUrl];
-            NSError *error;
-            
-            if (mydata!=nil)
-            {
-                
-                SVHUD_HIDE;
-                
-                id jsonData = [NSJSONSerialization JSONObjectWithData:mydata options:kNilOptions error:&error];
-                id array = [jsonData valueForKey:@"data"];
-                
-                eveArray = [CoreDataHelper getEventsFromJSONData:array storeIntoManagedObjectContext:self.context];
-            }
-            
-        }
-        @catch (NSException *exception) {
-            
-        }
-        @finally {
-            
-        }
-    });
-}
-
-- (void)loadScheduleFromApi
-{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        
-        @try {
-            
-            NSURL *custumUrl = [[NSURL alloc]initWithString:@"http://api.mitportals.in/schedule/"];
-            NSData *mydata = [NSData dataWithContentsOfURL:custumUrl];
-            NSError *error;
-            
-            if (mydata!=nil)
-            {
-                
-                SVHUD_HIDE;
-                
-                id jsonData = [NSJSONSerialization JSONObjectWithData:mydata options:kNilOptions error:&error];
-                id array = [jsonData valueForKey:@"data"];
-                
-                scheduleArray = [CoreDataHelper getScheduleFromJSONData:array storeIntoManagedObjectContext:self.context];
-            }
-        }
-        @catch (NSException *exception) {
-            
-        }
-        @finally {
-            
-        }
-        
-        
-    });
-}
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -101,20 +38,12 @@
     
     self.fetchRequest = [EventStore fetchRequest];
     [self.fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"catName" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"eventName" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"day" ascending:YES]]];
-    [self.fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"isFavorite == TRUE"]];
-    
+    [self.fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"isFavorite == 1"]];
     
     self.fetchSchedule = [ScheduleStore fetchRequest];
     [self.fetchSchedule setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"eventID" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"day" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"stime" ascending:YES]]];
     
-    eveArray = [NSMutableArray new];
-    scheduleArray = [NSMutableArray new];
-    
     [self fetchFavourites];
-    
-    [self loadEventsFromApi];
-    [self loadScheduleFromApi];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -129,13 +58,20 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return eveArray.count;
+    return scheduleArray.count;
 }
 
 - (void)fetchFavourites {
     NSError *error;
+	eveArray = [NSMutableArray new];
+	scheduleArray = [NSMutableArray new];
     eveArray = [[self.context executeFetchRequest:self.fetchRequest error:&error] mutableCopy];
-    scheduleArray = [[self.context executeFetchRequest:self.fetchSchedule error:&error] mutableCopy];
+    NSMutableArray *schArray = [[self.context executeFetchRequest:self.fetchSchedule error:&error] mutableCopy];
+	for (EventStore *event in eveArray) {
+		NSArray *fsch = [schArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"eventID == %@", event.eventID]];
+		[scheduleArray addObjectsFromArray:fsch];
+		[schArray removeObjectsInArray:fsch];
+	}
     if (error)
         NSLog(@"Error in fetching: %@", error.localizedDescription);
     [self.tableView reloadData];
@@ -171,7 +107,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 216.f;
+    return 224.f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

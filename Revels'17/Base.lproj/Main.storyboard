@@ -633,7 +633,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vDf-w1-TRO" customClass="DynamicLabel">
-                                <rect key="frame" x="16" y="572.5" width="343" height="41"/>
+                                <rect key="frame" x="16" y="578" width="343" height="37.5"/>
                                 <fontDescription key="fontDescription" name="PixelCalculon" family="Pixel Calculon" pointSize="32"/>
                                 <color key="textColor" red="0.76862745099999996" green="0.21960784310000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -647,7 +647,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUG Manipal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2h-aQ-vaj">
-                                <rect key="frame" x="16" y="621.5" width="343" height="25.5"/>
+                                <rect key="frame" x="16" y="623.5" width="343" height="23.5"/>
                                 <fontDescription key="fontDescription" name="PixelCalculon" family="Pixel Calculon" pointSize="20"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -686,21 +686,21 @@ Said the joker to the thief,
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kr0-9G-C2U">
-                                <rect key="frame" x="168" y="524.5" width="40" height="40"/>
+                                <rect key="frame" x="168" y="530" width="40" height="40"/>
                                 <state key="normal" image="sfacebook"/>
                                 <connections>
                                     <action selector="facebookAction:" destination="kCm-Yv-kyy" eventType="touchUpInside" id="S5J-fD-lLK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFt-vp-W0t">
-                                <rect key="frame" x="112" y="524.5" width="40" height="40"/>
+                                <rect key="frame" x="112" y="530" width="40" height="40"/>
                                 <state key="normal" image="sgithub"/>
                                 <connections>
                                     <action selector="githubAction:" destination="kCm-Yv-kyy" eventType="touchUpInside" id="uaB-1x-K4B"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhD-2D-UHt">
-                                <rect key="frame" x="224" y="524.5" width="40" height="40"/>
+                                <rect key="frame" x="224" y="530" width="40" height="40"/>
                                 <state key="normal" image="ssafari"/>
                                 <connections>
                                     <action selector="websiteAction:" destination="kCm-Yv-kyy" eventType="touchUpInside" id="Aeb-RR-N4x"/>
@@ -1053,10 +1053,10 @@ Said the joker to the thief,
         <scene sceneID="988-PF-aYx">
             <objects>
                 <tableViewController storyboardIdentifier="FavouritesVC" id="x3l-OW-Yk6" customClass="FavouritesTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="y4d-nb-1jt">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="y4d-nb-1jt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <connections>
                             <outlet property="dataSource" destination="x3l-OW-Yk6" id="UNJ-eW-ejq"/>
                             <outlet property="delegate" destination="x3l-OW-Yk6" id="ZTQ-4g-7bI"/>
@@ -1549,7 +1549,7 @@ Said the joker to the thief,
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ph9-cQ-5vr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ph9-cQ-5vr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
