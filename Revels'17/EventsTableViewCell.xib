@@ -9,11 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Neutra2Display-Titling.otf">
+            <string>Neutraface2Display-Titling</string>
+        </array>
         <array key="neutra2displaybold.ttf">
             <string>Neutraface2Display-Bold</string>
-        </array>
-        <array key="neutra2displaytitling.ttf">
-            <string>Neutraface2Display-Titling</string>
         </array>
     </customFonts>
     <objects>

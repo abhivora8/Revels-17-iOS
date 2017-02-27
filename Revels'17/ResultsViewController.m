@@ -8,20 +8,69 @@
 
 #import "ResultsViewController.h"
 #import "ResultsTableViewCell.h"
+#import "ResultsJSONModel.h"
+#import "EventStore+CoreDataClass.h"
 
-@interface ResultsViewController ()
-{
-    NSArray *resultsArray;
-}
+@interface ResultsViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic) NSArray <EventStore *> *events;
+@property (weak,nonatomic) IBOutlet UITableView *resultsTableView;
 
 @end
 
-@implementation ResultsViewController
+@implementation ResultsViewController{
+    NSMutableArray *resultsArray;
+    NSManagedObjectContext *context;
+    NSFetchRequest *fetchEvents;
+}
+
+- (void)loadResultsFromApi
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        SVHUD_SHOW;
+        @try {
+            
+            NSURL *custumUrl = [[NSURL alloc]initWithString:@"http://api.mitportals.in/results/"];
+            NSData *mydata = [NSData dataWithContentsOfURL:custumUrl];
+            NSError *error;
+            
+            if (mydata!=nil)
+            {
+                SVHUD_HIDE;
+                id jsonData = [NSJSONSerialization JSONObjectWithData:mydata options:kNilOptions error:&error];
+                id array = [jsonData valueForKey:@"data"];
+                
+                resultsArray = [ResultsJSONModel getArrayFromJson:array];
+                
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                    [self.resultsTableView reloadData];
+                });
+            }
+            
+        }
+        @catch (NSException *exception) {
+            
+        }
+        @finally {
+            
+        }
+    });
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.title = @"Results";
-    resultsArray = [[NSArray alloc] initWithObjects:@"Eve1",@"Eve2",@"Eve3", nil];
+    
+    self.title = @"Results";
+    context = [AppDelegate sharedManagedObjectContext];
+    
+    [self.resultsTableView registerNib:[UINib nibWithNibName:@"ResultsTableViewCell" bundle:nil] forCellReuseIdentifier:@"resultsCell"];
+    
+    resultsArray = [NSMutableArray new];
+    [self loadResultsFromApi];
+    
+    NSError *error;
+    self.events = [context executeFetchRequest:[EventStore fetchRequest] error:&error];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,17 +87,19 @@
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    ResultsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"resultsCell"];
+    ResultsTableViewCell *cell;
+    ResultsJSONModel *model = [resultsArray objectAtIndex:indexPath.row];
     
-    if (cell == nil)
-    {
-        [tableView registerNib:[UINib nibWithNibName:@"ResultsTableViewCell" bundle:nil] forCellReuseIdentifier:@"resultsCell"];
-        cell = [tableView dequeueReusableCellWithIdentifier:@"resultsCell"];
-        
-    }
-    cell.eventName.text = [resultsArray objectAtIndex:indexPath.row];
+    EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", model.catID, model.eventID]] firstObject];
+
+    cell = [tableView dequeueReusableCellWithIdentifier:@"resultsCell"];
+    
+    cell.eventName.text = event.eventName;
+    cell.categoryName.text = event.catName;
+    cell.round.text = [NSString stringWithFormat:@"Round: %@",model.round];
+    cell.resultLabel.text = [NSString stringWithFormat:@"Team: %@ Pos: %@",model.teamID,model.pos];
     
     return cell;
 }
