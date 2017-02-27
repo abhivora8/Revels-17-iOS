@@ -130,7 +130,7 @@
 	
 	for (NSInteger i = 0; i < 4; i++) {
 		EventsTableViewController *ebdtvc = [self.viewControllers objectAtIndex:i];
-		NSArray *filteredSchedules = [scheduleArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"day == %@", [NSString stringWithFormat:@"%li", i + 1]]];
+		NSArray *filteredSchedules = [scheduleArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"day == %@", [NSString stringWithFormat:@"%i", i + 1]]];
 		ebdtvc.catName = self.category.catName;
 		ebdtvc.schedules = filteredSchedules;
 	}

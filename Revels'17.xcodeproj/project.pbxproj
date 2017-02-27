@@ -32,6 +32,7 @@
 		591088E21E63F1A0004A04C4 /* WorkshopsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 591088E01E63F1A0004A04C4 /* WorkshopsTableViewCell.xib */; };
 		5918B8DD1E33D66800AB612C /* EventsTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5918B8DC1E33D66800AB612C /* EventsTableViewCell2.xib */; };
 		593D8BB71E431C3C0074B636 /* EventsByDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */; };
+		D6043D491E64070F0004B93A /* FavouritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6043D481E64070F0004B93A /* FavouritesTableViewController.m */; };
 		D60CA6A11E02ADA300B79D69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CA6A01E02ADA300B79D69 /* main.m */; };
 		D60CA6A41E02ADA300B79D69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CA6A31E02ADA300B79D69 /* AppDelegate.m */; };
 		D60CA6AA1E02ADA300B79D69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60CA6A81E02ADA300B79D69 /* Main.storyboard */; };
@@ -113,6 +114,8 @@
 		593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsByDayTableViewController.m; sourceTree = "<group>"; };
 		5C82C8B650CF896A877C5137 /* libPods-Revels'17.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Revels'17.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F277E97FEB34C8351AE9CD8 /* Pods-Revels'17.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revels'17.release.xcconfig"; path = "Pods/Target Support Files/Pods-Revels'17/Pods-Revels'17.release.xcconfig"; sourceTree = "<group>"; };
+		D6043D471E64070F0004B93A /* FavouritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouritesTableViewController.h; sourceTree = "<group>"; };
+		D6043D481E64070F0004B93A /* FavouritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouritesTableViewController.m; sourceTree = "<group>"; };
 		D60CA69C1E02ADA300B79D69 /* Revels'17.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Revels'17.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60CA6A01E02ADA300B79D69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D60CA6A21E02ADA300B79D69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -296,6 +299,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D6043D461E6406C00004B93A /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				D6043D471E64070F0004B93A /* FavouritesTableViewController.h */,
+				D6043D481E64070F0004B93A /* FavouritesTableViewController.m */,
+			);
+			name = Favourites;
+			sourceTree = "<group>";
+		};
 		D60CA6931E02ADA200B79D69 = {
 			isa = PBXGroup;
 			children = (
@@ -317,9 +329,9 @@
 		D60CA69E1E02ADA300B79D69 /* Revels'17 */ = {
 			isa = PBXGroup;
 			children = (
-				591088A81E62D2A7004A04C4 /* Core Data */,
 				D60CA6A21E02ADA300B79D69 /* AppDelegate.h */,
 				D60CA6A31E02ADA300B79D69 /* AppDelegate.m */,
+				591088A81E62D2A7004A04C4 /* Core Data */,
 				591088D91E63F01B004A04C4 /* Workshops Model */,
 				D6FC72781E5E035A00ED76EA /* Events JSON Model */,
 				D6EA2B781E5D8D9A00A60E80 /* Category JSON Model */,
@@ -616,6 +628,7 @@
 		D62003EB1E588A640056E6EE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D6043D461E6406C00004B93A /* Favourites */,
 				D620038C1E572DFC0056E6EE /* More */,
 				D6CD869F1E2FE84F00000446 /* Events */,
 				D60CA6C11E02C68900B79D69 /* Categories */,
@@ -862,6 +875,7 @@
 				D62003BA1E5734310056E6EE /* DAHexagonalView.m in Sources */,
 				591088D81E63EEFB004A04C4 /* WorkshopsTableViewController.m in Sources */,
 				D6EA2B7B1E5D8DB600A60E80 /* CategoriesJSONModel.m in Sources */,
+				D6043D491E64070F0004B93A /* FavouritesTableViewController.m in Sources */,
 				D620039C1E5730280056E6EE /* Colours.m in Sources */,
 				D62003B31E5733350056E6EE /* UnderlinedLabel.m in Sources */,
 				D62003FE1E5C7C2D0056E6EE /* InstagramDetailViewController.m in Sources */,
