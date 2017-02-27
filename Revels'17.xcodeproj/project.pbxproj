@@ -34,6 +34,7 @@
 		593D8BB71E431C3C0074B636 /* EventsByDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */; };
 		D6043D491E64070F0004B93A /* FavouritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6043D481E64070F0004B93A /* FavouritesTableViewController.m */; };
 		D6043D4E1E648EE20004B93A /* ResultsJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6043D4D1E648EE20004B93A /* ResultsJSONModel.m */; };
+		D6043D521E64B5F20004B93A /* SportsDetailsJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6043D511E64B5F20004B93A /* SportsDetailsJSONModel.m */; };
 		D60CA6A11E02ADA300B79D69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CA6A01E02ADA300B79D69 /* main.m */; };
 		D60CA6A41E02ADA300B79D69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CA6A31E02ADA300B79D69 /* AppDelegate.m */; };
 		D60CA6AA1E02ADA300B79D69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60CA6A81E02ADA300B79D69 /* Main.storyboard */; };
@@ -119,6 +120,8 @@
 		D6043D481E64070F0004B93A /* FavouritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouritesTableViewController.m; sourceTree = "<group>"; };
 		D6043D4C1E648EE20004B93A /* ResultsJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsJSONModel.h; sourceTree = "<group>"; };
 		D6043D4D1E648EE20004B93A /* ResultsJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsJSONModel.m; sourceTree = "<group>"; };
+		D6043D501E64B5F20004B93A /* SportsDetailsJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsDetailsJSONModel.h; sourceTree = "<group>"; };
+		D6043D511E64B5F20004B93A /* SportsDetailsJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsDetailsJSONModel.m; sourceTree = "<group>"; };
 		D60CA69C1E02ADA300B79D69 /* Revels'17.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Revels'17.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60CA6A01E02ADA300B79D69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D60CA6A21E02ADA300B79D69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -320,6 +323,15 @@
 			name = "Results Model";
 			sourceTree = "<group>";
 		};
+		D6043D4F1E64B40B0004B93A /* Sports Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6043D501E64B5F20004B93A /* SportsDetailsJSONModel.h */,
+				D6043D511E64B5F20004B93A /* SportsDetailsJSONModel.m */,
+			);
+			name = "Sports Model";
+			sourceTree = "<group>";
+		};
 		D60CA6931E02ADA200B79D69 = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +356,7 @@
 				D60CA6A21E02ADA300B79D69 /* AppDelegate.h */,
 				D60CA6A31E02ADA300B79D69 /* AppDelegate.m */,
 				591088A81E62D2A7004A04C4 /* Core Data */,
+				D6043D4F1E64B40B0004B93A /* Sports Model */,
 				D6043D4B1E648EAB0004B93A /* Results Model */,
 				591088D91E63F01B004A04C4 /* Workshops Model */,
 				D6FC72781E5E035A00ED76EA /* Events JSON Model */,
@@ -867,6 +880,7 @@
 				591088CD1E630A39004A04C4 /* CategoriesCollectionViewCell.m in Sources */,
 				591088DC1E63F02B004A04C4 /* WorkshopsModel.m in Sources */,
 				D62003B01E5733260056E6EE /* RoundedLabel.m in Sources */,
+				D6043D521E64B5F20004B93A /* SportsDetailsJSONModel.m in Sources */,
 				D60CA6BC1E02B00500B79D69 /* CategoriesTableViewCell.m in Sources */,
 				D62003F41E5AE9DF0056E6EE /* CategoriesPageViewController.m in Sources */,
 				D60CA6A11E02ADA300B79D69 /* main.m in Sources */,

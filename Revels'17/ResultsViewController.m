@@ -13,7 +13,7 @@
 
 @interface ResultsViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic) NSArray <EventStore *> *events;
+@property (nonatomic) NSMutableArray <EventStore *> *events;
 @property (weak,nonatomic) IBOutlet UITableView *resultsTableView;
 
 @end
@@ -21,7 +21,6 @@
 @implementation ResultsViewController{
     NSMutableArray *resultsArray;
     NSManagedObjectContext *context;
-    NSFetchRequest *fetchEvents;
 }
 
 - (void)loadResultsFromApi
@@ -69,7 +68,7 @@
     [self loadResultsFromApi];
     
     NSError *error;
-    self.events = [context executeFetchRequest:[EventStore fetchRequest] error:&error];
+    self.events = [[context executeFetchRequest:[EventStore fetchRequest] error:&error] mutableCopy];
     
 }
 
