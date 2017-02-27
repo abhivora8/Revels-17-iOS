@@ -200,6 +200,10 @@
 	[[UIApplication sharedApplication] openURL:callURL];
 }
 
+-(void) dismissViewController{
+    
+}
+
 
 /*
 // Override to support conditional editing of the table view.
