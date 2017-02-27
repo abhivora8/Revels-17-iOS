@@ -32,8 +32,8 @@
 	[SVProgressHUD setBackgroundColor:[UIColor whiteColor]];
 	[SVProgressHUD setForegroundColor:GLOBAL_RED_COLOR];
 	
-	[[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: GLOBAL_YELLOW_COLOR} forState:UIControlStateNormal];
-	[[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor lightTextColor]} forState:UIControlStateHighlighted];
+	[[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: GLOBAL_YELLOW_COLOR, NSFontAttributeName: GLOBAL_FONT_BOLD(14)} forState:UIControlStateNormal];
+	[[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor lightTextColor], NSFontAttributeName: GLOBAL_FONT_BOLD(14)} forState:UIControlStateHighlighted];
 	[[UISegmentedControl appearance] setTintColor:GLOBAL_YELLOW_COLOR];
 	
 	[[UITextField appearance] setTextColor:GLOBAL_TINT_COLOR];

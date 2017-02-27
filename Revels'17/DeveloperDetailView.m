@@ -18,11 +18,14 @@
     self.personNameLabel.text = personName;
     self.personDetailLabel.text = personDetail;
     self.personImageView.image = personImage;
-    self.backgroundImageView.image = [personImage applyExtraLightEffect];
+    self.backgroundImageView.image = [personImage applyDarkEffect];
+	[self.backgroundImageView setClipsToBounds:YES];
     
 }
 
 - (void)awakeFromNib {
+	
+	[super awakeFromNib];
     
     self.alpha = 0.0;
     

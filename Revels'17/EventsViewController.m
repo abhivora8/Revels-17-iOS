@@ -157,10 +157,6 @@
 	
 	eveArray = [[self.context executeFetchRequest:self.eventRequest error:&error] mutableCopy];
 	scheduleArray = [[self.context executeFetchRequest:self.scheduleRequest error:&error] mutableCopy];
-
-	if (eveArray.count == 0 || scheduleArray.count == 0) {
-		SVHUD_SHOW;
-	}
 	
     self.viewControllers = [NSMutableArray new];
 	
@@ -174,9 +170,6 @@
 	lastIndex = 0;
 	self.eventsSegmentedView.selectedSegmentIndex = 0;
 	[self eventDayChanged:self.eventsSegmentedView];
-	
-    [self loadEventsFromApi];
-	[self loadScheduleFromApi];
 
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
 	
@@ -189,6 +182,15 @@
 	self.eventsSegmentedView.selectedSegmentIndex = 0;
 	
 	[self setupSearchController];
+	
+	if (eveArray.count == 0 || scheduleArray.count == 0) {
+		SVHUD_SHOW;
+	} else {
+		[self populateChildControllers];
+	}
+	
+	[self loadEventsFromApi];
+	[self loadScheduleFromApi];
 
 }
 

@@ -59,6 +59,8 @@ typedef struct EasterEggPosition {
     
     eePos.pos1 = 0;
     eePos.pos2 = 0;
+	
+	self.title = @"";
     
 }
 
@@ -75,8 +77,8 @@ typedef struct EasterEggPosition {
         CGRect barRect = CGRectMake(0.0f, 0.0f, SWdith, 80.0f);
         
         self.navBarBackgroundView = [[DevPatternView alloc] initWithFrame:barRect];
-        self.navBarBackgroundView.backgroundColor = [UIColor clearColor];
-        
+		self.navBarBackgroundView.backgroundColor = GLOBAL_BACK_COLOR;
+		
         CAGradientLayer *gradientLayer = [CAGradientLayer layer];
         NSArray *colors = @[(id)[[UIColor colorWithWhite:0.5 alpha:0] CGColor],
                             (id)[[UIColor colorWithWhite:1.0 alpha:1] CGColor]];
@@ -88,7 +90,7 @@ typedef struct EasterEggPosition {
         [[self.navBarBackgroundView layer] setMask:gradientLayer];
         [self.navigationController.view insertSubview:self.navBarBackgroundView belowSubview:self.navigationController.navigationBar];
     }
-    
+	
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -122,7 +124,7 @@ typedef struct EasterEggPosition {
 	}
 	
     else if (index == 0) {
-        [devDetailView setPersonName:@"Avikant Saini" personDetail:@"iOS Developer\nIf I wanted a warm fuzzy feeling,\nI’d antialias my graphics!" personImage:[UIImage imageNamed:@"Avikant"]];
+        [devDetailView setPersonName:@"Abhishek Vora" personDetail:@"iOS Developer\nIf I wanted a warm fuzzy feeling,\nI’d antialias my graphics!" personImage:[UIImage imageNamed:@"Abhishek"]];
         [devDetailView showInView:self.view animatedFromAnchorPoint:[self.hexagonalView.hexPoints[1] CGPointValue]];
     }
     
@@ -132,22 +134,22 @@ typedef struct EasterEggPosition {
     }
     
     else if (index == 1) {
-        [devDetailView setPersonName:@"Anuraag Baishya" personDetail:@"Android Developer\nStudent by day.\nDeveloper by night." personImage:[UIImage imageNamed:@"Anuraag"]];
+        [devDetailView setPersonName:@"Anurag Choudhary" personDetail:@"Android Developer\nStudent by day.\nDeveloper by night." personImage:[UIImage imageNamed:@"Anurag"]];
         [devDetailView showInView:self.view animatedFromAnchorPoint:[self.hexagonalView.hexPoints[2] CGPointValue]];
     }
     
     else if (index == 2) {
-        [devDetailView setPersonName:@"Saketh Kaparthi" personDetail:@"Android Developer\nPenguins love cold,\nthey won't survive the sun." personImage:[UIImage imageNamed:@"Saketh"]];
+        [devDetailView setPersonName:@"Gautham Vinod" personDetail:@"Windows Developer\nPenguins love cold,\nthey won't survive the sun." personImage:[UIImage imageNamed:@"Gautham"]];
         [devDetailView showInView:self.view animatedFromAnchorPoint:[self.hexagonalView.hexPoints[4] CGPointValue]];
     }
     
     else if (index == 4) {
-        [devDetailView setPersonName:@"Kartik Arora" personDetail:@"Category Head\nBugs come in through open Windows." personImage:[UIImage imageNamed:@"Kartik"]];
+        [devDetailView setPersonName:@"Anuraag Baishya" personDetail:@"Android Developer\nStudent by day.\nDeveloper by night." personImage:[UIImage imageNamed:@"Anuraag"]];
         [devDetailView showInView:self.view animatedFromAnchorPoint:[self.hexagonalView.hexPoints[0] CGPointValue]];
     }
     
     else if (index == 5) {
-        [devDetailView setPersonName:@"Shubham Sorte" personDetail:@"Coordinator\nMac users swear by their Mac,\nPC users swear at their PC" personImage:[UIImage imageNamed:@"Sorte"]];
+        [devDetailView setPersonName:@"Avikant Saini" personDetail:@"iOS Developer\nIf I wanted a warm fuzzy feeling,\nI’d antialias my graphics!" personImage:[UIImage imageNamed:@"Avikant"]];
         [devDetailView showInView:self.view animatedFromAnchorPoint:[self.hexagonalView.hexPoints[3] CGPointValue]];
     }
     
@@ -157,7 +159,7 @@ typedef struct EasterEggPosition {
 
 - (void)finishedDeveloperAnimations {
     
-    [self.hexagonalView drawTopText:@"REVELS'17" withAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Futura-Medium" size:50.0]}];
+	[self.hexagonalView drawTopText:@"REVELS'17" withAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Futura-Medium" size:50.0], NSForegroundColorAttributeName: GLOBAL_YELLOW_COLOR}];
     
     //	CGFloat bottomTextSize = (SWdith > 360)?22.f:18.f;
     //	[self.hexagonalView drawBottomText:@"DAASTAN | Everybody has a Story" withAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Futura-Medium" size:bottomTextSize]}];

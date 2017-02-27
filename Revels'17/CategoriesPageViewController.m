@@ -131,6 +131,7 @@
 	for (NSInteger i = 0; i < 4; i++) {
 		EventsTableViewController *ebdtvc = [self.viewControllers objectAtIndex:i];
 		NSArray *filteredSchedules = [scheduleArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"day == %@", [NSString stringWithFormat:@"%li", i + 1]]];
+		ebdtvc.catName = self.category.catName;
 		ebdtvc.schedules = filteredSchedules;
 	}
 	EventsTableViewController *etvc = [self.viewControllers firstObject];
@@ -164,10 +165,6 @@
 	eveArray = [[self.context executeFetchRequest:self.eventRequest error:&error] mutableCopy];
 	scheduleArray = [[self.context executeFetchRequest:self.scheduleRequest error:&error] mutableCopy];
 	
-	if (eveArray.count == 0 || scheduleArray.count == 0) {
-		SVHUD_SHOW;
-	}
-	
 	self.viewControllers = [NSMutableArray new];
 	
 	for (NSInteger i = 0; i < 4; i++) {
@@ -180,9 +177,7 @@
 	lastIndex = 0;
 	self.eventsByDaySegmentedView.selectedSegmentIndex = 0;
 	[self dayChanged:self.eventsByDaySegmentedView];
-	
-	[self loadEventsFromApi];
-	[self loadScheduleFromApi];
+
 	
 	self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
 	
@@ -193,7 +188,15 @@
 	
 	lastIndex = 0;
 	self.eventsByDaySegmentedView.selectedSegmentIndex = 0;
+	
+	if (eveArray.count == 0 || scheduleArray.count == 0) {
+		SVHUD_SHOW;
+	} else {
+		[self populateChildControllers];
+	}
 
+	[self loadEventsFromApi];
+	[self loadScheduleFromApi];
 	
 }
 

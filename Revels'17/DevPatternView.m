@@ -38,35 +38,35 @@
     
     [UIColor.clearColor setStroke];
     
-    UIBezierPath *rectPath1 = [UIBezierPath bezierPath];
-    [rectPath1 moveToPoint:pt0];
-    [rectPath1 addLineToPoint:pt1];
-    [rectPath1 addLineToPoint:ptc];
-    [rectPath1 closePath];
-    [[UIColor colorFromHexString:@"#FFFFEF"] setFill];
-    [rectPath1 fill];
-    UIBezierPath *rectPath2 = [UIBezierPath bezierPath];
-    [rectPath2 moveToPoint:pt1];
-    [rectPath2 addLineToPoint:pt2];
-    [rectPath2 addLineToPoint:ptc];
-    [rectPath2 closePath];
-    [[UIColor colorFromHexString:@"#FFEFFF"] setFill];
-    [rectPath2 fill];
-    UIBezierPath *rectPath3 = [UIBezierPath bezierPath];
-    [rectPath3 moveToPoint:pt2];
-    [rectPath3 addLineToPoint:pt3];
-    [rectPath3 addLineToPoint:ptc];
-    [rectPath3 closePath];
-    [[UIColor colorFromHexString:@"#EFFFFF"] setFill];
-    [rectPath3 fill];
-    UIBezierPath *rectPath4 = [UIBezierPath bezierPath];
-    [rectPath4 moveToPoint:pt3];
-    [rectPath4 addLineToPoint:pt0];
-    [rectPath4 addLineToPoint:ptc];
-    [rectPath4 closePath];
-    [[UIColor colorFromHexString:@"#EFEFEF"] setFill];
-    [rectPath4 fill];
-    
+	UIBezierPath *rectPath1 = [UIBezierPath bezierPath];
+	[rectPath1 moveToPoint:pt0];
+	[rectPath1 addLineToPoint:pt1];
+	[rectPath1 addLineToPoint:ptc];
+	[rectPath1 closePath];
+	[GLOBAL_PATTERN_COLOR_1 setFill];
+	[rectPath1 fill];
+	UIBezierPath *rectPath2 = [UIBezierPath bezierPath];
+	[rectPath2 moveToPoint:pt1];
+	[rectPath2 addLineToPoint:pt2];
+	[rectPath2 addLineToPoint:ptc];
+	[rectPath2 closePath];
+	[GLOBAL_PATTERN_COLOR_2 setFill];
+	[rectPath2 fill];
+	UIBezierPath *rectPath3 = [UIBezierPath bezierPath];
+	[rectPath3 moveToPoint:pt2];
+	[rectPath3 addLineToPoint:pt3];
+	[rectPath3 addLineToPoint:ptc];
+	[rectPath3 closePath];
+	[GLOBAL_PATTERN_COLOR_3 setFill];
+	[rectPath3 fill];
+	UIBezierPath *rectPath4 = [UIBezierPath bezierPath];
+	[rectPath4 moveToPoint:pt3];
+	[rectPath4 addLineToPoint:pt0];
+	[rectPath4 addLineToPoint:ptc];
+	[rectPath4 closePath];
+	[GLOBAL_PATTERN_COLOR_4 setFill];
+	[rectPath4 fill];
+	
     CGContextFillRect(context, CGRectMake(0, 0, patSize.width * 2, patSize.height * 2));
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
