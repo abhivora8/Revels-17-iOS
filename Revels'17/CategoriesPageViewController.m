@@ -81,7 +81,7 @@
 - (void)loadScheduleFromApi
 {
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-		
+        SVHUD_SHOW;
 		@try {
 			
 			NSURL *custumUrl = [[NSURL alloc]initWithString:@"http://api.mitportals.in/schedule/"];

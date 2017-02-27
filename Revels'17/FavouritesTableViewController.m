@@ -134,6 +134,22 @@
 }
 
 - (void)favAction:(id)sender {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[sender tag] inSection:0];
+    
+    EventStore *event = [eveArray objectAtIndex:indexPath.row];
+    event.isFavorite = !event.isFavorite;
+    
+    NSError *error;
+    if (![self.context save:&error])
+        NSLog(@"Can't Save : %@, %@", error, [error localizedDescription]);
+    
+    [eveArray removeObject:event];
+    [self.tableView beginUpdates];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+    [self.tableView endUpdates];
     
 }
 
