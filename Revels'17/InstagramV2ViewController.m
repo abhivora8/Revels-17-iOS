@@ -166,6 +166,10 @@
 
 #pragma mark - DZN Empty Data Set Source
 
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
+	return [UIImage imageNamed:@"RevelsCircle"];
+}
+
 - (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView {
     return GLOBAL_BACK_COLOR;
 }
@@ -175,7 +179,7 @@
     NSString *text = @"No images right now.";
     
     NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Futura-Medium" size:18.f],
-                                 NSForegroundColorAttributeName: [UIColor darkGrayColor]};
+                                 NSForegroundColorAttributeName: GLOBAL_RED_COLOR};
     
     return [[NSAttributedString alloc] initWithString:text attributes:attributes];
 }
@@ -185,7 +189,7 @@
     NSString *text = @"Check your connection and try again.";
     
     NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Futura-Medium" size:14.f],
-                                 NSForegroundColorAttributeName: [UIColor lightGrayColor]};
+                                 NSForegroundColorAttributeName: [UIColor ghostWhiteColor]};
     
     return [[NSAttributedString alloc] initWithString:text attributes:attributes];
     
@@ -193,8 +197,8 @@
 
 - (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state {
     
-    NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Futura-Medium" size:22.f]};
-    
+	NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Futura-Medium" size:22.f], NSForegroundColorAttributeName: GLOBAL_YELLOW_COLOR};
+	
     return [[NSAttributedString alloc] initWithString:@"Reload" attributes:attributes];
 }
 

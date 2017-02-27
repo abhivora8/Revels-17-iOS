@@ -8,9 +8,12 @@
 
 #import "InstagramRootViewController.h"
 #import "UIImage+ImageEffects.h"
+#import "CrossButton.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface InstagramRootViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet CrossButton *crossButton;
 
 @end
 
@@ -64,7 +67,11 @@
     swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGesture:)];
     swipeGesture.direction = UISwipeGestureRecognizerDirectionDown;
     [self.view addGestureRecognizer:swipeGesture];
-    
+	
+	[UIView animateWithDuration:0.3 delay:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
+		self.crossButton.alpha = 0.2;
+	} completion:nil];
+	
 }
 
 - (void)didReceiveMemoryWarning {
@@ -143,6 +150,13 @@
             self.backgroundImageView.image = [image applyDarkEffect];
         });
     }];
+	[UIView animateWithDuration:0.3 animations:^{
+		self.crossButton.alpha = 1.0;
+	} completion:^(BOOL finished) {
+		[UIView animateWithDuration:0.3 animations:^{
+			self.crossButton.alpha = 0.2;
+		} completion:nil];
+	}];
 }
 
 /*

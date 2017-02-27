@@ -7,7 +7,6 @@
 //
 
 #import "AboutTableViewController.h"
-#import "RegisterWebViewController.h"
 
 @interface AboutTableViewController ()
 

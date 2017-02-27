@@ -37,10 +37,7 @@
     self.saveButton.hidden = YES;
     self.shareButton.hidden = YES;
     
-    NSURL *imageURL = self.instaData.lowResURL;
-    
-    if (self.reachability.currentReachabilityStatus == ReachableViaWiFi)
-        imageURL = self.instaData.highResURL;
+    NSURL *imageURL = self.instaData.highResURL;
     
     [self.foregroundImageView sd_setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"RevelsLogo"] options:SDWebImageProgressiveDownload completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         finishedDownloading = YES;
