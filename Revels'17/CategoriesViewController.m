@@ -21,10 +21,10 @@
 
 @end
 
-@implementation CategoriesViewController
-{
+@implementation CategoriesViewController {
     NSMutableArray *catArray;
     Reachability *reachability;
+	BOOL animateCells;
 }
 
 -(void) loadCategoriesFromApi
@@ -35,8 +35,6 @@
             NSURL *custumUrl = [[NSURL alloc]initWithString:@"http://api.mitportals.in/categories/"];
             NSData *mydata = [NSData dataWithContentsOfURL:custumUrl];
             NSError *error;
-			
-			SVHUD_HIDE;
             
             if (mydata!=nil)
             {
@@ -46,9 +44,13 @@
 				catArray = [[CoreDataHelper getCategoriesFromJSONData:array storeIntoManagedObjectContext:self.context] mutableCopy];
 				
 				dispatch_async(dispatch_get_main_queue(), ^{
-					NSError *err;
-					[self.context save:&err];
-					[self.collectionView reloadData];
+					dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+						SVHUD_HIDE;
+						NSError *err;
+//						animateCells = YES;
+						[self.context save:&err];
+						[self.collectionView reloadData];
+					});
 				});
 			
             }
@@ -78,6 +80,9 @@
 	
 	if (catArray.count == 0) {
 		SVHUD_SHOW;
+		animateCells = NO;
+	} else {
+		animateCells = YES;
 	}
 	
 //    if(reachability.isReachable) not working
@@ -115,6 +120,22 @@
 }
 
 #pragma mark - Collection view delegate
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+	NSInteger index = indexPath.row;
+	if (animateCells) {
+		cell.alpha = 0;
+		cell.transform = CGAffineTransformMakeScale(0.7, 0.7);
+		[UIView animateWithDuration:0.3 delay:index * 0.1 options:UIViewAnimationOptionCurveEaseOut animations:^{
+			cell.alpha = 1.0;
+			cell.transform = CGAffineTransformIdentity;
+		} completion:^(BOOL finished) {
+			if (index >= catArray.count - 4) {
+				animateCells = NO;
+			}
+		}];
+	}
+}
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
 	CGFloat w = (self.view.bounds.size.width)/3.f - 8;

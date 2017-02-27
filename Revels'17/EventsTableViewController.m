@@ -69,7 +69,7 @@
 	ScheduleStore *schedule = [self.schedules objectAtIndex:indexPath.row];
 	EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
 	
-	cell.eveName.text = [NSString stringWithFormat:@"%@", event.eventName];
+	cell.eveName.text = [NSString stringWithFormat:@"%@ %@", event.eventName, ([schedule.round isEqualToString:@"-"])?@"":[NSString stringWithFormat:@"(%@)", schedule.round]];
 	cell.maxPplLabel.text = [NSString stringWithFormat:@"Max team size: %@", event.eventMaxTeamSize];
 	
 	cell.day = schedule.day;
@@ -142,7 +142,7 @@
 #pragma mark - DZN Empty Data Set Source
 
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
-	return [UIImage imageNamed:@"header"];
+	return [UIImage imageNamed:self.catName];
 }
 
 - (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView {

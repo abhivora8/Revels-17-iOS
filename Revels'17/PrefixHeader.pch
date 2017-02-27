@@ -44,6 +44,11 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 #define GLOBAL_BLUE_COLOR UIColorFromRGBWithAlpha(0x2980b6, 1.f)
 #define GLOBAL_TINT_COLOR GLOBAL_RED_COLOR
 
+#define GLOBAL_PATTERN_COLOR_1 UIColorFromRGBWithAlpha(0x1e1e1e, 0.5)
+#define GLOBAL_PATTERN_COLOR_2 UIColorFromRGBWithAlpha(0x2c2c2c, 0.5)
+#define GLOBAL_PATTERN_COLOR_3 UIColorFromRGBWithAlpha(0x1e1e1e, 0.5)
+#define GLOBAL_PATTERN_COLOR_4 UIColorFromRGBWithAlpha(0x2c2c2c, 0.5)
+
 #define GLOBAL_FONT_BOLD(x) [UIFont fontWithName:@"Neutraface2Display-Bold" size:x]
 #define GLOBAL_FONT_MEDIUM(x) [UIFont fontWithName:@"Neutraface2Display-Medium" size:x]
 

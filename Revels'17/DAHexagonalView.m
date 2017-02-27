@@ -274,28 +274,28 @@
     [rectPath1 addLineToPoint:pt1];
     [rectPath1 addLineToPoint:ptc];
     [rectPath1 closePath];
-    [[UIColor colorFromHexString:@"#FFFFEF"] setFill];
+    [GLOBAL_PATTERN_COLOR_1 setFill];
     [rectPath1 fill];
     UIBezierPath *rectPath2 = [UIBezierPath bezierPath];
     [rectPath2 moveToPoint:pt1];
     [rectPath2 addLineToPoint:pt2];
     [rectPath2 addLineToPoint:ptc];
     [rectPath2 closePath];
-    [[UIColor colorFromHexString:@"#FFEFFF"] setFill];
+    [GLOBAL_PATTERN_COLOR_2 setFill];
     [rectPath2 fill];
     UIBezierPath *rectPath3 = [UIBezierPath bezierPath];
     [rectPath3 moveToPoint:pt2];
     [rectPath3 addLineToPoint:pt3];
     [rectPath3 addLineToPoint:ptc];
     [rectPath3 closePath];
-    [[UIColor colorFromHexString:@"#EFFFFF"] setFill];
+    [GLOBAL_PATTERN_COLOR_3 setFill];
     [rectPath3 fill];
     UIBezierPath *rectPath4 = [UIBezierPath bezierPath];
     [rectPath4 moveToPoint:pt3];
     [rectPath4 addLineToPoint:pt0];
     [rectPath4 addLineToPoint:ptc];
     [rectPath4 closePath];
-    [[UIColor colorFromHexString:@"#EFEFEF"] setFill];
+    [GLOBAL_PATTERN_COLOR_4 setFill];
     [rectPath4 fill];
     
     CGContextFillRect(context, CGRectMake(0, 0, patSize.width * 2, patSize.height * 2));
@@ -309,18 +309,18 @@
     // Main drawing
     
     if (drawsHex) {
-        [[UIColor oliveColor] setStroke];
+        [GLOBAL_YELLOW_COLOR setStroke];
         UIBezierPath *hexPath1 = [UIBezierPath bezierPath];
-        [hexPath1 setLineWidth:0.5f];
+        [hexPath1 setLineWidth:1.f];
         [hexPath1 moveToPoint:[self.hexPoints[0] CGPointValue]];
         [hexPath1 addLineToPoint:[self.hexPoints[2] CGPointValue]];
         [hexPath1 addLineToPoint:[self.hexPoints[4] CGPointValue]];
         [hexPath1 addLineToPoint:[self.hexPoints[0] CGPointValue]];
         [hexPath1 stroke];
         
-        [[UIColor pastelBlueColor] setStroke];
+        [GLOBAL_RED_COLOR setStroke];
         UIBezierPath *hexPath2 = [UIBezierPath bezierPath];
-        [hexPath2 setLineWidth:0.5f];
+        [hexPath2 setLineWidth:1.f];
         [hexPath2 moveToPoint:[self.hexPoints[3] CGPointValue]];
         [hexPath2 addLineToPoint:[self.hexPoints[1] CGPointValue]];
         [hexPath2 addLineToPoint:[self.hexPoints[5] CGPointValue]];
@@ -328,7 +328,7 @@
         [hexPath2 stroke];
     }
     
-    [[UIColor antiqueWhiteColor] setFill];
+    [GLOBAL_RED_COLOR setFill];
     [UIColor.lightGrayColor setStroke];
     
     CGFloat bigCircleRadius = (WIDTH > 360.f)?60.f:48.f;
@@ -340,7 +340,7 @@
     if (WIDTH > 360) {
         [UIColor.darkGrayColor setStroke];
         for (NSInteger i = 0; i < 6; ++i) {
-            [[UIColor honeydewColor] setFill];
+            [GLOBAL_GRAY_COLOR setFill];
             UIBezierPath *circlePath = [UIBezierPath bezierPathWithArcCenter:[self.entryPoints[i] CGPointValue] radius:4.f startAngle:0.f endAngle:2 * M_PI clockwise:YES];
             [circlePath fill];
             [circlePath stroke];
@@ -350,7 +350,7 @@
     [UIColor.lightGrayColor setStroke];
     
     for (NSInteger i = 0; i < 6; ++i) {
-        [[UIColor icebergColor] setFill];
+        [GLOBAL_GRAY_COLOR setFill];
         UIBezierPath *circlePath = [UIBezierPath bezierPathWithArcCenter:[self.hexPoints[i] CGPointValue] radius:32.f startAngle:0.f endAngle:2 * M_PI clockwise:YES];
         [circlePath fill];
         [circlePath stroke];
@@ -524,7 +524,7 @@
     pathLayer.geometryFlipped = YES;
     pathLayer.path = path.CGPath;
     pathLayer.fillColor = nil;
-    pathLayer.strokeColor = [[UIColor blackColor] CGColor];
+    pathLayer.strokeColor = [GLOBAL_YELLOW_COLOR CGColor];
     pathLayer.lineWidth = 0.8f;
     pathLayer.lineJoin = kCALineJoinBevel;
     
@@ -584,7 +584,7 @@
     pathLayer.geometryFlipped = YES;
     pathLayer.path = path.CGPath;
     pathLayer.fillColor = nil;
-    pathLayer.strokeColor = [[UIColor blackColor] CGColor];
+    pathLayer.strokeColor = [GLOBAL_YELLOW_COLOR CGColor];
     pathLayer.lineWidth = 0.4f;
     pathLayer.lineJoin = kCALineJoinRound;
     

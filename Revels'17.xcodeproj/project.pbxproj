@@ -23,6 +23,9 @@
 		591088B71E62D374004A04C4 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 591088B61E62D374004A04C4 /* CoreDataHelper.m */; };
 		591088CD1E630A39004A04C4 /* CategoriesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 591088CB1E630A39004A04C4 /* CategoriesCollectionViewCell.m */; };
 		591088CE1E630A39004A04C4 /* CategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 591088CC1E630A39004A04C4 /* CategoriesCollectionViewCell.xib */; };
+		591088D21E63E7E8004A04C4 /* AvenirCondensedHand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 591088CF1E63E590004A04C4 /* AvenirCondensedHand.ttf */; };
+		591088D31E63E7EC004A04C4 /* LeagueGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 591088D01E63E590004A04C4 /* LeagueGothic.otf */; };
+		591088D41E63E7EF004A04C4 /* PixelCalculon.otf in Resources */ = {isa = PBXBuildFile; fileRef = 591088D11E63E590004A04C4 /* PixelCalculon.otf */; };
 		5918B8DD1E33D66800AB612C /* EventsTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5918B8DC1E33D66800AB612C /* EventsTableViewCell2.xib */; };
 		593D8BB71E431C3C0074B636 /* EventsByDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */; };
 		D60CA6A11E02ADA300B79D69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CA6A01E02ADA300B79D69 /* main.m */; };
@@ -93,6 +96,9 @@
 		591088CA1E630A39004A04C4 /* CategoriesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesCollectionViewCell.h; sourceTree = "<group>"; };
 		591088CB1E630A39004A04C4 /* CategoriesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesCollectionViewCell.m; sourceTree = "<group>"; };
 		591088CC1E630A39004A04C4 /* CategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesCollectionViewCell.xib; sourceTree = "<group>"; };
+		591088CF1E63E590004A04C4 /* AvenirCondensedHand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AvenirCondensedHand.ttf; sourceTree = "<group>"; };
+		591088D01E63E590004A04C4 /* LeagueGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeagueGothic.otf; sourceTree = "<group>"; };
+		591088D11E63E590004A04C4 /* PixelCalculon.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PixelCalculon.otf; sourceTree = "<group>"; };
 		5918B8DC1E33D66800AB612C /* EventsTableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell2.xib; sourceTree = "<group>"; };
 		593D8BB51E431C3C0074B636 /* EventsByDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsByDayTableViewController.h; sourceTree = "<group>"; };
 		593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsByDayTableViewController.m; sourceTree = "<group>"; };
@@ -206,6 +212,9 @@
 		591088591E5F1CDE004A04C4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				591088CF1E63E590004A04C4 /* AvenirCondensedHand.ttf */,
+				591088D01E63E590004A04C4 /* LeagueGothic.otf */,
+				591088D11E63E590004A04C4 /* PixelCalculon.otf */,
 				5910885A1E5F1CDE004A04C4 /* Neutra2Display-Titling.otf */,
 				5910885B1E5F1CDE004A04C4 /* neutra2displaybold.ttf */,
 				5910885C1E5F1CDE004A04C4 /* neutra2displayinline.ttf */,
@@ -729,6 +738,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				591088D41E63E7EF004A04C4 /* PixelCalculon.otf in Resources */,
+				591088D31E63E7EC004A04C4 /* LeagueGothic.otf in Resources */,
+				591088D21E63E7E8004A04C4 /* AvenirCondensedHand.ttf in Resources */,
 				591088621E5F1CDE004A04C4 /* neutra2displaybold.ttf in Resources */,
 				591088671E5F1CDE004A04C4 /* neutra2displaytitling.ttf in Resources */,
 				591088CE1E630A39004A04C4 /* CategoriesCollectionViewCell.xib in Resources */,
