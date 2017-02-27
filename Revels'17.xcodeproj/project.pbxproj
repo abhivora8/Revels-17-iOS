@@ -26,6 +26,10 @@
 		591088D21E63E7E8004A04C4 /* AvenirCondensedHand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 591088CF1E63E590004A04C4 /* AvenirCondensedHand.ttf */; };
 		591088D31E63E7EC004A04C4 /* LeagueGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 591088D01E63E590004A04C4 /* LeagueGothic.otf */; };
 		591088D41E63E7EF004A04C4 /* PixelCalculon.otf in Resources */ = {isa = PBXBuildFile; fileRef = 591088D11E63E590004A04C4 /* PixelCalculon.otf */; };
+		591088D81E63EEFB004A04C4 /* WorkshopsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591088D71E63EEFB004A04C4 /* WorkshopsTableViewController.m */; };
+		591088DC1E63F02B004A04C4 /* WorkshopsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 591088DB1E63F02B004A04C4 /* WorkshopsModel.m */; };
+		591088E11E63F1A0004A04C4 /* WorkshopsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 591088DF1E63F1A0004A04C4 /* WorkshopsTableViewCell.m */; };
+		591088E21E63F1A0004A04C4 /* WorkshopsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 591088E01E63F1A0004A04C4 /* WorkshopsTableViewCell.xib */; };
 		5918B8DD1E33D66800AB612C /* EventsTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5918B8DC1E33D66800AB612C /* EventsTableViewCell2.xib */; };
 		593D8BB71E431C3C0074B636 /* EventsByDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */; };
 		D60CA6A11E02ADA300B79D69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CA6A01E02ADA300B79D69 /* main.m */; };
@@ -57,10 +61,8 @@
 		D62003CC1E5741640056E6EE /* DevPatternView.m in Sources */ = {isa = PBXBuildFile; fileRef = D62003CB1E5741640056E6EE /* DevPatternView.m */; };
 		D62003D11E5743200056E6EE /* DADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D62003D01E5743200056E6EE /* DADataManager.m */; };
 		D62003D41E5882AE0056E6EE /* MoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D62003D31E5882AE0056E6EE /* MoreTableViewController.m */; };
-		D62003D81E5883210056E6EE /* RegisterWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D62003D71E5883210056E6EE /* RegisterWebViewController.m */; };
 		D62003DC1E5883840056E6EE /* UINavigationItem+Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = D62003DB1E5883840056E6EE /* UINavigationItem+Loading.m */; };
 		D62003E01E5886760056E6EE /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D62003DF1E5886760056E6EE /* AboutTableViewController.m */; };
-		D62003E41E5887B60056E6EE /* NotificationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D62003E31E5887B60056E6EE /* NotificationsTableViewController.m */; };
 		D62003F41E5AE9DF0056E6EE /* CategoriesPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D62003F31E5AE9DF0056E6EE /* CategoriesPageViewController.m */; };
 		D62003FB1E5C7BE40056E6EE /* InstagramData.m in Sources */ = {isa = PBXBuildFile; fileRef = D62003FA1E5C7BE40056E6EE /* InstagramData.m */; };
 		D62003FE1E5C7C2D0056E6EE /* InstagramDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D62003FD1E5C7C2D0056E6EE /* InstagramDetailViewController.m */; };
@@ -99,6 +101,13 @@
 		591088CF1E63E590004A04C4 /* AvenirCondensedHand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AvenirCondensedHand.ttf; sourceTree = "<group>"; };
 		591088D01E63E590004A04C4 /* LeagueGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeagueGothic.otf; sourceTree = "<group>"; };
 		591088D11E63E590004A04C4 /* PixelCalculon.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PixelCalculon.otf; sourceTree = "<group>"; };
+		591088D61E63EEFB004A04C4 /* WorkshopsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkshopsTableViewController.h; sourceTree = "<group>"; };
+		591088D71E63EEFB004A04C4 /* WorkshopsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkshopsTableViewController.m; sourceTree = "<group>"; };
+		591088DA1E63F02B004A04C4 /* WorkshopsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkshopsModel.h; sourceTree = "<group>"; };
+		591088DB1E63F02B004A04C4 /* WorkshopsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkshopsModel.m; sourceTree = "<group>"; };
+		591088DE1E63F1A0004A04C4 /* WorkshopsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkshopsTableViewCell.h; sourceTree = "<group>"; };
+		591088DF1E63F1A0004A04C4 /* WorkshopsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkshopsTableViewCell.m; sourceTree = "<group>"; };
+		591088E01E63F1A0004A04C4 /* WorkshopsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkshopsTableViewCell.xib; sourceTree = "<group>"; };
 		5918B8DC1E33D66800AB612C /* EventsTableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell2.xib; sourceTree = "<group>"; };
 		593D8BB51E431C3C0074B636 /* EventsByDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsByDayTableViewController.h; sourceTree = "<group>"; };
 		593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsByDayTableViewController.m; sourceTree = "<group>"; };
@@ -158,14 +167,10 @@
 		D62003D01E5743200056E6EE /* DADataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DADataManager.m; sourceTree = "<group>"; };
 		D62003D21E5882AE0056E6EE /* MoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreTableViewController.h; sourceTree = "<group>"; };
 		D62003D31E5882AE0056E6EE /* MoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreTableViewController.m; sourceTree = "<group>"; };
-		D62003D61E5883210056E6EE /* RegisterWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterWebViewController.h; sourceTree = "<group>"; };
-		D62003D71E5883210056E6EE /* RegisterWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterWebViewController.m; sourceTree = "<group>"; };
 		D62003DA1E5883840056E6EE /* UINavigationItem+Loading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+Loading.h"; sourceTree = "<group>"; };
 		D62003DB1E5883840056E6EE /* UINavigationItem+Loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+Loading.m"; sourceTree = "<group>"; };
 		D62003DE1E5886760056E6EE /* AboutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewController.h; sourceTree = "<group>"; };
 		D62003DF1E5886760056E6EE /* AboutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewController.m; sourceTree = "<group>"; };
-		D62003E21E5887B60056E6EE /* NotificationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsTableViewController.h; sourceTree = "<group>"; };
-		D62003E31E5887B60056E6EE /* NotificationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsTableViewController.m; sourceTree = "<group>"; };
 		D62003F21E5AE9DF0056E6EE /* CategoriesPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesPageViewController.h; sourceTree = "<group>"; };
 		D62003F31E5AE9DF0056E6EE /* CategoriesPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesPageViewController.m; sourceTree = "<group>"; };
 		D62003F91E5C7BE40056E6EE /* InstagramData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramData.h; sourceTree = "<group>"; };
@@ -245,6 +250,34 @@
 			name = "Core Data";
 			sourceTree = "<group>";
 		};
+		591088D51E63EEED004A04C4 /* Workshops */ = {
+			isa = PBXGroup;
+			children = (
+				591088D61E63EEFB004A04C4 /* WorkshopsTableViewController.h */,
+				591088D71E63EEFB004A04C4 /* WorkshopsTableViewController.m */,
+			);
+			name = Workshops;
+			sourceTree = "<group>";
+		};
+		591088D91E63F01B004A04C4 /* Workshops Model */ = {
+			isa = PBXGroup;
+			children = (
+				591088DA1E63F02B004A04C4 /* WorkshopsModel.h */,
+				591088DB1E63F02B004A04C4 /* WorkshopsModel.m */,
+			);
+			name = "Workshops Model";
+			sourceTree = "<group>";
+		};
+		591088DD1E63F18D004A04C4 /* Workshops */ = {
+			isa = PBXGroup;
+			children = (
+				591088DE1E63F1A0004A04C4 /* WorkshopsTableViewCell.h */,
+				591088DF1E63F1A0004A04C4 /* WorkshopsTableViewCell.m */,
+				591088E01E63F1A0004A04C4 /* WorkshopsTableViewCell.xib */,
+			);
+			name = Workshops;
+			sourceTree = "<group>";
+		};
 		5971CB1FF1C66DF0119CB1B2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +320,7 @@
 				591088A81E62D2A7004A04C4 /* Core Data */,
 				D60CA6A21E02ADA300B79D69 /* AppDelegate.h */,
 				D60CA6A31E02ADA300B79D69 /* AppDelegate.m */,
+				591088D91E63F01B004A04C4 /* Workshops Model */,
 				D6FC72781E5E035A00ED76EA /* Events JSON Model */,
 				D6EA2B781E5D8D9A00A60E80 /* Category JSON Model */,
 				D62003A91E5732600056E6EE /* Views */,
@@ -355,9 +389,8 @@
 		D620038C1E572DFC0056E6EE /* More */ = {
 			isa = PBXGroup;
 			children = (
-				D62003E11E5887AA0056E6EE /* Notifications */,
+				591088D51E63EEED004A04C4 /* Workshops */,
 				D62003DD1E5886460056E6EE /* About */,
-				D62003D51E5883080056E6EE /* Register */,
 				D620039D1E5730E30056E6EE /* Developers */,
 				D62003D21E5882AE0056E6EE /* MoreTableViewController.h */,
 				D62003D31E5882AE0056E6EE /* MoreTableViewController.m */,
@@ -495,15 +528,6 @@
 			name = "Data Manager";
 			sourceTree = "<group>";
 		};
-		D62003D51E5883080056E6EE /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				D62003D61E5883210056E6EE /* RegisterWebViewController.h */,
-				D62003D71E5883210056E6EE /* RegisterWebViewController.m */,
-			);
-			name = Register;
-			sourceTree = "<group>";
-		};
 		D62003D91E5883630056E6EE /* UINavigationItem+Loading */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,18 +546,10 @@
 			name = About;
 			sourceTree = "<group>";
 		};
-		D62003E11E5887AA0056E6EE /* Notifications */ = {
-			isa = PBXGroup;
-			children = (
-				D62003E21E5887B60056E6EE /* NotificationsTableViewController.h */,
-				D62003E31E5887B60056E6EE /* NotificationsTableViewController.m */,
-			);
-			name = Notifications;
-			sourceTree = "<group>";
-		};
 		D62003E51E5889040056E6EE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				591088DD1E63F18D004A04C4 /* Workshops */,
 				D62003E91E5889E40056E6EE /* Categories */,
 				D62003E81E5889CE0056E6EE /* Results */,
 				D62003E71E5889B50056E6EE /* Events */,
@@ -754,6 +770,7 @@
 				591088611E5F1CDE004A04C4 /* Neutra2Display-Titling.otf in Resources */,
 				D6CD86A71E2FEB4F00000446 /* EventsTableViewCell.xib in Resources */,
 				591088661E5F1CDE004A04C4 /* neutra2displaythin.ttf in Resources */,
+				591088E21E63F1A0004A04C4 /* WorkshopsTableViewCell.xib in Resources */,
 				D62003C81E5740AF0056E6EE /* DeveloperDetailView.xib in Resources */,
 				D60CA6BD1E02B00500B79D69 /* CategoriesTableViewCell.xib in Resources */,
 				D60CA6AC1E02ADA300B79D69 /* Assets.xcassets in Resources */,
@@ -822,11 +839,12 @@
 				D60CA6A41E02ADA300B79D69 /* AppDelegate.m in Sources */,
 				D6FC727B1E5E037900ED76EA /* EventsDetailsJSONModel.m in Sources */,
 				591088CD1E630A39004A04C4 /* CategoriesCollectionViewCell.m in Sources */,
+				591088DC1E63F02B004A04C4 /* WorkshopsModel.m in Sources */,
 				D62003B01E5733260056E6EE /* RoundedLabel.m in Sources */,
 				D60CA6BC1E02B00500B79D69 /* CategoriesTableViewCell.m in Sources */,
 				D62003F41E5AE9DF0056E6EE /* CategoriesPageViewController.m in Sources */,
-				D62003E41E5887B60056E6EE /* NotificationsTableViewController.m in Sources */,
 				D60CA6A11E02ADA300B79D69 /* main.m in Sources */,
+				591088E11E63F1A0004A04C4 /* WorkshopsTableViewCell.m in Sources */,
 				D62003CC1E5741640056E6EE /* DevPatternView.m in Sources */,
 				593D8BB71E431C3C0074B636 /* EventsByDayTableViewController.m in Sources */,
 				D6CD86A21E2FE86F00000446 /* EventsViewController.m in Sources */,
@@ -835,7 +853,6 @@
 				D62004041E5C7C9D0056E6EE /* InstagramV2ViewController.m in Sources */,
 				D62003C21E5735AD0056E6EE /* ASMutableURLRequest.m in Sources */,
 				5910886B1E5F5147004A04C4 /* CrossButton.m in Sources */,
-				D62003D81E5883210056E6EE /* RegisterWebViewController.m in Sources */,
 				591088B71E62D374004A04C4 /* CoreDataHelper.m in Sources */,
 				D60CA6C01E02C14900B79D69 /* CategoriesViewController.m in Sources */,
 				D62003AC1E57326E0056E6EE /* AboutBackgroundView.m in Sources */,
@@ -843,6 +860,7 @@
 				D620038A1E572D360056E6EE /* UIImage+ImageEffects.m in Sources */,
 				D62003B61E5733440056E6EE /* DynamicLabel.m in Sources */,
 				D62003BA1E5734310056E6EE /* DAHexagonalView.m in Sources */,
+				591088D81E63EEFB004A04C4 /* WorkshopsTableViewController.m in Sources */,
 				D6EA2B7B1E5D8DB600A60E80 /* CategoriesJSONModel.m in Sources */,
 				D620039C1E5730280056E6EE /* Colours.m in Sources */,
 				D62003B31E5733350056E6EE /* UnderlinedLabel.m in Sources */,

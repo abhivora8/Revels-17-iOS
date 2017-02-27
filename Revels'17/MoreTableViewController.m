@@ -6,8 +6,9 @@
 //  Copyright © 2017 Abhishek Vora. All rights reserved.
 //
 
+@import SafariServices;
+
 #import "MoreTableViewController.h"
-#import "RegisterWebViewController.h"
 #import <KWTransition/KWTransition.h>
 #import "AboutBackgroundView.h"
 
@@ -83,18 +84,19 @@
         
         // Register shit
         
-        navc = [self.storyboard instantiateViewControllerWithIdentifier:@"RegisterVCNav"];
-        
-        RegisterWebViewController *rwvc = [navc.viewControllers firstObject];
+		SFSafariViewController *rwvc;
         
         if (indexPath.row == 0) {
-            rwvc.passedTitle = @"Register for Proshow";
-            rwvc.passedURL = [NSURL URLWithString:@"http://proshow.mitportals.in"];
+//            rwvc.passedTitle = @"Register for Proshow";
+            rwvc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://proshow.mitportals.in"]];
         }
         else if (indexPath.row == 1) {
-            rwvc.passedTitle = @"Register for Revels'16";
-            rwvc.passedURL = [NSURL URLWithString:@"http://register.mitportals.in/"];
+            rwvc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://register.mitportals.in/"]];
         }
+		
+		[self.navigationController pushViewController:rwvc animated:YES];
+		
+		return;
         
     }
     
@@ -108,9 +110,9 @@
     
     else if (indexPath.section == 2) {
         
-        // Notifications
+        // Workshops
         
-        navc = [self.storyboard instantiateViewControllerWithIdentifier:@"NotificationsVCNav"];
+        navc = [self.storyboard instantiateViewControllerWithIdentifier:@"WorkshopsVCNav"];
         
     }
     
