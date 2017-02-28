@@ -74,5 +74,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Revels needs access to your photo gallery.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Revels needs access to your camera.</string>
 </dict>
 </plist>

@@ -13,7 +13,7 @@
 #import "CategoriesCollectionViewCell.h"
 #import "CategoriesJSONModel.h"
 
-@interface CategoriesViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface CategoriesViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIViewControllerPreviewingDelegate>
 
 @property (nonatomic) NSManagedObjectContext *context;
 @property (nonatomic) NSFetchRequest *fetchRequest;
@@ -104,6 +104,10 @@
 	[self.collectionView addSubview:headerImageView1];
 	
 	[self setNeedsStatusBarAppearanceUpdate];
+	
+	if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+		[self registerForPreviewingWithDelegate:self sourceView:self.collectionView];
+	}
     
 }
 
@@ -187,5 +191,22 @@
 - (UIStatusBarStyle)preferredStatusBarStyle {
 	return UIStatusBarStyleLightContent;
 }
+
+#pragma mark - UIViewController previewing delegate
+
+- (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+	NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:location];
+	UICollectionViewLayoutAttributes *cellattrs = [self.collectionView layoutAttributesForItemAtIndexPath:indexPath];
+	[previewingContext setSourceRect:cellattrs.frame];
+	CategoriesPageViewController *dest = [self.storyboard instantiateViewControllerWithIdentifier:@"CategoriesPageVC"];
+	CategoryStore *cat = [catArray objectAtIndex:indexPath.row];
+	dest.category = cat;
+	return dest;
+}
+
+- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+	[self.navigationController pushViewController:viewControllerToCommit animated:YES];
+}
+
 
 @end

@@ -18,7 +18,7 @@
 // Set your client ID here...
 #define kClientID @"3d1dcff5e23c4c70b27ffd700628282d"
 
-@interface InstagramV2ViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, UISearchBarDelegate>
+@interface InstagramV2ViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, UISearchBarDelegate, UIViewControllerPreviewingDelegate>
 
 @property (nonatomic, strong) KWTransition *transition;
 
@@ -54,6 +54,10 @@
 	headerImageView.frame = CGRectMake(0, -120, self.view.bounds.size.width, 80);
 	headerImageView.alpha = 0.5;
 	[self.collectionView addSubview:headerImageView];
+	
+	if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+		[self registerForPreviewingWithDelegate:self sourceView:self.collectionView];
+	}
     
 }
 
@@ -273,6 +277,22 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
 	return UIStatusBarStyleLightContent;
+}
+
+- (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+	NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:location];
+	UICollectionViewLayoutAttributes *cellattrs = [self.collectionView layoutAttributesForItemAtIndexPath:indexPath];
+	[previewingContext setSourceRect:cellattrs.frame];
+	InstagramRootViewController *irvc = [self.storyboard instantiateViewControllerWithIdentifier:@"InstagramRootVC"];
+	irvc.instagramObjects = instagramObjects;
+	irvc.presentationIndex = indexPath.row;
+	irvc.peeking = YES;
+	irvc.parentX = self;
+	return irvc;
+}
+
+- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+	[self.navigationController presentViewController:viewControllerToCommit animated:YES completion:nil];
 }
 
 /*

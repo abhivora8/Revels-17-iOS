@@ -68,6 +68,10 @@
     swipeGesture.direction = UISwipeGestureRecognizerDirectionDown;
     [self.view addGestureRecognizer:swipeGesture];
 	
+	if (self.peeking) {
+		self.crossButton.hidden = YES;
+	}
+	
 	[UIView animateWithDuration:0.3 delay:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
 		self.crossButton.alpha = 0.2;
 	} completion:nil];
@@ -161,6 +165,25 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
 	return UIStatusBarStyleLightContent;
+}
+
+- (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
+	UIPreviewAction *saveAction = [UIPreviewAction actionWithTitle:@"Save" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+		InstagramDetailViewController *idvc = [self.pageViewController.viewControllers firstObject];
+		UIImageWriteToSavedPhotosAlbum(idvc.foregroundImageView.image, nil, nil, nil);
+		SVHUD_SUCCESS(@"Saved!");
+	}];
+	UIPreviewAction *shareAction = [UIPreviewAction actionWithTitle:@"Share" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+		InstagramDetailViewController *idvc = [self.pageViewController.viewControllers firstObject];
+		NSString *texttoshare = [NSString stringWithFormat:@"Check out this pic from #Revels'17 '%@'", idvc.instaData.captionText];
+		NSURL *imageLinkToShare = idvc.instaData.instagramURL;
+		NSArray *activityItems = @[texttoshare, imageLinkToShare];
+		UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+		activityVC.view.tintColor = GLOBAL_YELLOW_COLOR;
+		activityVC.view.backgroundColor = [UIColor whiteColor];
+		[self.parentX presentViewController:activityVC animated:YES completion:nil];
+	}];
+	return @[shareAction, saveAction];
 }
 
 /*

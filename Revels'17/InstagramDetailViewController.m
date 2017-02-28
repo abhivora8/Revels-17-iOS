@@ -76,7 +76,7 @@
 
 - (IBAction)shareAction:(id)sender {
     if (finishedDownloading) {
-        NSString *texttoshare = [NSString stringWithFormat:@"Check out this pic from #Revels'16 '%@'", self.instaData.captionText];
+        NSString *texttoshare = [NSString stringWithFormat:@"Check out this pic from #Revels'17 '%@'", self.instaData.captionText];
         UIImage *imagetoshare = self.foregroundImageView.image;
         NSArray *activityItems = @[texttoshare, imagetoshare];
         UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
