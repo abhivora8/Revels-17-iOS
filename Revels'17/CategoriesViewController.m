@@ -102,7 +102,17 @@
 	headerImageView1.frame = CGRectMake(0, -140, self.view.bounds.size.width, 120);
 	headerImageView1.alpha = 0.5;
 	[self.collectionView addSubview:headerImageView1];
+	
+	[self setNeedsStatusBarAppearanceUpdate];
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	if (self.pushFavs) {
+		[self favsAction:nil];
+		self.pushFavs = NO;
+	}
 }
 
 - (void)didReceiveMemoryWarning {

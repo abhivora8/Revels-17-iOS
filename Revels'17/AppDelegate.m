@@ -10,7 +10,7 @@
 
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import "AppDelegate.h"
-
+#import "CategoriesViewController.h"
 
 @interface AppDelegate ()
 
@@ -25,6 +25,16 @@
 	[self customizeColors];
 	
 	[FIRApp configure];
+	
+	UIMutableApplicationShortcutItem *catItem = [[UIMutableApplicationShortcutItem alloc] initWithType:@"favorites" localizedTitle:@"Favorites"];
+	[catItem setIcon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"44favouritesIcon"]];
+	UIMutableApplicationShortcutItem *eventsItem = [[UIMutableApplicationShortcutItem alloc] initWithType:@"com.da.revels.events" localizedTitle:@"Events"];
+	[eventsItem setIcon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"44eventIcon"]];
+	UIMutableApplicationShortcutItem *instaItem = [[UIMutableApplicationShortcutItem alloc] initWithType:@"com.da.revels.instafeed" localizedTitle:@"Instafeed"];
+	[instaItem setIcon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"44instagramLogo"]];
+	UIMutableApplicationShortcutItem *resultsItem = [[UIMutableApplicationShortcutItem alloc] initWithType:@"com.da.revels.results" localizedTitle:@"Results"];
+	[resultsItem setIcon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"44resultsIcon"]];
+	[application setShortcutItems:@[catItem, eventsItem, instaItem, resultsItem]];
 	
     return YES;
 }
@@ -113,6 +123,29 @@
 }
 
 
+#pragma mark - Handling force touch shortcuts
+
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+	
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+	
+	UITabBarController *tabBarVC = [storyboard instantiateViewControllerWithIdentifier:@"TabBarVC"];
+	
+	if ([shortcutItem.type containsString:@"favorites"]) {
+		tabBarVC.selectedIndex = 0;
+		UINavigationController *navc = [tabBarVC.viewControllers firstObject];
+		CategoriesViewController *catvc = [navc.viewControllers firstObject];
+		catvc.pushFavs = YES;
+	}
+	else if ([shortcutItem.type containsString:@"events"])
+		tabBarVC.selectedIndex = 1;
+	else if ([shortcutItem.type containsString:@"instafeed"])
+		tabBarVC.selectedIndex = 2;
+	else if ([shortcutItem.type containsString:@"results"])
+		tabBarVC.selectedIndex = 3;
+	
+	self.window.rootViewController = tabBarVC;
+}
 
 #pragma mark - Core Data stack
 
