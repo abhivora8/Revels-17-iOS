@@ -81,7 +81,6 @@
 - (void)loadScheduleFromApi
 {
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        SVHUD_SHOW;
 		@try {
 			
 			NSURL *custumUrl = [[NSURL alloc]initWithString:@"http://api.mitportals.in/schedule/"];
@@ -130,7 +129,7 @@
 	
 	for (NSInteger i = 0; i < 4; i++) {
 		EventsTableViewController *ebdtvc = [self.viewControllers objectAtIndex:i];
-		NSArray *filteredSchedules = [scheduleArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"day == %@", [NSString stringWithFormat:@"%i", i + 1]]];
+		NSArray *filteredSchedules = [scheduleArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"day == %@", [NSString stringWithFormat:@"%li", i + 1]]];
 		ebdtvc.catName = self.category.catName;
 		ebdtvc.schedules = filteredSchedules;
 	}

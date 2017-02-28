@@ -19,6 +19,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *infoButton;
 @property (weak, nonatomic) IBOutlet UIButton *callButton;
 
+@property (weak, nonatomic) IBOutlet UIImageView *catImageView;
+
+@property (nonatomic) BOOL roundedCorners;
 
 @property (strong, nonatomic) IBOutlet UIImageView *locationImage;
 @property (strong, nonatomic) IBOutlet UIImageView *dateimage;

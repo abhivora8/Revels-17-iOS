@@ -48,7 +48,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFf-nV-yVG">
-                        <rect key="frame" x="58" y="52" width="301" height="30"/>
+                        <rect key="frame" x="58" y="56" width="301" height="26"/>
                         <fontDescription key="fontDescription" name="Neutraface2Display-Medium" family="Neutraface 2 Display" pointSize="20"/>
                         <color key="textColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -57,7 +57,7 @@
                         <rect key="frame" x="16" y="90" width="30" height="30"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKO-bw-GNN">
-                        <rect key="frame" x="58" y="90" width="301" height="30"/>
+                        <rect key="frame" x="58" y="94" width="301" height="26"/>
                         <fontDescription key="fontDescription" name="Neutraface2Display-Medium" family="Neutraface 2 Display" pointSize="20"/>
                         <color key="textColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
                         <rect key="frame" x="16" y="128" width="30" height="30"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXE-qo-e8n">
-                        <rect key="frame" x="58" y="128" width="301" height="30"/>
+                        <rect key="frame" x="58" y="132" width="301" height="26"/>
                         <fontDescription key="fontDescription" name="Neutraface2Display-Medium" family="Neutraface 2 Display" pointSize="20"/>
                         <color key="textColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -75,7 +75,7 @@
                         <rect key="frame" x="16" y="166" width="30" height="30"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAl-RW-2cp">
-                        <rect key="frame" x="58" y="166" width="263" height="30"/>
+                        <rect key="frame" x="58" y="170" width="263" height="26"/>
                         <fontDescription key="fontDescription" name="Neutraface2Display-Medium" family="Neutraface 2 Display" pointSize="20"/>
                         <color key="textColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -89,7 +89,7 @@
                         <state key="normal" title="Button" image="call"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhL-Nv-qWJ">
-                        <rect key="frame" x="327" y="91" width="32" height="32"/>
+                        <rect key="frame" x="327" y="89" width="32" height="32"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="pJ8-2Z-s58"/>
                             <constraint firstAttribute="width" constant="32" id="xLh-bI-JrI"/>
@@ -99,8 +99,7 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="DFf-nV-yVG" firstAttribute="top" secondItem="A0g-Ag-cNg" secondAttribute="top" id="1PL-sn-AYm"/>
-                    <constraint firstItem="hhL-Nv-qWJ" firstAttribute="centerY" secondItem="UhE-cx-fDe" secondAttribute="centerY" id="2N6-Kx-Kdq"/>
+                    <constraint firstItem="DFf-nV-yVG" firstAttribute="top" secondItem="A0g-Ag-cNg" secondAttribute="top" constant="4" id="1PL-sn-AYm"/>
                     <constraint firstItem="jAl-RW-2cp" firstAttribute="bottom" secondItem="1Q5-IR-GGn" secondAttribute="bottom" id="305-zx-1bB"/>
                     <constraint firstItem="h54-E8-r75" firstAttribute="leading" secondItem="UhE-cx-fDe" secondAttribute="leadingMargin" constant="8" id="3bV-2T-VKp"/>
                     <constraint firstItem="ZNK-FW-IfN" firstAttribute="top" secondItem="7Zv-Bn-EFX" secondAttribute="bottom" constant="8" id="47M-vK-zij"/>
@@ -109,13 +108,13 @@
                     <constraint firstItem="DFf-nV-yVG" firstAttribute="leading" secondItem="A0g-Ag-cNg" secondAttribute="trailing" constant="12" id="5te-aK-883"/>
                     <constraint firstItem="UVm-q1-VzW" firstAttribute="leading" secondItem="jAl-RW-2cp" secondAttribute="trailing" constant="8" id="7pb-UR-gdk"/>
                     <constraint firstItem="7Zv-Bn-EFX" firstAttribute="height" secondItem="A0g-Ag-cNg" secondAttribute="height" id="C5Z-Fd-2M7"/>
-                    <constraint firstItem="jAl-RW-2cp" firstAttribute="top" secondItem="1Q5-IR-GGn" secondAttribute="top" id="Irl-Dz-rn2"/>
+                    <constraint firstItem="jAl-RW-2cp" firstAttribute="top" secondItem="1Q5-IR-GGn" secondAttribute="top" constant="4" id="Irl-Dz-rn2"/>
                     <constraint firstItem="zKO-bw-GNN" firstAttribute="trailing" secondItem="DFf-nV-yVG" secondAttribute="trailing" id="Jt7-uB-b41"/>
                     <constraint firstItem="h54-E8-r75" firstAttribute="top" secondItem="a2l-ef-j9Y" secondAttribute="top" id="Lza-aD-qTE"/>
                     <constraint firstItem="7Zv-Bn-EFX" firstAttribute="top" secondItem="A0g-Ag-cNg" secondAttribute="bottom" constant="8" id="N1v-KR-UNi"/>
                     <constraint firstItem="1Q5-IR-GGn" firstAttribute="top" secondItem="ZNK-FW-IfN" secondAttribute="bottom" constant="8" id="NbD-Sl-fiN"/>
                     <constraint firstItem="A0g-Ag-cNg" firstAttribute="leading" secondItem="h54-E8-r75" secondAttribute="leading" id="OzS-2Q-m3Z"/>
-                    <constraint firstItem="zKO-bw-GNN" firstAttribute="top" secondItem="7Zv-Bn-EFX" secondAttribute="top" id="PPW-t6-Bx8"/>
+                    <constraint firstItem="zKO-bw-GNN" firstAttribute="top" secondItem="7Zv-Bn-EFX" secondAttribute="top" constant="4" id="PPW-t6-Bx8"/>
                     <constraint firstItem="h54-E8-r75" firstAttribute="bottom" secondItem="a2l-ef-j9Y" secondAttribute="bottom" id="Tch-oM-uQm"/>
                     <constraint firstItem="ZNK-FW-IfN" firstAttribute="height" secondItem="7Zv-Bn-EFX" secondAttribute="height" id="UtO-NA-ayX"/>
                     <constraint firstItem="1Q5-IR-GGn" firstAttribute="centerX" secondItem="ZNK-FW-IfN" secondAttribute="centerX" id="VRS-gr-XXz"/>
@@ -131,13 +130,14 @@
                     <constraint firstItem="DFf-nV-yVG" firstAttribute="trailing" secondItem="a2l-ef-j9Y" secondAttribute="trailing" id="rQC-5G-aEo"/>
                     <constraint firstItem="jAl-RW-2cp" firstAttribute="leading" secondItem="1Q5-IR-GGn" secondAttribute="trailing" constant="12" id="rm1-cM-jRA"/>
                     <constraint firstItem="A0g-Ag-cNg" firstAttribute="top" secondItem="h54-E8-r75" secondAttribute="bottom" constant="8" id="tEL-QS-dmI"/>
-                    <constraint firstItem="wXE-qo-e8n" firstAttribute="top" secondItem="ZNK-FW-IfN" secondAttribute="top" id="tg9-6l-e1y"/>
+                    <constraint firstItem="wXE-qo-e8n" firstAttribute="top" secondItem="ZNK-FW-IfN" secondAttribute="top" constant="4" id="tg9-6l-e1y"/>
                     <constraint firstItem="7Zv-Bn-EFX" firstAttribute="centerX" secondItem="A0g-Ag-cNg" secondAttribute="centerX" id="tuH-sl-baE"/>
                     <constraint firstItem="DFf-nV-yVG" firstAttribute="bottom" secondItem="A0g-Ag-cNg" secondAttribute="bottom" id="v3M-Oy-WX1"/>
                     <constraint firstAttribute="topMargin" secondItem="a2l-ef-j9Y" secondAttribute="top" constant="-4" id="vlq-kI-n6R"/>
                     <constraint firstItem="wXE-qo-e8n" firstAttribute="trailing" secondItem="zKO-bw-GNN" secondAttribute="trailing" id="w2o-3r-S2Y"/>
                     <constraint firstItem="wXE-qo-e8n" firstAttribute="leading" secondItem="ZNK-FW-IfN" secondAttribute="trailing" constant="12" id="wjz-gu-Oud"/>
                     <constraint firstItem="ZNK-FW-IfN" firstAttribute="centerX" secondItem="7Zv-Bn-EFX" secondAttribute="centerX" id="y7e-gv-9IC"/>
+                    <constraint firstItem="hhL-Nv-qWJ" firstAttribute="centerY" secondItem="7Zv-Bn-EFX" secondAttribute="centerY" id="zjd-Hs-bto"/>
                 </constraints>
                 <userDefinedRuntimeAttributes>
                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

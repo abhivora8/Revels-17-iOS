@@ -10,14 +10,20 @@
 
 @implementation EventsTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+- (void)setFrame:(CGRect)frame {
+	if (self.roundedCorners) {
+		self.layer.cornerRadius = 4.f;
+		self.clipsToBounds = YES;
+		self.contentView.layer.cornerRadius = 4.f;
+		self.contentView.clipsToBounds = YES;
+		[super setFrame:CGRectInset(frame, 8, 4)];
+	} else {
+		[super setFrame:frame];
+	}
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 

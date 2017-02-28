@@ -129,7 +129,7 @@
 	
 	for (NSInteger i = 0; i < 4; i++) {
 		EventsByDayTableViewController *ebdtvc = [self.viewControllers objectAtIndex:i];
-		NSArray *filteredSchedules = [scheduleArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"day == %@", [NSString stringWithFormat:@"%i", i + 1]]];
+		NSArray *filteredSchedules = [scheduleArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"day == %@", [NSString stringWithFormat:@"%li", i + 1]]];
 		ebdtvc.schedules = filteredSchedules;
 	}
 	EventsByDayTableViewController *etvc = [self.viewControllers firstObject];
@@ -215,6 +215,7 @@
 	UITextField *txfSearchField = [self.searchController.searchBar valueForKey:@"_searchField"];
 	[txfSearchField setTextColor:GLOBAL_YELLOW_COLOR];
 	[txfSearchField setFont:GLOBAL_FONT_BOLD(14)];
+	self.searchController.searchBar.placeholder = @"Event, Category, Hashtag or Type...";
 	self.searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
 	self.searchController.dimsBackgroundDuringPresentation = NO;
 	self.definesPresentationContext = NO;
