@@ -6,13 +6,15 @@
 //  Copyright © 2017 Abhishek Vora. All rights reserved.
 //
 
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+
 #import "FavouritesTableViewController.h"
 #import "EventsTableViewCell.h"
 #import "EventsDetailsJSONModel.h"
 #import "EventStore+CoreDataClass.h"
 #import "ScheduleStore+CoreDataClass.h"
 
-@interface FavouritesTableViewController ()
+@interface FavouritesTableViewController () <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 
@@ -31,6 +33,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	self.tableView.emptyDataSetSource = self;
+	self.tableView.emptyDataSetDelegate = self;
     
     self.context = [AppDelegate sharedManagedObjectContext];
     

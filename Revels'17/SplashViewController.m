@@ -10,17 +10,23 @@
 
 #import "SplashViewController.h"
 
-@interface SplashViewController ()
+@interface SplashViewController () <UIGestureRecognizerDelegate>
 
 @property (nonatomic) MPMoviePlayerController *moviePlayerController;
 
+@property (nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
+
 @end
 
-@implementation SplashViewController
+@implementation SplashViewController {
+	BOOL present;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+	
+	present = YES;
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished) name:MPMoviePlayerPlaybackDidFinishNotification object:self.moviePlayerController];
 	self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
@@ -33,23 +39,47 @@
 	[self.moviePlayerController setFullscreen:YES];
 	[self.moviePlayerController setScalingMode:MPMovieScalingModeFill];
 	[self.moviePlayerController setControlStyle:MPMovieControlStyleNone];
-	[self.view addSubview:self.moviePlayerController.view];
-	[self.moviePlayerController play];
+	[self.view insertSubview:self.moviePlayerController.view atIndex:0];
 
+	self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+	self.tapGestureRecognizer.delegate = self;
+	[self.view addGestureRecognizer:self.tapGestureRecognizer];
 	
+	
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	[self.moviePlayerController play];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
 	return UIStatusBarStyleLightContent;
 }
 
-- (void)playbackFinished {
-	UITabBarController *tabBarC = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarVC"];
-	[self presentViewController:tabBarC animated:YES completion:^{
-		self.view.window.rootViewController = tabBarC;
-	}];
+- (void)handleTap:(UITapGestureRecognizer *)recognizer {
+	[self playbackFinished];
 }
 
+- (void)playbackFinished {
+	if (present) {
+		UITabBarController *tabBarC = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarVC"];
+		[self presentViewController:tabBarC animated:YES completion:^{
+			self.view.window.rootViewController = tabBarC;
+		}];
+		present = NO;
+	}
+}
+
+#pragma mark - gesture delegate
+// this allows you to dispatch touches
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+	return YES;
+}
+// this enables you to handle multiple recognizers on single view
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+	return YES;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

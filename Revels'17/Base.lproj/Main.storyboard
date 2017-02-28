@@ -43,8 +43,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Revels Cutout" translatesAutoresizingMaskIntoConstraints="NO" id="TRn-jO-Cc4">
+                                <rect key="frame" x="147.5" y="80" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="KB3-uP-HdS"/>
+                                    <constraint firstAttribute="height" constant="80" id="h4y-x8-6OO"/>
+                                </constraints>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oFu-RC-dCG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="563"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jyg-tU-LJX">
                                     <size key="itemSize" width="50" height="50"/>
@@ -62,9 +69,11 @@
                         <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="oFu-RC-dCG" firstAttribute="leading" secondItem="yZq-Ai-LHo" secondAttribute="leadingMargin" constant="-16" id="OOu-2H-ZEl"/>
+                            <constraint firstItem="TRn-jO-Cc4" firstAttribute="centerX" secondItem="yZq-Ai-LHo" secondAttribute="centerX" id="SXL-HQ-RRT"/>
+                            <constraint firstItem="TRn-jO-Cc4" firstAttribute="top" secondItem="Qfa-VG-rRG" secondAttribute="bottom" constant="16" id="mjG-yB-6zh"/>
                             <constraint firstItem="oFu-RC-dCG" firstAttribute="top" secondItem="Qfa-VG-rRG" secondAttribute="bottom" id="psS-qQ-RU9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oFu-RC-dCG" secondAttribute="trailing" constant="-16" id="szp-aO-5pV"/>
-                            <constraint firstItem="GWD-wV-JVq" firstAttribute="top" secondItem="oFu-RC-dCG" secondAttribute="bottom" constant="-49" id="vqL-Gt-Fys"/>
+                            <constraint firstItem="GWD-wV-JVq" firstAttribute="top" secondItem="oFu-RC-dCG" secondAttribute="bottom" constant="-9" id="vqL-Gt-Fys"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Categories" id="Sew-l6-0EV">
@@ -356,7 +365,7 @@
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vAr-Rn-YD1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vAr-Rn-YD1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -377,7 +386,7 @@
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="js2-qv-wm2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="js2-qv-wm2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -401,12 +410,25 @@
                     <view key="view" contentMode="scaleToFill" id="lQm-rH-27F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to skip." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9f2-9f-LrF">
+                                <rect key="frame" x="16" y="635" width="343" height="24"/>
+                                <fontDescription key="fontDescription" name="Neutraface2Display-Medium" family="Neutraface 2 Display" pointSize="24"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Scn-Xq-mib" firstAttribute="top" secondItem="9f2-9f-LrF" secondAttribute="bottom" constant="8" id="CNl-6J-cCH"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="9f2-9f-LrF" secondAttribute="leading" id="WgY-r5-U9U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9f2-9f-LrF" secondAttribute="trailing" id="pWA-zc-p5v"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2RF-jh-jQB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1983" y="1555"/>
+            <point key="canvasLocation" x="-1983.2" y="1554.872563718141"/>
         </scene>
         <!--Tabbar Controller-->
         <scene sceneID="O8m-D0-R83">
@@ -438,7 +460,7 @@
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bdM-zz-1IJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bdM-zz-1IJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -456,7 +478,7 @@
             <objects>
                 <navigationController storyboardIdentifier="DevelopersVCNav" automaticallyAdjustsScrollViewInsets="NO" id="ldJ-8C-TOf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Piq-YQ-ADn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Piq-YQ-ADn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -671,7 +693,7 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vvb-pa-M8e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vvb-pa-M8e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1075,7 +1097,7 @@ Said the joker to the thief,
                 <navigationController storyboardIdentifier="AboutVCNav" automaticallyAdjustsScrollViewInsets="NO" id="9Xz-SB-xLY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="About Us" image="44aboutIcon" id="Vaa-zB-J4N"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ggQ-H1-p5V">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ggQ-H1-p5V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.95686274510000002" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1100,7 +1122,7 @@ Said the joker to the thief,
                 <navigationController storyboardIdentifier="FavouritesVCNav" automaticallyAdjustsScrollViewInsets="NO" id="gQN-hy-vMr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favourites" image="44favouritesIcon" id="xKb-qx-d5z"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nBE-QJ-pyV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="nBE-QJ-pyV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1613,7 +1635,7 @@ Said the joker to the thief,
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ph9-cQ-5vr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ph9-cQ-5vr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -1634,7 +1656,7 @@ Said the joker to the thief,
             <objects>
                 <navigationController storyboardIdentifier="WorkshopsVCNav" automaticallyAdjustsScrollViewInsets="NO" id="SK4-xb-OTN" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xYj-x8-LGG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xYj-x8-LGG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

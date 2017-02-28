@@ -130,7 +130,6 @@
 	for (NSInteger i = 0; i < 4; i++) {
 		EventsTableViewController *ebdtvc = [self.viewControllers objectAtIndex:i];
 		NSArray *filteredSchedules = [scheduleArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"day == %@", [NSString stringWithFormat:@"%li", i + 1]]];
-		ebdtvc.catName = self.category.catName;
 		ebdtvc.schedules = filteredSchedules;
 	}
 	EventsTableViewController *etvc = [self.viewControllers firstObject];
@@ -168,6 +167,7 @@
 	
 	for (NSInteger i = 0; i < 4; i++) {
 		EventsTableViewController *ebdtvc = [self.storyboard instantiateViewControllerWithIdentifier:@"EventsByCatVC"];
+		ebdtvc.catName = self.category.catName;
 		[self.viewControllers addObject:ebdtvc];
 	}
 	
@@ -197,6 +197,9 @@
 	[self loadEventsFromApi];
 	[self loadScheduleFromApi];
 	
+	UIBarButtonItem *infoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"44aboutIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(infoAction:)];
+	self.navigationItem.rightBarButtonItem = infoButton;
+	
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -212,6 +215,12 @@
     
 }
 
+- (void)infoAction:(id)sender {
+	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:self.category.catName message:self.category.catDesc preferredStyle:UIAlertControllerStyleAlert];
+	UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleCancel handler:nil];
+	[alertController addAction:cancelAction];
+	[self presentViewController:alertController animated:YES completion:nil];
+}
 
 - (IBAction)dayChanged:(id)sender {
     
