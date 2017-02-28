@@ -34,33 +34,23 @@
                         </constraints>
                         <state key="normal" title="Button" image="favsEmpty"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EventName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmg-ok-VhC">
-                        <rect key="frame" x="16" y="12" width="265" height="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EventName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kmg-ok-VhC">
+                        <rect key="frame" x="16" y="12" width="303" height="22"/>
                         <fontDescription key="fontDescription" name="Neutraface2Display-Bold" family="Neutraface 2 Display" pointSize="22"/>
                         <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cat Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nb-T4-kOU">
-                        <rect key="frame" x="16" y="38" width="265" height="17"/>
+                        <rect key="frame" x="16" y="38" width="303" height="17"/>
                         <fontDescription key="fontDescription" name="Neutraface2Display-Titling" family="Neutraface 2 Display" pointSize="17"/>
                         <color key="textColor" red="0.76862745099999996" green="0.21960784310000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6C-zA-uvW">
-                        <rect key="frame" x="293" y="17" width="22" height="22"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="22" id="EpN-Id-qeo"/>
-                            <constraint firstAttribute="width" constant="22" id="LWR-gm-K6w"/>
-                        </constraints>
-                        <color key="tintColor" red="0.76862745099999996" green="0.21960784310000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="4PW-dN-CQK" secondAttribute="trailing" constant="8" id="5qZ-mU-PDM"/>
                     <constraint firstAttribute="topMargin" secondItem="4PW-dN-CQK" secondAttribute="top" constant="-4" id="DSL-Ec-h70"/>
-                    <constraint firstItem="l6C-zA-uvW" firstAttribute="centerY" secondItem="4PW-dN-CQK" secondAttribute="centerY" id="TNF-CK-1hm"/>
-                    <constraint firstItem="4PW-dN-CQK" firstAttribute="leading" secondItem="l6C-zA-uvW" secondAttribute="trailing" constant="12" id="Wo1-71-q4s"/>
-                    <constraint firstItem="l6C-zA-uvW" firstAttribute="leading" secondItem="kmg-ok-VhC" secondAttribute="trailing" constant="12" id="Yi5-vJ-71d"/>
+                    <constraint firstItem="4PW-dN-CQK" firstAttribute="leading" secondItem="kmg-ok-VhC" secondAttribute="trailing" constant="8" id="EEj-YR-5oF"/>
                     <constraint firstItem="5Nb-T4-kOU" firstAttribute="top" secondItem="kmg-ok-VhC" secondAttribute="bottom" constant="4" id="ZFl-9R-T3y"/>
                     <constraint firstItem="5Nb-T4-kOU" firstAttribute="trailing" secondItem="kmg-ok-VhC" secondAttribute="trailing" id="hAb-HP-Trp"/>
                     <constraint firstItem="5Nb-T4-kOU" firstAttribute="leading" secondItem="kmg-ok-VhC" secondAttribute="leading" id="l8f-5W-L4j"/>
@@ -73,7 +63,6 @@
                 <outlet property="catName" destination="5Nb-T4-kOU" id="gY3-Dl-njR"/>
                 <outlet property="eveName" destination="kmg-ok-VhC" id="C0I-yf-GoQ"/>
                 <outlet property="favButton" destination="4PW-dN-CQK" id="WkA-71-xw6"/>
-                <outlet property="infoButton" destination="l6C-zA-uvW" id="KWN-aZ-6jX"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="-52"/>
         </tableViewCell>

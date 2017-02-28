@@ -15,4 +15,13 @@
     // Initialization code
 }
 
+- (void)setHighlighted:(BOOL)highlighted {
+	[super setHighlighted:highlighted];
+	if (highlighted) {
+		self.backgroundColor = [UIColor darkGrayColor];
+	} else {
+		self.backgroundColor = GLOBAL_GRAY_COLOR;
+	}
+}
+
 @end
