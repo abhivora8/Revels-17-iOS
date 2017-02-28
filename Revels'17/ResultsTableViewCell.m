@@ -15,6 +15,10 @@
     // Initialization code
 }
 
+- (void)setFrame:(CGRect)frame {
+	[super setFrame:CGRectInset(frame, 8, 4)];
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

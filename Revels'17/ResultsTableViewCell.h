@@ -14,8 +14,8 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *categoryName;
 
-@property (strong, nonatomic) IBOutlet UILabel *round;
+@property (strong, nonatomic) IBOutlet UILabel *teamIDLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
+@property (weak, nonatomic) IBOutlet UILabel *posLabel;
 
 @end

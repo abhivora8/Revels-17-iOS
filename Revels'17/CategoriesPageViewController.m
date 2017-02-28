@@ -171,8 +171,6 @@
 		[self.viewControllers addObject:ebdtvc];
 	}
 	
-	[self.pageViewController setViewControllers:@[self.viewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-	
 	lastIndex = 0;
 	self.eventsByDaySegmentedView.selectedSegmentIndex = 0;
 	[self dayChanged:self.eventsByDaySegmentedView];
@@ -184,6 +182,8 @@
 	self.pageViewController.delegate = self;
 	
 	[self addChildViewController:self.pageViewController];
+	
+	[self.pageViewController setViewControllers:@[self.viewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 	
 	lastIndex = 0;
 	self.eventsByDaySegmentedView.selectedSegmentIndex = 0;

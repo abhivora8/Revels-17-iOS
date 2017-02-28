@@ -32,6 +32,8 @@
 		591088E21E63F1A0004A04C4 /* WorkshopsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 591088E01E63F1A0004A04C4 /* WorkshopsTableViewCell.xib */; };
 		5918B8DD1E33D66800AB612C /* EventsTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5918B8DC1E33D66800AB612C /* EventsTableViewCell2.xib */; };
 		593D8BB71E431C3C0074B636 /* EventsByDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */; };
+		599B5FCF1E658E8400EAB2BD /* AllResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599B5FCE1E658E8400EAB2BD /* AllResultsTableViewController.m */; };
+		599B5FD21E658E8C00EAB2BD /* SportsResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599B5FD11E658E8C00EAB2BD /* SportsResultsTableViewController.m */; };
 		D6043D491E64070F0004B93A /* FavouritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6043D481E64070F0004B93A /* FavouritesTableViewController.m */; };
 		D6043D4E1E648EE20004B93A /* ResultsJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6043D4D1E648EE20004B93A /* ResultsJSONModel.m */; };
 		D6043D521E64B5F20004B93A /* SportsDetailsJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6043D511E64B5F20004B93A /* SportsDetailsJSONModel.m */; };
@@ -114,6 +116,10 @@
 		5918B8DC1E33D66800AB612C /* EventsTableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell2.xib; sourceTree = "<group>"; };
 		593D8BB51E431C3C0074B636 /* EventsByDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsByDayTableViewController.h; sourceTree = "<group>"; };
 		593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsByDayTableViewController.m; sourceTree = "<group>"; };
+		599B5FCD1E658E8400EAB2BD /* AllResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllResultsTableViewController.h; sourceTree = "<group>"; };
+		599B5FCE1E658E8400EAB2BD /* AllResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllResultsTableViewController.m; sourceTree = "<group>"; };
+		599B5FD01E658E8C00EAB2BD /* SportsResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsResultsTableViewController.h; sourceTree = "<group>"; };
+		599B5FD11E658E8C00EAB2BD /* SportsResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsResultsTableViewController.m; sourceTree = "<group>"; };
 		5C82C8B650CF896A877C5137 /* libPods-Revels'17.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Revels'17.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F277E97FEB34C8351AE9CD8 /* Pods-Revels'17.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revels'17.release.xcconfig"; path = "Pods/Target Support Files/Pods-Revels'17/Pods-Revels'17.release.xcconfig"; sourceTree = "<group>"; };
 		D6043D471E64070F0004B93A /* FavouritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouritesTableViewController.h; sourceTree = "<group>"; };
@@ -398,6 +404,10 @@
 			children = (
 				D60CA6C31E02FAE200B79D69 /* ResultsViewController.h */,
 				D60CA6C41E02FAE200B79D69 /* ResultsViewController.m */,
+				599B5FCD1E658E8400EAB2BD /* AllResultsTableViewController.h */,
+				599B5FCE1E658E8400EAB2BD /* AllResultsTableViewController.m */,
+				599B5FD01E658E8C00EAB2BD /* SportsResultsTableViewController.h */,
+				599B5FD11E658E8C00EAB2BD /* SportsResultsTableViewController.m */,
 			);
 			name = Results;
 			sourceTree = "<group>";
@@ -904,9 +914,11 @@
 				591088D81E63EEFB004A04C4 /* WorkshopsTableViewController.m in Sources */,
 				D6EA2B7B1E5D8DB600A60E80 /* CategoriesJSONModel.m in Sources */,
 				D6043D491E64070F0004B93A /* FavouritesTableViewController.m in Sources */,
+				599B5FD21E658E8C00EAB2BD /* SportsResultsTableViewController.m in Sources */,
 				D620039C1E5730280056E6EE /* Colours.m in Sources */,
 				D62003B31E5733350056E6EE /* UnderlinedLabel.m in Sources */,
 				D62003FE1E5C7C2D0056E6EE /* InstagramDetailViewController.m in Sources */,
+				599B5FCF1E658E8400EAB2BD /* AllResultsTableViewController.m in Sources */,
 				D60CA6C91E02FAF800B79D69 /* ResultsTableViewCell.m in Sources */,
 				D65BD80C1E3A56F200417E8B /* EventsTableViewController.m in Sources */,
 				D62003A01E5730FE0056E6EE /* DevelopersViewController.m in Sources */,

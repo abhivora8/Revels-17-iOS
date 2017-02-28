@@ -58,7 +58,7 @@
 		if (category != nil ) {
 			// Update existing
 			
-			NSLog(@"Updating existsing %@", identifier);
+//			NSLog(@"Updating existsing %@", identifier);
 			
 			@try {
 				
@@ -73,7 +73,7 @@
 		} else {
 			// Insert
 			
-			NSLog(@"Insering new %@", identifier);
+//			NSLog(@"Insering new %@", identifier);
 			
 			[CoreDataHelper createNewCategoryWithDict:dict inEntity:[NSEntityDescription entityForName:@"CategoryStore" inManagedObjectContext:context] insertIntoManagedObjectContext:context];
 			
@@ -152,7 +152,7 @@
 		if (event != nil ) {
 			// Update existing
 			
-			NSLog(@"Updating existsing %@ - %@", catID, eventID);
+//			NSLog(@"Updating existsing %@ - %@", catID, eventID);
 			
 			@try {
 				
@@ -174,7 +174,7 @@
 		} else {
 			// Insert
 			
-			NSLog(@"Inserting new %@ - %@", catID, eventID);
+//			NSLog(@"Inserting new %@ - %@", catID, eventID);
 			
 			[CoreDataHelper createNewEventWithDict:dict inEntity:[NSEntityDescription entityForName:@"EventStore" inManagedObjectContext:context] insertIntoManagedObjectContext:context];
 			
@@ -250,7 +250,7 @@
 		if (schedule != nil ) {
 			// Update existing
 			
-			NSLog(@"Updating existsing %@, %@, %@, %@", catID, eventID, round, schedule.day);
+//			NSLog(@"Updating existsing %@, %@, %@, %@", catID, eventID, round, schedule.day);
 			
 			@try {
 				
@@ -266,7 +266,7 @@
 		} else {
 			// Insert
 			
-			NSLog(@"Inserting new %@, %@, %@", catID, eventID, round);
+//			NSLog(@"Inserting new %@, %@, %@", catID, eventID, round);
 			
 			[CoreDataHelper createNewScheduleWithDict:dict inEntity:[NSEntityDescription entityForName:@"ScheduleStore" inManagedObjectContext:context] insertIntoManagedObjectContext:context];
 			

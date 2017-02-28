@@ -25,6 +25,12 @@
 	
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	self.tableView.backgroundColor = GLOBAL_GRAY_COLOR;
+	self.view.backgroundColor = GLOBAL_GRAY_COLOR;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     
     if (!self.bottomBackgroundView) {

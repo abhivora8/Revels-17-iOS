@@ -17,6 +17,8 @@
     if(self) {
         if (myData && [myData isKindOfClass:[NSDictionary class]]) {
             self.teamID = [myData objectForKey:@"teamid"];
+			self.catID = [myData objectForKey:@"catid"];
+			self.eventID = [myData objectForKey:@"eveid"];
             self.eventName = [myData objectForKey:@"evename"];
             self.round = [myData objectForKey:@"roundno"];
             self.pos = [myData objectForKey:@"position"];
@@ -36,6 +38,7 @@
         SportsDetailsJSONModel *mod = [[SportsDetailsJSONModel alloc] initWithData:dict];
         [array addObject:mod];
     }
+	[array sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"catID" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"eventID" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"round" ascending:YES]]];
     return array;
 }
 
