@@ -72,8 +72,9 @@
 		[scheduleArray addObjectsFromArray:fsch];
 		[schArray removeObjectsInArray:fsch];
 	}
-    if (error)
+	if (error) {
         NSLog(@"Error in fetching: %@", error.localizedDescription);
+	}
     [self.tableView reloadData];
 }
 
@@ -87,6 +88,8 @@
     
     ScheduleStore *schedule = [scheduleArray objectAtIndex:indexPath.row];
     EventStore *event = [[eveArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
+	
+	cell.roundedCorners = YES;
     
     cell.catName.text = [NSString stringWithFormat:@"%@", event.catName];
     cell.eveName.text = [NSString stringWithFormat:@"%@ %@", event.eventName, ([schedule.round isEqualToString:@"-"])?@"":[NSString stringWithFormat:@"(%@)", schedule.round]];
@@ -97,6 +100,10 @@
     cell.personOfContactLabel.text = event.contactName;
     cell.dateLabel.text = [NSString stringWithFormat:@"%@ - %@", schedule.stime, schedule.etime];
     cell.favButton.imageView.image = [UIImage imageNamed:@"favsFilled"];
+	
+	cell.catImageView.image = [UIImage imageNamed:event.catName];
+	
+	cell.favButton.tag = indexPath.row;
     
     [cell.favButton addTarget:self action:@selector(favAction:) forControlEvents:UIControlEventTouchUpInside];
     [cell.infoButton addTarget:self action:@selector(infoAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -107,7 +114,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 224.f;
+    return 232.f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -135,22 +142,23 @@
 
 - (void)favAction:(id)sender {
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[sender tag] inSection:0];
-    
-    EventStore *event = [eveArray objectAtIndex:indexPath.row];
-    event.isFavorite = !event.isFavorite;
-    
-    NSError *error;
-    if (![self.context save:&error])
-        NSLog(@"Can't Save : %@, %@", error, [error localizedDescription]);
-    
-    [eveArray removeObject:event];
-    [self.tableView beginUpdates];
-    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.tableView reloadData];
-    });
-    [self.tableView endUpdates];
-    
+    ScheduleStore *schedule = [scheduleArray objectAtIndex:indexPath.row];
+	EventStore *event = [[eveArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
+	NSArray *favoritedSchedules = [scheduleArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", event.catID, event.eventID]];
+	NSMutableArray *indexPaths = [NSMutableArray new];
+	for (ScheduleStore *sstore in favoritedSchedules) {
+		[indexPaths addObject:[NSIndexPath indexPathForRow:[scheduleArray indexOfObject:sstore] inSection:0]];
+	}
+	[scheduleArray removeObjectsInArray:favoritedSchedules];
+	[self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationLeft];
+	event.isFavorite = NO;
+	NSError *error;
+	[self.context save:&error];
+//	SVHUD_SHOW;
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//		SVHUD_HIDE;
+		[self fetchFavourites];
+	});
 }
 
 - (void)infoAction:(id)sender {

@@ -41,7 +41,7 @@
                 
                 resultsArray = [ResultsJSONModel getArrayFromJson:array];
                 
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                dispatch_async(dispatch_get_main_queue(), ^{
                     [self.resultsTableView reloadData];
                 });
             }
@@ -97,8 +97,8 @@
     
     cell.eventName.text = event.eventName;
     cell.categoryName.text = event.catName;
-    cell.round.text = [NSString stringWithFormat:@"Round: %@",model.round];
-    cell.resultLabel.text = [NSString stringWithFormat:@"Team: %@ Pos: %@",model.teamID,model.pos];
+    cell.round.text = [NSString stringWithFormat:@"Round: %@", model.round];
+    cell.resultLabel.text = [[NSString stringWithFormat:@"Team: %@  •  Pos: %@", model.teamID, model.pos] uppercaseString];
     
     return cell;
 }

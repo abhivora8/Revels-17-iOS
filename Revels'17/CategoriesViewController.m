@@ -7,6 +7,7 @@
 //
 
 #import "CategoriesViewController.h"
+#import "FavouritesTableViewController.h"
 #import "CategoriesTableViewCell.h"
 #import "CategoriesPageViewController.h"
 #import "CategoriesCollectionViewCell.h"
@@ -101,6 +102,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+- (IBAction)favsAction:(id)sender {
+	FavouritesTableViewController *ftvc = [self.storyboard instantiateViewControllerWithIdentifier:@"FavouritesVC"];
+	ftvc.hidesBottomBarWhenPushed = YES;
+	ftvc.navigationItem.leftBarButtonItem = nil;
+	[self.navigationController pushViewController:ftvc animated:YES];
+}
+
 
 #pragma mark - Collection view data souce
 

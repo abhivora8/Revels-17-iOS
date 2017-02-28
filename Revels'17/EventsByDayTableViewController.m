@@ -81,6 +81,8 @@
 	cell.personOfContactLabel.text = event.contactName;
 	cell.dateLabel.text = [NSString stringWithFormat:@"%@ - %@", schedule.stime, schedule.etime];
 	
+	cell.catImageView.image = [UIImage imageNamed:event.catName];
+	
 	cell.favButton.tag = indexPath.row;
 	cell.infoButton.tag = indexPath.row;
 	cell.callButton.tag = indexPath.row;
@@ -114,7 +116,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame)
-		return 240.f;
+		return 232.f;
 	return 60.f;
 }
 
