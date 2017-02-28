@@ -31,6 +31,12 @@
 	self.tableView.emptyDataSetDelegate = self;
 	
 	[self loadWorkshopsData];
+	
+	UIImageView *headerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"header"]];
+	headerImageView.contentMode = UIViewContentModeScaleAspectFit;
+	headerImageView.frame = CGRectMake(0, -120, self.view.bounds.size.width, 80);
+	headerImageView.alpha = 0.5;
+	[self.tableView addSubview:headerImageView];
     
 }
 
@@ -89,9 +95,9 @@
 	WorkshopsModel *wshop = [self.workshops objectAtIndex:indexPath.row];
 	
 	cell.wnameLabel.text = wshop.wname;
-	cell.wdateLabel.text = wshop.wdate;
-	cell.wtimeLabel.text = [NSString stringWithFormat:@"%@ - %@", wshop.wshuru, wshop.wkhatam];
+	cell.wdateLabel.text = [NSString stringWithFormat:@"%@, %@ - %@", wshop.wdate, wshop.wshuru, wshop.wkhatam];
 	cell.wcostLabel.text = wshop.wcost;
+	cell.wcontactLabel.text = wshop.cname;
 	cell.wvenueLabel.text = wshop.wvenue;
 	
 	cell.winfoButton.tag = indexPath.row;
@@ -161,6 +167,10 @@
 
 - (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView {
 	return (self.workshops.count == 0);
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+	return UIStatusBarStyleLightContent;
 }
 
 @end

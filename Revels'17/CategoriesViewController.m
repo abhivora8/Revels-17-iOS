@@ -96,6 +96,12 @@
 	[self.collectionView registerNib:[UINib nibWithNibName:@"CategoriesCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"catCell"];
 	
 	self.collectionView.contentInset = UIEdgeInsetsMake(8, 0, 8, 0);
+	
+	UIImageView *headerImageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"header"]];
+	headerImageView1.contentMode = UIViewContentModeScaleAspectFit;
+	headerImageView1.frame = CGRectMake(0, -140, self.view.bounds.size.width, 120);
+	headerImageView1.alpha = 0.5;
+	[self.collectionView addSubview:headerImageView1];
     
 }
 
@@ -166,6 +172,10 @@
 	dest.category = cat;
 	[collectionView deselectItemAtIndexPath:indexPath animated:YES];
 	[self.navigationController pushViewController:dest animated:YES];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+	return UIStatusBarStyleLightContent;
 }
 
 @end

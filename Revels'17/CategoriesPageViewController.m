@@ -190,12 +190,15 @@
 	
 	if (eveArray.count == 0 || scheduleArray.count == 0) {
 		SVHUD_SHOW;
+		[self loadEventsFromApi];
+		[self loadScheduleFromApi];
 	} else {
 		[self populateChildControllers];
+		if ([AppDelegate fiveMinutesSinceLastUpdateDate]) {
+			[self loadEventsFromApi];
+			[self loadScheduleFromApi];
+		}
 	}
-
-	[self loadEventsFromApi];
-	[self loadScheduleFromApi];
 	
 	UIBarButtonItem *infoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"44aboutIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(infoAction:)];
 	self.navigationItem.rightBarButtonItem = infoButton;
@@ -259,6 +262,10 @@
         [self.eventsByDaySegmentedView setSelectedSegmentIndex:index];
     }
     
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+	return UIStatusBarStyleLightContent;
 }
 
 /*

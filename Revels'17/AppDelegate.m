@@ -6,6 +6,8 @@
 //  Copyright © 2016 Abhishek Vora. All rights reserved.
 //
 
+@import Firebase;
+
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import "AppDelegate.h"
 
@@ -22,6 +24,8 @@
 	
 	[self customizeColors];
 	
+	[FIRApp configure];
+	
     return YES;
 }
 
@@ -29,11 +33,12 @@
 
 - (void)customizeColors {
 	
+	[[IQKeyboardManager sharedManager] setEnable:YES];
 	[[IQKeyboardManager sharedManager] setKeyboardAppearance:UIKeyboardAppearanceDark];
 	
 	[SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
-	[SVProgressHUD setBackgroundColor:[UIColor whiteColor]];
-	[SVProgressHUD setForegroundColor:GLOBAL_RED_COLOR];
+	[SVProgressHUD setBackgroundColor:GLOBAL_GRAY_COLOR];
+	[SVProgressHUD setForegroundColor:GLOBAL_YELLOW_COLOR];
 	
 	[[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: GLOBAL_YELLOW_COLOR, NSFontAttributeName: GLOBAL_FONT_BOLD(14)} forState:UIControlStateNormal];
 	[[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor lightTextColor], NSFontAttributeName: GLOBAL_FONT_BOLD(14)} forState:UIControlStateHighlighted];
@@ -62,11 +67,23 @@
 	[[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: GLOBAL_YELLOW_COLOR} forState:UIControlStateSelected];
 	
 	[[UIView appearanceWhenContainedInInstancesOfClasses:@[[UITabBar class]]] setTintColor:GLOBAL_YELLOW_COLOR];
-
 	
 }
 
-
++ (BOOL)fiveMinutesSinceLastUpdateDate {
+	NSDate *current = [NSDate date];
+	NSDate *saved = [[NSUserDefaults standardUserDefaults] objectForKey:@"LAST_SAVED"];
+	if (saved == nil) {
+		[[NSUserDefaults standardUserDefaults] setObject:current forKey:@"LAST_SAVED"];
+		return YES;
+	}
+	NSLog(@"Last updated %f seconds ago.", [current timeIntervalSinceDate:saved]);
+	if ([current timeIntervalSinceDate:saved] > 300) {
+		[[NSUserDefaults standardUserDefaults] setObject:current forKey:@"LAST_SAVED"];
+		return YES;
+	}
+	return NO;
+}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

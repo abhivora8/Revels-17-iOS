@@ -28,6 +28,12 @@
 	
 	self.tableView.emptyDataSetSource = self;
 	self.tableView.emptyDataSetDelegate = self;
+	
+	UIImageView *headerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"header"]];
+	headerImageView.contentMode = UIViewContentModeScaleAspectFit;
+	headerImageView.frame = CGRectMake(0, -120, self.view.bounds.size.width, 80);
+	headerImageView.alpha = 0.5;
+	[self.tableView addSubview:headerImageView];
 }
 
 - (void)didReceiveMemoryWarning {
