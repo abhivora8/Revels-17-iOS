@@ -119,6 +119,10 @@
 		
 				dispatch_async(dispatch_get_main_queue(), ^{
 					self.allResults = [ResultsJSONModel getArrayFromJson:array];
+					for (ResultsJSONModel *model in self.allResults) {
+						EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"eventID == %@", model.eventID]] firstObject];
+						model.categoryName = event.catName;
+					}
 					[self.allResultsController filterResultsWithSearchText:@""];
 				});
 			}

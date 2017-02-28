@@ -34,6 +34,8 @@
 		593D8BB71E431C3C0074B636 /* EventsByDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D8BB61E431C3C0074B636 /* EventsByDayTableViewController.m */; };
 		599B5FCF1E658E8400EAB2BD /* AllResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599B5FCE1E658E8400EAB2BD /* AllResultsTableViewController.m */; };
 		599B5FD21E658E8C00EAB2BD /* SportsResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599B5FD11E658E8C00EAB2BD /* SportsResultsTableViewController.m */; };
+		599B5FD61E65B32F00EAB2BD /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599B5FD51E65B32F00EAB2BD /* SplashViewController.m */; };
+		599B5FD81E65B3D600EAB2BD /* RevelsIntro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 599B5FD71E65B3D300EAB2BD /* RevelsIntro.mp4 */; };
 		D6043D491E64070F0004B93A /* FavouritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6043D481E64070F0004B93A /* FavouritesTableViewController.m */; };
 		D6043D4E1E648EE20004B93A /* ResultsJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6043D4D1E648EE20004B93A /* ResultsJSONModel.m */; };
 		D6043D521E64B5F20004B93A /* SportsDetailsJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6043D511E64B5F20004B93A /* SportsDetailsJSONModel.m */; };
@@ -120,6 +122,9 @@
 		599B5FCE1E658E8400EAB2BD /* AllResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllResultsTableViewController.m; sourceTree = "<group>"; };
 		599B5FD01E658E8C00EAB2BD /* SportsResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsResultsTableViewController.h; sourceTree = "<group>"; };
 		599B5FD11E658E8C00EAB2BD /* SportsResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsResultsTableViewController.m; sourceTree = "<group>"; };
+		599B5FD41E65B32F00EAB2BD /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		599B5FD51E65B32F00EAB2BD /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		599B5FD71E65B3D300EAB2BD /* RevelsIntro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = RevelsIntro.mp4; sourceTree = "<group>"; };
 		5C82C8B650CF896A877C5137 /* libPods-Revels'17.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Revels'17.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F277E97FEB34C8351AE9CD8 /* Pods-Revels'17.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revels'17.release.xcconfig"; path = "Pods/Target Support Files/Pods-Revels'17/Pods-Revels'17.release.xcconfig"; sourceTree = "<group>"; };
 		D6043D471E64070F0004B93A /* FavouritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouritesTableViewController.h; sourceTree = "<group>"; };
@@ -302,6 +307,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		599B5FD31E65B30800EAB2BD /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				599B5FD41E65B32F00EAB2BD /* SplashViewController.h */,
+				599B5FD51E65B32F00EAB2BD /* SplashViewController.m */,
+			);
+			name = Splash;
+			sourceTree = "<group>";
+		};
 		83CF0BFE6636F991EF9FE28B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +394,7 @@
 		D60CA69F1E02ADA300B79D69 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				599B5FD71E65B3D300EAB2BD /* RevelsIntro.mp4 */,
 				591088591E5F1CDE004A04C4 /* Fonts */,
 				D62003951E572F710056E6EE /* PrefixHeader.pch */,
 				D60CA6B01E02ADA300B79D69 /* Info.plist */,
@@ -437,7 +452,7 @@
 		D620038C1E572DFC0056E6EE /* More */ = {
 			isa = PBXGroup;
 			children = (
-				D60CA6C21E02FABC00B79D69 /* Results */,
+				D6043D461E6406C00004B93A /* Favourites */,
 				591088D51E63EEED004A04C4 /* Workshops */,
 				D62003DD1E5886460056E6EE /* About */,
 				D620039D1E5730E30056E6EE /* Developers */,
@@ -492,7 +507,6 @@
 				D62003AA1E57326E0056E6EE /* AboutBackgroundView.h */,
 				D62003AB1E57326E0056E6EE /* AboutBackgroundView.m */,
 				D62004081E5C7D6A0056E6EE /* Tab Bar */,
-				D62003F81E5C7BBB0056E6EE /* Instagram */,
 				D62003C91E5741430056E6EE /* DevPatternView */,
 				D62003C31E5740650056E6EE /* DevDetailView */,
 				D62003B71E5734190056E6EE /* HexagonalDevView */,
@@ -665,10 +679,12 @@
 		D62003EB1E588A640056E6EE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D6043D461E6406C00004B93A /* Favourites */,
-				D620038C1E572DFC0056E6EE /* More */,
-				D6CD869F1E2FE84F00000446 /* Events */,
+				599B5FD31E65B30800EAB2BD /* Splash */,
 				D60CA6C11E02C68900B79D69 /* Categories */,
+				D6CD869F1E2FE84F00000446 /* Events */,
+				D62003F81E5C7BBB0056E6EE /* Instagram */,
+				D60CA6C21E02FABC00B79D69 /* Results */,
+				D620038C1E572DFC0056E6EE /* More */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -823,6 +839,7 @@
 				D62003C81E5740AF0056E6EE /* DeveloperDetailView.xib in Resources */,
 				D60CA6BD1E02B00500B79D69 /* CategoriesTableViewCell.xib in Resources */,
 				D60CA6AC1E02ADA300B79D69 /* Assets.xcassets in Resources */,
+				599B5FD81E65B3D600EAB2BD /* RevelsIntro.mp4 in Resources */,
 				D60CA6AA1E02ADA300B79D69 /* Main.storyboard in Resources */,
 				591088631E5F1CDE004A04C4 /* neutra2displayinline.ttf in Resources */,
 			);
@@ -886,6 +903,7 @@
 				D62003D11E5743200056E6EE /* DADataManager.m in Sources */,
 				D6CD86A61E2FEB4F00000446 /* EventsTableViewCell.m in Sources */,
 				D60CA6A41E02ADA300B79D69 /* AppDelegate.m in Sources */,
+				599B5FD61E65B32F00EAB2BD /* SplashViewController.m in Sources */,
 				D6FC727B1E5E037900ED76EA /* EventsDetailsJSONModel.m in Sources */,
 				591088CD1E630A39004A04C4 /* CategoriesCollectionViewCell.m in Sources */,
 				591088DC1E63F02B004A04C4 /* WorkshopsModel.m in Sources */,
@@ -1060,7 +1078,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Revels'17/PrefixHeader.pch";
 				INFOPLIST_FILE = "Revels'17/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.lugmanipal.Revels-15";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1081,7 +1099,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Revels'17/PrefixHeader.pch";
 				INFOPLIST_FILE = "Revels'17/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.lugmanipal.Revels-15";
 				PRODUCT_NAME = "$(TARGET_NAME)";

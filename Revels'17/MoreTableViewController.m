@@ -88,10 +88,10 @@
         
         if (indexPath.row == 0) {
 //            rwvc.passedTitle = @"Register for Proshow";
-            rwvc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://proshow.mitportals.in"]];
+            rwvc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://alpha.mitrevels.in/"]];
         }
         else if (indexPath.row == 1) {
-            rwvc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://register.mitportals.in/"]];
+            rwvc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://proshow.mitrevels.in"]];
         }
 		
 		[self.navigationController pushViewController:rwvc animated:YES];
@@ -140,12 +140,6 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-}
-
-- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0)
-        return NO;
-    return YES;
 }
 
 #pragma mark - View controller animated transistioning

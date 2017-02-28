@@ -20,6 +20,7 @@
             self.eventID = [NSString stringWithFormat:@"%@", [myData objectForKey:@"eve"]];
             self.round = [NSString stringWithFormat:@"%@", [myData objectForKey:@"round"]];
             self.pos = [NSString stringWithFormat:@"%@", [myData objectForKey:@"pos"]];
+			self.eventName = [NSString stringWithFormat:@"%@", [myData objectForKey:@"evename"]];
             self.teamID = [NSString stringWithFormat:@"%@", [myData objectForKey:@"tid"]];
 		} @catch (NSException *exception) {
 			NSLog(@"Exc: %@", exception.reason);
