@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="208"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ODl-aS-VQQ" id="wU6-Hy-ql0">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="207.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="207"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaV-9t-8eg">
@@ -62,7 +63,7 @@
                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="feC-LR-kva">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="price" translatesAutoresizingMaskIntoConstraints="NO" id="feC-LR-kva">
                         <rect key="frame" x="16" y="128" width="30" height="30"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHZ-lM-iqD">
@@ -71,7 +72,7 @@
                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="price" translatesAutoresizingMaskIntoConstraints="NO" id="9nB-5P-lxB">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact" translatesAutoresizingMaskIntoConstraints="NO" id="9nB-5P-lxB">
                         <rect key="frame" x="16" y="166" width="30" height="30"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4E-sU-WrQ">
@@ -142,11 +143,11 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="wcallButton" destination="vW2-84-rB6" id="uji-hh-tdK"/>
-                <outlet property="wcostLabel" destination="T4E-sU-WrQ" id="7yE-fN-oUp"/>
+                <outlet property="wcontactLabel" destination="T4E-sU-WrQ" id="4o0-2X-3jG"/>
+                <outlet property="wcostLabel" destination="QHZ-lM-iqD" id="nxM-OB-srx"/>
                 <outlet property="wdateLabel" destination="zVg-MY-HS6" id="gEP-Ih-WxZ"/>
                 <outlet property="winfoButton" destination="NaV-9t-8eg" id="Yai-1V-thl"/>
                 <outlet property="wnameLabel" destination="Xq2-he-vsR" id="2F2-nI-Cso"/>
-                <outlet property="wtimeLabel" destination="QHZ-lM-iqD" id="eKt-n5-3EL"/>
                 <outlet property="wvenueLabel" destination="KiC-B6-Hyo" id="clj-Gk-xIR"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="20"/>
@@ -154,10 +155,10 @@
     </objects>
     <resources>
         <image name="call" width="44" height="44"/>
+        <image name="contact" width="44" height="44"/>
         <image name="date" width="44" height="44"/>
         <image name="infoIcon" width="32" height="32"/>
         <image name="location" width="44" height="44"/>
         <image name="price" width="44" height="44"/>
-        <image name="time" width="44" height="44"/>
     </resources>
 </document>

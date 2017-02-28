@@ -260,6 +260,9 @@ typedef struct EasterEggPosition {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+	return UIStatusBarStyleLightContent;
+}
 
 #pragma mark - View controller animated transistioning
 

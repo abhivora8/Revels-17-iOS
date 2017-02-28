@@ -98,6 +98,7 @@
 	self.searchController.searchBar.placeholder = @"Team ID, Event, or Category...";
 	self.searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
 	self.searchController.dimsBackgroundDuringPresentation = NO;
+	self.searchController.searchBar.keyboardAppearance = UIKeyboardAppearanceDark;
 	self.definesPresentationContext = NO;
 	self.searchController.hidesNavigationBarDuringPresentation = NO;
 	self.navigationItem.titleView = self.searchController.searchBar;
@@ -200,6 +201,10 @@
 	NSString *searchText = searchBar.text;
 	[self.allResultsController filterResultsWithSearchText:searchText];
 	[self.sportsResultsController filterResultsWithSearchText:searchText];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+	return UIStatusBarStyleLightContent;
 }
 
 @end

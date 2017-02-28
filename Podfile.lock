@@ -1,5 +1,18 @@
 PODS:
   - DZNEmptyDataSet (1.8.1)
+  - Firebase/Core (3.13.0):
+    - FirebaseAnalytics (= 3.7.0)
+    - FirebaseCore (= 3.5.0)
+  - FirebaseAnalytics (3.7.0):
+    - FirebaseCore (~> 3.5)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCore (3.5.0):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (1.0.9)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - IQKeyboardManager (4.0.8)
   - KWTransition (0.0.4)
   - SDWebImage (3.8.2):
@@ -9,6 +22,7 @@ PODS:
 
 DEPENDENCIES:
   - DZNEmptyDataSet
+  - Firebase/Core
   - IQKeyboardManager
   - KWTransition
   - SDWebImage
@@ -16,11 +30,16 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  Firebase: 5bc34d7b5ff5792e3386c8b28dc6265deeab0da4
+  FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
+  FirebaseCore: 1c0a13bf59bb95cdd19577252499f0ec6a03e999
+  FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   IQKeyboardManager: 1a8189fa153bf09044355ee0ad36826f6767e7f7
   KWTransition: 72d59eef35ddb67769eb99a41317fa75c0444e1b
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 3621872c11d4d221f486ee490e80dcdf7a908f84
+PODFILE CHECKSUM: 46d500c296a4c273f89e4d75f06ca0ac62ba8fc9
 
 COCOAPODS: 1.2.0

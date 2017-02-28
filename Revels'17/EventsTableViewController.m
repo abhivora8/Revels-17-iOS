@@ -38,10 +38,9 @@
 	
 	UIImageView *headerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.catName]];
 	headerImageView.contentMode = UIViewContentModeScaleAspectFit;
-	headerImageView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 80);
-	self.tableView.tableHeaderView = headerImageView;
-	
-	self.tableView.contentOffset = CGPointMake(0, 80);
+	headerImageView.frame = CGRectMake(0, -80, self.view.bounds.size.width, 80);
+	headerImageView.alpha = 0.5;
+	[self.tableView addSubview:headerImageView];
 	
 }
 

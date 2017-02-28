@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *wnameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wvenueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wdateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *wtimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *wcontactLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wcostLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *winfoButton;

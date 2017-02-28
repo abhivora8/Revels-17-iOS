@@ -169,4 +169,8 @@
     [self openURLWithString:@"http://www.lugmanipal.org"];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+	return UIStatusBarStyleLightContent;
+}
+
 @end

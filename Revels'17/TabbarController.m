@@ -32,6 +32,10 @@
     self.tabBar.frame = frame;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+	return UIStatusBarStyleLightContent;
+}
+
 /*
 #pragma mark - Navigation
 

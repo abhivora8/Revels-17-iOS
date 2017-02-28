@@ -18,6 +18,7 @@
 @property (nonatomic) NSString *wkhatam;	// lel
 @property (nonatomic) NSString *wdesc;
 @property (nonatomic) NSString *wvenue;
+@property (nonatomic) NSString *cname;
 @property (nonatomic) NSString *wnumb;
 
 - (instancetype)initWithDict:(NSDictionary *)dict;

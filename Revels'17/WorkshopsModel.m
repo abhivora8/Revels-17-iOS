@@ -23,6 +23,7 @@
 			self.wdesc = [dict objectForKey:@"wdesc"];
 			self.wvenue = [dict objectForKey:@"wvenue"];
 			self.wnumb = [dict objectForKey:@"wnumb"];
+			self.cname = [dict objectForKey:@"cname"];
 		} @catch (NSException *exception) {
 			NSLog(@"Exception: %@", exception.reason);
 		}
@@ -36,6 +37,7 @@
 		WorkshopsModel *model = [[WorkshopsModel alloc] initWithDict:dict];
 		[res addObject:model];
 	}
+	[res sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"wdate" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"wname" ascending:YES]]];
 	return res;
 }
 

@@ -183,14 +183,20 @@
 	
 	if (eveArray.count == 0 || scheduleArray.count == 0) {
 		SVHUD_SHOW;
+		[self loadEventsFromApi];
+		[self loadScheduleFromApi];
 	} else {
 		[self populateChildControllers];
+		if ([AppDelegate fiveMinutesSinceLastUpdateDate]) {
+			[self loadEventsFromApi];
+			[self loadScheduleFromApi];
+		}
 	}
 	
 	[self.pageViewController setViewControllers:@[self.viewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 	
-	[self loadEventsFromApi];
-	[self loadScheduleFromApi];
+	UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshAction:)];
+	self.navigationItem.leftBarButtonItem = refreshButton;
 
 }
 
@@ -218,6 +224,7 @@
 	self.searchController.searchBar.placeholder = @"Event, Category, Hashtag or Type...";
 	self.searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
 	self.searchController.dimsBackgroundDuringPresentation = NO;
+	self.searchController.searchBar.keyboardAppearance = UIKeyboardAppearanceDark;
 	self.definesPresentationContext = NO;
 	self.searchController.hidesNavigationBarDuringPresentation = NO;
 	self.navigationItem.titleView = self.searchController.searchBar;
@@ -234,6 +241,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)refreshAction:(id)sender {
+	SVHUD_SHOW;
+	[self loadEventsFromApi];
+	[self loadScheduleFromApi];
 }
 
 #pragma mark - Page view controller data source
@@ -272,6 +285,10 @@
 	for (EventsByDayTableViewController *ebdtvc in self.viewControllers) {
 		[ebdtvc filterWithSearchText:searchBar.text];
 	}
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+	return UIStatusBarStyleLightContent;
 }
 
 @end

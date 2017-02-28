@@ -48,6 +48,12 @@
     
     self.collectionView.emptyDataSetSource = self;
     self.collectionView.emptyDataSetDelegate = self;
+	
+	UIImageView *headerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"header"]];
+	headerImageView.contentMode = UIViewContentModeScaleAspectFit;
+	headerImageView.frame = CGRectMake(0, -120, self.view.bounds.size.width, 80);
+	headerImageView.alpha = 0.5;
+	[self.collectionView addSubview:headerImageView];
     
 }
 
@@ -263,6 +269,10 @@
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.searchBar resignFirstResponder];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+	return UIStatusBarStyleLightContent;
 }
 
 /*

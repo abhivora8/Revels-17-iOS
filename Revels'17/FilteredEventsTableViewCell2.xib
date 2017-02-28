@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,8 +35,8 @@
                         </constraints>
                         <state key="normal" title="Button" image="favsEmpty"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EventName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h54-E8-r75">
-                        <rect key="frame" x="16" y="12" width="89.5" height="32"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EventName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="h54-E8-r75">
+                        <rect key="frame" x="16" y="12" width="305" height="32"/>
                         <fontDescription key="fontDescription" name="Neutraface2Display-Bold" family="Neutraface 2 Display" pointSize="22"/>
                         <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -109,6 +110,7 @@
                     <constraint firstItem="UVm-q1-VzW" firstAttribute="leading" secondItem="jAl-RW-2cp" secondAttribute="trailing" constant="8" id="7pb-UR-gdk"/>
                     <constraint firstItem="7Zv-Bn-EFX" firstAttribute="height" secondItem="A0g-Ag-cNg" secondAttribute="height" id="C5Z-Fd-2M7"/>
                     <constraint firstItem="jAl-RW-2cp" firstAttribute="top" secondItem="1Q5-IR-GGn" secondAttribute="top" constant="4" id="Irl-Dz-rn2"/>
+                    <constraint firstItem="a2l-ef-j9Y" firstAttribute="leading" secondItem="h54-E8-r75" secondAttribute="trailing" constant="6" id="Itw-8d-9QG"/>
                     <constraint firstItem="zKO-bw-GNN" firstAttribute="trailing" secondItem="DFf-nV-yVG" secondAttribute="trailing" id="Jt7-uB-b41"/>
                     <constraint firstItem="h54-E8-r75" firstAttribute="top" secondItem="a2l-ef-j9Y" secondAttribute="top" id="Lza-aD-qTE"/>
                     <constraint firstItem="7Zv-Bn-EFX" firstAttribute="top" secondItem="A0g-Ag-cNg" secondAttribute="bottom" constant="8" id="N1v-KR-UNi"/>

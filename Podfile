@@ -10,6 +10,7 @@ target 'Revels\'17' do
   pod 'KWTransition'
   pod 'DZNEmptyDataSet'
   pod 'IQKeyboardManager'
+  pod 'Firebase/Core'
 
   # Pods for Revels'17
 

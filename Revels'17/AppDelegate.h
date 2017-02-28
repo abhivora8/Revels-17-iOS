@@ -20,6 +20,8 @@
 + (NSPersistentContainer *)sharedPersistentContainer;
 + (NSManagedObjectContext *)sharedManagedObjectContext;
 
++ (BOOL)fiveMinutesSinceLastUpdateDate;
+
 
 @end
 

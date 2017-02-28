@@ -43,15 +43,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Revels Cutout" translatesAutoresizingMaskIntoConstraints="NO" id="TRn-jO-Cc4">
-                                <rect key="frame" x="147.5" y="80" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="KB3-uP-HdS"/>
-                                    <constraint firstAttribute="height" constant="80" id="h4y-x8-6OO"/>
-                                </constraints>
-                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oFu-RC-dCG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="563"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jyg-tU-LJX">
                                     <size key="itemSize" width="50" height="50"/>
@@ -69,11 +62,9 @@
                         <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="oFu-RC-dCG" firstAttribute="leading" secondItem="yZq-Ai-LHo" secondAttribute="leadingMargin" constant="-16" id="OOu-2H-ZEl"/>
-                            <constraint firstItem="TRn-jO-Cc4" firstAttribute="centerX" secondItem="yZq-Ai-LHo" secondAttribute="centerX" id="SXL-HQ-RRT"/>
-                            <constraint firstItem="TRn-jO-Cc4" firstAttribute="top" secondItem="Qfa-VG-rRG" secondAttribute="bottom" constant="16" id="mjG-yB-6zh"/>
                             <constraint firstItem="oFu-RC-dCG" firstAttribute="top" secondItem="Qfa-VG-rRG" secondAttribute="bottom" id="psS-qQ-RU9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oFu-RC-dCG" secondAttribute="trailing" constant="-16" id="szp-aO-5pV"/>
-                            <constraint firstItem="GWD-wV-JVq" firstAttribute="top" secondItem="oFu-RC-dCG" secondAttribute="bottom" constant="-9" id="vqL-Gt-Fys"/>
+                            <constraint firstItem="GWD-wV-JVq" firstAttribute="top" secondItem="oFu-RC-dCG" secondAttribute="bottom" constant="-49" id="vqL-Gt-Fys"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Categories" id="Sew-l6-0EV">
@@ -365,7 +356,8 @@
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vAr-Rn-YD1">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vAr-Rn-YD1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -386,7 +378,8 @@
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="js2-qv-wm2">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="js2-qv-wm2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -435,6 +428,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="TabBarVC" automaticallyAdjustsScrollViewInsets="NO" id="tYj-7b-MiY" customClass="TabbarController" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="LDr-i4-c2Q">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -460,7 +454,8 @@
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bdM-zz-1IJ">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bdM-zz-1IJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -693,7 +688,8 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vvb-pa-M8e">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vvb-pa-M8e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -719,7 +715,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vDf-w1-TRO" customClass="DynamicLabel">
-                                <rect key="frame" x="16" y="572" width="343" height="41"/>
+                                <rect key="frame" x="16" y="572.5" width="343" height="41"/>
                                 <fontDescription key="fontDescription" name="PixelCalculon" family="Pixel Calculon" pointSize="32"/>
                                 <color key="textColor" red="0.76862745099999996" green="0.21960784310000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -733,7 +729,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUG Manipal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2h-aQ-vaj">
-                                <rect key="frame" x="16" y="621" width="343" height="26"/>
+                                <rect key="frame" x="16" y="621.5" width="343" height="25.5"/>
                                 <fontDescription key="fontDescription" name="PixelCalculon" family="Pixel Calculon" pointSize="20"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -772,21 +768,21 @@ Said the joker to the thief,
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kr0-9G-C2U">
-                                <rect key="frame" x="168" y="524" width="40" height="40"/>
+                                <rect key="frame" x="168" y="524.5" width="40" height="40"/>
                                 <state key="normal" image="sfacebook"/>
                                 <connections>
                                     <action selector="facebookAction:" destination="kCm-Yv-kyy" eventType="touchUpInside" id="S5J-fD-lLK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFt-vp-W0t">
-                                <rect key="frame" x="112" y="524" width="40" height="40"/>
+                                <rect key="frame" x="112" y="524.5" width="40" height="40"/>
                                 <state key="normal" image="sgithub"/>
                                 <connections>
                                     <action selector="githubAction:" destination="kCm-Yv-kyy" eventType="touchUpInside" id="uaB-1x-K4B"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhD-2D-UHt">
-                                <rect key="frame" x="224" y="524" width="40" height="40"/>
+                                <rect key="frame" x="224" y="524.5" width="40" height="40"/>
                                 <state key="normal" image="ssafari"/>
                                 <connections>
                                     <action selector="websiteAction:" destination="kCm-Yv-kyy" eventType="touchUpInside" id="Aeb-RR-N4x"/>
@@ -1635,7 +1631,8 @@ Said the joker to the thief,
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ph9-cQ-5vr">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ph9-cQ-5vr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
