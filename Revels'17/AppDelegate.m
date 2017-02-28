@@ -6,6 +6,7 @@
 //  Copyright © 2016 Abhishek Vora. All rights reserved.
 //
 
+#import <IQKeyboardManager/IQKeyboardManager.h>
 #import "AppDelegate.h"
 
 
@@ -27,6 +28,8 @@
 #pragma mark - Customizations
 
 - (void)customizeColors {
+	
+	[[IQKeyboardManager sharedManager] setKeyboardAppearance:UIKeyboardAppearanceDark];
 	
 	[SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
 	[SVProgressHUD setBackgroundColor:[UIColor whiteColor]];
@@ -59,6 +62,7 @@
 	[[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: GLOBAL_YELLOW_COLOR} forState:UIControlStateSelected];
 	
 	[[UIView appearanceWhenContainedInInstancesOfClasses:@[[UITabBar class]]] setTintColor:GLOBAL_YELLOW_COLOR];
+
 	
 }
 

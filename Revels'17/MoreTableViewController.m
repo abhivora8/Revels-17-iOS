@@ -77,8 +77,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UINavigationController *navc;
+	
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	UINavigationController *navc;
     
     if (indexPath.section == 0) {
         
@@ -94,37 +96,29 @@
             rwvc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://proshow.mitrevels.in"]];
         }
 		
-		[self.navigationController pushViewController:rwvc animated:YES];
+		[self.navigationController presentViewController:rwvc animated:YES completion:nil];
 		
 		return;
         
-    }
-    
-    else if (indexPath.section == 1) {
+    } else if (indexPath.section == 1) {
         
         // About Revels
         
         navc = [self.storyboard instantiateViewControllerWithIdentifier:@"AboutVCNav"];
         
-    }
-    
-    else if (indexPath.section == 2) {
+    } else if (indexPath.section == 2) {
         
         // Workshops
         
         navc = [self.storyboard instantiateViewControllerWithIdentifier:@"WorkshopsVCNav"];
         
-    }
-    
-    else if (indexPath.section == 3) {
+    } else if (indexPath.section == 3) {
         
         // Favourites
         
         navc = [self.storyboard instantiateViewControllerWithIdentifier:@"FavouritesVCNav"];
         
-    }
-    
-    else if (indexPath.section == 4) {
+    } else if (indexPath.section == 4) {
         
         // Developers
         
@@ -137,8 +131,6 @@
     [navc setTransitioningDelegate:self];
     
     [self.navigationController presentViewController:navc animated:YES completion:nil];
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
 

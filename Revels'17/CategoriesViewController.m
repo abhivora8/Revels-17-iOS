@@ -46,7 +46,7 @@
 				catArray = [[CoreDataHelper getCategoriesFromJSONData:array storeIntoManagedObjectContext:self.context] mutableCopy];
 				
 				dispatch_async(dispatch_get_main_queue(), ^{
-					dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+					dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 						SVHUD_HIDE;
 						NSError *err;
 //						animateCells = YES;
@@ -140,7 +140,7 @@
 			cell.alpha = 1.0;
 			cell.transform = CGAffineTransformIdentity;
 		} completion:^(BOOL finished) {
-			if (index >= catArray.count - 4) {
+			if (index >= 11) {
 				animateCells = NO;
 			}
 		}];

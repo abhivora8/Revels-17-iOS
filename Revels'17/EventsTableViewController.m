@@ -36,6 +36,13 @@
 	NSError *error;
 	self.events = [self.context executeFetchRequest:[EventStore fetchRequest] error:&error];
 	
+	UIImageView *headerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.catName]];
+	headerImageView.contentMode = UIViewContentModeScaleAspectFit;
+	headerImageView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 80);
+	self.tableView.tableHeaderView = headerImageView;
+	
+	self.tableView.contentOffset = CGPointMake(0, 80);
+	
 }
 
 - (void)didReceiveMemoryWarning {

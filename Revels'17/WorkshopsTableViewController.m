@@ -140,7 +140,7 @@
 #pragma mark - DZN Empty Data Set Source
 
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
-	return [UIImage imageNamed:@"Revels Cutout"];
+	return [UIImage imageNamed:@"RevelsCircle"];
 }
 
 - (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView {
