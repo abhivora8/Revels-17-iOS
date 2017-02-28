@@ -124,7 +124,7 @@ typedef struct EasterEggPosition {
 	}
 	
     else if (index == 0) {
-        [devDetailView setPersonName:@"Abhishek Vora" personDetail:@"iOS Developer\nIf I wanted a warm fuzzy feeling,\nI’d antialias my graphics!" personImage:[UIImage imageNamed:@"Abhishek"]];
+        [devDetailView setPersonName:@"Abhishek Vora" personDetail:@"iOS Developer\nFailure is not an option, It comes\nbundled with your Microsoft product." personImage:[UIImage imageNamed:@"Abhishek"]];
         [devDetailView showInView:self.view animatedFromAnchorPoint:[self.hexagonalView.hexPoints[1] CGPointValue]];
     }
     

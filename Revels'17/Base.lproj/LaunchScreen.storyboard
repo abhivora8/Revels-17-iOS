@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,49 +19,7 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZ1-vG-yu2">
-                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
-                                <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="kme-Ci-WCa"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGW-2i-Z2W">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="f0O-b8-HJO"/>
-                                </constraints>
-                            </view>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Revels Cutout" translatesAutoresizingMaskIntoConstraints="NO" id="Fwa-fH-G2l">
-                                <rect key="frame" x="47" y="72" width="280" height="280"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="280" id="MQR-FI-7wY"/>
-                                    <constraint firstAttribute="width" constant="280" id="UL7-rv-elH"/>
-                                </constraints>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Revels Title Text" translatesAutoresizingMaskIntoConstraints="NO" id="EnB-H8-qtJ">
-                                <rect key="frame" x="87" y="327" width="200" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="I2F-bF-zyP"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="pGW-2i-Z2W" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-16" id="8Bt-lX-pcw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pGW-2i-Z2W" secondAttribute="trailing" constant="-16" id="K0p-U1-Bie"/>
-                            <constraint firstItem="EnB-H8-qtJ" firstAttribute="top" secondItem="Fwa-fH-G2l" secondAttribute="bottom" constant="-25" id="XHt-vU-o5B"/>
-                            <constraint firstItem="pGW-2i-Z2W" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="Yfc-Z4-GMo"/>
-                            <constraint firstItem="dZ1-vG-yu2" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-16" id="Z6e-2N-GK8"/>
-                            <constraint firstItem="EnB-H8-qtJ" firstAttribute="trailing" secondItem="Fwa-fH-G2l" secondAttribute="trailing" constant="-40" id="cTU-e9-eua"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="dZ1-vG-yu2" secondAttribute="bottom" id="fZK-rt-4yr"/>
-                            <constraint firstItem="EnB-H8-qtJ" firstAttribute="leading" secondItem="Fwa-fH-G2l" secondAttribute="leading" constant="40" id="m3l-B7-V9o"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dZ1-vG-yu2" secondAttribute="trailing" constant="-16" id="n0D-kR-Hfp"/>
-                            <constraint firstItem="Fwa-fH-G2l" firstAttribute="centerX" secondItem="pGW-2i-Z2W" secondAttribute="centerX" id="ps6-8T-1Dx"/>
-                            <constraint firstItem="Fwa-fH-G2l" firstAttribute="top" secondItem="pGW-2i-Z2W" secondAttribute="bottom" constant="8" id="xXh-3S-ZmW"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -70,8 +27,4 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Revels Cutout" width="480" height="480"/>
-        <image name="Revels Title Text" width="480" height="168"/>
-    </resources>
 </document>

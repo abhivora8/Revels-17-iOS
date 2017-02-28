@@ -53,16 +53,10 @@
 	ResultsTableViewCell *cell;
 	ResultsJSONModel *model = [self.filteredResults objectAtIndex:indexPath.row];
 	
-	EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", model.catID, model.eventID]] firstObject];
-	
-	if (event == nil) {
-		event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"eventID == %@", model.eventID]] firstObject];
-	}
-	
 	cell = [tableView dequeueReusableCellWithIdentifier:@"resultsCell"];
 	
-	cell.eventName.text = [NSString stringWithFormat:@"%@ (%@)", event.eventName.uppercaseString, model.round];
-	cell.categoryName.text = event.catName;
+	cell.eventName.text = [NSString stringWithFormat:@"%@ (%@)", model.eventName.uppercaseString, model.round];
+	cell.categoryName.text = model.categoryName;
 	cell.teamIDLabel.text = [NSString stringWithFormat:@"Team: %@", model.teamID];
 	cell.posLabel.text = [NSString stringWithFormat:@"Pos: %@", model.pos];
 	
@@ -114,7 +108,7 @@
 - (void)filterResultsWithSearchText:(NSString *)searchText {
 	self.filteredResults = [self.allResults mutableCopy];
 	if (searchText.length > 0) {
-		[self.filteredResults filterUsingPredicate:[NSPredicate predicateWithFormat:@"eventName contains[cd] %@ OR teamID contains[cd] %@", searchText, searchText]];
+		[self.filteredResults filterUsingPredicate:[NSPredicate predicateWithFormat:@"eventName contains[cd] %@ OR categoryName contains[cd] %@ OR teamID contains[cd] %@", searchText, searchText, searchText]];
 	}
 	[self.tableView reloadData];
 }

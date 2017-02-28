@@ -13,6 +13,8 @@
 @property (nonatomic) NSString *teamID;
 @property (nonatomic) NSString *catID;
 @property (nonatomic) NSString *eventID;
+@property (nonatomic) NSString *eventName;
+@property (nonatomic) NSString *categoryName;
 @property (nonatomic) NSString *round;
 @property (nonatomic) NSString *pos;
 
