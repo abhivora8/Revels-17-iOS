@@ -17,9 +17,9 @@
 	if (dict != nil) {
 		
 		@try {
-			category.catID = [dict objectForKey:@"cid"];
-			category.catName = [dict objectForKey:@"cname"];
-			category.catDesc = [dict objectForKey:@"cdesc"];
+			category.catID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"cid"]];
+			category.catName = [NSString stringWithFormat:@"%@", [dict objectForKey:@"cname"]];
+			category.catDesc = [NSString stringWithFormat:@"%@", [dict objectForKey:@"cdesc"]];
 		} @catch (NSException *exception) {
 			NSLog(@"Exception: %@", exception.reason);
 		}
@@ -62,8 +62,8 @@
 			
 			@try {
 				
-				category.catName = [dict objectForKey:@"cname"];
-				category.catDesc = [dict objectForKey:@"cdesc"];
+				category.catName = [NSString stringWithFormat:@"%@", [dict objectForKey:@"cname"]];
+				category.catDesc = [NSString stringWithFormat:@"%@", [dict objectForKey:@"cdesc"]];
 				
 			}
 			@catch (NSException *exception) {
@@ -100,17 +100,17 @@
 	if (dict != nil) {
 		
 		@try {
-			event.eventName = [dict objectForKey:@"ename"];
-			event.eventID = [dict objectForKey:@"eid"];
-			event.eventDesc = [dict objectForKey:@"edesc"];
-			event.eventMaxTeamSize = [dict objectForKey:@"emaxteamsize"];
-			event.catID = [dict objectForKey:@"cid"];
-			event.catName = [dict objectForKey:@"cname"];
-			event.contactName = [dict objectForKey:@"cntctname"];
-			event.contactNumber = [dict objectForKey:@"cntctno"];
-			event.hashtag = [dict objectForKey:@"hash"];
-			event.type = [dict objectForKey:@"type"];
-			event.day = [dict objectForKey:@"day"];
+			event.eventName = [NSString stringWithFormat:@"%@", [dict objectForKey:@"ename"]];
+			event.eventID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"eid"]];
+			event.eventDesc = [NSString stringWithFormat:@"%@", [dict objectForKey:@"edesc"]];
+			event.eventMaxTeamSize = [NSString stringWithFormat:@"%@", [dict objectForKey:@"emaxteamsize"]];
+			event.catID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"cid"]];
+			event.catName = [NSString stringWithFormat:@"%@", [dict objectForKey:@"cname"]];
+			event.contactName = [NSString stringWithFormat:@"%@", [dict objectForKey:@"cntctname"]];
+			event.contactNumber = [NSString stringWithFormat:@"%@", [dict objectForKey:@"cntctno"]];
+			event.hashtag = [NSString stringWithFormat:@"%@", [dict objectForKey:@"hash"]];
+			event.type = [NSString stringWithFormat:@"%@", [dict objectForKey:@"type"]];
+			event.day = [NSString stringWithFormat:@"%@", [dict objectForKey:@"day"]];
 			event.isFavorite = NO;
 
 		} @catch (NSException *exception) {
@@ -140,8 +140,8 @@
 		NSString *catID, *eventID;
 		
 		@try {
-			catID = [dict objectForKey:@"cid"];
-			eventID = [dict objectForKey:@"eid"];
+			catID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"cid"]];
+			eventID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"eid"]];
 		} @catch (NSException *exception) {
 			NSLog(@"Exception: %@", exception.description);
 			continue;
@@ -156,15 +156,15 @@
 			
 			@try {
 				
-				event.eventName = [dict objectForKey:@"ename"];
-				event.eventDesc = [dict objectForKey:@"edesc"];
-				event.eventMaxTeamSize = [dict objectForKey:@"emaxteamsize"];
-				event.catName = [dict objectForKey:@"cname"];
-				event.contactName = [dict objectForKey:@"cntctname"];
-				event.contactNumber = [dict objectForKey:@"cntctno"];
-				event.hashtag = [dict objectForKey:@"hash"];
-				event.type = [dict objectForKey:@"type"];
-				event.day = [dict objectForKey:@"day"];
+				event.eventName = [NSString stringWithFormat:@"%@", [dict objectForKey:@"ename"]];
+				event.eventDesc = [NSString stringWithFormat:@"%@", [dict objectForKey:@"edesc"]];
+				event.eventMaxTeamSize = [NSString stringWithFormat:@"%@", [dict objectForKey:@"emaxteamsize"]];
+				event.catName = [NSString stringWithFormat:@"%@", [dict objectForKey:@"cname"]];
+				event.contactName = [NSString stringWithFormat:@"%@", [dict objectForKey:@"cntctname"]];
+				event.contactNumber = [NSString stringWithFormat:@"%@", [dict objectForKey:@"cntctno"]];
+				event.hashtag = [NSString stringWithFormat:@"%@", [dict objectForKey:@"hash"]];
+				event.type = [NSString stringWithFormat:@"%@", [dict objectForKey:@"type"]];
+				event.day = [NSString stringWithFormat:@"%@", [dict objectForKey:@"day"]];
 				
 			}
 			@catch (NSException *exception) {
@@ -200,14 +200,14 @@
 	if (dict != nil) {
 		
 		@try {
-			schedule.eventID = [dict objectForKey:@"eid"];
-			schedule.catID = [dict objectForKey:@"catid"];
-			schedule.day = [dict objectForKey:@"day"];
-			schedule.stime = [dict objectForKey:@"stime"];
-			schedule.etime = [dict objectForKey:@"etime"];
-			schedule.venue = [dict objectForKey:@"venue"];
-			schedule.round = [dict objectForKey:@"round"];
-			schedule.date = [dict objectForKey:@"date"];
+			schedule.eventID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"eid"]];
+			schedule.catID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"catid"]];
+			schedule.day = [NSString stringWithFormat:@"%@", [dict objectForKey:@"day"]];
+			schedule.stime = [NSString stringWithFormat:@"%@", [dict objectForKey:@"stime"]];
+			schedule.etime = [NSString stringWithFormat:@"%@", [dict objectForKey:@"etime"]];
+			schedule.venue = [NSString stringWithFormat:@"%@", [dict objectForKey:@"venue"]];
+			schedule.round = [NSString stringWithFormat:@"%@", [dict objectForKey:@"round"]];
+			schedule.date = [NSString stringWithFormat:@"%@", [dict objectForKey:@"date"]];
 			
 		} @catch (NSException *exception) {
 			NSLog(@"Exception: %@", exception.reason);
@@ -236,10 +236,10 @@
 		NSString *catID, *eventID, *round, *date;
 		
 		@try {
-			catID = [dict objectForKey:@"catid"];
-			eventID = [dict objectForKey:@"eid"];
-			round = [dict objectForKey:@"round"];
-			date = [dict objectForKey:@"date"];
+			catID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"catid"]];
+			eventID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"eid"]];
+			round = [NSString stringWithFormat:@"%@", [dict objectForKey:@"round"]];
+			date = [NSString stringWithFormat:@"%@", [dict objectForKey:@"date"]];
 		} @catch (NSException *exception) {
 			NSLog(@"Exception: %@", exception.description);
 			continue;
@@ -254,10 +254,10 @@
 			
 			@try {
 				
-				schedule.stime = [dict objectForKey:@"stime"];
-				schedule.etime = [dict objectForKey:@"etime"];
-				schedule.venue = [dict objectForKey:@"venue"];
-				schedule.day = [dict objectForKey:@"day"];
+				schedule.stime = [NSString stringWithFormat:@"%@", [dict objectForKey:@"stime"]];
+				schedule.etime = [NSString stringWithFormat:@"%@", [dict objectForKey:@"etime"]];
+				schedule.venue = [NSString stringWithFormat:@"%@", [dict objectForKey:@"venue"]];
+				schedule.day = [NSString stringWithFormat:@"%@", [dict objectForKey:@"day"]];
 			}
 			@catch (NSException *exception) {
 				NSLog(@"Exception: %@", exception.description);
