@@ -16,6 +16,10 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
+@property (nonatomic) BOOL peeking;
+
+@property (nonatomic) UIViewController *parentX;
+
 @property (nonatomic, strong) NSMutableArray <InstagramData *> *instagramObjects;
 @property (nonatomic) NSInteger presentationIndex;
 
