@@ -165,8 +165,6 @@
 		[self.viewControllers addObject:ebdtvc];
 	}
 	
-	[self.pageViewController setViewControllers:@[self.viewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-	
 	lastIndex = 0;
 	self.eventsSegmentedView.selectedSegmentIndex = 0;
 	[self eventDayChanged:self.eventsSegmentedView];
@@ -188,6 +186,8 @@
 	} else {
 		[self populateChildControllers];
 	}
+	
+	[self.pageViewController setViewControllers:@[self.viewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 	
 	[self loadEventsFromApi];
 	[self loadScheduleFromApi];

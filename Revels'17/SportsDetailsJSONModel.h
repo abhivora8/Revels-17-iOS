@@ -11,13 +11,15 @@
 @interface SportsDetailsJSONModel : NSObject
 
 @property (nonatomic) NSString *teamID;
+@property (nonatomic) NSString *catID;
+@property (nonatomic) NSString *eventID;
 @property (nonatomic) NSString *eventName;
 @property (nonatomic) NSString *round;
 @property (nonatomic) NSString *pos;
 @property (nonatomic) NSString *teamSize;
 @property (nonatomic) NSString *day;
 
--(instancetype)initWithData:(id)myData;
-+(NSMutableArray *)getArrayFromJson:(id)myData;
+- (instancetype)initWithData:(id)myData;
++ (NSMutableArray *)getArrayFromJson:(id)myData;
 
 @end

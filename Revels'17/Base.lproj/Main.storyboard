@@ -22,6 +22,9 @@
         <array key="neutra2displaybold.ttf">
             <string>Neutraface2Display-Bold</string>
         </array>
+        <array key="neutra2displaylight.ttf">
+            <string>Neutraface2Display-Light</string>
+        </array>
         <array key="neutra2displaymedium.ttf">
             <string>Neutraface2Display-Medium</string>
         </array>
@@ -91,33 +94,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kfZ-gW-okQ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="separatorColor" red="0.12012769536041142" green="0.15693187713623047" blue="0.059359985223619356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="xVv-fQ-vsu" id="icy-4b-weL"/>
-                                    <outlet property="delegate" destination="xVv-fQ-vsu" id="E4C-J7-aru"/>
-                                </connections>
-                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIN-IN-vQQ">
+                                <rect key="frame" x="-4" y="107" width="383" height="520"/>
+                                <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pjF-6f-Ado">
+                                <rect key="frame" x="-4" y="64" width="383" height="43"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="goY-UY-i36">
+                                        <rect key="frame" x="8" y="8" width="367" height="29"/>
+                                        <segments>
+                                            <segment title="All Results"/>
+                                            <segment title="Sports Results"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="segmentedControlValueChanged:" destination="xVv-fQ-vsu" eventType="valueChanged" id="81e-in-NzK"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="goY-UY-i36" secondAttribute="bottom" constant="7" id="6Nt-Om-iI3"/>
+                                    <constraint firstAttribute="trailing" secondItem="goY-UY-i36" secondAttribute="trailing" constant="8" id="dpc-NT-oak"/>
+                                    <constraint firstItem="goY-UY-i36" firstAttribute="leading" secondItem="pjF-6f-Ado" secondAttribute="leading" constant="8" id="vEz-NW-kDJ"/>
+                                    <constraint firstItem="goY-UY-i36" firstAttribute="top" secondItem="pjF-6f-Ado" secondAttribute="top" constant="8" id="yhc-5t-D3P"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="kfZ-gW-okQ" firstAttribute="leading" secondItem="X68-QK-ZWg" secondAttribute="leading" id="6Nk-nH-ojH"/>
-                            <constraint firstItem="kfZ-gW-okQ" firstAttribute="top" secondItem="oOc-fB-cHA" secondAttribute="bottom" id="Icb-Wu-gPy"/>
-                            <constraint firstItem="8gp-Yz-Wqn" firstAttribute="top" secondItem="kfZ-gW-okQ" secondAttribute="bottom" constant="-49" id="OEv-Aw-oyB"/>
-                            <constraint firstAttribute="trailing" secondItem="kfZ-gW-okQ" secondAttribute="trailing" id="cCF-zV-5Gp"/>
+                            <constraint firstItem="pjF-6f-Ado" firstAttribute="leading" secondItem="X68-QK-ZWg" secondAttribute="leadingMargin" constant="-20" id="7c5-iA-dII"/>
+                            <constraint firstItem="pjF-6f-Ado" firstAttribute="top" secondItem="oOc-fB-cHA" secondAttribute="bottom" id="98i-RO-zHk"/>
+                            <constraint firstItem="VIN-IN-vQQ" firstAttribute="top" secondItem="pjF-6f-Ado" secondAttribute="bottom" id="9p0-Re-HCO"/>
+                            <constraint firstItem="VIN-IN-vQQ" firstAttribute="leading" secondItem="X68-QK-ZWg" secondAttribute="leadingMargin" constant="-20" id="Btj-Dd-3A8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pjF-6f-Ado" secondAttribute="trailing" constant="-20" id="Epb-cU-FFD"/>
+                            <constraint firstItem="8gp-Yz-Wqn" firstAttribute="top" secondItem="VIN-IN-vQQ" secondAttribute="bottom" constant="-9" id="H3R-FH-wGU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VIN-IN-vQQ" secondAttribute="trailing" constant="-20" id="yPE-SL-UJW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="6du-Zb-9pc"/>
+                    <navigationItem key="navigationItem" id="6du-Zb-9pc">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="resultsTableView" destination="kfZ-gW-okQ" id="2PF-uS-h4B"/>
+                        <outlet property="containerView" destination="VIN-IN-vQQ" id="ae0-ui-g3W"/>
+                        <outlet property="segmentedControl" destination="goY-UY-i36" id="c6z-mm-eGA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AvE-eT-crw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="760.79999999999995" y="1554.872563718141"/>
+        </scene>
+        <!--All Results Table View Controller-->
+        <scene sceneID="c7h-fB-ZPW">
+            <objects>
+                <tableViewController storyboardIdentifier="AllResultsVC" id="fD1-g5-Z3N" customClass="AllResultsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="IuP-Dh-qyL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="fD1-g5-Z3N" id="e1I-wo-mYo"/>
+                            <outlet property="delegate" destination="fD1-g5-Z3N" id="bjm-eu-fZ1"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bme-cU-hSe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1494" y="1555"/>
+        </scene>
+        <!--Sports Results Table View Controller-->
+        <scene sceneID="JxU-Qh-pkV">
+            <objects>
+                <tableViewController storyboardIdentifier="SportsResultsVC" id="59P-kb-1K9" customClass="SportsResultsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="SxD-sw-rkk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="59P-kb-1K9" id="aAX-iz-tLG"/>
+                            <outlet property="delegate" destination="59P-kb-1K9" id="Ux9-at-2tu"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vTl-sB-yMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2276" y="1555"/>
         </scene>
         <!--Categories Page View Controller-->
         <scene sceneID="t6M-0e-ofK">
@@ -293,7 +355,7 @@
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vAr-Rn-YD1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vAr-Rn-YD1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -314,7 +376,7 @@
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="js2-qv-wm2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="js2-qv-wm2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -357,7 +419,7 @@
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bdM-zz-1IJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bdM-zz-1IJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -375,7 +437,7 @@
             <objects>
                 <navigationController storyboardIdentifier="DevelopersVCNav" automaticallyAdjustsScrollViewInsets="NO" id="ldJ-8C-TOf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Piq-YQ-ADn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Piq-YQ-ADn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -414,7 +476,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m2l-nK-qZR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2276" y="3037"/>
+            <point key="canvasLocation" x="2276" y="3036"/>
         </scene>
         <!--More-->
         <scene sceneID="upI-TV-VPa">
@@ -616,7 +678,7 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vvb-pa-M8e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vvb-pa-M8e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -642,7 +704,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vDf-w1-TRO" customClass="DynamicLabel">
-                                <rect key="frame" x="16" y="572.5" width="343" height="41"/>
+                                <rect key="frame" x="16" y="572" width="343" height="41"/>
                                 <fontDescription key="fontDescription" name="PixelCalculon" family="Pixel Calculon" pointSize="32"/>
                                 <color key="textColor" red="0.76862745099999996" green="0.21960784310000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -656,7 +718,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUG Manipal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2h-aQ-vaj">
-                                <rect key="frame" x="16" y="621.5" width="343" height="25.5"/>
+                                <rect key="frame" x="16" y="621" width="343" height="26"/>
                                 <fontDescription key="fontDescription" name="PixelCalculon" family="Pixel Calculon" pointSize="20"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -695,21 +757,21 @@ Said the joker to the thief,
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kr0-9G-C2U">
-                                <rect key="frame" x="168" y="524.5" width="40" height="40"/>
+                                <rect key="frame" x="168" y="524" width="40" height="40"/>
                                 <state key="normal" image="sfacebook"/>
                                 <connections>
                                     <action selector="facebookAction:" destination="kCm-Yv-kyy" eventType="touchUpInside" id="S5J-fD-lLK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFt-vp-W0t">
-                                <rect key="frame" x="112" y="524.5" width="40" height="40"/>
+                                <rect key="frame" x="112" y="524" width="40" height="40"/>
                                 <state key="normal" image="sgithub"/>
                                 <connections>
                                     <action selector="githubAction:" destination="kCm-Yv-kyy" eventType="touchUpInside" id="uaB-1x-K4B"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhD-2D-UHt">
-                                <rect key="frame" x="224" y="524.5" width="40" height="40"/>
+                                <rect key="frame" x="224" y="524" width="40" height="40"/>
                                 <state key="normal" image="ssafari"/>
                                 <connections>
                                     <action selector="websiteAction:" destination="kCm-Yv-kyy" eventType="touchUpInside" id="Aeb-RR-N4x"/>
@@ -774,7 +836,7 @@ Said the joker to the thief,
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="sectionIndexBackgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection id="qSi-7f-1QO">
                                 <cells>
@@ -846,9 +908,9 @@ Said the joker to the thief,
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L6g-3H-JC7">
                                                     <rect key="frame" x="16" y="2" width="343" height="56"/>
-                                                    <string key="text">Revels’16 presents the theme of the fest
-“Dastaan | Everybody has a story”</string>
-                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                                    <string key="text">Revels’17 presents the theme of the fest
+“Carnaval | The Rhythm of Life”</string>
+                                                    <fontDescription key="fontDescription" name="Neutraface2Display-Light" family="Neutraface 2 Display" pointSize="26"/>
                                                     <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -871,8 +933,7 @@ Said the joker to the thief,
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QKq-T6-3YA">
                                                     <rect key="frame" x="16" y="2" width="343" height="176"/>
-                                                    <string key="text">Everyone you meet has a part to play in your story. When you look at a person, any person, remember that everyone has a story, everyone has gone through something, something that might inspire you. While some may take a chapter, others a paragraph and most will be no more than scribbled notes in the margins and you’ll reach somewhere which will become so integral to your life that you’ll put that name in the title - 
-“Revels’16”</string>
+                                                    <string key="text">Life, in its innumerable twists and turns provides us with both opportunities and failures. Yet it is what we do with it that makes the difference. Life is a carnival, one in which we wait in long lines to enjoy short rides, but it's those moments of excitement that inspire us to reach our limits. It is those movements which fuel our imaginations, inspire our creativity, and makes us feel alive.</string>
                                                     <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
                                                     <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -896,7 +957,8 @@ Said the joker to the thief,
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Op9-jo-w5B">
                                                     <rect key="frame" x="16" y="6" width="343" height="84"/>
-                                                    <string key="text">Live your sorrow, Live your pain, Live your laughter, Live revels ’16 because in the end, what we will be left with is a “Dastaan”, a story created at Manipal, a story that would make all the difference.</string>
+                                                    <string key="text">Forget all your worries for a little while, it's time to live a little more.
+"Revels’17 - the biggest carnaval is coming your way!"</string>
                                                     <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="16"/>
                                                     <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1012,7 +1074,7 @@ Said the joker to the thief,
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cn8-EZ-U7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6194" y="3839"/>
+            <point key="canvasLocation" x="6185" y="3892"/>
         </scene>
         <!--About Us-->
         <scene sceneID="uzb-Ec-TJ6">
@@ -1020,7 +1082,7 @@ Said the joker to the thief,
                 <navigationController storyboardIdentifier="AboutVCNav" automaticallyAdjustsScrollViewInsets="NO" id="9Xz-SB-xLY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="About Us" image="44aboutIcon" id="Vaa-zB-J4N"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ggQ-H1-p5V">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ggQ-H1-p5V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.95686274510000002" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1037,7 +1099,7 @@ Said the joker to the thief,
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zNu-VH-x6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5414" y="3837"/>
+            <point key="canvasLocation" x="5417" y="3833"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="rtx-74-rqu">
@@ -1045,7 +1107,7 @@ Said the joker to the thief,
                 <navigationController storyboardIdentifier="FavouritesVCNav" automaticallyAdjustsScrollViewInsets="NO" id="gQN-hy-vMr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favourites" image="44favouritesIcon" id="xKb-qx-d5z"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="nBE-QJ-pyV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nBE-QJ-pyV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1234,7 +1296,7 @@ Said the joker to the thief,
                     </connections>
                 </searchBar>
             </objects>
-            <point key="canvasLocation" x="761" y="3840"/>
+            <point key="canvasLocation" x="761" y="3833"/>
         </scene>
         <!--Instagram Detail View Controller-->
         <scene sceneID="csb-n4-5nB">
@@ -1461,7 +1523,7 @@ Said the joker to the thief,
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B63-YD-5hV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3042" y="3827"/>
+            <point key="canvasLocation" x="3042" y="3823"/>
         </scene>
         <!--Workshops-->
         <scene sceneID="nMK-gb-Fnu">
@@ -1486,7 +1548,7 @@ Said the joker to the thief,
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wHF-yv-qJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4638" y="3839"/>
+            <point key="canvasLocation" x="4638" y="3833"/>
         </scene>
         <!--Instagram Root View Controller-->
         <scene sceneID="Njo-fg-pxn">
@@ -1540,7 +1602,7 @@ Said the joker to the thief,
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jwg-Pv-LIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1503" y="3840"/>
+            <point key="canvasLocation" x="1494" y="3834"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="0BE-Gv-MLs">
@@ -1548,7 +1610,7 @@ Said the joker to the thief,
                 <pageViewController storyboardIdentifier="InstagramPageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="7rd-bE-NTq" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xh-QP-W6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2274" y="3840"/>
+            <point key="canvasLocation" x="2276" y="3836"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cak-Gx-lr8">
@@ -1558,7 +1620,7 @@ Said the joker to the thief,
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ph9-cQ-5vr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ph9-cQ-5vr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -1572,14 +1634,14 @@ Said the joker to the thief,
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D7W-9O-Ccl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="3840"/>
+            <point key="canvasLocation" x="1" y="3833"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Myy-mS-a6X">
             <objects>
                 <navigationController storyboardIdentifier="WorkshopsVCNav" automaticallyAdjustsScrollViewInsets="NO" id="SK4-xb-OTN" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xYj-x8-LGG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xYj-x8-LGG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1590,7 +1652,7 @@ Said the joker to the thief,
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7f-kY-fNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3885.5999999999999" y="3838.8305847076463"/>
+            <point key="canvasLocation" x="3886" y="3833"/>
         </scene>
     </scenes>
     <resources>

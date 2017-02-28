@@ -16,7 +16,7 @@
 @property (nonatomic) NSString *round;
 @property (nonatomic) NSString *pos;
 
--(instancetype)initWithData:(id)myData;
-+(NSMutableArray *)getArrayFromJson:(id)myData;
+- (instancetype)initWithData:(id)myData;
++ (NSMutableArray *)getArrayFromJson:(id)myData;
 
 @end

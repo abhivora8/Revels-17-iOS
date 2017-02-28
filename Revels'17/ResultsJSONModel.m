@@ -14,27 +14,28 @@
 {
     self = [super init];
     
-    if(self) {
-        if (myData && [myData isKindOfClass:[NSDictionary class]]) {
-            self.catID = [myData objectForKey:@"cat"];
-            self.eventID = [myData objectForKey:@"eve"];
-            self.round = [myData objectForKey:@"round"];
-            self.pos = [myData objectForKey:@"pos"];
-            self.teamID = [myData objectForKey:@"tid"];
-        }
+    if (self) {
+		@try {
+            self.catID = [NSString stringWithFormat:@"%@", [myData objectForKey:@"cat"]];
+            self.eventID = [NSString stringWithFormat:@"%@", [myData objectForKey:@"eve"]];
+            self.round = [NSString stringWithFormat:@"%@", [myData objectForKey:@"round"]];
+            self.pos = [NSString stringWithFormat:@"%@", [myData objectForKey:@"pos"]];
+            self.teamID = [NSString stringWithFormat:@"%@", [myData objectForKey:@"tid"]];
+		} @catch (NSException *exception) {
+			NSLog(@"Exc: %@", exception.reason);
+		}
     }
     return self;
     
 }
 
-+(NSMutableArray *)getArrayFromJson:(id)myData
-{
++ (NSMutableArray *)getArrayFromJson:(id)myData {
     NSMutableArray *array = [NSMutableArray new];
-    for(NSDictionary *dict in myData)
-    {
+    for (NSDictionary *dict in myData) {
         ResultsJSONModel *mod = [[ResultsJSONModel alloc] initWithData:dict];
         [array addObject:mod];
     }
+	[array sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"catID" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"eventID" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"round" ascending:YES]]];
     return array;
 }
 
