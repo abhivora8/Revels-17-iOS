@@ -8,7 +8,7 @@ Open-Source Project.
 [<img src="images/preview.jpg">](https://itunes.apple.com/in/app/revels17/id967230420?mt=8)
 
 --------------------
-##Features
+## Features
 
 - 3D Touch enabled Quick Action Menus from homescreen
 - Offline Save
@@ -24,7 +24,7 @@ Open-Source Project.
 
 --------------------
 
-##The app uses:
+## The app uses:
 
 - [Firebase](http://firebase.google.com) as backend for notifications and alerts.
 - [SDWebImage](https://github.com/rs/SDWebImage) for caching and async loading of images.
@@ -36,7 +36,7 @@ Open-Source Project.
 
 --------------------
 
-###Keys
+### Keys
 
 The Project uses [Firebase](http://firebase.google.com) as backend and therefore needs Client key and Application ID.  
 To obtain these you may message us at our [Facebook Page](https://www.facebook.com/LUGManipal/).
