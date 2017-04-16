@@ -24,6 +24,7 @@
 	
 	[self customizeColors];
 	
+	// For the "GoogleService-Info.plist", contact LUGM
 	[FIRApp configure];
 	
 	UIMutableApplicationShortcutItem *catItem = [[UIMutableApplicationShortcutItem alloc] initWithType:@"favorites" localizedTitle:@"Favorites"];

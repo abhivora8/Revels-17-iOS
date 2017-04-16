@@ -4,10 +4,8 @@ The Official iOS App for Revels'17 cultural fest of MIT, Manipal.
 
 Open-Source Project.
 
-[<img src="images/revels.png" width=180>](http://www.mitrevels.in)
+[<img src="images/revels.png" width=72>](http://www.mitrevels.in)
 [<img src="images/preview.jpg">](https://itunes.apple.com/in/app/revels17/id967230420?mt=8)
-
-[![Get the app from App Store](http://www.catan.com/images/stories/Elektronische_Spiele/iPhone_Catan/AppStore_klein_24.png)](https://itunes.apple.com/in/app/revels17/id967230420?mt=8)
 
 --------------------
 ##Features
@@ -21,6 +19,8 @@ Open-Source Project.
 - Save images from Instafeed to your phone
 - Beautiful UI
 - Works good on 2G networks
+
+[![Get the app from App Store](http://www.catan.com/images/stories/Elektronische_Spiele/iPhone_Catan/AppStore_klein_24.png)](https://itunes.apple.com/in/app/revels17/id967230420?mt=8)
 
 --------------------
 

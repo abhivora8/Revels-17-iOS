@@ -36,7 +36,6 @@
 		599B5FD21E658E8C00EAB2BD /* SportsResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599B5FD11E658E8C00EAB2BD /* SportsResultsTableViewController.m */; };
 		599B5FD61E65B32F00EAB2BD /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599B5FD51E65B32F00EAB2BD /* SplashViewController.m */; };
 		599B5FD81E65B3D600EAB2BD /* RevelsIntro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 599B5FD71E65B3D300EAB2BD /* RevelsIntro.mp4 */; };
-		599B5FDA1E65D56B00EAB2BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 599B5FD91E65D56B00EAB2BD /* GoogleService-Info.plist */; };
 		D6043D491E64070F0004B93A /* FavouritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6043D481E64070F0004B93A /* FavouritesTableViewController.m */; };
 		D6043D4E1E648EE20004B93A /* ResultsJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6043D4D1E648EE20004B93A /* ResultsJSONModel.m */; };
 		D6043D521E64B5F20004B93A /* SportsDetailsJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6043D511E64B5F20004B93A /* SportsDetailsJSONModel.m */; };
@@ -126,7 +125,6 @@
 		599B5FD41E65B32F00EAB2BD /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		599B5FD51E65B32F00EAB2BD /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		599B5FD71E65B3D300EAB2BD /* RevelsIntro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = RevelsIntro.mp4; sourceTree = "<group>"; };
-		599B5FD91E65D56B00EAB2BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5C82C8B650CF896A877C5137 /* libPods-Revels'17.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Revels'17.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F277E97FEB34C8351AE9CD8 /* Pods-Revels'17.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revels'17.release.xcconfig"; path = "Pods/Target Support Files/Pods-Revels'17/Pods-Revels'17.release.xcconfig"; sourceTree = "<group>"; };
 		D6043D471E64070F0004B93A /* FavouritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouritesTableViewController.h; sourceTree = "<group>"; };
@@ -399,7 +397,6 @@
 				599B5FD71E65B3D300EAB2BD /* RevelsIntro.mp4 */,
 				591088591E5F1CDE004A04C4 /* Fonts */,
 				D62003951E572F710056E6EE /* PrefixHeader.pch */,
-				599B5FD91E65D56B00EAB2BD /* GoogleService-Info.plist */,
 				D60CA6B01E02ADA300B79D69 /* Info.plist */,
 				D60CA6AB1E02ADA300B79D69 /* Assets.xcassets */,
 				D60CA6A01E02ADA300B79D69 /* main.m */,
@@ -793,7 +790,6 @@
 				TargetAttributes = {
 					D60CA69B1E02ADA200B79D69 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = HN3SCP8A52;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -839,7 +835,6 @@
 				D6CD86A71E2FEB4F00000446 /* EventsTableViewCell.xib in Resources */,
 				591088661E5F1CDE004A04C4 /* neutra2displaythin.ttf in Resources */,
 				591088E21E63F1A0004A04C4 /* WorkshopsTableViewCell.xib in Resources */,
-				599B5FDA1E65D56B00EAB2BD /* GoogleService-Info.plist in Resources */,
 				D62003C81E5740AF0056E6EE /* DeveloperDetailView.xib in Resources */,
 				D60CA6BD1E02B00500B79D69 /* CategoriesTableViewCell.xib in Resources */,
 				D60CA6AC1E02ADA300B79D69 /* Assets.xcassets in Resources */,
@@ -1077,7 +1072,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = HN3SCP8A52;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Revels'17/PrefixHeader.pch";
@@ -1086,6 +1082,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.lugmanipal.Revels-15";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1098,7 +1095,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = HN3SCP8A52;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Revels'17/PrefixHeader.pch";
@@ -1107,6 +1105,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.lugmanipal.Revels-15";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
