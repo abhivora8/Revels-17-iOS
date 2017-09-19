@@ -12,6 +12,9 @@
 #import <KWTransition/KWTransition.h>
 #import "EasterEggViewController.h"
 
+#import <AVFoundation/AVFoundation.h>
+#import <AVKit/AVKit.h>
+
 typedef NS_ENUM(NSUInteger, EasterEggController) {
     EasterEggControllerX = 1,
     EasterEggControllerY = 2,
@@ -122,6 +125,11 @@ typedef struct EasterEggPosition {
 	if (index == 10) {
         NSLog(@"Revels logo pressed");
 		// Present video controller hehe
+		NSURL *videoURL = [NSURL URLWithString:@"https://video-bom1-1.xx.fbcdn.net/v/t43.1792-2/21669308_1392997334141392_685635853145341952_n.mp4?efg=eyJybHIiOjE1MDAsInJsYSI6MTAyNCwidmVuY29kZV90YWciOiJzdmVfaGQifQ%3D%3D&rl=1500&vabr=748&oh=7bdeb50fec9c76f5a4d28ab1d3e13bd5&oe=59C1090F"];
+		AVPlayer *player = [AVPlayer playerWithURL:videoURL];
+		AVPlayerViewController *playerViewController = [AVPlayerViewController new];
+		playerViewController.player = player;
+		[self presentViewController:playerViewController animated:YES completion:nil];
 	}
 	
     else if (index == 0) {

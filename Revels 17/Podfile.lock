@@ -15,6 +15,7 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - IQKeyboardManager (4.0.8)
   - KWTransition (0.0.4)
+  - PBJVideoPlayer (0.3.2)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - Firebase/Core
   - IQKeyboardManager
   - KWTransition
+  - PBJVideoPlayer
   - SDWebImage
   - SVProgressHUD
 
@@ -37,9 +39,10 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   IQKeyboardManager: 1a8189fa153bf09044355ee0ad36826f6767e7f7
   KWTransition: 72d59eef35ddb67769eb99a41317fa75c0444e1b
+  PBJVideoPlayer: b2f79c2139e4a74711bc900dd879cee4e7ccfef6
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 46d500c296a4c273f89e4d75f06ca0ac62ba8fc9
+PODFILE CHECKSUM: 5b1ed4770e66e199f0dc427abe6e518048e32c12
 
 COCOAPODS: 1.2.1

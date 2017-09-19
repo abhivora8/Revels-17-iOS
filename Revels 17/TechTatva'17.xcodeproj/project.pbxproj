@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		474024E0714FEDAFC755AA81 /* libPods-Revels'17.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C82C8B650CF896A877C5137 /* libPods-Revels'17.a */; };
+		0F345CD25C7A0A1A8695D3F2 /* libPods-TechTatva'17.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD2935D77D37759872937E6 /* libPods-TechTatva'17.a */; };
 		591088611E5F1CDE004A04C4 /* Neutra2Display-Titling.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5910885A1E5F1CDE004A04C4 /* Neutra2Display-Titling.otf */; };
 		591088621E5F1CDE004A04C4 /* neutra2displaybold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5910885B1E5F1CDE004A04C4 /* neutra2displaybold.ttf */; };
 		591088631E5F1CDE004A04C4 /* neutra2displayinline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5910885C1E5F1CDE004A04C4 /* neutra2displayinline.ttf */; };
@@ -88,6 +88,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C807341B364E9EFB1403042 /* Pods-TechTatva'17.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechTatva'17.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TechTatva'17/Pods-TechTatva'17.debug.xcconfig"; sourceTree = "<group>"; };
 		5910885A1E5F1CDE004A04C4 /* Neutra2Display-Titling.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neutra2Display-Titling.otf"; sourceTree = "<group>"; };
 		5910885B1E5F1CDE004A04C4 /* neutra2displaybold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = neutra2displaybold.ttf; sourceTree = "<group>"; };
 		5910885C1E5F1CDE004A04C4 /* neutra2displayinline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = neutra2displayinline.ttf; sourceTree = "<group>"; };
@@ -129,13 +130,14 @@
 		59ED8D5D1F7103C700BB7D2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5C82C8B650CF896A877C5137 /* libPods-Revels'17.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Revels'17.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F277E97FEB34C8351AE9CD8 /* Pods-Revels'17.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revels'17.release.xcconfig"; path = "Pods/Target Support Files/Pods-Revels'17/Pods-Revels'17.release.xcconfig"; sourceTree = "<group>"; };
+		99DA8B2BFA82BE0B68C566D3 /* Pods-TechTatva'17.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechTatva'17.release.xcconfig"; path = "Pods/Target Support Files/Pods-TechTatva'17/Pods-TechTatva'17.release.xcconfig"; sourceTree = "<group>"; };
 		D6043D471E64070F0004B93A /* FavouritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouritesTableViewController.h; sourceTree = "<group>"; };
 		D6043D481E64070F0004B93A /* FavouritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouritesTableViewController.m; sourceTree = "<group>"; };
 		D6043D4C1E648EE20004B93A /* ResultsJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsJSONModel.h; sourceTree = "<group>"; };
 		D6043D4D1E648EE20004B93A /* ResultsJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsJSONModel.m; sourceTree = "<group>"; };
 		D6043D501E64B5F20004B93A /* SportsDetailsJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsDetailsJSONModel.h; sourceTree = "<group>"; };
 		D6043D511E64B5F20004B93A /* SportsDetailsJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsDetailsJSONModel.m; sourceTree = "<group>"; };
-		D60CA69C1E02ADA300B79D69 /* Revels'17.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Revels'17.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D60CA69C1E02ADA300B79D69 /* TechTatva'17.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TechTatva'17.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60CA6A01E02ADA300B79D69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D60CA6A21E02ADA300B79D69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D60CA6A31E02ADA300B79D69 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		D6FC72791E5E037900ED76EA /* EventsDetailsJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsDetailsJSONModel.h; sourceTree = "<group>"; };
 		D6FC727A1E5E037900ED76EA /* EventsDetailsJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsDetailsJSONModel.m; sourceTree = "<group>"; };
 		FD1901EFD50286870DA04BBE /* Pods-Revels'17.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revels'17.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Revels'17/Pods-Revels'17.debug.xcconfig"; sourceTree = "<group>"; };
+		FFD2935D77D37759872937E6 /* libPods-TechTatva'17.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TechTatva'17.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,7 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				591088A71E62D25E004A04C4 /* CoreData.framework in Frameworks */,
-				474024E0714FEDAFC755AA81 /* libPods-Revels'17.a in Frameworks */,
+				0F345CD25C7A0A1A8695D3F2 /* libPods-TechTatva'17.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +308,8 @@
 			children = (
 				FD1901EFD50286870DA04BBE /* Pods-Revels'17.debug.xcconfig */,
 				7F277E97FEB34C8351AE9CD8 /* Pods-Revels'17.release.xcconfig */,
+				2C807341B364E9EFB1403042 /* Pods-TechTatva'17.debug.xcconfig */,
+				99DA8B2BFA82BE0B68C566D3 /* Pods-TechTatva'17.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 			children = (
 				591088A61E62D25E004A04C4 /* CoreData.framework */,
 				5C82C8B650CF896A877C5137 /* libPods-Revels'17.a */,
+				FFD2935D77D37759872937E6 /* libPods-TechTatva'17.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -357,7 +363,7 @@
 		D60CA6931E02ADA200B79D69 = {
 			isa = PBXGroup;
 			children = (
-				D60CA69E1E02ADA300B79D69 /* Revels'17 */,
+				D60CA69E1E02ADA300B79D69 /* TechTatva'17 */,
 				D60CA69D1E02ADA300B79D69 /* Products */,
 				5971CB1FF1C66DF0119CB1B2 /* Pods */,
 				83CF0BFE6636F991EF9FE28B /* Frameworks */,
@@ -367,12 +373,12 @@
 		D60CA69D1E02ADA300B79D69 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D60CA69C1E02ADA300B79D69 /* Revels'17.app */,
+				D60CA69C1E02ADA300B79D69 /* TechTatva'17.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D60CA69E1E02ADA300B79D69 /* Revels'17 */ = {
+		D60CA69E1E02ADA300B79D69 /* TechTatva'17 */ = {
 			isa = PBXGroup;
 			children = (
 				D60CA6A21E02ADA300B79D69 /* AppDelegate.h */,
@@ -383,6 +389,7 @@
 				D62003871E572D120056E6EE /* Libraries */,
 				D60CA69F1E02ADA300B79D69 /* Supporting Files */,
 			);
+			name = "TechTatva'17";
 			path = "Revels'17";
 			sourceTree = "<group>";
 		};
@@ -762,9 +769,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D60CA69B1E02ADA200B79D69 /* Revels'17 */ = {
+		D60CA69B1E02ADA200B79D69 /* TechTatva'17 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D60CA6B31E02ADA300B79D69 /* Build configuration list for PBXNativeTarget "Revels'17" */;
+			buildConfigurationList = D60CA6B31E02ADA300B79D69 /* Build configuration list for PBXNativeTarget "TechTatva'17" */;
 			buildPhases = (
 				FD1F904E5A1ABCC4915BB31B /* [CP] Check Pods Manifest.lock */,
 				D60CA6981E02ADA200B79D69 /* Sources */,
@@ -777,9 +784,9 @@
 			);
 			dependencies = (
 			);
-			name = "Revels'17";
+			name = "TechTatva'17";
 			productName = "Revels'16";
-			productReference = D60CA69C1E02ADA300B79D69 /* Revels'17.app */;
+			productReference = D60CA69C1E02ADA300B79D69 /* TechTatva'17.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -799,7 +806,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D60CA6971E02ADA200B79D69 /* Build configuration list for PBXProject "Revels'17" */;
+			buildConfigurationList = D60CA6971E02ADA200B79D69 /* Build configuration list for PBXProject "TechTatva'17" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -812,7 +819,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D60CA69B1E02ADA200B79D69 /* Revels'17 */,
+				D60CA69B1E02ADA200B79D69 /* TechTatva'17 */,
 			);
 		};
 /* End PBXProject section */
@@ -864,7 +871,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Revels'17/Pods-Revels'17-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TechTatva'17/Pods-TechTatva'17-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C7D06733D164A7FDEC6F0221 /* [CP] Copy Pods Resources */ = {
@@ -879,7 +886,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Revels'17/Pods-Revels'17-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TechTatva'17/Pods-TechTatva'17-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD1F904E5A1ABCC4915BB31B /* [CP] Check Pods Manifest.lock */ = {
@@ -1073,7 +1080,7 @@
 		};
 		D60CA6B41E02ADA300B79D69 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD1901EFD50286870DA04BBE /* Pods-Revels'17.debug.xcconfig */;
+			baseConfigurationReference = 2C807341B364E9EFB1403042 /* Pods-TechTatva'17.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1085,7 +1092,7 @@
 				INFOPLIST_FILE = "Revels'17/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.lugmanipal.Revels-15";
+				PRODUCT_BUNDLE_IDENTIFIER = "techtatva.in.techtatva-14";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1096,7 +1103,7 @@
 		};
 		D60CA6B51E02ADA300B79D69 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F277E97FEB34C8351AE9CD8 /* Pods-Revels'17.release.xcconfig */;
+			baseConfigurationReference = 99DA8B2BFA82BE0B68C566D3 /* Pods-TechTatva'17.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1108,7 +1115,7 @@
 				INFOPLIST_FILE = "Revels'17/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.lugmanipal.Revels-15";
+				PRODUCT_BUNDLE_IDENTIFIER = "techtatva.in.techtatva-14";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -1119,7 +1126,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D60CA6971E02ADA200B79D69 /* Build configuration list for PBXProject "Revels'17" */ = {
+		D60CA6971E02ADA200B79D69 /* Build configuration list for PBXProject "TechTatva'17" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D60CA6B11E02ADA300B79D69 /* Debug */,
@@ -1128,7 +1135,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D60CA6B31E02ADA300B79D69 /* Build configuration list for PBXNativeTarget "Revels'17" */ = {
+		D60CA6B31E02ADA300B79D69 /* Build configuration list for PBXNativeTarget "TechTatva'17" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D60CA6B41E02ADA300B79D69 /* Debug */,

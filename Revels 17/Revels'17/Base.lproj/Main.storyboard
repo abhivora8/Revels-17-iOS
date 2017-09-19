@@ -529,29 +529,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VISIT THE WEBSITE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dPR-I8-xAi">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="techtatva.in/" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dPR-I8-xAi">
                                                     <rect key="frame" x="15" y="0.0" width="325" height="64"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="Neutraface2Display-Medium" family="Neutraface 2 Display" pointSize="26"/>
-                                                    <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="fjW-d0-gyD" rowHeight="64" style="IBUITableViewCellStyleDefault" id="Em5-oP-63o">
-                                        <rect key="frame" x="0.0" y="119.5" width="375" height="64"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Em5-oP-63o" id="jtj-ny-zFB">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="PROSHOW PORTAL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fjW-d0-gyD">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="Neutraface2Display-Medium" family="Neutraface 2 Display" pointSize="26"/>
-                                                    <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="Neutraface2Display-Bold" family="Neutraface 2 Display" pointSize="30"/>
+                                                    <color key="textColor" red="0.090196078430000007" green="0.72941176470000002" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -563,7 +545,7 @@
                             <tableViewSection headerTitle="" id="YtO-TS-Bnn">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="8hz-gh-lWE" imageView="bg1-m2-dmH" rowHeight="52" style="IBUITableViewCellStyleDefault" id="ghS-zk-9H9">
-                                        <rect key="frame" x="0.0" y="199.5" width="375" height="52"/>
+                                        <rect key="frame" x="0.0" y="135.5" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghS-zk-9H9" id="B6e-ax-cSB">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="52"/>
@@ -589,7 +571,7 @@
                             <tableViewSection headerTitle="" id="Vcn-0a-cZF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="qac-sn-r0P" imageView="1lZ-96-o7T" rowHeight="52" style="IBUITableViewCellStyleDefault" id="th7-7Z-zQL">
-                                        <rect key="frame" x="0.0" y="267.5" width="375" height="52"/>
+                                        <rect key="frame" x="0.0" y="203.5" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="th7-7Z-zQL" id="rMc-eg-jlU">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="52"/>
@@ -615,7 +597,7 @@
                             <tableViewSection headerTitle="" id="QlE-bi-rSX">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="6jU-UI-3ye" imageView="lC0-JC-cIy" rowHeight="52" style="IBUITableViewCellStyleDefault" id="mCq-6n-o73">
-                                        <rect key="frame" x="0.0" y="335.5" width="375" height="52"/>
+                                        <rect key="frame" x="0.0" y="271.5" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mCq-6n-o73" id="9ti-eZ-uAU">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="52"/>
@@ -641,7 +623,7 @@
                             <tableViewSection headerTitle="" id="AJz-Z0-z3c">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="EY8-Es-Dlh" imageView="gr6-0a-jak" rowHeight="52" style="IBUITableViewCellStyleDefault" id="qlY-0K-QZh">
-                                        <rect key="frame" x="0.0" y="403.5" width="375" height="52"/>
+                                        <rect key="frame" x="0.0" y="339.5" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qlY-0K-QZh" id="MOB-Qd-L7c">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="52"/>
@@ -1152,7 +1134,7 @@ Said the joker to the thief,
             </objects>
             <point key="canvasLocation" x="4638" y="3037"/>
         </scene>
-        <!--#Revels17-->
+        <!--#TechTatva17-->
         <scene sceneID="zFp-zQ-eFo">
             <objects>
                 <viewController storyboardIdentifier="InstagramV2VC" id="360-h5-u8M" customClass="InstagramV2ViewController" sceneMemberID="viewController">
@@ -1278,7 +1260,7 @@ Said the joker to the thief,
                             <constraint firstAttribute="trailingMargin" secondItem="cf4-JJ-VND" secondAttribute="trailing" constant="-20" id="gol-Ba-Z6V"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="#Revels17" id="5ck-IV-xiL">
+                    <navigationItem key="navigationItem" title="#TechTatva17" id="5ck-IV-xiL">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="87p-Pl-kCp">
                             <connections>
                                 <action selector="refreshAction:" destination="360-h5-u8M" id="9ML-6l-7Pw"/>
