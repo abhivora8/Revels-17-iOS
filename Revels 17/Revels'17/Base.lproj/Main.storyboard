@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tYj-7b-MiY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tYj-7b-MiY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -845,7 +845,7 @@ Said the joker to the thief,
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qB0-1A-C61">
                                                     <rect key="frame" x="156" y="12" width="203" height="112"/>
-                                                    <string key="text">Revels is one of the most awaited cultural and sports festival in the south circuit amongst the engineering colleges and is widely regarded as the largest event in Karnataka. </string>
+                                                    <string key="text">Nautilus, in "20,000 Leagues Under the Sea", was imagined by Jules Verne a full twenty-four years before Simon Lake used it as a reference to realise his dream of building a working submarine.</string>
                                                     <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="16"/>
                                                     <color key="textColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -874,7 +874,7 @@ Said the joker to the thief,
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aRz-w5-KFO">
                                                     <rect key="frame" x="16" y="6" width="343" height="104"/>
-                                                    <string key="text">This year, we plan to stop at nothing, and make this fest not just a success, but an enduring part of every participant’s life. We attempt to provide the participants a platform where they can pursue their passion, perceive it, believe in it and achieve their goals.</string>
+                                                    <string key="text"> Technology has a rich history of first appearing in fiction, before pioneers of the age bring such ideas into reality. Gadgets resembling Google Glass, Skype's realtime language translator, and iPads have appeared in Star Trek more than three decades before the world got their hands on working versions of them.</string>
                                                     <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="16"/>
                                                     <color key="textColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -896,11 +896,9 @@ Said the joker to the thief,
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L6g-3H-JC7">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TechTatva '17 pays its tribute to this nexus between artists and scientists with its theme &quot;Realising Fiction&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L6g-3H-JC7">
                                                     <rect key="frame" x="16" y="2" width="343" height="56"/>
-                                                    <string key="text">Revels’17 presents the theme of the fest
-“Carnaval | The Rhythm of Life”</string>
-                                                    <fontDescription key="fontDescription" name="Neutraface2Display-Light" family="Neutraface 2 Display" pointSize="26"/>
+                                                    <fontDescription key="fontDescription" name="Neutraface2Display-Light" family="Neutraface 2 Display" pointSize="28"/>
                                                     <color key="textColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -923,8 +921,8 @@ Said the joker to the thief,
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QKq-T6-3YA">
                                                     <rect key="frame" x="16" y="2" width="343" height="176"/>
-                                                    <string key="text">Life, in its innumerable twists and turns provides us with both opportunities and failures. Yet it is what we do with it that makes the difference. Life is a carnival, one in which we wait in long lines to enjoy short rides, but it's those moments of excitement that inspire us to reach our limits. It is those movements which fuel our imaginations, inspire our creativity, and makes us feel alive.</string>
-                                                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
+                                                    <string key="text">With projects and events that bring out the innovative genius in you, here's to hoping somewhere in this fest you bring your day-dreams to reality too!</string>
+                                                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
                                                     <color key="textColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -938,37 +936,12 @@ Said the joker to the thief,
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="96" id="B3x-nN-wf9">
-                                        <rect key="frame" x="0.0" y="488" width="375" height="96"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B3x-nN-wf9" id="rZF-UI-5UT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Op9-jo-w5B">
-                                                    <rect key="frame" x="16" y="6" width="343" height="84"/>
-                                                    <string key="text">Forget all your worries for a little while, it's time to live a little more.
-"Revels’17 - the biggest carnaval is coming your way!"</string>
-                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="16"/>
-                                                    <color key="textColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Op9-jo-w5B" secondAttribute="bottom" constant="-2" id="Uv0-uw-yip"/>
-                                                <constraint firstItem="Op9-jo-w5B" firstAttribute="leading" secondItem="rZF-UI-5UT" secondAttribute="leadingMargin" constant="8" id="hvb-sa-FRs"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Op9-jo-w5B" secondAttribute="trailing" constant="8" id="jPS-KG-cTV"/>
-                                                <constraint firstItem="Op9-jo-w5B" firstAttribute="top" secondItem="rZF-UI-5UT" secondAttribute="topMargin" constant="-2" id="z40-wa-uJs"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="ECE-vG-myg">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="145" id="siX-Vv-TA2">
-                                        <rect key="frame" x="0.0" y="584" width="375" height="145"/>
+                                        <rect key="frame" x="0.0" y="488" width="375" height="145"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="siX-Vv-TA2" id="UGN-8u-56y">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="145"/>
@@ -1600,6 +1573,64 @@ Said the joker to the thief,
             </objects>
             <point key="canvasLocation" x="2276" y="3836"/>
         </scene>
+        <!--Developers Page-->
+        <scene sceneID="Nff-c8-8LM">
+            <objects>
+                <tableViewController storyboardIdentifier="DevelopersPage" id="AeL-iJ-HIP" customClass="DevelopersPage" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="28" sectionFooterHeight="28" id="QqT-7l-mlV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="devCell" rowHeight="89" id="u23-er-MtU" customClass="DevelopersPageCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="89"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u23-er-MtU" id="Ph8-w4-yyt">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="88.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EMN-aL-7g1">
+                                            <rect key="frame" x="18" y="23" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="R7H-U7-zq8"/>
+                                                <constraint firstAttribute="width" constant="60" id="bZz-XX-NRd"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ag-6c-eKb">
+                                            <rect key="frame" x="98" y="43" width="250" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="250" id="GvY-XG-A9a"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.090196078430000007" green="0.72941176470000002" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="EMN-aL-7g1" firstAttribute="leading" secondItem="Ph8-w4-yyt" secondAttribute="leadingMargin" constant="10" id="027-cd-rvM"/>
+                                        <constraint firstItem="7ag-6c-eKb" firstAttribute="leading" secondItem="EMN-aL-7g1" secondAttribute="trailing" constant="20" id="9LD-Il-yvi"/>
+                                        <constraint firstItem="7ag-6c-eKb" firstAttribute="centerY" secondItem="EMN-aL-7g1" secondAttribute="centerY" id="IyW-qZ-5mG"/>
+                                        <constraint firstItem="EMN-aL-7g1" firstAttribute="top" secondItem="Ph8-w4-yyt" secondAttribute="topMargin" constant="15" id="KDc-ST-tdb"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="developerName" destination="7ag-6c-eKb" id="7n2-PT-nlf"/>
+                                    <outlet property="devloperImage" destination="EMN-aL-7g1" id="A8H-fH-m04"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AeL-iJ-HIP" id="HAw-H5-SrD"/>
+                            <outlet property="delegate" destination="AeL-iJ-HIP" id="IOY-6l-PlZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Developers Page" id="bRX-9T-BbN"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mpn-YI-sNi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2264.8000000000002" y="4588.1559220389809"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cak-Gx-lr8">
             <objects>
@@ -1642,6 +1673,24 @@ Said the joker to the thief,
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7f-kY-fNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3886" y="3833"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SNs-Nr-hc8">
+            <objects>
+                <navigationController storyboardIdentifier="DevelopersPageNav" automaticallyAdjustsScrollViewInsets="NO" id="G1U-Dk-qFN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hAq-Pl-aik">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AeL-iJ-HIP" kind="relationship" relationship="rootViewController" id="j1M-m1-2dF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xn3-bh-EsQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1494" y="4590"/>
         </scene>
     </scenes>
     <resources>

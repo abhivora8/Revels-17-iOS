@@ -138,7 +138,7 @@ typedef struct EasterEggPosition {
     }
     
     else if (index == 3) {
-        [devDetailView setPersonName:@"Yash Kumar Lal" personDetail:@"iOS Developer\nWalking Contradiction." personImage:[UIImage imageNamed:@"Yash"]];
+        [devDetailView setPersonName:@"Mahima Borah" personDetail:@"iOS Developer\nWalking Contradiction." personImage:[UIImage imageNamed:@"Mahima"]];
         [devDetailView showInView:self.view animatedFromAnchorPoint:[self.hexagonalView.hexPoints[5] CGPointValue]];
     }
     
@@ -153,12 +153,12 @@ typedef struct EasterEggPosition {
     }
     
     else if (index == 4) {
-        [devDetailView setPersonName:@"Anuraag Baishya" personDetail:@"Android Developer\nStudent by day.\nDeveloper by night." personImage:[UIImage imageNamed:@"Anuraag"]];
+        [devDetailView setPersonName:@"Rahul Sathanapalli" personDetail:@"Android Developer\nStudent by day.\nDeveloper by night." personImage:[UIImage imageNamed:@"Rahul"]];
         [devDetailView showInView:self.view animatedFromAnchorPoint:[self.hexagonalView.hexPoints[0] CGPointValue]];
     }
     
     else if (index == 5) {
-        [devDetailView setPersonName:@"Avikant Saini" personDetail:@"iOS Developer\nIf I wanted a warm fuzzy feeling,\nI’d antialias my graphics!" personImage:[UIImage imageNamed:@"Avikant"]];
+        [devDetailView setPersonName:@"Rhitam" personDetail:@"iOS Developer\nIf I wanted a warm fuzzy feeling,\nI’d antialias my graphics!" personImage:[UIImage imageNamed:@"Rhitam"]];
         [devDetailView showInView:self.view animatedFromAnchorPoint:[self.hexagonalView.hexPoints[3] CGPointValue]];
     }
     

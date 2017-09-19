@@ -119,7 +119,7 @@
         
         // Developers
         
-        navc = [self.storyboard instantiateViewControllerWithIdentifier:@"DevelopersVCNav"];
+        navc = [self.storyboard instantiateViewControllerWithIdentifier:@"DevelopersPageNav"];
         
     }
     
