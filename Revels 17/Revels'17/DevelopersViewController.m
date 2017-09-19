@@ -121,6 +121,7 @@ typedef struct EasterEggPosition {
     
 	if (index == 10) {
         NSLog(@"Revels logo pressed");
+		// Present video controller hehe
 	}
 	
     else if (index == 0) {
@@ -159,7 +160,7 @@ typedef struct EasterEggPosition {
 
 - (void)finishedDeveloperAnimations {
     
-	[self.hexagonalView drawTopText:@"REVELS'17" withAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Futura-Medium" size:50.0], NSForegroundColorAttributeName: GLOBAL_YELLOW_COLOR}];
+	[self.hexagonalView drawTopText:@"TECHTATVA'17" withAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Futura-Medium" size:46.0], NSForegroundColorAttributeName: GLOBAL_YELLOW_COLOR}];
     
     //	CGFloat bottomTextSize = (SWdith > 360)?22.f:18.f;
     //	[self.hexagonalView drawBottomText:@"DAASTAN | Everybody has a Story" withAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Futura-Medium" size:bottomTextSize]}];

@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Revels&apos;17</string>
+	<string>TechTatva'17</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -21,8 +21,6 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
@@ -41,6 +39,10 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Revels needs access to your camera.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Revels needs access to your photo gallery.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Neutra2Display-Titling.otf</string>
@@ -74,9 +76,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Revels needs access to your photo gallery.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Revels needs access to your camera.</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 </dict>
 </plist>

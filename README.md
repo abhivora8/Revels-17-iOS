@@ -1,11 +1,8 @@
-# Revels-17
+# Tech-Tatva-17
 
-The Official iOS App for Revels'17 cultural fest of MIT, Manipal.
+The Official iOS App for Tech Tatva'17, technical fest of MIT, Manipal.
 
 Open-Source Project.
-
-[<img src="images/revels.png" width=72>](http://www.mitrevels.in)
-[<img src="images/preview.jpg">](https://itunes.apple.com/in/app/revels17/id967230420?mt=8)
 
 --------------------
 ## Features
@@ -15,12 +12,10 @@ Open-Source Project.
 - Add interesting events to the favourites list
 - Get Results on the go
 - Get information about the workshops
-- Instagram Integration (Use #Revels17 when posting pictures on Instagram)
+- Instagram Integration (Use #TechTatva17 when posting pictures on Instagram)
 - Save images from Instafeed to your phone
 - Beautiful UI
 - Works good on 2G networks
-
-[![Get the app from App Store](http://www.catan.com/images/stories/Elektronische_Spiele/iPhone_Catan/AppStore_klein_24.png)](https://itunes.apple.com/in/app/revels17/id967230420?mt=8)
 
 --------------------
 

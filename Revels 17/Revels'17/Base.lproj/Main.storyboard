@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KRB-PR-HLJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tYj-7b-MiY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -108,7 +108,6 @@
                                             <segment title="All Results"/>
                                             <segment title="Sports Results"/>
                                         </segments>
-                                        <color key="tintColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="segmentedControlValueChanged:" destination="xVv-fQ-vsu" eventType="valueChanged" id="81e-in-NzK"/>
                                         </connections>
@@ -205,7 +204,6 @@
                                             <segment title="Day 3"/>
                                             <segment title="Day 4"/>
                                         </segments>
-                                        <color key="tintColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="dayChanged:" destination="iXb-Gn-cfh" eventType="valueChanged" id="yIm-Ke-Fvo"/>
                                         </connections>
@@ -287,7 +285,6 @@
                                             <segment title="Day 3"/>
                                             <segment title="Day 4"/>
                                         </segments>
-                                        <color key="tintColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="eventDayChanged:" destination="b4e-h9-JdW" eventType="valueChanged" id="IvO-tK-cnQ"/>
                                         </connections>
@@ -357,7 +354,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vAr-Rn-YD1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vAr-Rn-YD1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -379,7 +376,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="js2-qv-wm2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="js2-qv-wm2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -407,7 +404,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to skip." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9f2-9f-LrF">
                                 <rect key="frame" x="16" y="635" width="343" height="24"/>
                                 <fontDescription key="fontDescription" name="Neutraface2Display-Medium" family="Neutraface 2 Display" pointSize="24"/>
-                                <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.090196078430000007" green="0.72941176470000002" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -455,7 +452,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bdM-zz-1IJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bdM-zz-1IJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -473,7 +470,7 @@
             <objects>
                 <navigationController storyboardIdentifier="DevelopersVCNav" automaticallyAdjustsScrollViewInsets="NO" id="ldJ-8C-TOf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Piq-YQ-ADn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Piq-YQ-ADn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -526,7 +523,7 @@
                             <tableViewSection headerTitle=" " id="ynI-3y-i1g">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="dPR-I8-xAi" rowHeight="64" style="IBUITableViewCellStyleDefault" id="Bbt-Ah-12p">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="64"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bbt-Ah-12p" id="01G-pC-XaO">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
@@ -544,7 +541,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="fjW-d0-gyD" rowHeight="64" style="IBUITableViewCellStyleDefault" id="Em5-oP-63o">
-                                        <rect key="frame" x="0.0" y="120" width="375" height="64"/>
+                                        <rect key="frame" x="0.0" y="119.5" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Em5-oP-63o" id="jtj-ny-zFB">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
@@ -566,7 +563,7 @@
                             <tableViewSection headerTitle="" id="YtO-TS-Bnn">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="8hz-gh-lWE" imageView="bg1-m2-dmH" rowHeight="52" style="IBUITableViewCellStyleDefault" id="ghS-zk-9H9">
-                                        <rect key="frame" x="0.0" y="200" width="375" height="52"/>
+                                        <rect key="frame" x="0.0" y="199.5" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghS-zk-9H9" id="B6e-ax-cSB">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="52"/>
@@ -576,7 +573,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="325" height="52"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Neutraface2Display-Medium" family="Neutraface 2 Display" pointSize="24"/>
-                                                    <color key="textColor" red="0.76862745099999996" green="0.21960784310000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="bg1-m2-dmH">
@@ -592,7 +589,7 @@
                             <tableViewSection headerTitle="" id="Vcn-0a-cZF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="qac-sn-r0P" imageView="1lZ-96-o7T" rowHeight="52" style="IBUITableViewCellStyleDefault" id="th7-7Z-zQL">
-                                        <rect key="frame" x="0.0" y="268" width="375" height="52"/>
+                                        <rect key="frame" x="0.0" y="267.5" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="th7-7Z-zQL" id="rMc-eg-jlU">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="52"/>
@@ -602,7 +599,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="325" height="52"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Neutraface2Display-Medium" family="Neutraface 2 Display" pointSize="24"/>
-                                                    <color key="textColor" red="0.76862745099999996" green="0.21960784310000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1lZ-96-o7T">
@@ -618,7 +615,7 @@
                             <tableViewSection headerTitle="" id="QlE-bi-rSX">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="6jU-UI-3ye" imageView="lC0-JC-cIy" rowHeight="52" style="IBUITableViewCellStyleDefault" id="mCq-6n-o73">
-                                        <rect key="frame" x="0.0" y="336" width="375" height="52"/>
+                                        <rect key="frame" x="0.0" y="335.5" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mCq-6n-o73" id="9ti-eZ-uAU">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="52"/>
@@ -628,7 +625,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="325" height="52"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Neutraface2Display-Medium" family="Neutraface 2 Display" pointSize="24"/>
-                                                    <color key="textColor" red="0.76862745099999996" green="0.21960784310000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="lC0-JC-cIy">
@@ -644,7 +641,7 @@
                             <tableViewSection headerTitle="" id="AJz-Z0-z3c">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="EY8-Es-Dlh" imageView="gr6-0a-jak" rowHeight="52" style="IBUITableViewCellStyleDefault" id="qlY-0K-QZh">
-                                        <rect key="frame" x="0.0" y="404" width="375" height="52"/>
+                                        <rect key="frame" x="0.0" y="403.5" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qlY-0K-QZh" id="MOB-Qd-L7c">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="52"/>
@@ -654,7 +651,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="325" height="52"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Neutraface2Display-Medium" family="Neutraface 2 Display" pointSize="24"/>
-                                                    <color key="textColor" red="0.76862745099999996" green="0.21960784310000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="gr6-0a-jak">
@@ -689,7 +686,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vvb-pa-M8e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vvb-pa-M8e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -717,7 +714,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vDf-w1-TRO" customClass="DynamicLabel">
                                 <rect key="frame" x="16" y="572.5" width="343" height="41"/>
                                 <fontDescription key="fontDescription" name="PixelCalculon" family="Pixel Calculon" pointSize="32"/>
-                                <color key="textColor" red="0.76862745099999996" green="0.21960784310000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
@@ -731,7 +728,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUG Manipal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2h-aQ-vaj">
                                 <rect key="frame" x="16" y="621.5" width="343" height="25.5"/>
                                 <fontDescription key="fontDescription" name="PixelCalculon" family="Pixel Calculon" pointSize="20"/>
-                                <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SWIPE DOWN TO GO BACK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7w-VY-i76" customClass="DynamicLabel">
@@ -839,7 +836,7 @@ Said the joker to the thief,
             </objects>
             <point key="canvasLocation" x="3055" y="3036"/>
         </scene>
-        <!--About Revels-->
+        <!--About TechTatva-->
         <scene sceneID="RM9-Cp-gS8">
             <objects>
                 <tableViewController storyboardIdentifier="AboutVC" id="nTM-u8-4yC" customClass="AboutTableViewController" sceneMemberID="viewController">
@@ -868,7 +865,7 @@ Said the joker to the thief,
                                                     <rect key="frame" x="156" y="12" width="203" height="112"/>
                                                     <string key="text">Revels is one of the most awaited cultural and sports festival in the south circuit amongst the engineering colleges and is widely regarded as the largest event in Karnataka. </string>
                                                     <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="16"/>
-                                                    <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -897,7 +894,7 @@ Said the joker to the thief,
                                                     <rect key="frame" x="16" y="6" width="343" height="104"/>
                                                     <string key="text">This year, we plan to stop at nothing, and make this fest not just a success, but an enduring part of every participant’s life. We attempt to provide the participants a platform where they can pursue their passion, perceive it, believe in it and achieve their goals.</string>
                                                     <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="16"/>
-                                                    <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -922,7 +919,7 @@ Said the joker to the thief,
                                                     <string key="text">Revels’17 presents the theme of the fest
 “Carnaval | The Rhythm of Life”</string>
                                                     <fontDescription key="fontDescription" name="Neutraface2Display-Light" family="Neutraface 2 Display" pointSize="26"/>
-                                                    <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -946,7 +943,7 @@ Said the joker to the thief,
                                                     <rect key="frame" x="16" y="2" width="343" height="176"/>
                                                     <string key="text">Life, in its innumerable twists and turns provides us with both opportunities and failures. Yet it is what we do with it that makes the difference. Life is a carnival, one in which we wait in long lines to enjoy short rides, but it's those moments of excitement that inspire us to reach our limits. It is those movements which fuel our imaginations, inspire our creativity, and makes us feel alive.</string>
                                                     <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="16"/>
-                                                    <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -971,7 +968,7 @@ Said the joker to the thief,
                                                     <string key="text">Forget all your worries for a little while, it's time to live a little more.
 "Revels’17 - the biggest carnaval is coming your way!"</string>
                                                     <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="16"/>
-                                                    <color key="textColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1072,9 +1069,8 @@ Said the joker to the thief,
                             <outlet property="delegate" destination="nTM-u8-4yC" id="pmJ-VH-o79"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="About Revels" id="SGc-9z-4aW">
+                    <navigationItem key="navigationItem" title="About TechTatva" id="SGc-9z-4aW">
                         <barButtonItem key="leftBarButtonItem" image="crossButton" id="8CM-Pz-0y1">
-                            <color key="tintColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="dismissAction:" destination="nTM-u8-4yC" id="JPp-7h-eif"/>
                             </connections>
@@ -1093,7 +1089,7 @@ Said the joker to the thief,
                 <navigationController storyboardIdentifier="AboutVCNav" automaticallyAdjustsScrollViewInsets="NO" id="9Xz-SB-xLY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="About Us" image="44aboutIcon" id="Vaa-zB-J4N"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ggQ-H1-p5V">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ggQ-H1-p5V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.95686274510000002" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1118,7 +1114,7 @@ Said the joker to the thief,
                 <navigationController storyboardIdentifier="FavouritesVCNav" automaticallyAdjustsScrollViewInsets="NO" id="gQN-hy-vMr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favourites" image="44favouritesIcon" id="xKb-qx-d5z"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="nBE-QJ-pyV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nBE-QJ-pyV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1284,7 +1280,6 @@ Said the joker to the thief,
                     </view>
                     <navigationItem key="navigationItem" title="#Revels17" id="5ck-IV-xiL">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="87p-Pl-kCp">
-                            <color key="tintColor" red="0.96862745100000003" green="0.68627450980000004" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="refreshAction:" destination="360-h5-u8M" id="9ML-6l-7Pw"/>
                             </connections>
@@ -1364,7 +1359,7 @@ Said the joker to the thief,
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@shorteswag" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="sOz-eJ-dIm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@qnaxzrzrf" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="sOz-eJ-dIm">
                                 <rect key="frame" x="72" y="521" width="216" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="wuK-Dz-703"/>
@@ -1632,7 +1627,7 @@ Said the joker to the thief,
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ph9-cQ-5vr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ph9-cQ-5vr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -1653,7 +1648,7 @@ Said the joker to the thief,
             <objects>
                 <navigationController storyboardIdentifier="WorkshopsVCNav" automaticallyAdjustsScrollViewInsets="NO" id="SK4-xb-OTN" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xYj-x8-LGG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xYj-x8-LGG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1688,5 +1683,5 @@ Said the joker to the thief,
         <image name="stwitter" width="40" height="40"/>
         <image name="syoutube" width="40" height="40"/>
     </resources>
-    <color key="tintColor" red="0.76862745099999996" green="0.21960784310000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -37,6 +37,8 @@
 	[resultsItem setIcon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"44resultsIcon"]];
 	[application setShortcutItems:@[catItem, eventsItem, instaItem, resultsItem]];
 	
+	
+	
     return YES;
 }
 

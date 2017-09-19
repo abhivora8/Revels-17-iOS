@@ -38,7 +38,7 @@
     
     [super viewDidLoad];
     
-    kTagToSearch = @"revels17";
+    kTagToSearch = @"techtatva17";
     
     self.searchBar.text = kTagToSearch;
     
@@ -73,7 +73,7 @@
     
     instagramObjects = [NSMutableArray new];
     
-    NSString *URLString = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/revels17/media/recent?access_token=630237785.f53975e.8dcfa635acf14fcbb99681c60519d04c"];
+    NSString *URLString = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/techtatva17/media/recent?access_token=630237785.f53975e.8dcfa635acf14fcbb99681c60519d04c"];
     
     nextURL = [NSURL URLWithString:URLString];
     
