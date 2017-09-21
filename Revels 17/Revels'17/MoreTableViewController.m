@@ -90,7 +90,7 @@
         
         if (indexPath.row == 0) {
 //            rwvc.passedTitle = @"Register for Proshow";
-            rwvc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://http://techtatva.in"]];
+            rwvc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://techtatva.in"]];
         }
 		
 		[self.navigationController presentViewController:rwvc animated:YES completion:nil];

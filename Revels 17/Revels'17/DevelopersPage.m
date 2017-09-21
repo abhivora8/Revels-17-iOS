@@ -62,7 +62,7 @@
     }
     else if (indexPath.row == 3) {
         cell.developerName.text = @"Mahima Borah";
-        cell.devloperImage.image = [UIImage imageNamed:@""];
+        cell.devloperImage.image = [UIImage imageNamed:@"Mahima"];
 
     }
     else if (indexPath.row == 4) {
@@ -123,37 +123,41 @@
         [alert show];
         
     }
-    else if (indexPath.row == 3) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"iOS Developer\n..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
-        [alert show];
-    }
-    else if (indexPath.row == 4) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"iOS Developer\n..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
-        [alert show];
-    }
+//    else if (indexPath.row == 3) {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"iOS Developer\n..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+//        [alert show];
+//    }
+//    else if (indexPath.row == 4) {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"iOS Developer\n..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+//        [alert show];
+//    }
     else if (indexPath.row == 5) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"Windows Developer\n..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"Windows Developer\nEven without the glasses, I can C#" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
         [alert show];
     }
-    else if (indexPath.row == 6) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"Windows Developer\n..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
-        [alert show];
-    }
+//    else if (indexPath.row == 6) {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"Windows Developer\n..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+//        [alert show];
+//    }
     else if (indexPath.row == 7) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"Android Developer\n..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"Android Developer\nFork that shit" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
         [alert show];
     }
-    else if (indexPath.row == 8) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"Android Developer\n..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
-        [alert show];
-    }
-    else if (indexPath.row == 9) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"Android Developer\n..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
-        [alert show];
-    }
+//    else if (indexPath.row == 8) {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"Android Developer\n..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+//        [alert show];
+//    }
+//    else if (indexPath.row == 9) {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"Android Developer\n..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+//        [alert show];
+//    }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+}
+
+- (IBAction)dismissAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

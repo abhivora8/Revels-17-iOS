@@ -146,6 +146,7 @@
 	CategoryStore *category = [catArray objectAtIndex:indexPath.row];
 	cell.catNameLabel.text = category.catName;
 	cell.catImageView.image = [UIImage imageNamed:category.catName];
+    NSLog("%@",category.catName);
 	return cell;
 }
 

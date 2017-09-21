@@ -70,15 +70,15 @@
 }
 
 - (IBAction)facebookAction:(id)sender {
-    [self openURLWithString:@"https://www.facebook.com/mitrevels/" backupURLString:@"https://www.facebook.com/mitrevels/"];
+    [self openURLWithString:@"https://www.facebook.com/mittechtatva/" backupURLString:@"http://www.facebook.com/mittechtatva"];
 }
 
 - (IBAction)twitterAction:(id)sender {
-    [self openURLWithString:@"twitter://user?screen_name=revelsmit/" backupURLString:@"https://www.twitter.com/revelsmit/"];
+    [self openURLWithString:@"twitter://user?screen_name=mittechtatva/" backupURLString:@"http://www.twitter.com/mittechtatva"];
 }
 
 - (IBAction)instagramAction:(id)sender {
-    [self openURLWithString:@"instagram://user?username=revelsmit" backupURLString:@"https://www.instagram.com/revelsmit/"];
+    [self openURLWithString:@"instagram://user?username=mittechtatva" backupURLString:@"http://www.instagram.com/mittechtatva"];
 }
 
 - (IBAction)youtubeAction:(id)sender {
@@ -86,7 +86,7 @@
 }
 
 - (IBAction)snapchatAction:(id)sender {
-    [self openURLWithString:@"snapchat://add/revelsmit" backupURLString:@"http://www.snapchat.com/add/revelsmit/"];
+    [self openURLWithString:@"snapchat://add/techtatva" backupURLString:@"http://www.snapchat.com/add/techtatva/"];
 }
 
 - (IBAction)browserAction:(id)sender {
