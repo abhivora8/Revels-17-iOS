@@ -24,6 +24,8 @@
 
 @property (nonatomic, strong) IBOutlet UISearchBar *searchBar;
 
+@property (nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
+
 @end
 
 @implementation InstagramV2ViewController {
@@ -32,6 +34,7 @@
     NSIndexPath *lastIndexPath;
     
     NSString *kTagToSearch;
+	BOOL qnaxmode;
 }
 
 - (void)viewDidLoad {
@@ -39,6 +42,7 @@
     [super viewDidLoad];
     
     kTagToSearch = @"techtatva17";
+	qnaxmode = NO;
     
     self.searchBar.text = kTagToSearch;
     
@@ -48,6 +52,10 @@
     
     self.collectionView.emptyDataSetSource = self;
     self.collectionView.emptyDataSetDelegate = self;
+	
+	self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+	self.tapGestureRecognizer.numberOfTapsRequired = 2;
+	[self.navigationController.navigationBar addGestureRecognizer:self.tapGestureRecognizer];
 	
 	UIImageView *headerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"header"]];
 	headerImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -59,6 +67,12 @@
 		[self registerForPreviewingWithDelegate:self sourceView:self.collectionView];
 	}
     
+}
+
+- (void)handleTap:(UITapGestureRecognizer *)recognizer {
+	qnaxmode = !qnaxmode;
+	kTagToSearch = qnaxmode ? @"qnaxzrzf" : @"techtatva17";
+	[self refreshAction:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -73,9 +87,11 @@
     
     instagramObjects = [NSMutableArray new];
     
-    NSString *URLString = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/techtatva17/media/recent?access_token=630237785.f53975e.8dcfa635acf14fcbb99681c60519d04c"];
+    NSString *URLString = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/%@/media/recent?access_token=630237785.f53975e.8dcfa635acf14fcbb99681c60519d04c", kTagToSearch];
     
     nextURL = [NSURL URLWithString:URLString];
+	
+	self.navigationItem.title = [NSString stringWithFormat:@"#%@", kTagToSearch];
     
     Reachability *reachability = [Reachability reachabilityForInternetConnection];
     if ([reachability isReachable])

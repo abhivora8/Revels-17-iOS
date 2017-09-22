@@ -12,6 +12,7 @@ target 'TechTatva\'17' do
   pod 'IQKeyboardManager'
   pod 'Firebase/Core'
   pod 'PBJVideoPlayer'
+  pod 'MWPhotoBrowser'
 
   # Pods for Revels'17
 

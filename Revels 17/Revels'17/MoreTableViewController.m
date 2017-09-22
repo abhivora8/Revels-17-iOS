@@ -8,13 +8,39 @@
 
 @import SafariServices;
 
+#import <MWPhotoBrowser/MWPhotoBrowser.h>
 #import "MoreTableViewController.h"
 #import <KWTransition/KWTransition.h>
 #import "AboutBackgroundView.h"
 
-@interface MoreTableViewController () <UIViewControllerTransitioningDelegate>
+@interface QnaxPhoto : NSObject
+
++ (NSMutableArray <MWPhoto *> *)getPhotosArrayFromJSON:(id)jsonData;
+
+@end
+
+@implementation QnaxPhoto
+
++ (NSMutableArray <MWPhoto *> *)getPhotosArrayFromJSON:(id)jsonData {
+	NSMutableArray <MWPhoto *> *photos = [NSMutableArray new];
+	for (NSDictionary *dict in jsonData) {
+		MWPhoto *photo = [[MWPhoto alloc] initWithURL:[NSURL URLWithString:[dict objectForKey:@"source"]]];
+		[photos addObject:photo];
+	}
+	return photos;
+}
+
+@end
+
+#pragma mark --
+
+@interface MoreTableViewController () <UIViewControllerTransitioningDelegate, MWPhotoBrowserDelegate>
 
 @property (nonatomic, strong) KWTransition *transition;
+
+@property (nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
+
+@property (nonatomic) NSMutableArray <MWPhoto *> *photos;
 
 @end
 
@@ -27,12 +53,54 @@
     
     self.transition = [KWTransition manager];
 	
+	self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+	self.tapGestureRecognizer.numberOfTapsRequired = 2;
+	[self.tableView addGestureRecognizer:self.tapGestureRecognizer];
+	
 	UIImageView *headerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"header"]];
 	headerImageView.contentMode = UIViewContentModeScaleAspectFit;
 	self.tableView.tableHeaderView = headerImageView;
 	
 	self.title = @"";
     
+}
+
+- (void)handleTap:(UITapGestureRecognizer *)sender {
+	
+	if ([[DADataManager sharedManager] fileExistsInDocuments:@"qnaxphotos.json"]) {
+		id jsonData = [[DADataManager sharedManager] fetchJSONFromDocumentsFileName:@"qnaxphotos.json"];
+		self.photos = [QnaxPhoto getPhotosArrayFromJSON:jsonData];
+		[self presentPhotosController];
+	} else {
+		SVHUD_SHOW;
+		NSURL *URL = [NSURL URLWithString:@"http://qnaxzrzrf.herokuapp.com/api/photos/"];
+		[[[NSURLSession sharedSession] dataTaskWithURL:URL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+			SVHUD_HIDE;
+			if (error == nil) {
+				[[DADataManager sharedManager] saveData:data toDocumentsFile:@"qnaxphotos.json"];
+				id jsonData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+				self.photos = [QnaxPhoto getPhotosArrayFromJSON:jsonData];
+				dispatch_async(dispatch_get_main_queue(), ^{
+					[self presentPhotosController];
+				});
+			}
+		}] resume];
+	}
+	
+}
+
+- (void)presentPhotosController {
+	MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+	browser.displayActionButton = YES;
+	browser.displayNavArrows = NO;
+	browser.displaySelectionButtons = NO;
+	browser.zoomPhotosToFill = NO;
+	browser.alwaysShowControls = NO;
+	browser.enableGrid = YES;
+	browser.startOnGrid = YES;
+	browser.autoPlayOnAppear = NO;
+	[browser setCurrentPhotoIndex:arc4random_uniform(self.photos.count - 1)];
+	[self.navigationController pushViewController:browser animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -50,6 +118,17 @@
 	
 }
 
+
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
+	return self.photos.count;
+}
+
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
+	if (index < self.photos.count) {
+		return [self.photos objectAtIndex:index];
+	}
+	return nil;
+}
 
 #pragma mark - Table view delegate
 
