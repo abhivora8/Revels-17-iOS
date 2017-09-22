@@ -219,6 +219,10 @@
 }
 
 - (void)infoAction:(id)sender {
+    if ( [self.category.catDesc isEqualToString:@""]) {//data in empty in api
+       self.category.catDesc = [NSString stringWithFormat:@"Sorry\nDescription not available."];
+    }
+    
 	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:self.category.catName message:self.category.catDesc preferredStyle:UIAlertControllerStyleAlert];
 	UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleCancel handler:nil];
 	[alertController addAction:cancelAction];

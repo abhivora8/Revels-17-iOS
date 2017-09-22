@@ -45,7 +45,7 @@
 	UIImageView *headerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"header"]];
 	headerImageView.contentMode = UIViewContentModeScaleAspectFit;
 	headerImageView.frame = CGRectMake(0, -120, self.view.bounds.size.width, 80);
-	headerImageView.alpha = 0.5;
+	headerImageView.alpha = 0.7;
 	[self.tableView addSubview:headerImageView];
 	
 }
@@ -84,10 +84,18 @@
 	
 	cell.day = schedule.day;
 	cell.locationLabel.text = schedule.venue;
-	cell.personOfContactLabel.text = event.contactName;
+    if ([event.contactName length] == 0) {
+        cell.personOfContactLabel.text = [NSString stringWithFormat:@"Not available."];
+    }
+    else{
+        cell.personOfContactLabel.text = event.contactName;
+    }
 	cell.dateLabel.text = [NSString stringWithFormat:@"%@ - %@", schedule.stime, schedule.etime];
 	
-	cell.catImageView.image = [UIImage imageNamed:event.catName];
+    cell.catImageView.image = [UIImage imageNamed:event.catName];
+    cell.catImageView.contentMode = UIViewContentModeScaleToFill;
+    cell.catImageView.alpha = 0.2;
+
 	
 	cell.favButton.tag = indexPath.row;
 	cell.infoButton.tag = indexPath.row;
@@ -202,6 +210,9 @@
 //	NSLog(@"Info clicked at %li", row);
 	ScheduleStore *schedule = [self.filteredSchedules objectAtIndex:row];
 	EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
+    if ([event.eventDesc length] == 4) {//default value in event.desc is "desc" in the api
+        event.eventDesc = [NSString stringWithFormat:@"Sorry\nDescription not available."];
+    }
 	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@", event.eventName] message:[NSString stringWithFormat:@"%@", event.eventDesc] preferredStyle:UIAlertControllerStyleAlert];
 	UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleCancel handler:nil];
 	[alertController addAction:cancelAction];

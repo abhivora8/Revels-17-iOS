@@ -169,6 +169,11 @@
 - (void)infoAction:(id)sender {
     ScheduleStore *schedule = [scheduleArray objectAtIndex:self.selectedIndexPath.row];
     EventStore *event = [[eveArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
+    
+    if ([event.eventDesc length] == 4) {//default value in event.desc is "desc" in the api
+        event.eventDesc = [NSString stringWithFormat:@"Sorry\nDescription not available."];
+    }
+    
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@", event.eventName] message:[NSString stringWithFormat:@"%@", event.eventDesc] preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleCancel handler:nil];
     [alertController addAction:cancelAction];

@@ -55,6 +55,7 @@
 				id jsonData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&err2];
 				if (err2 == nil) {
 					self.workshops = [WorkshopsModel getAllWorkshopsFromJSONArray:[jsonData objectForKey:@"data"]];
+                    
 					dispatch_async(dispatch_get_main_queue(), ^{
 						[self.tableView reloadData];
 					});
@@ -96,12 +97,22 @@
 	
 	cell.wnameLabel.text = wshop.wname;
 	cell.wdateLabel.text = [NSString stringWithFormat:@"%@, %@ - %@", wshop.wdate, wshop.wshuru, wshop.wkhatam];
+    if ([wshop.wcost length] == 0) {
+        wshop.wcost = [NSString stringWithFormat:@"Free"];
+    }
+    else{
+        cell.wcostLabel.text = wshop.wcost;
+    }
 	cell.wcostLabel.text = wshop.wcost;
 	cell.wcontactLabel.text = wshop.cname;
 	cell.wvenueLabel.text = wshop.wvenue;
 	
 	cell.winfoButton.tag = indexPath.row;
 	cell.wcallButton.tag = indexPath.row;
+    if (wshop.wnumb == nil) {
+        cell.wcontactLabel.text = [NSString stringWithFormat: @"Not available"];
+    }
+//    cell.wcontactLabel.text = [NSString stringWithFormat: @"Not available"];
 	
 	[cell.winfoButton addTarget:self action:@selector(infoAction:) forControlEvents:UIControlEventTouchUpInside];
 	[cell.wcallButton addTarget:self action:@selector(callAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -130,6 +141,9 @@
 - (void)infoAction:(id)sender {
 	NSInteger row = [sender tag];
 	WorkshopsModel *wshop = [self.workshops objectAtIndex:row];
+    if ([wshop.wdesc length] == 0) {
+        wshop.wdesc = [NSString stringWithFormat:@"Sorry.\nNo desc available."];
+    }
 	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@", wshop.wname] message:[NSString stringWithFormat:@"%@", wshop.wdesc] preferredStyle:UIAlertControllerStyleAlert];
 	UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleCancel handler:nil];
 	[alertController addAction:cancelAction];

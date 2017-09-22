@@ -38,7 +38,7 @@
 	
 	UIImageView *headerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.catName]];
 	headerImageView.contentMode = UIViewContentModeScaleAspectFit;
-	headerImageView.frame = CGRectMake(0, -80, self.view.bounds.size.width, 80);
+	headerImageView.frame = CGRectMake(0, -80, self.view.bounds.size.width - 20, 80);
 	headerImageView.alpha = 0.5;
 	[self.tableView addSubview:headerImageView];
 	
@@ -145,11 +145,11 @@
     return YES;
 }
 
-#pragma mark - DZN Empty Data Set Source
-
-- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
-	return [UIImage imageNamed:self.catName];
-}
+//#pragma mark - DZN Empty Data Set Source
+//
+//- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
+//    return [UIImage imageNamed:self.catName];
+//}
 
 - (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView {
 	return GLOBAL_BACK_COLOR;
@@ -190,6 +190,11 @@
 	//	NSLog(@"Info clicked at %li", row);
 	ScheduleStore *schedule = [self.schedules objectAtIndex:row];
 	EventStore *event = [[self.events filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"catID == %@ AND eventID == %@", schedule.catID, schedule.eventID]] firstObject];
+    
+    if ([event.eventDesc length] == 4) {//default value in event.desc is "desc" in the api
+        event.eventDesc = [NSString stringWithFormat:@"Sorry\nDescription not available."];
+    }
+    
 	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@", event.eventName] message:[NSString stringWithFormat:@"%@", event.eventDesc] preferredStyle:UIAlertControllerStyleAlert];
 	UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleCancel handler:nil];
 	[alertController addAction:cancelAction];

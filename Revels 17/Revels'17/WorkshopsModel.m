@@ -22,8 +22,8 @@
 			self.wkhatam = [dict objectForKey:@"wkhatam"];
 			self.wdesc = [dict objectForKey:@"wdesc"];
 			self.wvenue = [dict objectForKey:@"wvenue"];
-			self.wnumb = [dict objectForKey:@"wnumb"];
-			self.cname = [dict objectForKey:@"cname"];
+			//self.wnumb = [dict objectForKey:@"cnumb"];
+			//self.cname = [dict objectForKey:@"cname"];
 		} @catch (NSException *exception) {
 			NSLog(@"Exception: %@", exception.reason);
 		}

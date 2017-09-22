@@ -67,7 +67,7 @@
     }
     else if (indexPath.row == 4) {
         cell.developerName.text = @"Rhitam";
-        cell.devloperImage.image = [UIImage imageNamed:@""];
+        cell.devloperImage.image = [UIImage imageNamed:@"Rhitam"];
 
     }
     else if (indexPath.row == 5) {
@@ -76,8 +76,8 @@
 
     }
     else if (indexPath.row == 6) {
-        cell.developerName.text = @"";
-        cell.devloperImage.image = [UIImage imageNamed:@""];
+        cell.developerName.text = @"Anjali Premjit";
+        cell.devloperImage.image = [UIImage imageNamed:@"contact"];
 
     }
     else if (indexPath.row == 7) {
@@ -92,7 +92,7 @@
     }
     else if (indexPath.row == 9) {
         cell.developerName.text = @"Saptarshi Roy Choudhuri";
-        cell.devloperImage.image = [UIImage imageNamed:@"Saptarshi"];
+        cell.devloperImage.image = [UIImage imageNamed:@"contact"];
 
     }
     cell.devloperImage.layer.cornerRadius = 30.0;
@@ -108,18 +108,18 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.row == 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cat Head" message:@"iOS Developer\nFailure is not an option, It comes\nbundled with your Microsoft product." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cat Head" message:@"iOS Developer\nFailure is not an option, It comes\nbundled with your Microsoft product." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
 
     }
     else if (indexPath.row == 1) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cat Head" message:@"Windows Developer\nPenguins love cold,\nthey won't survive the sun." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cat Head" message:@"Windows Developer\nPenguins love cold,\nthey won't survive the sun." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
 
     }
     else if (indexPath.row == 2) {
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cat Head" message:@"Android Developer\nStudent by day.\nDeveloper by night." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cat Head" message:@"Android Developer\nStudent by day.\nDeveloper by night." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         
     }
@@ -132,7 +132,7 @@
 //        [alert show];
 //    }
     else if (indexPath.row == 5) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"Windows Developer\nEven without the glasses, I can C#" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"Windows Developer\nEven without the glasses, I can C#" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
 //    else if (indexPath.row == 6) {
@@ -140,7 +140,7 @@
 //        [alert show];
 //    }
     else if (indexPath.row == 7) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"Android Developer\nFork that shit" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Organiser" message:@"Android Developer\nFork that shit" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
 //    else if (indexPath.row == 8) {
