@@ -165,13 +165,7 @@
         
         // Register shit
         
-		SFSafariViewController *rwvc;
-        
-        if (indexPath.row == 0) {
-//            rwvc.passedTitle = @"Register for Proshow";
-            rwvc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://techtatva.in"]];
-        }
-		
+		SFSafariViewController *rwvc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://techtatva.in"]];
 		[self.navigationController presentViewController:rwvc animated:YES completion:nil];
 		
 		return;
@@ -188,13 +182,21 @@
         
         navc = [self.storyboard instantiateViewControllerWithIdentifier:@"WorkshopsVCNav"];
         
-    } else if (indexPath.section == 3) {
+	} else if (indexPath.section == 3) {
+		
+		// Live blog
+		
+		SFSafariViewController *svc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://themitpost.com/techtatva17-liveblog/"]];
+		[self.navigationController presentViewController:svc animated:YES completion:nil];
+		return;
+		
+	} else if (indexPath.section == 4) {
         
         // Favourites
         
         navc = [self.storyboard instantiateViewControllerWithIdentifier:@"FavouritesVCNav"];
         
-    } else if (indexPath.section == 4) {
+    } else if (indexPath.section == 5) {
         
         // Developers
         

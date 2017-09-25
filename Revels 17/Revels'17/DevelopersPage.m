@@ -9,6 +9,9 @@
 #import "DevelopersPage.h"
 #import "DevelopersPageCell.h"
 
+#import <AVFoundation/AVFoundation.h>
+#import <AVKit/AVKit.h>
+
 @interface DevelopersPage ()
 
 @end
@@ -25,11 +28,28 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	
+	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+	
+	UIImageView *headerImageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"header2"]];
+	headerImageView1.contentMode = UIViewContentModeScaleAspectFit;
+	headerImageView1.frame = CGRectMake(0, -140, self.view.bounds.size.width, 120);
+	headerImageView1.alpha = 0.5;
+	[self.tableView addSubview:headerImageView1];
+	
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+	NSURL *videoURL = [NSURL URLWithString:@"https://raw.githubusercontent.com/PyPals/PyPals-Logos/master/Trailer.mp4"];
+	AVPlayer *player = [AVPlayer playerWithURL:videoURL];
+	AVPlayerViewController *playerViewController = [AVPlayerViewController new];
+	playerViewController.player = player;
+	[self presentViewController:playerViewController animated:YES completion:nil];
 }
 
 #pragma mark - Table view data source
@@ -45,7 +65,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DevelopersPageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"devCell" forIndexPath:indexPath];
-    
+
     if (indexPath.row == 0) {
         cell.developerName.text = @"Abhishek Vora";
         cell.devloperImage.image = [UIImage imageNamed:@"Abhishek"];
@@ -102,7 +122,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 95.f;
+    return 72.f;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

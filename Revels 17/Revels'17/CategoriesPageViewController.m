@@ -9,8 +9,10 @@
 #import "CategoriesPageViewController.h"
 #import "EventsTableViewController.h"
 #import "EventsDetailsJSONModel.h"
+#import "EasterEggViewController.h"
+#import <KWTransition/KWTransition.h>
 
-@interface CategoriesPageViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
+@interface CategoriesPageViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource, UIViewControllerTransitioningDelegate>
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *eventsByDaySegmentedView;
 
@@ -23,6 +25,8 @@
 @property (nonatomic) NSManagedObjectContext *context;
 @property (nonatomic) NSFetchRequest *eventRequest;
 @property (nonatomic) NSFetchRequest *scheduleRequest;
+
+@property (nonatomic) KWTransition *transition;
 
 
 @end
@@ -145,6 +149,10 @@
 	
 	self.title = self.category.catName;
 	
+	if ([self.category.catName isEqualToString:@"Turing"]) {
+		
+	}
+	
 	self.context = [AppDelegate sharedManagedObjectContext];
 	
 	self.eventRequest = [EventStore fetchRequest];
@@ -205,8 +213,19 @@
 	
 }
 
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+	if ([self.category.catName isEqualToString:@"Turing"]) {
+		EasterEggViewController *eevc = [self.storyboard instantiateViewControllerWithIdentifier:@"EasterEggVC"];
+		eevc.ptype = PresentationTypeYZ;
+		self.transition.style = KWTransitionStyleUp;
+		[eevc setTransitioningDelegate:self];
+		
+		[self presentViewController:eevc animated:YES completion:nil];
+	}
+}
+
 - (void)viewDidAppear:(BOOL)animated {
-    
+	
     [super viewDidAppear:animated];
     
     [self.containerView addSubview:self.pageViewController.view];
@@ -270,6 +289,21 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
 	return UIStatusBarStyleLightContent;
+}
+
+
+#pragma mark - View controller animated transistioning
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+																   presentingController:(UIViewController *)presenting
+																	   sourceController:(UIViewController *)source {
+	self.transition.action = KWTransitionStepPresent;
+	return self.transition;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+	self.transition.action = KWTransitionStepDismiss;
+	return self.transition;
 }
 
 /*

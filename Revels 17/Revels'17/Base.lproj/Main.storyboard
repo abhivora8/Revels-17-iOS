@@ -80,6 +80,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Categories" id="Sew-l6-0EV">
+                        <barButtonItem key="leftBarButtonItem" image="signals" id="ONR-9b-Ifq">
+                            <connections>
+                                <action selector="liveStream:" destination="YVz-KJ-hyn" id="MJX-14-TU9"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="44favouritesIcon" id="pep-cV-iyR">
                             <connections>
                                 <action selector="favsAction:" destination="YVz-KJ-hyn" id="sug-Xm-Wqy"/>
@@ -606,10 +611,54 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="" id="mmz-wZ-RPO">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="bQ8-26-l9O" imageView="dRJ-DU-xMS" rowHeight="52" style="IBUITableViewCellStyleDefault" id="POX-V6-LhM">
+                                        <rect key="frame" x="0.0" y="271.5" width="375" height="52"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="POX-V6-LhM" id="tWM-1y-s9J">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="52"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bQ8-26-l9O">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="52"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="LIVE BLOG  ">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.090196078430000007" green="0.72941176470000002" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="24" name="Neutraface2Display-Medium"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="(courtesy The MIT Post)">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="19" name="Neutraface2Display-Medium"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content=" ">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.090196078430000007" green="0.72941176470000002" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="24" name="Neutraface2Display-Medium"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="dRJ-DU-xMS">
+                                                    <rect key="frame" x="15" y="8" width="44" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="" id="QlE-bi-rSX">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="6jU-UI-3ye" imageView="lC0-JC-cIy" rowHeight="52" style="IBUITableViewCellStyleDefault" id="mCq-6n-o73">
-                                        <rect key="frame" x="0.0" y="271.5" width="375" height="52"/>
+                                        <rect key="frame" x="0.0" y="339.5" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mCq-6n-o73" id="9ti-eZ-uAU">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="52"/>
@@ -635,7 +684,7 @@
                             <tableViewSection headerTitle="" id="AJz-Z0-z3c">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="EY8-Es-Dlh" imageView="gr6-0a-jak" rowHeight="52" style="IBUITableViewCellStyleDefault" id="qlY-0K-QZh">
-                                        <rect key="frame" x="0.0" y="339.5" width="375" height="52"/>
+                                        <rect key="frame" x="0.0" y="407.5" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qlY-0K-QZh" id="MOB-Qd-L7c">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="52"/>
@@ -680,7 +729,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vvb-pa-M8e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vvb-pa-M8e">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -719,7 +768,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUG Manipal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2h-aQ-vaj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not double tap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2h-aQ-vaj">
                                 <rect key="frame" x="16" y="621.5" width="343" height="25.5"/>
                                 <fontDescription key="fontDescription" name="PixelCalculon" family="Pixel Calculon" pointSize="20"/>
                                 <color key="textColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
@@ -1585,7 +1634,7 @@ Said the joker to the thief,
             </objects>
             <point key="canvasLocation" x="2276" y="3836"/>
         </scene>
-        <!--Developers Page-->
+        <!--Developers-->
         <scene sceneID="Nff-c8-8LM">
             <objects>
                 <tableViewController storyboardIdentifier="DevelopersPage" id="AeL-iJ-HIP" customClass="DevelopersPage" sceneMemberID="viewController">
@@ -1602,28 +1651,28 @@ Said the joker to the thief,
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EMN-aL-7g1">
-                                            <rect key="frame" x="18" y="23" width="60" height="60"/>
+                                            <rect key="frame" x="20" y="14.5" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="R7H-U7-zq8"/>
                                                 <constraint firstAttribute="width" constant="60" id="bZz-XX-NRd"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ag-6c-eKb">
-                                            <rect key="frame" x="98" y="43" width="250" height="21"/>
+                                            <rect key="frame" x="100" y="34.5" width="250" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="250" id="GvY-XG-A9a"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Neutraface2Display-Medium" family="Neutraface 2 Display" pointSize="20"/>
                                             <color key="textColor" red="0.090196078430000007" green="0.72941176470000002" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="EMN-aL-7g1" firstAttribute="leading" secondItem="Ph8-w4-yyt" secondAttribute="leadingMargin" constant="10" id="027-cd-rvM"/>
+                                        <constraint firstItem="EMN-aL-7g1" firstAttribute="leading" secondItem="Ph8-w4-yyt" secondAttribute="leadingMargin" constant="12" id="027-cd-rvM"/>
                                         <constraint firstItem="7ag-6c-eKb" firstAttribute="leading" secondItem="EMN-aL-7g1" secondAttribute="trailing" constant="20" id="9LD-Il-yvi"/>
+                                        <constraint firstItem="EMN-aL-7g1" firstAttribute="centerY" secondItem="Ph8-w4-yyt" secondAttribute="centerY" id="9W1-Ga-WQm"/>
                                         <constraint firstItem="7ag-6c-eKb" firstAttribute="centerY" secondItem="EMN-aL-7g1" secondAttribute="centerY" id="IyW-qZ-5mG"/>
-                                        <constraint firstItem="EMN-aL-7g1" firstAttribute="top" secondItem="Ph8-w4-yyt" secondAttribute="topMargin" constant="15" id="KDc-ST-tdb"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -1637,8 +1686,8 @@ Said the joker to the thief,
                             <outlet property="delegate" destination="AeL-iJ-HIP" id="IOY-6l-PlZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Developers Page" id="bRX-9T-BbN">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="JlL-y4-prA">
+                    <navigationItem key="navigationItem" title="Developers" id="bRX-9T-BbN">
+                        <barButtonItem key="leftBarButtonItem" image="crossButton" id="JlL-y4-prA">
                             <connections>
                                 <action selector="dismissAction:" destination="AeL-iJ-HIP" id="paZ-pj-Evd"/>
                             </connections>
@@ -1726,6 +1775,7 @@ Said the joker to the thief,
         <image name="sfacebook" width="40" height="40"/>
         <image name="sgithub" width="40" height="40"/>
         <image name="share" width="40" height="40"/>
+        <image name="signals" width="32" height="32"/>
         <image name="sinstagram" width="40" height="40"/>
         <image name="ssafari" width="40" height="40"/>
         <image name="ssnapchat" width="40" height="40"/>

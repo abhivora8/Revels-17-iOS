@@ -13,6 +13,9 @@
 #import "UnderlinedLabel.h"
 #import "DynamicLabel.h"
 
+#import <AVKit/AVKit.h>
+#import <AVFoundation/AVFoundation.h>
+
 @interface EasterEggViewController ()
 
 @property (weak, nonatomic) IBOutlet UnderlinedLabel *goBackLabel;
@@ -86,8 +89,7 @@
     
     if (self.ptype == PresentationTypeYZ) {
         tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-        tapGesture.numberOfTapsRequired = 3;
-        tapGesture.numberOfTouchesRequired = 3;
+        tapGesture.numberOfTapsRequired = 2;
         [self.view addGestureRecognizer:tapGesture];
         [(AboutBackgroundView *)self.view jiggleBackground];
     }
@@ -141,7 +143,11 @@
 }
 
 - (void)handleTap:(UITapGestureRecognizer *)recognizer {
-    [self openURLWithString:@"http://www.youtube.com/watch?v=gHi5VTnr9cg"];
+	NSURL *videoURL = [NSURL URLWithString:@"https://raw.githubusercontent.com/PyPals/PyPals-Logos/master/Trailer.mp4"];
+	AVPlayer *player = [AVPlayer playerWithURL:videoURL];
+	AVPlayerViewController *playerViewController = [AVPlayerViewController new];
+	playerViewController.player = player;
+	[self presentViewController:playerViewController animated:YES completion:nil];
 }
 
 #pragma mark - Social

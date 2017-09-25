@@ -12,6 +12,7 @@
 #import "CategoriesPageViewController.h"
 #import "CategoriesCollectionViewCell.h"
 #import "CategoriesJSONModel.h"
+#import <SafariServices/SafariServices.h>
 
 @interface CategoriesViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIViewControllerPreviewingDelegate>
 
@@ -194,6 +195,12 @@
 }
 
 #pragma mark - UIViewController previewing delegate
+
+- (IBAction)liveStream:(id)sender {
+	SFSafariViewController *svc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://themitpost.com/techtatva17-liveblog/"]];
+	[self.navigationController presentViewController:svc animated:YES completion:nil];
+}
+
 
 - (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
 	NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:location];
